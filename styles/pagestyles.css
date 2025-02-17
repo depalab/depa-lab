@@ -1,0 +1,890 @@
+/* Variables */
+:root {
+    --primary-color: #002d62;
+    --secondary-color: #457b9d;
+    --accent-color: #ff7f50;
+    --text-color: #003d80;
+    --background-color: #f9fbff;
+    --white: #ffffff;
+}
+
+/* Banner Styles */
+.page-banner {
+    position: relative;
+    height: 400px;
+    background: linear-gradient(rgba(0, 45, 98, 0.8), rgba(0, 45, 98, 0.8)),
+                url('https://techtalentscity.github.io/dapa-research-lab/images/banners/llm.jpeg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.banner-content {
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.banner-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.banner-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Main Content */
+.academic-advisory {
+    padding: 4rem 2rem;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+/* Content Single Card */
+.content-single {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.content-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.content-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+.content-card p {
+    color: var(--text-color);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+/* Footer */
+.main-footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 2rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    color: var(--white);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .banner-title {
+        font-size: 2rem;
+    }
+
+    .banner-subtitle {
+        font-size: 1rem;
+    }
+
+    .content-single {
+        padding: 1rem 0.5rem;
+    }
+
+    .content-card {
+        padding: 2rem;
+    }
+
+    .content-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .content-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-banner {
+        height: 300px;
+    }
+
+    .academic-advisory {
+        padding: 3rem 1rem;
+    }
+}
+
+/* Publications Showcase Styles */
+.publications-showcase {
+    background-color: var(--background-color);
+    padding: 5rem 2rem;
+}
+
+.showcase-title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.showcase-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 1rem auto;
+}
+
+.showcase-subtitle {
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.showcase-item {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 45, 98, 0.1);
+}
+
+.showcase-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 45, 98, 0.15);
+}
+
+.showcase-content {
+    padding: 2rem;
+}
+
+.item-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.detail-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.detail-label {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.detail-text {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.showcase-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.showcase-link:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .publications-showcase {
+        padding: 4rem 1.5rem;
+    }
+
+    .showcase-title {
+        font-size: 2rem;
+    }
+
+    .showcase-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .showcase-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .item-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .publications-showcase {
+        padding: 3rem 1rem;
+    }
+
+    .showcase-content {
+        padding: 1.5rem;
+    }
+
+    .showcase-title {
+        font-size: 1.8rem;
+    }
+
+    .showcase-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* Research Highlight Section Styles */
+.research-highlight {
+    background: linear-gradient(to bottom, var(--background-color) 0%, rgba(249, 251, 255, 0.9) 100%);
+    padding: 5rem 2rem;
+    position: relative;
+}
+
+.research-highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+}
+
+.highlight-title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.highlight-subtitle {
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.highlight-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.highlight-card {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 45, 98, 0.12);
+    padding: 3rem;
+    transition: transform 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    margin-bottom: 2.5rem;
+}
+
+.highlight-text {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.highlight-text:last-child {
+    margin-bottom: 0;
+}
+
+.highlight-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.action-button {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 200px;
+}
+
+.action-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(0, 45, 98, 0.2);
+}
+
+.action-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 45, 98, 0.25);
+}
+
+.action-secondary {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.action-secondary:hover {
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .research-highlight {
+        padding: 4rem 1.5rem;
+    }
+
+    .highlight-title {
+        font-size: 2rem;
+    }
+
+    .highlight-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .highlight-card {
+        padding: 2rem;
+    }
+
+    .highlight-text {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .action-button {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+@media (max-width: 480px) {
+    .research-highlight {
+        padding: 3rem 1rem;
+    }
+
+    .highlight-title {
+        font-size: 1.8rem;
+    }
+
+    .highlight-subtitle {
+        font-size: 1rem;
+    }
+
+    .highlight-card {
+        padding: 1.5rem;
+    }
+
+    .highlight-actions {
+        gap: 1rem;
+    }
+
+    .action-button {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+/* Achievement Gallery Section Styles */
+.achievement-gallery {
+    background-color: var(--background-color);
+    padding: 5rem 2rem;
+    position: relative;
+}
+
+.achievement-gallery::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--primary-color),
+        transparent
+    );
+}
+
+.gallery-title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.gallery-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+.gallery-subtitle {
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 3.5rem;
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.achievement-card {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.achievement-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+}
+
+.achievement-card:hover::before {
+    opacity: 0.05;
+}
+
+.card-inner {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 45, 98, 0.08);
+    transition: box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.achievement-card:hover .card-inner {
+    box-shadow: 0 12px 32px rgba(0, 45, 98, 0.12);
+}
+
+.achievement-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 127, 80, 0.1);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover .achievement-icon {
+    transform: scale(1.1);
+}
+
+.achievement-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.achievement-description {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .achievement-grid {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .achievement-gallery {
+        padding: 4rem 1.5rem;
+    }
+
+    .gallery-title {
+        font-size: 2rem;
+    }
+
+    .gallery-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .achievement-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .card-inner {
+        padding: 2rem;
+    }
+
+    .achievement-title {
+        font-size: 1.3rem;
+    }
+
+    .achievement-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .achievement-gallery {
+        padding: 3rem 1rem;
+    }
+
+    .gallery-title {
+        font-size: 1.8rem;
+    }
+
+    .gallery-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-inner {
+        padding: 1.5rem;
+    }
+
+    .achievement-icon {
+        font-size: 2rem;
+        height: 50px;
+        width: 50px;
+    }
+}
+/* Team Showcase Styles */
+.team-showcase {
+    padding: 5rem 2rem;
+    background-color: var(--background-color);
+}
+
+.showcase-title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.showcase-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.showcase-subtitle {
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.team-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.member-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 45, 98, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 45, 98, 0.15);
+}
+
+.member-photo-wrapper {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+}
+
+.member-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.member-card:hover .member-photo {
+    transform: scale(1.05);
+}
+
+.member-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.member-name {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.member-role {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.member-social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icon {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--accent-color);
+}
+
+/* View All Button Styles (for index page) */
+.view-all-wrapper {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.view-all-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.view-all-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.view-all-button i {
+    transition: transform 0.3s ease;
+}
+
+.view-all-button:hover i {
+    transform: translateX(4px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .team-showcase {
+        padding: 4rem 1.5rem;
+    }
+
+    .showcase-title {
+        font-size: 2rem;
+    }
+
+    .showcase-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .member-grid {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-showcase {
+        padding: 3rem 1rem;
+    }
+
+    .showcase-title {
+        font-size: 1.8rem;
+    }
+
+    .member-info {
+        padding: 1.25rem;
+    }
+
+    .member-name {
+        font-size: 1.2rem;
+    }
+}
