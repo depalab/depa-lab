@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Check if we're in a subdirectory by looking at the path
     const isInSubdirectory = window.location.pathname.includes('/pages/');
-    const basePath = isInSubdirectory ? '../' : '';
+    const basePath = isInSubdirectory ? '../' : '/depa-lab/';
     
     loadComponent('header-container', `${basePath}components/header.html`);
     loadComponent('footer-container', `${basePath}components/footer.html`);
