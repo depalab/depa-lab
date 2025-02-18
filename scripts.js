@@ -1,28 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Mobile Menu Toggle
+    // Cache DOM elements
     const checkBtn = document.querySelector('.checkbtn');
     const navLinks = document.querySelector('.nav-links');
-    const check = document.querySelector('.check');
-    
+    const check = document.getElementById('check'); // Use getElementById for consistency
+
+    // Function to close mobile menu
+    const closeMobileMenu = () => {
+        if (check) {
+            check.checked = false; // Uncheck the checkbox (if it controls the menu)
+        }
+        if (navLinks) {
+            navLinks.classList.remove('active'); // Remove the 'active' class to hide the menu
+        }
+    };
+
     // Click handler for navigation links
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', (e) => {
             // Close mobile menu
-            if (check && check.checked) {
-                check.checked = false;
-                navLinks.classList.remove('active');
-            }
-            
+            closeMobileMenu();
+
             // Handle scrolling
             const targetId = link.getAttribute('href').split('#')[1];
             if (targetId) {
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) {
                     e.preventDefault(); // Prevent default only if target section exists
-                    window.scrollTo({
-                        top: targetSection.offsetTop - 60,
-                        behavior: 'smooth'
-                    });
+                    setTimeout(() => {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 100); // Small delay to ensure the menu is closed before scrolling
                 }
             }
         });
@@ -30,10 +39,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Toggle menu on button click
     if (checkBtn && navLinks) {
-        checkBtn.addEventListener('click', () => {
+        checkBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent event from bubbling up
             navLinks.classList.toggle('active');
         });
     }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navLinks && checkBtn) {
+            // If click is outside the menu and menu button
+            if (!navLinks.contains(e.target) && !checkBtn.contains(e.target)) {
+                closeMobileMenu();
+            }
+        }
+    });
 
     // Fade-In Animation Logic
     const fadeElements = document.querySelectorAll('.fade-in');
