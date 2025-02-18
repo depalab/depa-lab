@@ -89,54 +89,42 @@ body {
     display: none;
 }
 
-/* Replace the existing media query in your CSS with this one */
+/* Responsive Styles */
 @media (max-width: 768px) {
     .checkbtn {
         display: block;
-        z-index: 1001; /* Ensure button stays above the menu */
     }
 
+    /* Hide navigation links by default */
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
-        background-color: #ffffff;
+        background-color: #ffffff; /* Changed from #1a2b47 to white */
         width: 75%;
         height: 100vh;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: transform 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
-        z-index: 1000;
-        transform: translateX(100%);
+        z-index: 999;
     }
 
     .nav-links li {
         margin: 20px 0;
-        width: 100%;
-        text-align: center;
     }
 
     .nav-links li a {
         font-size: 20px;
-        display: block;
-        padding: 10px 20px;
     }
 
     /* Show navigation when checkbox is checked */
     .check:checked ~ nav .nav-links {
-        transform: translateX(-100%);
         right: 0;
     }
 
-    /* Hide the menu when unchecked */
-    .check:not(:checked) ~ nav .nav-links {
-        transform: translateX(0);
-        right: -100%;
-    }
-
-    /* Add overlay when menu is open */
+    /* Add a backdrop to dim the background */
     .check:checked ~ nav::before {
         content: '';
         position: fixed;
@@ -145,12 +133,12 @@ body {
         width: 100vw;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.5);
-        z-index: 999;
+        z-index: 998;
     }
 
     /* Ensure body remains scrollable */
     body {
-        overflow-y: auto !important;
+        overflow-y: auto;
     }
 }
 
