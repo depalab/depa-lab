@@ -99,7 +99,7 @@ body {
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: -100%; /* Move off-screen by default */
         background-color: #ffffff; /* Changed from #1a2b47 to white */
         width: 75%;
         height: 100vh;
@@ -111,6 +111,10 @@ body {
         z-index: 999;
     }
 
+    .nav-links.active {
+        right: 0; /* Bring into view when active class is added */
+    }
+
     .nav-links li {
         margin: 20px 0;
     }
@@ -119,12 +123,11 @@ body {
         font-size: 20px;
     }
 
-    /* Show navigation when checkbox is checked */
+    /* Add a backdrop to dim the background */
     .check:checked ~ nav .nav-links {
-        right: 0;
+        right: 0; /* Bring into view when checkbox is checked */
     }
 
-    /* Add a backdrop to dim the background */
     .check:checked ~ nav::before {
         content: '';
         position: fixed;
