@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Cache DOM elements
     const checkBtn = document.querySelector('.checkbtn');
     const navLinks = document.querySelector('.nav-links');
-    const check = document.getElementById('check'); // Use getElementById for consistency
+    const checkbox = document.getElementById('check'); // Use getElementById for consistency
 
     // Function to close mobile menu
     const closeMobileMenu = () => {
-        if (check) {
-            check.checked = false; // Uncheck the checkbox (if it controls the menu)
+        if (checkbox) {
+            checkbox.checked = false; // Uncheck the checkbox (if it controls the menu)
         }
         if (navLinks) {
             navLinks.classList.remove('active'); // Remove the 'active' class to hide the menu
@@ -41,7 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (checkBtn && navLinks) {
         checkBtn.addEventListener('click', (e) => {
             e.stopPropagation(); // Prevent event from bubbling up
-            navLinks.classList.toggle('active');
+            if (checkbox) {
+                checkbox.checked = !checkbox.checked; // Toggle checkbox state
+            }
+            navLinks.classList.toggle('active'); // Toggle 'active' class
         });
     }
 
