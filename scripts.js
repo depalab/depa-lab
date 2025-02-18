@@ -7,10 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Click handler for navigation links
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
-            
             // Close mobile menu
-            if (check) {
+            if (check && check.checked) {
                 check.checked = false;
                 navLinks.classList.remove('active');
             }
@@ -20,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (targetId) {
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) {
+                    e.preventDefault(); // Prevent default only if target section exists
                     window.scrollTo({
                         top: targetSection.offsetTop - 60,
                         behavior: 'smooth'
