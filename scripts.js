@@ -1,41 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Function to close mobile menu
-    function closeMobileMenu() {
-        const navLinks = document.querySelector('.nav-links');
-        const checkbox = document.querySelector('.check');
-        if (navLinks && checkbox) {
-            navLinks.classList.remove('active');
-            checkbox.checked = false;
-        }
-    }
-
-    // Smooth Scrolling for Navigation Links with mobile menu handling
+    // Mobile Menu Toggle
+    const checkBtn = document.querySelector('.checkbtn');
+    const navLinks = document.querySelector('.nav-links');
+    const check = document.querySelector('.check');
+    
+    // Click handler for navigation links
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            // Close mobile menu first
-            closeMobileMenu();
             
-            // Then handle scrolling
+            // Close mobile menu
+            if (check) {
+                check.checked = false;
+                navLinks.classList.remove('active');
+            }
+            
+            // Handle scrolling
             const targetId = link.getAttribute('href').split('#')[1];
             if (targetId) {
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) {
-                    setTimeout(() => {
-                        window.scrollTo({
-                            top: targetSection.offsetTop - 60,
-                            behavior: 'smooth'
-                        });
-                    }, 300); // Small delay to allow menu animation
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 60,
+                        behavior: 'smooth'
+                    });
                 }
             }
         });
     });
 
-    // Mobile Menu Toggle
-    const checkBtn = document.querySelector('.checkbtn');
-    const navLinks = document.querySelector('.nav-links');
-    
+    // Toggle menu on button click
     if (checkBtn && navLinks) {
         checkBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
@@ -48,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Stop observing once visible
+                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1 });
@@ -64,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Scroll Left
         leftArrow.addEventListener('click', () => {
             teamCarousel.scrollBy({
-                left: -300, // Adjust scroll amount
+                left: -300,
                 behavior: 'smooth'
             });
         });
@@ -72,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Scroll Right
         rightArrow.addEventListener('click', () => {
             teamCarousel.scrollBy({
-                left: 300, // Adjust scroll amount
+                left: 300,
                 behavior: 'smooth'
             });
         });
@@ -100,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const navLinksArray = document.querySelectorAll('.nav-links a');
 
     window.addEventListener('scroll', () => {
-        const scrollPos = window.scrollY + 100; // Adjust based on header height
+        const scrollPos = window.scrollY + 100;
         sections.forEach(section => {
             if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
                 navLinksArray.forEach(link => {
