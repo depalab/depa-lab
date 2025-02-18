@@ -89,46 +89,45 @@ body {
     display: none;
 }
 
-/* Responsive Styles */
+/* Mobile Menu Styles */
 @media (max-width: 768px) {
-    .checkbtn {
-        display: block;
-    }
-
-    /* Hide navigation links by default */
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%; /* Move off-screen by default */
-        background-color: #ffffff; /* Changed from #1a2b47 to white */
+        right: -100%;
         width: 75%;
         height: 100vh;
+        background-color: #ffffff;
+        display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         transition: all 0.3s ease-in-out;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
-        z-index: 999;
+        z-index: 1000;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links.active {
-        right: 0; /* Bring into view when active class is added */
+        right: 0;
     }
 
     .nav-links li {
-        margin: 20px 0;
+        margin: 1.5rem 0;
     }
 
     .nav-links li a {
-        font-size: 20px;
+        font-size: 1.2rem;
+        color: #002d62;
     }
 
-    /* Add a backdrop to dim the background */
-    .check:checked ~ nav .nav-links {
-        right: 0; /* Bring into view when checkbox is checked */
+    .checkbtn {
+        display: block;
+        z-index: 1001;
+        position: relative;
     }
 
-    .check:checked ~ nav::before {
+    /* Overlay when menu is open */
+    .nav-links.active::before {
         content: '';
         position: fixed;
         top: 0;
@@ -136,12 +135,12 @@ body {
         width: 100vw;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.5);
-        z-index: 998;
+        z-index: -1;
     }
 
-    /* Ensure body remains scrollable */
-    body {
-        overflow-y: auto;
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+        overflow: hidden;
     }
 }
 
