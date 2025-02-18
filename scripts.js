@@ -1,15 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Smooth Scrolling for Navigation Links
+    // Function to close mobile menu
+    function closeMobileMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        const checkbox = document.querySelector('.check');
+        if (navLinks && checkbox) {
+            navLinks.classList.remove('active');
+            checkbox.checked = false;
+        }
+    }
+
+    // Smooth Scrolling for Navigation Links with mobile menu handling
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 60, // Adjust for header height
-                    behavior: 'smooth'
-                });
+            // Close mobile menu first
+            closeMobileMenu();
+            
+            // Then handle scrolling
+            const targetId = link.getAttribute('href').split('#')[1];
+            if (targetId) {
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 60,
+                            behavior: 'smooth'
+                        });
+                    }, 300); // Small delay to allow menu animation
+                }
             }
         });
     });
@@ -21,14 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (checkBtn && navLinks) {
         checkBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                document.querySelector('.check').checked = false;
-            });
         });
     }
 
@@ -95,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
                 navLinksArray.forEach(link => {
                     link.classList.remove('active');
-                    if (link.getAttribute('href').substring(1) === section.id) {
+                    if (link.getAttribute('href').split('#')[1] === section.id) {
                         link.classList.add('active');
                     }
                 });
@@ -177,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "David Nyarko",
             role: "Research Assistant",
             image: "images/david-nyarko.JPG"
-        },
+        }
     ];
 
     // Populate the Team Carousel
