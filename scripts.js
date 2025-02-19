@@ -1,4 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Call the mobile menu initialization
+    initMobileMenu();
+    
+    // Rest of your existing code...
+    // Function to close mobile menu
+    function closeMobileMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        const checkbox = document.getElementById('check');
+        if (navLinks && checkbox) {
+            checkbox.checked = false;
+        }
+    }
+
+    // Mobile Menu Toggle
+    const checkBtn = document.querySelector('.checkbtn');
+    const checkbox = document.getElementById('check');
+
+    if (checkBtn && checkbox) {
+        checkBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            checkbox.checked = !checkbox.checked;
+        });
+    }
+
+document.addEventListener("DOMContentLoaded", () => {
     // Function to close mobile menu
     function closeMobileMenu() {
         const navLinks = document.querySelector('.nav-links');
