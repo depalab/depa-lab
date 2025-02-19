@@ -50,13 +50,6 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.logo-image {
-    height: 40px;
-    width: auto;
-    object-fit: contain;
-}
-
-/* Navigation Links - Desktop */
 .nav-links {
     display: flex;
     list-style: none;
@@ -73,11 +66,6 @@ body {
     transition: color 0.3s ease;
 }
 
-.nav-links li a:hover {
-    color: #457b9d;
-}
-
-/* Mobile Menu Controls */
 .checkbtn {
     display: none;
     font-size: 30px;
@@ -93,55 +81,54 @@ body {
 @media (max-width: 768px) {
     .checkbtn {
         display: block;
-        font-size: 30px;
-        color: #002d62;
-        cursor: pointer;
-        z-index: 1001;
+        z-index: 1002;
     }
 
-    .check {
-        display: none;
+    .nav-container {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease-in-out;
+        z-index: 1001;
+        opacity: 0;
+        visibility: hidden;
     }
 
     .nav-links {
-        position: fixed;
+        position: absolute;
         top: 0;
         right: -100%;
         width: 75%;
         height: 100vh;
         background-color: #ffffff;
-        display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         transition: all 0.3s ease-in-out;
     }
 
-    /* This is the critical part for the checkbox toggle */
-    .check:checked ~ nav .nav-links {
+    .check:checked ~ .nav-container {
+        right: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .check:checked ~ .nav-container .nav-links {
         right: 0;
     }
 
     .nav-links li {
-        margin: 20px 0;
+        margin: 1.5rem 0;
     }
 
     .nav-links li a {
-        font-size: 20px;
-    }
-
-    /* Overlay when menu is open */
-    .check:checked ~ nav .nav-links::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: -1;
+        font-size: 1.2rem;
     }
 }
+
 
 .main-header .logo {
     display: flex;
