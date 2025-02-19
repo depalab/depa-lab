@@ -104,11 +104,28 @@ body {
         justify-content: center;
         transition: all 0.3s ease-in-out;
         z-index: 1000;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links.active {
         right: 0;
+    }
+
+    .nav-links::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        pointer-events: none;
+    }
+
+    .nav-links.active::before {
+        opacity: 1;
     }
 
     .nav-links li {
@@ -122,28 +139,20 @@ body {
 
     .checkbtn {
         display: block;
+        font-size: 30px;
+        color: #002d62;
+        cursor: pointer;
         z-index: 1001;
-        position: relative;
     }
 
-    /* Overlay when menu is open */
-    .nav-links.active::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: -1;
+    .check {
+        display: none;
     }
 
-    /* Prevent body scroll when menu is open */
     body.menu-open {
         overflow: hidden;
     }
 }
-
 .main-header .logo {
     display: flex;
     align-items: center;
