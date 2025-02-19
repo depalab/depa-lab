@@ -4,28 +4,23 @@ document.addEventListener("DOMContentLoaded", () => {
         const navLinks = document.querySelector('.nav-links');
         const checkbox = document.getElementById('check');
         if (navLinks && checkbox) {
-            navLinks.classList.remove('active');
             checkbox.checked = false;
-            document.body.classList.remove('menu-open');
         }
     }
 
     // Mobile Menu Toggle
+    const checkBtn = document.querySelector('.checkbtn');
     const checkbox = document.getElementById('check');
-    const navLinks = document.querySelector('.nav-links');
 
-    if (checkbox) {
-        checkbox.addEventListener('change', (e) => {
-            if (navLinks) {
-                navLinks.classList.toggle('active');
-                document.body.classList.toggle('menu-open');
-            }
+    if (checkBtn && checkbox) {
+        checkBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            checkbox.checked = !checkbox.checked;
         });
     }
 
     // Navigation Links Click Handling
-    const links = document.querySelectorAll('.nav-links a');
-    links.forEach(link => {
+    document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', (e) => {
             const targetId = link.getAttribute('href').split('#')[1];
             
@@ -57,15 +52,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const checkbox = document.getElementById('check');
         const checkBtn = document.querySelector('.checkbtn');
         
-        if (navLinks?.classList.contains('active')) {
-            const isClickInsideMenu = navLinks.contains(e.target);
-            const isClickOnButton = checkBtn?.contains(e.target) || checkbox?.contains(e.target);
+        if (checkbox?.checked) {
+            const isClickInsideMenu = navLinks?.contains(e.target);
+            const isClickOnButton = checkBtn?.contains(e.target);
             
             if (!isClickInsideMenu && !isClickOnButton) {
                 closeMobileMenu();
             }
         }
     });
+});
 
     // Fade-In Animation
     const observer = new IntersectionObserver(entries => {
