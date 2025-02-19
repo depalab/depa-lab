@@ -89,7 +89,7 @@ body {
     display: none;
 }
 
-
+/* Mobile Menu Styles */
 @media (max-width: 768px) {
     .checkbtn {
         display: block;
@@ -142,6 +142,7 @@ body {
         z-index: -1;
     }
 }
+
 .main-header .logo {
     display: flex;
     align-items: center;
