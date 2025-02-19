@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Function to close mobile menu
+    // Function to close the mobile menu
     function closeMobileMenu() {
         const checkbox = document.getElementById('check');
+        const navLinksContainer = document.querySelector('.nav-links');
+
         if (checkbox) {
-            checkbox.checked = false;
+            checkbox.checked = false; // Uncheck the menu toggle checkbox
+        }
+        if (navLinksContainer) {
+            navLinksContainer.classList.remove('active'); // Hide the menu
         }
     }
 
@@ -11,18 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkbox = document.getElementById('check');
     const closeBtn = document.querySelector('.close-menu');
 
-    // Close button click handler
     if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            closeMobileMenu();
-        });
+        closeBtn.addEventListener('click', closeMobileMenu);
     }
 
     // Navigation Links Click Handling
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', (e) => {
             const targetId = link.getAttribute('href').split('#')[1];
-            
+
             if (!targetId) return;
 
             if (window.location.pathname.includes('pages/')) {
@@ -31,12 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.preventDefault();
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     
-                    // Close menu after scrolling
+                    // Close the menu after scrolling
                     setTimeout(closeMobileMenu, 300);
                 }
             }
@@ -123,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "Anjolie Anthony", role: "Researcher", image: "images/Anjolie.JPG" },
         { name: "David Nyarko", role: "Research Assistant", image: "images/david-nyarko.JPG" }
     ];
+
     // Populate Team Carousel
     if (teamCarousel) {
         teamMembers.forEach(member => {
