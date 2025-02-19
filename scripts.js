@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
-});
 
     // Fade-In Animation
     const observer = new IntersectionObserver(entries => {
@@ -118,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
     });
 
-    // Populate Team Carousel
+    // Team Members Array
     const teamMembers = [
         { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
         { name: "Tasmeer Alam", role: "AI Researcher", image: "images/Tasmeer_Alam.jpeg" },
@@ -133,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "David Nyarko", role: "Research Assistant", image: "images/david-nyarko.JPG" }
     ];
 
+    // Populate Team Carousel
     if (teamCarousel) {
         teamMembers.forEach(member => {
             const cardHTML = `
