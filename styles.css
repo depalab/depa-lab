@@ -90,48 +90,7 @@ body {
 }
 
 
-/* Mobile Menu Styles */
 @media (max-width: 768px) {
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 75%;
-        height: 100vh;
-        background-color: #ffffff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease-in-out;
-        z-index: 1000;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-links li {
-        margin: 1.5rem 0;
-    }
-
-    .nav-links li a {
-        font-size: 1.2rem;
-        color: #002d62;
-        text-decoration: none;
-        display: block;
-        padding: 0.5rem 1rem;
-    }
-
     .checkbtn {
         display: block;
         font-size: 30px;
@@ -144,8 +103,35 @@ body {
         display: none;
     }
 
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* This is the critical part for the checkbox toggle */
+    .check:checked ~ nav .nav-links {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links li a {
+        font-size: 20px;
+    }
+
     /* Overlay when menu is open */
-    .nav-links.active::before {
+    .check:checked ~ nav .nav-links::before {
         content: '';
         position: fixed;
         top: 0;
@@ -155,13 +141,7 @@ body {
         background-color: rgba(0, 0, 0, 0.5);
         z-index: -1;
     }
-
-    /* Prevent body scroll when menu is open */
-    body.menu-open {
-        overflow: hidden;
-    }
 }
-
 .main-header .logo {
     display: flex;
     align-items: center;
