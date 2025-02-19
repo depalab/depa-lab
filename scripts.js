@@ -123,7 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "Anjolie Anthony", role: "Researcher", image: "images/Anjolie.JPG" },
         { name: "David Nyarko", role: "Research Assistant", image: "images/david-nyarko.JPG" }
     ];
-
     // Populate Team Carousel
     if (teamCarousel) {
         teamMembers.forEach(member => {
