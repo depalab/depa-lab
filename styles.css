@@ -129,6 +129,34 @@ body {
     }
 }
 
+/* Close Button Styles */
+.close-menu {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #002d62;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1002;
+}
+
+.close-menu:hover {
+    color: #457b9d;
+}
+
+@media (max-width: 768px) {
+    .close-menu {
+        display: block;
+    }
+    
+    .nav-links {
+        padding-top: 60px; /* Make room for close button */
+    }
+}
 
 .main-header .logo {
     display: flex;
