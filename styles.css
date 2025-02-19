@@ -50,6 +50,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Desktop Navigation */
 .nav-links {
     display: flex;
     list-style: none;
@@ -66,6 +67,11 @@ body {
     transition: color 0.3s ease;
 }
 
+.nav-links li a:hover {
+    color: #457b9d;
+}
+
+/* Menu Controls */
 .checkbtn {
     display: none;
     font-size: 30px;
@@ -77,59 +83,7 @@ body {
     display: none;
 }
 
-/* Mobile Menu Styles */
-@media (max-width: 768px) {
-    .checkbtn {
-        display: block;
-        z-index: 1002;
-    }
-
-    .nav-container {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5);
-        transition: all 0.3s ease-in-out;
-        z-index: 1001;
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 0;
-        right: -100%;
-        width: 75%;
-        height: 100vh;
-        background-color: #ffffff;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .check:checked ~ .nav-container {
-        right: 0;
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .check:checked ~ .nav-container .nav-links {
-        right: 0;
-    }
-
-    .nav-links li {
-        margin: 1.5rem 0;
-    }
-
-    .nav-links li a {
-        font-size: 1.2rem;
-    }
-}
-
-/* Close Button Styles */
+/* Close Button */
 .close-menu {
     display: none;
     position: absolute;
@@ -148,13 +102,60 @@ body {
     color: #457b9d;
 }
 
+/* Mobile Menu Styles */
 @media (max-width: 768px) {
+    .checkbtn {
+        display: block;
+        z-index: 1002;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: #ffffff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+        padding-top: 60px; /* Make room for close button */
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+    }
+
     .close-menu {
         display: block;
     }
-    
-    .nav-links {
-        padding-top: 60px; /* Make room for close button */
+
+    /* Menu Open State */
+    #check:checked ~ nav {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #check:checked ~ nav .nav-links {
+        right: 0;
     }
 }
 
