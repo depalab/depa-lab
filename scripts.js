@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to close mobile menu
     function closeMobileMenu() {
         const navLinks = document.querySelector('.nav-links');
-        const checkbox = document.querySelector('.check');
+        const checkbox = document.getElementById('check');
         if (navLinks && checkbox) {
             navLinks.classList.remove('active');
             checkbox.checked = false;
@@ -11,27 +11,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Mobile Menu Toggle
-    const checkBtn = document.querySelector('.checkbtn');
+    const checkbox = document.getElementById('check');
     const navLinks = document.querySelector('.nav-links');
-    const checkbox = document.querySelector('.check');
 
-    if (checkBtn && navLinks) {
-        checkBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            navLinks.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
-            if (checkbox) checkbox.checked = !checkbox.checked;
+    if (checkbox) {
+        checkbox.addEventListener('change', (e) => {
+            if (navLinks) {
+                navLinks.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            }
         });
     }
 
     // Navigation Links Click Handling
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
         link.addEventListener('click', (e) => {
             const targetId = link.getAttribute('href').split('#')[1];
+            
+            // Close mobile menu first
             closeMobileMenu();
             
             if (!targetId) return;
-            
+
             if (window.location.pathname.includes('pages/')) {
                 window.location.href = `../index.html#${targetId}`;
             } else {
@@ -39,7 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) {
                     setTimeout(() => {
-                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
                     }, 300);
                 }
             }
@@ -48,8 +53,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
+        const navLinks = document.querySelector('.nav-links');
+        const checkbox = document.getElementById('check');
+        const checkBtn = document.querySelector('.checkbtn');
+        
         if (navLinks?.classList.contains('active')) {
-            if (!navLinks.contains(e.target) && !checkBtn?.contains(e.target)) {
+            const isClickInsideMenu = navLinks.contains(e.target);
+            const isClickOnButton = checkBtn?.contains(e.target) || checkbox?.contains(e.target);
+            
+            if (!isClickInsideMenu && !isClickOnButton) {
                 closeMobileMenu();
             }
         }
