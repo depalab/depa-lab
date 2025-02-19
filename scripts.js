@@ -1,13 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Call the mobile menu initialization
-    initMobileMenu();
-    
-    // Rest of your existing code...
     // Function to close mobile menu
     function closeMobileMenu() {
-        const navLinks = document.querySelector('.nav-links');
         const checkbox = document.getElementById('check');
-        if (navLinks && checkbox) {
+        if (checkbox) {
             checkbox.checked = false;
         }
     }
@@ -16,33 +11,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkBtn = document.querySelector('.checkbtn');
     const checkbox = document.getElementById('check');
 
+    // Toggle menu on hamburger icon click
     if (checkBtn && checkbox) {
         checkBtn.addEventListener('click', (e) => {
-            e.preventDefault();
+            e.stopPropagation(); // Prevent click from bubbling
             checkbox.checked = !checkbox.checked;
         });
     }
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Function to close mobile menu
-    function closeMobileMenu() {
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
         const navLinks = document.querySelector('.nav-links');
-        const checkbox = document.getElementById('check');
-        if (navLinks && checkbox) {
-            checkbox.checked = false;
+        if (checkbox?.checked) {
+            const isClickInsideMenu = navLinks?.contains(e.target);
+            const isClickOnButton = checkBtn?.contains(e.target);
+            
+            if (!isClickInsideMenu && !isClickOnButton) {
+                closeMobileMenu();
+            }
         }
-    }
-
-    // Mobile Menu Toggle
-    const checkBtn = document.querySelector('.checkbtn');
-    const checkbox = document.getElementById('check');
-
-    if (checkBtn && checkbox) {
-        checkBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            checkbox.checked = !checkbox.checked;
-        });
-    }
+    });
 
     // Navigation Links Click Handling
     document.querySelectorAll('.nav-links a').forEach(link => {
@@ -71,22 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        const navLinks = document.querySelector('.nav-links');
-        const checkbox = document.getElementById('check');
-        const checkBtn = document.querySelector('.checkbtn');
-        
-        if (checkbox?.checked) {
-            const isClickInsideMenu = navLinks?.contains(e.target);
-            const isClickOnButton = checkBtn?.contains(e.target);
-            
-            if (!isClickInsideMenu && !isClickOnButton) {
-                closeMobileMenu();
-            }
-        }
-    });
-
     // Fade-In Animation
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -107,6 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (teamCarousel && leftArrow && rightArrow) {
         leftArrow.addEventListener('click', () => teamCarousel.scrollBy({ left: -300, behavior: 'smooth' }));
         rightArrow.addEventListener('click', () => teamCarousel.scrollBy({ left: 300, behavior: 'smooth' }));
+
+        // Handle keyboard navigation for accessibility
+        teamCarousel.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                teamCarousel.scrollBy({ left: -300, behavior: 'smooth' });
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                teamCarousel.scrollBy({ left: 300, behavior: 'smooth' });
+            }
+        });
     }
 
     // Active Link Highlighting
@@ -162,7 +145,10 @@ document.addEventListener("DOMContentLoaded", () => {
         teamMembers.forEach(member => {
             const cardHTML = `
                 <div class="card" tabindex="0">
-                    <img src="${member.image}" alt="${member.name}" class="team-photo" onerror="this.src='images/placeholder.jpg'">
+                    <img src="${member.image}" 
+                         alt="${member.name}" 
+                         class="team-photo"
+                         onerror="this.src='images/placeholder.jpg'">
                     <h3>${member.name}</h3>
                     <p>${member.role}</p>
                 </div>
