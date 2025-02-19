@@ -133,7 +133,6 @@ body {
         justify-content: center;
         align-items: center;
         transition: all 0.3s ease-in-out;
-        padding-top: 60px; /* Make room for close button */
     }
 
     .nav-links li {
