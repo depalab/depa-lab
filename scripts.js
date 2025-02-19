@@ -10,14 +10,51 @@ document.addEventListener("DOMContentLoaded", () => {
     // Mobile Menu Toggle
     const checkBtn = document.querySelector('.checkbtn');
     const checkbox = document.getElementById('check');
+    const closeBtn = document.querySelector('.close-menu');
 
     // Toggle menu on hamburger icon click
     if (checkBtn && checkbox) {
         checkBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent click from bubbling
+            e.stopPropagation();
             checkbox.checked = !checkbox.checked;
         });
     }
+
+    // Close button functionality
+    if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeMobileMenu();
+        });
+    }
+
+    // Navigation Links Click Handling
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href').split('#')[1];
+            
+            if (!targetId) return;
+
+            if (window.location.pathname.includes('pages/')) {
+                window.location.href = `../index.html#${targetId}`;
+            } else {
+                e.preventDefault();
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    // First scroll to the section
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Then close the menu after a short delay
+                    setTimeout(() => {
+                        closeMobileMenu();
+                    }, 300);
+                }
+            }
+        });
+    });
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
@@ -30,33 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 closeMobileMenu();
             }
         }
-    });
-
-    // Navigation Links Click Handling
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('href').split('#')[1];
-            
-            // Close mobile menu first
-            closeMobileMenu();
-            
-            if (!targetId) return;
-
-            if (window.location.pathname.includes('pages/')) {
-                window.location.href = `../index.html#${targetId}`;
-            } else {
-                e.preventDefault();
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    setTimeout(() => {
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }, 300);
-                }
-            }
-        });
     });
 
     // Fade-In Animation
