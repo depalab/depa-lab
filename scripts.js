@@ -7,23 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Mobile Menu Toggle
-    const checkBtn = document.querySelector('.checkbtn');
+    // Mobile Menu Toggle and Close Button
     const checkbox = document.getElementById('check');
     const closeBtn = document.querySelector('.close-menu');
 
-    // Toggle menu on hamburger icon click
-    if (checkBtn && checkbox) {
-        checkBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            checkbox.checked = !checkbox.checked;
-        });
-    }
-
-    // Close button functionality
+    // Close button click handler
     if (closeBtn) {
-        closeBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
+        closeBtn.addEventListener('click', () => {
             closeMobileMenu();
         });
     }
@@ -41,32 +31,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.preventDefault();
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) {
-                    // First scroll to the section
                     targetSection.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
                     });
                     
-                    // Then close the menu after a short delay
-                    setTimeout(() => {
-                        closeMobileMenu();
-                    }, 300);
+                    // Close menu after scrolling
+                    setTimeout(closeMobileMenu, 300);
                 }
             }
         });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        const navLinks = document.querySelector('.nav-links');
-        if (checkbox?.checked) {
-            const isClickInsideMenu = navLinks?.contains(e.target);
-            const isClickOnButton = checkBtn?.contains(e.target);
-            
-            if (!isClickInsideMenu && !isClickOnButton) {
-                closeMobileMenu();
-            }
-        }
     });
 
     // Fade-In Animation
