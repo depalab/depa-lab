@@ -41,22 +41,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #ffffff; /* Changed from #1a2b47 to white */
+    background-color: #ffffff;
     padding: 1rem 2rem;
-    color: #002d62; /* Changed from white to navy blue */
+    color: #002d62;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.main-header .logo {
-    font-size: 1.8rem;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.logo-image {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
+/* Navigation Links - Desktop */
 .nav-links {
     display: flex;
     list-style: none;
@@ -66,7 +66,7 @@ body {
 }
 
 .nav-links li a {
-    color: #002d62; /* Changed from white to navy blue */
+    color: #002d62;
     text-decoration: none;
     font-weight: 500;
     padding: 0.5rem 1rem;
@@ -74,20 +74,21 @@ body {
 }
 
 .nav-links li a:hover {
-    color: #457b9d; /* Changed from lightblue to a darker blue */
+    color: #457b9d;
 }
 
-/* Toggle Menu */
+/* Mobile Menu Controls */
 .checkbtn {
-    font-size: 30px;
-    color: #002d62; /* Changed from white to navy blue */
-    cursor: pointer;
     display: none;
+    font-size: 30px;
+    color: #002d62;
+    cursor: pointer;
 }
 
 .check {
     display: none;
 }
+
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
