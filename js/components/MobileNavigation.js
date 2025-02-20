@@ -1,105 +1,100 @@
-// MobileNavigation.js
-import React, { useState, useCallback, useEffect } from 'react';
-
+// js/components/MobileNavigation.js
 const MobileNavigation = ({ basePath }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
-  const closeMenu = useCallback(() => {
-    setIsMenuOpen(false);
-  }, []);
-
-  const handleNavClick = useCallback((e, targetId) => {
-    e.preventDefault();
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     
-    if (!targetId) return;
-    
-    if (window.location.pathname.includes('/pages/')) {
-      window.location.href = `${basePath}index.html#${targetId}`;
-      return;
-    }
+    const closeMenu = React.useCallback(() => {
+        setIsMenuOpen(false);
+    }, []);
 
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setTimeout(closeMenu, 300);
-    }
-  }, [basePath, closeMenu]);
-
-  useEffect(() => {
-    const handleOutsideClick = (e) => {
-      const navContainer = document.querySelector('.nav-links');
-      const menuButton = document.querySelector('.mobile-menu-button');
-      
-      if (isMenuOpen && navContainer && menuButton) {
-        const isClickInsideMenu = navContainer.contains(e.target);
-        const isClickOnButton = menuButton.contains(e.target);
+    const handleNavClick = React.useCallback((e, targetId) => {
+        e.preventDefault();
         
-        if (!isClickInsideMenu && !isClickOnButton) {
-          closeMenu();
+        if (!targetId) return;
+        
+        if (window.location.pathname.includes('/pages/')) {
+            window.location.href = `${basePath}index.html#${targetId}`;
+            return;
         }
-      }
-    };
 
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
-        closeMenu();
-      }
-    };
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setTimeout(closeMenu, 300);
+        }
+    }, [basePath, closeMenu]);
 
-    document.addEventListener('click', handleOutsideClick);
-    window.addEventListener('resize', handleResize);
-    
-    return () => {
-      document.removeEventListener('click', handleOutsideClick);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [isMenuOpen, closeMenu]);
+    React.useEffect(() => {
+        const handleOutsideClick = (e) => {
+            const navContainer = document.querySelector('.nav-links');
+            const menuButton = document.querySelector('.mobile-menu-button');
+            
+            if (isMenuOpen && navContainer && menuButton) {
+                const isClickInsideMenu = navContainer.contains(e.target);
+                const isClickOnButton = menuButton.contains(e.target);
+                
+                if (!isClickInsideMenu && !isClickOnButton) {
+                    closeMenu();
+                }
+            }
+        };
 
-  const navItems = [
-    'about',
-    'research',
-    'innovation',
-    'events',
-    'team',
-    'contact'
-  ];
+        const handleResize = () => {
+            if (window.innerWidth > 768) {
+                closeMenu();
+            }
+        };
 
-  return (
-    <>
-      <button
-        className="mobile-menu-button lg:hidden p-2"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        aria-label="Toggle navigation menu"
-      >
-        <i className="fas fa-bars text-2xl"></i>
-      </button>
-
-      <div className={`nav-links absolute top-full right-0 w-3/4 bg-white transform transition-transform duration-300 ease-in-out ${
-        isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-      } lg:relative lg:translate-x-0 lg:w-auto`}>
-        <button
-          className="lg:hidden absolute top-4 right-4 p-2"
-          onClick={closeMenu}
-        >
-          <i className="fas fa-times"></i>
-        </button>
+        document.addEventListener('click', handleOutsideClick);
+        window.addEventListener('resize', handleResize);
         
-        <ul className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-6 p-4">
-          {navItems.map(item => (
-            <li key={item}>
-              <a
-                href={`${basePath}index.html#${item}`}
-                className="text-lg hover:text-blue-600 transition-colors"
-                onClick={(e) => handleNavClick(e, item)}
-              >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </>
-  );
+        return () => {
+            document.removeEventListener('click', handleOutsideClick);
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [isMenuOpen, closeMenu]);
+
+    const navItems = [
+        { id: 'about', label: 'About' },
+        { id: 'research', label: 'Research' },
+        { id: 'innovation', label: 'Innovation' },
+        { id: 'events', label: 'Events' },
+        { id: 'team', label: 'Team' },
+        { id: 'contact', label: 'Contact' }
+    ];
+
+    return (
+        <div className="nav-container">
+            <button
+                className="mobile-menu-button lg:hidden"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle navigation menu"
+            >
+                <i className="fas fa-bars"></i>
+            </button>
+
+            <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+                <button
+                    className="close-menu lg:hidden"
+                    onClick={closeMenu}
+                >
+                    <i className="fas fa-times"></i>
+                </button>
+                
+                <ul>
+                    {navItems.map(item => (
+                        <li key={item.id}>
+                            <a
+                                href={`#${item.id}`}
+                                onClick={(e) => handleNavClick(e, item.id)}
+                            >
+                                {item.label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    );
 };
 
-export default MobileNavigation;
+window.MobileNavigation = MobileNavigation;

@@ -1,16 +1,34 @@
-// Footer.js
-import React from 'react';
-
+// js/components/Footer.js
 const Footer = () => {
-  return (
-    <footer className="bg-gray-100 py-8">
-      <div className="container mx-auto px-4">
-        <p className="text-center text-gray-600">
-          © {new Date().getFullYear()} DEPA Lab. All rights reserved.
-        </p>
-      </div>
-    </footer>
-  );
+    return (
+        <footer className="footer">
+            <div className="container">
+                <div className="footer-content">
+                    <div className="footer-section">
+                        <h3>DEPA Lab</h3>
+                        <p>Data Engineering and Predictive Analytics Laboratory</p>
+                        <p>Morgan State University</p>
+                    </div>
+                    <div className="footer-section">
+                        <h3>Contact</h3>
+                        <p>Email: kofi.nyarko@morgan.edu</p>
+                        <p>Address: 1700 E Cold Spring Ln, Baltimore, MD 21251</p>
+                    </div>
+                    <div className="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#research">Research</a></li>
+                            <li><a href="#innovation">Innovation</a></li>
+                            <li><a href="#team">Team</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="footer-bottom">
+                    <p>&copy; {new Date().getFullYear()} DEPA Lab. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    );
 };
 
-export default Footer;
+window.Footer = Footer;
