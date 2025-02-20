@@ -107,6 +107,7 @@ body {
     .checkbtn {
         display: block;
         z-index: 1002;
+        cursor: pointer;
     }
 
     nav {
@@ -145,6 +146,13 @@ body {
 
     .close-menu {
         display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
     }
 
     /* Menu Open State */
@@ -157,6 +165,7 @@ body {
         right: 0;
     }
 }
+
 
 .main-header .logo {
     display: flex;
