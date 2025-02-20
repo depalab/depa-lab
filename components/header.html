@@ -1,22 +1,111 @@
-<header class="main-header">
-    <a href="/depa-lab/index.html" class="logo">
-        <img src="https://depalab.github.io/depa-lab/images/DEPA-logo.png" alt="DEPA Lab Logo" class="logo-image">
-    </a>
-    <input type="checkbox" class="check" id="check">
-    <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-    </label>
-    <nav>
-        <ul class="nav-links">
-            <button class="close-menu">
-                <i class="fas fa-times"></i>
-            </button>
-            <li><a href="/depa-lab/index.html#about">About</a></li>
-            <li><a href="/depa-lab/index.html#research">Research</a></li>
-            <li><a href="/depa-lab/index.html#innovation">Innovation</a></li>
-            <li><a href="/depa-lab/index.html#events">Events</a></li>
-            <li><a href="/depa-lab/index.html#team">Team</a></li>
-            <li><a href="/depa-lab/index.html#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+import React, { useState, useEffect, useCallback } from 'react';
+
+const MobileNavigation = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  const closeMenu = useCallback(() => {
+    setIsMenuOpen(false);
+  }, []);
+
+  // Handle navigation link clicks
+  const handleNavClick = useCallback((e) => {
+    const link = e.currentTarget;
+    const targetId = link.getAttribute('href')?.split('#')[1];
+    
+    e.preventDefault();
+    
+    if (!targetId) return;
+    
+    // Handle navigation based on current page
+    if (window.location.pathname.includes('/pages/')) {
+      window.location.href = `../index.html#${targetId}`;
+      return;
+    }
+
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Close menu after a short delay
+      setTimeout(closeMenu, 300);
+    }
+  }, [closeMenu]);
+
+  // Handle clicks outside the menu
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      const navContainer = document.querySelector('.nav-links');
+      const menuButton = document.querySelector('.checkbtn');
+      
+      if (isMenuOpen && navContainer && menuButton) {
+        const isClickInsideMenu = navContainer.contains(e.target);
+        const isClickOnButton = menuButton.contains(e.target);
+        
+        if (!isClickInsideMenu && !isClickOnButton) {
+          closeMenu();
+        }
+      }
+    };
+
+    document.addEventListener('click', handleOutsideClick);
+    return () => document.removeEventListener('click', handleOutsideClick);
+  }, [isMenuOpen, closeMenu]);
+
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        closeMenu();
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [closeMenu]);
+
+  return (
+    <header className="w-full fixed top-0 right-0 bg-white z-50">
+      <nav className="relative flex items-center justify-between p-4">
+        <a href="/depa-lab/index.html" className="logo">
+          <img
+            src="https://depalab.github.io/depa-lab/images/DEPA-logo.png"
+            alt="DEPA Lab Logo"
+            className="h-12"
+          />
+        </a>
+        
+        <button
+          className="lg:hidden p-2"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle navigation menu"
+        >
+          <i className="fas fa-bars text-2xl"></i>
+        </button>
+
+        <div className={`nav-links absolute top-full right-0 w-3/4 bg-white transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} lg:relative lg:translate-x-0 lg:w-auto`}>
+          <button
+            className="lg:hidden absolute top-4 right-4 p-2"
+            onClick={closeMenu}
+          >
+            <i className="fas fa-times"></i>
+          </button>
+          
+          <ul className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-6 p-4">
+            {['about', 'research', 'innovation', 'events', 'team', 'contact'].map((item) => (
+              <li key={item}>
+                <a
+                  href={`/depa-lab/index.html#${item}`}
+                  className="text-lg hover:text-blue-600 transition-colors"
+                  onClick={handleNavClick}
+                >
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+    </header>
+  );
+};
+
+export default MobileNavigation;
