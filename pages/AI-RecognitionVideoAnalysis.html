@@ -9,67 +9,48 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../styles/pagestyles.css">
     
-    <!-- Add React and ReactDOM -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- Load components script first -->
+    <script src="../script/include.js"></script>
+    <!-- Other scripts -->
+    <script defer src="../scripts.js"></script>
+    <!-- Include pages.js -->
+    <script defer src="../script/pages.js"></script>
 </head>
+<!-- Header -->
+
 <body>
-    <div id="root"></div>
+    <div id="header-container"></div>
 
-    <!-- React Components -->
-    <script type="text/babel" src="../js/components/MobileNavigation.js"></script>
-    <script type="text/babel" src="../js/components/Header.js"></script>
-    <script type="text/babel" src="../js/components/Footer.js"></script>
-    <script type="text/babel" src="../js/components/Layout.js"></script>
-    <script type="text/babel">
-        // Page-specific content component
-        const PageContent = () => {
-            return (
-                <main>
-                    <section className="page-banner">
-                        <div className="banner-content">
-                        </div>
-                    </section>
-                    <section className="academic-advisory">
-                        <div className="container">
-                            <h2 className="section-title">AI Models in Action Recognition Video Analysis</h2>
-                            
-                            <div className="content-single">
-                                <div className="content-card">
-                                    <div className="card-icon">
-                                        <i className="fas fa-video"></i>
-                                    </div>
-                                    <h3>Research Overview</h3>
-                                    <p>The CLAIRE (Cross-Referencing Labels, Actions, and Interactions for Robust Explanations) project aims to integrate YOLO detections and LLM vision to analyze video frames, cross-reference object/person–person/person interactions, and generate detailed reports of the video frame's scene.</p>
-                                    <p>This research explores both the benefits and restraints of utilizing AI models in action recognition video analysis. The project extends to CCTV footage as well as everyday video recordings, evaluating the strengths and shortcomings of AI-driven computer vision technologies in real-world applications.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </main>
-            );
-        };
+<main>
+<section class="page-banner">
+    <div class="banner-content">
+    </div>
+</section>
 
-        // Page App component
-        const PageApp = () => {
-            return (
-                <Layout>
-                    <PageContent />
-                </Layout>
-            );
-        };
+<section class="academic-advisory">
+    <div class="container">
+        <h2 class="section-title">AI Models in Action Recognition Video Analysis</h2>
+        
+        <div class="content-single">
+            <div class="content-card">
+                <div class="card-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h3>Research Overview</h3>
+                <p>The CLAIRE (Cross-Referencing Labels, Actions, and Interactions for Robust Explanations) project aims to integrate YOLO detections and LLM vision to analyze video frames, cross-reference object/person–person/person interactions, and generate detailed reports of the video frame's scene.</p>
+                <p>This research explores both the benefits and restraints of utilizing AI models in action recognition video analysis. The project extends to CCTV footage as well as everyday video recordings, evaluating the strengths and shortcomings of AI-driven computer vision technologies in real-world applications.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-        // Render the page
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(
-            <React.StrictMode>
-                <PageApp />
-            </React.StrictMode>
-        );
-    </script>
+        
+    </main>
+
+    <!-- Footer -->
+   <div id="footer-container"></div>
 </body>
 </html>
