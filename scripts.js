@@ -1,3 +1,4 @@
+// scripts.js
 document.addEventListener("DOMContentLoaded", () => {
     // Fade-In Animation
     const observer = new IntersectionObserver(entries => {
@@ -10,27 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Carousel Arrow Functionality
-    const teamCarousel = document.querySelector('.team-carousel');
-    const leftArrow = document.querySelector('.left-arrow');
-    const rightArrow = document.querySelector('.right-arrow');
-
-    if (teamCarousel && leftArrow && rightArrow) {
-        leftArrow.addEventListener('click', () => teamCarousel.scrollBy({ left: -300, behavior: 'smooth' }));
-        rightArrow.addEventListener('click', () => teamCarousel.scrollBy({ left: 300, behavior: 'smooth' }));
-
-        // Handle keyboard navigation for accessibility
-        teamCarousel.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                e.preventDefault();
-                teamCarousel.scrollBy({ left: -300, behavior: 'smooth' });
-            } else if (e.key === 'ArrowRight') {
-                e.preventDefault();
-                teamCarousel.scrollBy({ left: 300, behavior: 'smooth' });
-            }
-        });
-    }
 
     // Active Link Highlighting
     const sections = document.querySelectorAll('section');
@@ -64,36 +44,4 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('scroll', () => {
         scrollTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
     });
-
-    // Team Members Array
-    const teamMembers = [
-        { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
-        { name: "Tasmeer Alam", role: "AI Researcher", image: "images/Tasmeer_Alam.jpeg" },
-        { name: "Cynthia Nosiri", role: "AI Researcher", image: "images/Cynthia.jpeg" },
-        { name: "Derrick Cook", role: "Research Assistant", image: "images/Derrick_Cook.PNG" },
-        { name: "Rezoan Sultan", role: "Research Assistant", image: "images/Rezoan_Sultan.jpeg" },
-        { name: "Benjamin Hall", role: "Researcher", image: "images/Benjamin Hall.jpg" },
-        { name: "Emmanuel Masa-ibi", role: "Research Assistant", image: "images/Emmanuel Masa-ibi.jpeg" },
-        { name: "Awotwi Baffoe", role: "Research Assistant", image: "images/Awotwi_Baffoe.jpg" },
-        { name: "Opeyemi Adeniran", role: "Research Assistant", image: "images/Opeyemi.PNG" },
-        { name: "Anjolie Anthony", role: "Researcher", image: "images/Anjolie.JPG" },
-        { name: "David Nyarko", role: "Research Assistant", image: "images/david-nyarko.JPG" }
-    ];
-
-    // Populate Team Carousel
-    if (teamCarousel) {
-        teamMembers.forEach(member => {
-            const cardHTML = `
-                <div class="card" tabindex="0">
-                    <img src="${member.image}" 
-                         alt="${member.name}" 
-                         class="team-photo"
-                         onerror="this.src='images/placeholder.jpg'">
-                    <h3>${member.name}</h3>
-                    <p>${member.role}</p>
-                </div>
-            `;
-            teamCarousel.insertAdjacentHTML('beforeend', cardHTML);
-        });
-    }
 });
