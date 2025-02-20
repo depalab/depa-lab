@@ -9,236 +9,182 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/pagestyles.css">
     
-    <!-- Load components script first -->
-    <script src="script/include.js"></script>
-    <!-- Other scripts -->
-    <script defer src="scripts.js"></script>
-     <script defer src="script/pages.js"></script>
+    <!-- React and dependencies -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body>
-    <div id="header-container"></div>
+    <div id="root"></div>
 
-<!-- Header -->
+    <!-- React Components -->
+    <script type="text/babel" src="js/components/MobileNavigation.js"></script>
+    <script type="text/babel" src="js/components/Header.js"></script>
+    <script type="text/babel" src="js/components/Footer.js"></script>
+    <script type="text/babel" src="js/components/Layout.js"></script>
     
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="container">
-            <h1>Welcome to DEPA Research Lab</h1>
-            <p>Driving innovation at the intersection of technology and impact.</p>
-        </div>
-    </section>
+    <!-- Main Content Component -->
+    <script type="text/babel">
+        const HomeContent = () => {
+            // Team members data
+            const teamMembers = [
+                { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
+                { name: "Tasmeer Alam", role: "AI Researcher", image: "images/Tasmeer_Alam.jpeg" },
+                // ... other team members
+            ];
 
-<section id="about" class="about-section">
-    <div class="container">
-        <!-- About Us -->
-        <h2 class="title">About DEPA Lab</h2>
-        <p class="about-text">
-            The Data Engineering and Predictive Analytics Lab (DEPA Lab) at Morgan State University, led by Dr. Kofi Nyarko,
-            is dedicated to unraveling the intricacies of complex systems and providing transformative insights. DEPA Lab
-            focuses on applied research in Computer Vision, Machine Learning, and Artificial Intelligence Techniques.
-        </p>
+            React.useEffect(() => {
+                // Initialize carousel functionality
+                const teamCarousel = document.querySelector('.team-carousel');
+                const leftArrow = document.querySelector('.left-arrow');
+                const rightArrow = document.querySelector('.right-arrow');
 
-        <!-- Mission and Vision -->
-        <div class="card-container">
-            <div class="info-card">
-                <h3>Our Mission</h3>
-                <p>
-                    We develop innovative machine learning models and algorithms for near real-time data collection,
-                    transformation, analysis, prediction, and visualization. DEPA Lab promotes inclusivity and innovation
-                    in data engineering and predictive analytics.
-                </p>
-            </div>
-            <div class="info-card">
-                <h3>Our Vision</h3>
-                <p>
-                    The Center for Equitable AI and Machine Learning Systems (CEAMLS) facilitates the development and deployment
-                    of socially responsible and equitable AI systems, ensuring they benefit everyone while educating the public
-                    about their impacts on health, prosperity, and happiness.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+                if (teamCarousel && leftArrow && rightArrow) {
+                    leftArrow.addEventListener('click', () => 
+                        teamCarousel.scrollBy({ left: -300, behavior: 'smooth' }));
+                    rightArrow.addEventListener('click', () => 
+                        teamCarousel.scrollBy({ left: 300, behavior: 'smooth' }));
+                }
 
+                // Fade-in animation
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
 
+                document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    <!-- Research Section -->
-    <section id="research" class="section bg-light fade-in">
-        <div class="container">
-            <h2>Core Research Areas</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>IoT Data Analytics</h3>
-                    <p>Analyze and visualize complex IoT networks for actionable insights.</p>
-                </div>
-                <div class="card">
-                    <h3>Cybersecurity</h3>
-                    <p>Secure networks through advanced analytics and visualization techniques.</p>
-                </div>
-                <div class="card">
-                    <h3>Machine Learning</h3>
-                    <p>Optimize algorithms for real-world decision support and autonomous systems.</p>
-                </div>
-                <div class="card">
-                    <h3>Computer Vision</h3>
-                    <p>Automating traffic data analysis, pose estimation, and scene perception for diverse applications.</p>
-                </div>
-                <div class="card">
-                    <h3>Ethical AI Framework</h3>
-                    <p>Advancing trustworthy and unbiased AI systems while addressing algorithmic bias.</p>
-                </div>
-                <div class="card">
-                    <h3>Human-Computer Interaction</h3>
-                    <p>Creating interactive visualization tools for enhanced situational awareness.</p>
-                </div>
-                <div class="card">
-                    <h3>Autonomous Systems</h3>
-                    <p>Developing robust algorithms for real-time navigation in challenging environments.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                // Cleanup
+                return () => {
+                    if (leftArrow && rightArrow) {
+                        leftArrow.removeEventListener('click');
+                        rightArrow.removeEventListener('click');
+                    }
+                };
+            }, []);
 
-    <!-- Innovation and Research Section -->
-    
-<section id="innovation" class="section bg-light fade-in">
-    <div class="container">
-        <h2>Innovative Projects and Research Highlights</h2>
-        <p>At DEPA Research Lab, we are at the forefront of cutting-edge research, solving complex real-world challenges through interdisciplinary approaches. Explore some of our groundbreaking projects:</p>
+            return (
+                <main>
+                    {/* Hero Section */}
+                    <section id="hero" className="hero">
+                        <div className="container">
+                            <h1>Welcome to DEPA Research Lab</h1>
+                            <p>Driving innovation at the intersection of technology and impact.</p>
+                        </div>
+                    </section>
 
-        <div class="grid">
-            <!-- Project 1 -->
-            <div class="card">
-                <h3>AI Assistive Comprehension Assessor</h3>
-                <p>Developing an AI-powered tool to evaluate student comprehension by analyzing essays and generating quizzes in Canvas QTI/XML format, ensuring meaningful learning over AI-assisted responses.</p>
-                <a href="pages/AssistiveComprehensionAssessor.html" target="_blank" class="btn">Learn More</a>
-            </div>
+                    {/* About Section */}
+                    <section id="about" className="about-section">
+                        <div className="container">
+                            <h2 className="title">About DEPA Lab</h2>
+                            <p className="about-text">
+                                The Data Engineering and Predictive Analytics Lab (DEPA Lab) at Morgan State University, led by Dr. Kofi Nyarko,
+                                is dedicated to unraveling the intricacies of complex systems and providing transformative insights. DEPA Lab
+                                focuses on applied research in Computer Vision, Machine Learning, and Artificial Intelligence Techniques.
+                            </p>
+                            <div className="card-container">
+                                <div className="info-card">
+                                    <h3>Our Mission</h3>
+                                    <p>
+                                        We develop innovative machine learning models and algorithms for near real-time data collection,
+                                        transformation, analysis, prediction, and visualization. DEPA Lab promotes inclusivity and innovation
+                                        in data engineering and predictive analytics.
+                                    </p>
+                                </div>
+                                <div className="info-card">
+                                    <h3>Our Vision</h3>
+                                    <p>
+                                        The Center for Equitable AI and Machine Learning Systems (CEAMLS) facilitates the development and deployment
+                                        of socially responsible and equitable AI systems, ensuring they benefit everyone while educating the public
+                                        about their impacts on health, prosperity, and happiness.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
-            <!-- Project 2 -->
-            <div class="card">
-                <h3>Benchmarking LLMs for AAVE & SAE</h3>
-                <p>Assessing leading LLMs for their ability to generate dialect-specific text while maintaining semantic consistency, sentiment alignment, and reducing bias in AI-driven linguistic diversity.</p>
-                <a href="pages/Benchmarking-LLM-AAVE-SAE.html" target="_blank" class="btn">Learn More</a>
-            </div>
+                    {/* Research Section */}
+                    <section id="research" className="section bg-light fade-in">
+                        {/* ... Research content ... */}
+                    </section>
 
-            <!-- Project 3 -->
-            <div class="card">
-                <h3>Ground Plane Segmentation for Wheelchair Mobility</h3>
-                <p>Utilizing real-time segmentation techniques within the SAM framework to improve navigation for wheelchair users by accurately identifying traversable surfaces in diverse environments.</p>
-                <a href="pages/Ground Plane for Enhanced Wheelchair Mobility.html" target="_blank" class="btn">Learn More</a>
-            </div>
+                    {/* Innovation Section */}
+                    <section id="innovation" className="section bg-light fade-in">
+                        {/* ... Innovation content ... */}
+                    </section>
 
-            <!-- Project 4 -->
-            <div class="card">
-                <h3>AI/ML Bench Guard</h3>
-                <p>A benchmarking framework for evaluating cloud-based and open-source ML services across tasks like object detection and facial recognition, promoting transparency and efficiency in AI service selection.</p>
-                <a href="pages/BenchmarkingFramework.html" target="_blank" class="btn">Learn More</a>
-            </div>
+                    {/* Events Section */}
+                    <section id="events" className="section bg-light fade-in">
+                        {/* ... Events content ... */}
+                    </section>
 
-            <!-- Project 5 -->
-            <div class="card">
-                <h3>Advanced Academic Support System</h3>
-                <p>Integrating Generative AI into an academic advisory system to provide instant, AI-driven responses on course details, degree programs, and graduation requirements for student support.</p>
-                <a href="pages/AI-poweredUniversityAdvisory.html" target="_blank" class="btn">Learn More</a>
-            </div>
+                    {/* Team Section */}
+                    <section id="team" className="section fade-in">
+                        <div className="container">
+                            <h2>Meet Our Team</h2>
+                            <p>Our diverse and talented team is committed to advancing research and innovation, solving real-world problems through technology.</p>
+                            <div className="team-carousel-wrapper">
+                                <button className="arrow left-arrow" aria-label="Scroll Left">❮</button>
+                                <div className="team-carousel">
+                                    {teamMembers.map((member, index) => (
+                                        <div key={index} className="card" tabIndex="0">
+                                            <img 
+                                                src={member.image}
+                                                alt={member.name}
+                                                className="team-photo"
+                                                onError={(e) => e.target.src = 'images/placeholder.jpg'}
+                                            />
+                                            <h3>{member.name}</h3>
+                                            <p>{member.role}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                                <button className="arrow right-arrow" aria-label="Scroll Right">❯</button>
+                            </div>
+                            <div className="view-team-button-wrapper">
+                                <a href="pages/team.html" className="view-team-button">
+                                    View All Team Members
+                                    <i className="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
 
-            <!-- Project 6 -->
-            <div class="card">
-                <h3>Queryable Computer Vision Pipeline</h3>
-                <p>Developing a scalable system that allows data analysts to execute SQL-like queries on video content without deep computer vision expertise, bridging AI with real-world applications.</p>
-                <a href="pages/QueryableComputerVisionPipeline.html" target="_blank" class="btn">Learn More</a>
-            </div>
+                    {/* Contact Section */}
+                    <section id="contact" className="section fade-in">
+                        <div className="container">
+                            <h2>Contact Us</h2>
+                            <p>Email: <a href="mailto:kofi.nyarko@morgan.edu">kofi.nyarko@morgan.edu</a></p>
+                            <p>Address: 1700 E Cold Spring Ln, Baltimore, MD 21251</p>
+                        </div>
+                    </section>
+                </main>
+            );
+        };
 
-            <!-- Project 7 -->
-            <div class="card">
-                <h3>AI Models in Action Recognition Video Analysis</h3>
-                <p>The CLAIRE (Cross-Referencing Labels, Actions, and Interactions for Robust Explanations) project aims to integrate YOLO detections and LLM vision to analyze video frames.</p>
-                <a href="pages/AI-RecognitionVideoAnalysis.html" target="_blank" class="btn">Learn More</a>
-            </div>
+        // Main App Component
+        const App = () => {
+            return (
+                <Layout>
+                    <HomeContent />
+                </Layout>
+            );
+        };
 
-            <!-- Project 8 -->
-            <div class="card">
-                <h3>Crack Detection and Classification in Structural Materials</h3>
-                <p>This research utilizes advanced machine learning techniques to detect cracks and structural anomalies in materials under stress.</p>
-                <a href="pages/CrackDetectionClassification.html" target="_blank" class="btn">Learn More</a>
-            </div>
-
-            <!-- Project 9 -->
-            <div class="card">
-                <h3>LLM Techniques for Multi-Object Tracking in Video Analysis</h3>
-                <p>This research explores cutting-edge approaches to enhance the ability to track individuals across video frames accurately and consistently.</p>
-                <a href="pages/LLM-Multi-Object Tracking in Video Analysis.html" target="_blank" class="btn">Learn More</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <section id="events" class="section bg-light fade-in">
-    <div class="container">
-        <h2>Latest Events and News</h2>
-        <p>Stay updated with the latest happenings, publications, and events at DEPA Research Lab.</p>
-        <div class="grid">
-            <!-- Event 1 -->
-            <div class="card">
-                <h3>DEPA Lab Award</h3>
-                <p>DEPA Lab has been recognized for its groundbreaking research on equitable AI systems, fostering innovation in AI ethics and shaping policy frameworks for a fairer, more inclusive future.</p>
-                <a href="pages/awards.html" class="btn">Read More</a>
-            </div>
-
-            <!-- Event 2 -->
-            <div class="card">
-                <h3>Publications</h3>
-                <p>DEPA Lab has made significant strides in advancing equitable AI systems, presenting groundbreaking research that addresses fairness, inclusivity, and transparency in artificial intelligence.</p>
-                <a href="pages/publications.html" class="btn">Read More</a>
-            </div>
-
-            <!-- Event 3 -->
-            <div class="card">
-                <h3>CEAMLS Symposium</h3>
-                <p>Join DEPA at the CEAMLS Symposium as we delve into groundbreaking advancements in machine learning and AI. This annual event showcases DEPA's commitment to driving progress in AI and ML technologies.</p>
-                <a href="pages/symposium.html" class="btn">Read More</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="team" class="section fade-in">
-    <div class="container">
-        <h2>Meet Our Team</h2>
-        <p>Our diverse and talented team is committed to advancing research and innovation, solving real-world problems through technology.</p>
-
-        <!-- Team Carousel Wrapper -->
-        <div class="team-carousel-wrapper">
-            <button class="arrow left-arrow" aria-label="Scroll Left">❮</button>
-            <div class="team-carousel">
-                <!-- Team members will be dynamically populated by JavaScript -->
-            </div>
-            <button class="arrow right-arrow" aria-label="Scroll Right">❯</button>
-        </div>
-        
-        <!-- View All Team Button -->
-        <div class="view-team-button-wrapper">
-            <a href="pages/team.html" class="view-team-button">
-                View All Team Members
-                <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
-    </div>
-</section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section fade-in">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>Email: <a href="mailto:kofi.nyarko@morgan.edu">kofi.nyarko@morgan.edu</a></p>
-            <p>Address: 1700 E Cold Spring Ln, Baltimore, MD 21251</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-   <div id="footer-container"></div>
+        // Render the app
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(
+            <React.StrictMode>
+                <App />
+            </React.StrictMode>
+        );
+    </script>
 </body>
 </html>
