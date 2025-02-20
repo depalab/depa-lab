@@ -7,10 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle Elements
     const checkBtn = document.querySelector('.checkbtn');
     const checkbox = document.getElementById('check');
     const closeBtn = document.querySelector('.close-menu');
+    const navLinksContainer = document.querySelector('.nav-links');
 
     // Toggle menu on hamburger icon click
     if (checkBtn && checkbox) {
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Close button functionality
+    // Close menu when close button is clicked
     if (closeBtn) {
         closeBtn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -28,11 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Navigation Links Click Handling
+    // Close menu when a navigation link is clicked
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', (e) => {
             const targetId = link.getAttribute('href').split('#')[1];
-            
+
             if (!targetId) return;
 
             if (window.location.pathname.includes('pages/')) {
@@ -41,16 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.preventDefault();
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) {
-                    // First scroll to the section
+                    // Scroll smoothly to section
                     targetSection.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    
-                    // Then close the menu after a short delay
-                    setTimeout(() => {
-                        closeMobileMenu();
-                    }, 300);
+
+                    // Close menu after a short delay
+                    setTimeout(closeMobileMenu, 300);
                 }
             }
         });
@@ -58,14 +57,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-        const navLinks = document.querySelector('.nav-links');
         if (checkbox?.checked) {
-            const isClickInsideMenu = navLinks?.contains(e.target);
+            const isClickInsideMenu = navLinksContainer?.contains(e.target);
             const isClickOnButton = checkBtn?.contains(e.target);
-            
+
             if (!isClickInsideMenu && !isClickOnButton) {
                 closeMobileMenu();
             }
+        }
+    });
+
+    // Close menu when resizing screen beyond mobile view
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+            closeMobileMenu();
         }
     });
 
