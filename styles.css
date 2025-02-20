@@ -108,7 +108,6 @@ body {
         display: block;
         z-index: 1002;
     }
-
     nav {
         position: fixed;
         top: 0;
@@ -121,7 +120,6 @@ body {
         transition: all 0.3s ease-in-out;
         z-index: 1001;
     }
-
     .nav-links {
         position: absolute;
         top: 0;
@@ -134,27 +132,26 @@ body {
         align-items: center;
         transition: all 0.3s ease-in-out;
     }
-
     .nav-links li {
         margin: 1.5rem 0;
     }
-
     .nav-links li a {
         font-size: 1.2rem;
     }
-
     .close-menu {
         display: block;
     }
-
     /* Menu Open State */
     #check:checked ~ nav {
         visibility: visible;
         opacity: 1;
     }
-
     #check:checked ~ nav .nav-links {
         right: 0;
+    }
+    /* Hide hamburger when menu is open */
+    #check:checked ~ .checkbtn {
+        display: none;
     }
 }
 
