@@ -11,12 +11,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkBtn = document.querySelector('.checkbtn');
     const checkbox = document.getElementById('check');
     const closeBtn = document.querySelector('.close-menu');
+    const scrollTopBtn = document.createElement('button');
+
+    // Initialize scroll-to-top button
+    scrollTopBtn.textContent = '↑';
+    scrollTopBtn.classList.add('scroll-to-top');
+    scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
+    document.body.appendChild(scrollTopBtn);
 
     // Toggle menu on hamburger icon click
     if (checkBtn && checkbox) {
         checkBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             checkbox.checked = !checkbox.checked;
+            // Hide scroll button when menu opens
+            scrollTopBtn.style.display = 'none';
         });
     }
 
@@ -27,6 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
             closeMobileMenu();
         });
     }
+
+    // Add change event listener to checkbox
+    checkbox?.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            scrollTopBtn.style.display = 'none';
+        }
+    });
 
     // Navigation Links Click Handling
     document.querySelectorAll('.nav-links a').forEach(link => {
@@ -108,6 +124,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener('scroll', () => {
         const scrollPos = window.scrollY + 100;
+        const menuOpen = checkbox?.checked;
+        
+        // Handle scroll-to-top button visibility
+        scrollTopBtn.style.display = (window.scrollY > 300 && !menuOpen) ? 'block' : 'none';
+        
+        // Handle active section highlighting
         sections.forEach(section => {
             if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
                 navLinksArray.forEach(link => {
@@ -120,19 +142,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Scroll-to-Top Button
-    const scrollTopBtn = document.createElement('button');
-    scrollTopBtn.textContent = '↑';
-    scrollTopBtn.classList.add('scroll-to-top');
-    scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
-    document.body.appendChild(scrollTopBtn);
-
+    // Scroll-to-top functionality
     scrollTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    window.addEventListener('scroll', () => {
-        scrollTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
     });
 
     // Team Members Array
