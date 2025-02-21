@@ -154,7 +154,7 @@ body {
     nav {
         position: fixed;
         top: 0;
-        right: 0;
+        right: -100%; /* Start offscreen */
         width: 100%;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.5);
@@ -167,7 +167,7 @@ body {
     .nav-links {
         position: absolute;
         top: 0;
-        right: -100%;
+        right: -100%; /* Start offscreen */
         width: 75%;
         height: 100vh;
         background-color: #ffffff;
@@ -175,38 +175,48 @@ body {
         justify-content: center;
         align-items: center;
         transition: all 0.3s ease-in-out;
+        padding-top: 60px; /* Space for close button */
     }
+
     .nav-links li {
         margin: 1.5rem 0;
     }
+
     .nav-links li a {
         font-size: 1.2rem;
     }
+
     .close-menu {
+        display: block;
         position: absolute;
         top: 20px;
         right: 20px;
-        z-index: 1002; /* This should be higher than nav */
-        display: block;
+        z-index: 1002;
         background: none;
         border: none;
         font-size: 24px;
         color: #002d62;
         cursor: pointer;
-        display: None;
     }
 
     /* Menu Open State */
     #check:checked ~ nav {
+        right: 0;
         visibility: visible;
         opacity: 1;
     }
+
     #check:checked ~ nav .nav-links {
         right: 0;
     }
-    /* Hide hamburger when menu is open */
+
     #check:checked ~ .checkbtn {
         display: none;
+    }
+
+    /* Show close button when menu is open */
+    #check:checked ~ nav .close-menu {
+        display: block;
     }
 }
 
