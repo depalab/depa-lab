@@ -1,4 +1,29 @@
+// Navigation state management functions
+function restoreNavigationMenu() {
+    const navMenu = document.querySelector('nav');
+    const navLinks = document.querySelector('.nav-links');
+    if (navMenu && navLinks) {
+        navMenu.style.visibility = 'visible';
+        navMenu.style.opacity = '1';
+        navLinks.style.right = '0';
+    }
+}
+
+function handleNavigation(targetUrl) {
+    history.pushState({ menuVisible: true }, '', targetUrl);
+}
+
+window.onpopstate = function(event) {
+    if (event.state && event.state.menuVisible) {
+        restoreNavigationMenu();
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize history state
+    history.replaceState({ menuVisible: true }, '');
+    restoreNavigationMenu();
+
     // Check if we're in a subdirectory
     const isInSubdirectory = window.location.pathname.includes('/pages/');
     const basePath = isInSubdirectory ? '../' : '';
