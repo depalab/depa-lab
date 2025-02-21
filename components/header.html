@@ -1,27 +1,18 @@
-<!-- components/header.html -->
-<header class="main-header">
-    <!-- For pages in root directory -->
-    <a href="/depa-lab/index.html" class="logo">
-        <img src="/depa-lab/images/DEPA-logo.png" alt="DEPA Lab Logo" class="logo-image">
-    </a>
-    <input type="checkbox" class="check" id="check">
-    <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-    </label>
-    <nav>
-        <!-- Added close button -->
-        <button class="close-menu">
-            <i class="fas fa-times"></i>
-        </button>
-        <ul class="nav-links">
-            <li><a href="/depa-lab/index.html#about">About</a></li>
-            <li><a href="/depa-lab/index.html#research">Research</a></li>
-            <li><a href="/depa-lab/index.html#innovation">Innovation</a></li>
-            <li><a href="/depa-lab/index.html#events">Events</a></li>
-            <li><a href="/depa-lab/index.html#team">Team</a></li>
-            <li><a href="/depa-lab/index.html#contact">Contact</a></li>
-        </ul>
-    </nav>
+<header id="header" class="fixed-top main-header">
+    <div class="container d-flex align-items-center justify-content-between">
+        <a href="/depa-lab/index.html" class="logo">
+            <img src="/depa-lab/images/DEPA-logo.png" alt="DEPA Lab Logo" class="logo-image">
+        </a>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto" href="/depa-lab/index.html#about">About</a></li>
+                <li><a class="nav-link scrollto" href="/depa-lab/index.html#research">Research</a></li>
+                <li><a class="nav-link scrollto" href="/depa-lab/index.html#innovation">Innovation</a></li>
+                <li><a class="nav-link scrollto" href="/depa-lab/index.html#events">Events</a></li>
+                <li><a class="nav-link scrollto" href="/depa-lab/index.html#team">Team</a></li>
+                <li><a class="nav-link scrollto" href="/depa-lab/index.html#contact">Contact</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+    </div>
 </header>
-
-<!-- No need to add extra script here since your main script already handles everything -->
