@@ -146,7 +146,7 @@ body {
 
 /* Mobile Navigation */
 .mobile-nav-toggle {
-    color: #fff;
+    color: #000080; 
     font-size: 28px;
     cursor: pointer;
     display: none;
