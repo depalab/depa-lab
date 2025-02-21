@@ -225,7 +225,7 @@ body {
 /* Responsive adjustment for logo */
 @media (max-width: 768px) {
     .logo-image {
-        height: 60px; /* Slightly smaller on mobile */
+        height: 40px; /* Slightly smaller on mobile */
     }
 }
 
