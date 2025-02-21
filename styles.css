@@ -36,241 +36,179 @@ body {
     text-align: center;
 }
 
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
-#header {
-    transition: all 0.5s;
-    z-index: 997;
-    padding: 20px 0;
-    background: #ffffff;
-}
-
-#header.header-scrolled,
-#header.header-inner-pages {
-    background: rgba(24, 6, 185, 0.8);
-    padding: 12px 0;
-}
-
-#header .logo {
-    font-size: 32px;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-    font-weight: 400;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-align: left;
-}
-
-#header .logo a {
-    color: #fff;
-    text-decoration: none;
-}
-
-#header .logo img {
-    max-height: 40px;
-    text-align: left;
-}
-
-/*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
-.navbar {
-    padding: 0;
-    margin-left: auto;
-}
-
-.navbar ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    list-style: none;
-    align-items: center;
-}
-
-.navbar li {
-    position: relative;
-}
-
-.navbar > ul > li {
-    padding: 10px 0 10px 24px;
-}
-
-.navbar a,
-.navbar a:focus {
+/* Header Styles */
+.main-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 3px;
-    font-family: "Poppins", sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: #000080;
-    white-space: nowrap;
-    transition: 0.3s;
-    position: relative;
-    text-decoration: none;
-}
-
-.navbar a i,
-.navbar a:focus i {
-    font-size: 12px;
-    line-height: 0;
-    margin-left: 5px;
-}
-
-.navbar a:hover,
-.navbar .active,
-.navbar .active:focus,
-.navbar li:hover > a {
-    color: #457b9d;
-}
-
-/* Desktop alignment fix */
-@media (min-width: 992px) {
-    .navbar {
-        margin-left: auto;
-    }
-    
-    .navbar ul {
-        justify-content: flex-end;
-    }
-}
-
-/* Mobile Navigation */
-.mobile-nav-toggle {
-    color: #000080;
-    font-size: 28px;
-    cursor: pointer;
-    display: none;
-    line-height: 0;
-    transition: 0.5s;
-}
-
-@media (max-width: 991px) {
-    .mobile-nav-toggle {
-        display: block;
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .navbar ul {
-        display: none;
-    }
-
-    #navbar.navbar-mobile {
-        display: block;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        background: rgba(28, 47, 65, 0.9);
-        transition: 0.3s;
-        z-index: 999;
-        padding-top: 60px;
-    }
-
-    #navbar.navbar-mobile ul {
-        display: block;
-        position: absolute;
-        top: 55px;
-        right: 15px;
-        bottom: 15px;
-        left: 15px;
-        padding: 10px 0;
-        background-color: #fff;
-        overflow-y: auto;
-        transition: 0.3s;
-    }
-
-    #navbar.navbar-mobile li {
-        padding: 0;
-    }
-
-    #navbar.navbar-mobile a,
-    #navbar.navbar-mobile a:focus {
-        padding: 10px 20px;
-        font-size: 15px;
-        color: #000080;
-    }
-
-    #navbar.navbar-mobile a:hover,
-    #navbar.navbar-mobile .active,
-    #navbar.navbar-mobile li:hover > a {
-        color: #457b9d;
-    }
-}
-
-/* Container styles */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Fixed header */
-.fixed-top {
-    position: fixed;
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    color: #002d62;
+    position: sticky;
     top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-    background: #ffffff;
+    z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Remove underline from links */
-.nav-link {
-    text-decoration: none !important;
+/* Desktop Navigation */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
 }
 
-/* Improved mobile navigation */
-.bi-list {
+.nav-links li a {
+    color: #002d62;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #457b9d;
+}
+
+/* Menu Controls */
+.checkbtn {
+    display: none;
+    font-size: 30px;
+    color: #002d62;
+    cursor: pointer;
+}
+
+.check {
     display: none;
 }
 
-@media (max-width: 991px) {
-    .bi-list {
-        display: block;
-        font-size: 28px;
+/* Close Button */
+.close-menu {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #002d62;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1002;
+}
+
+.close-menu:hover {
+    color: #457b9d;
+}
+
+@media (max-width: 768px) {
+    nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        z-index: 1001; /* Keep this higher */
     }
     
-    .mobile-nav-toggle.bi-x {
+    .nav-links {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: #ffffff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Ensure the close button is visible and clickable */
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1002; /* This should be higher than nav */
         display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #002d62;
+        cursor: pointer;
     }
 }
 
-/*--------------------------------------------------------------
-# Old Nav and Header Styles Removed from Here
---------------------------------------------------------------*/
-
-.main-header .logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.logo-image {
-    height: 40px;
-    width: auto;
-    object-fit: contain;
-}
-
-/* Responsive adjustment for logo */
+/* Mobile Menu Styles */
 @media (max-width: 768px) {
-    .logo-image {
-        height: 32px;
+    .checkbtn {
+        display: block;
+        z-index: 1002;
+    }
+    
+    nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        z-index: 1001;
+    }
+    
+    .nav-links {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: #ffffff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+    }
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+    .nav-links li a {
+        font-size: 1.2rem;
+    }
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1002; /* This should be higher than nav */
+        display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #002d62;
+        cursor: pointer;
+        display: None;
+    }
+
+    /* Menu Open State */
+    #check:checked ~ nav {
+        visibility: visible;
+        opacity: 1;
+    }
+    #check:checked ~ nav .nav-links {
+        right: 0;
+    }
+    /* Hide hamburger when menu is open */
+    #check:checked ~ .checkbtn {
+        display: none;
     }
 }
-
 
 .main-header .logo {
     display: flex;
