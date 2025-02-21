@@ -217,7 +217,7 @@ body {
 }
 
 .logo-image {
-    height: 90px; /* Adjust this value based on your logo size */
+    height: 80px; /* Adjust this value based on your logo size */
     width: auto;
     object-fit: contain;
 }
