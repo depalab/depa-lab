@@ -1,4 +1,30 @@
+// scripts.js
 document.addEventListener("DOMContentLoaded", () => {
+    // Load Components First
+    loadComponents().then(() => {
+        initializeUI();
+    });
+});
+
+// Component Loading Function
+async function loadComponents() {
+    try {
+        // Load header
+        const headerResponse = await fetch('/components/header.html');
+        const headerHtml = await headerResponse.text();
+        document.body.insertAdjacentHTML('afterbegin', headerHtml);
+
+        // Load footer
+        const footerResponse = await fetch('/components/footer.html');
+        const footerHtml = await footerResponse.text();
+        document.body.insertAdjacentHTML('beforeend', footerHtml);
+    } catch (error) {
+        console.error('Error loading components:', error);
+    }
+}
+
+// Main UI Initialization
+function initializeUI() {
     // Mobile Menu Elements
     const checkbox = document.getElementById('check');
     const checkBtn = document.querySelector('.checkbtn');
@@ -159,4 +185,4 @@ document.addEventListener("DOMContentLoaded", () => {
             teamCarousel.insertAdjacentHTML('beforeend', cardHTML);
         });
     }
-});
+}
