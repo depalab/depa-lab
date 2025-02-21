@@ -9,15 +9,26 @@ document.addEventListener("DOMContentLoaded", () => {
 // Component Loading Function
 async function loadComponents() {
     try {
-        // Load header
-        const headerResponse = await fetch('/components/header.html');
-        const headerHtml = await headerResponse.text();
-        document.body.insertAdjacentHTML('afterbegin', headerHtml);
+        // Load header into header container
+        const headerContainer = document.getElementById('header-container');
+        if (headerContainer) {
+            const headerResponse = await fetch('/components/header.html');
+            const headerHtml = await headerResponse.text();
+            headerContainer.innerHTML = headerHtml;
+        }
 
-        // Load footer
+        // Create and load footer container if it doesn't exist
+        let footerContainer = document.getElementById('footer-container');
+        if (!footerContainer) {
+            footerContainer = document.createElement('div');
+            footerContainer.id = 'footer-container';
+            document.body.appendChild(footerContainer);
+        }
+        
         const footerResponse = await fetch('/components/footer.html');
         const footerHtml = await footerResponse.text();
-        document.body.insertAdjacentHTML('beforeend', footerHtml);
+        footerContainer.innerHTML = footerHtml;
+
     } catch (error) {
         console.error('Error loading components:', error);
     }
