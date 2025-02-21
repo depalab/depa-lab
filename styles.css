@@ -110,16 +110,16 @@ body {
         width: 100%;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.5);
-        visibility: hidden;
-        opacity: 0;
+        visibility: visible !important;
+        opacity: 1 !important;
         transition: all 0.3s ease-in-out;
         z-index: 1001; /* Keep this higher */
     }
     
     .nav-links {
-        position: absolute;
+        position: relative;
+        right: 0 !important;
         top: 0;
-        right: -100%;
         width: 75%;
         height: 100vh;
         background-color: #ffffff;
@@ -174,7 +174,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: all 0.3s ease-in-out;
+        transition: right 0.3s ease;
     }
     .nav-links li {
         margin: 1.5rem 0;
@@ -209,6 +209,18 @@ body {
         display: none;
     }
 }
+
+/* Mobile navigation (768px and below) */
+@media screen and (max-width: 768px) {
+    nav[data-visible="false"] .nav-links {
+        right: -100%;
+    }
+
+    nav[data-visible="true"] .nav-links {
+        right: 0;
+    }
+}
+
 
 .main-header .logo {
     display: flex;
