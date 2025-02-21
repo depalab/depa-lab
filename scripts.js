@@ -1,51 +1,53 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Mobile Menu Elements
+    const checkbox = document.getElementById('check');
+    const checkBtn = document.querySelector('.checkbtn');
+    const closeBtn = document.querySelector('.close-menu');
+    const nav = document.querySelector('nav');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
     // Function to close mobile menu
     function closeMobileMenu() {
-        const checkbox = document.getElementById('check');
         if (checkbox) {
             checkbox.checked = false;
         }
     }
 
-    // Mobile Menu Toggle
-    const checkBtn = document.querySelector('.checkbtn');
-    const checkbox = document.getElementById('check');
-    const closeBtn = document.querySelector('.close-menu');
-    const scrollTopBtn = document.createElement('button');
-
     // Initialize scroll-to-top button
+    const scrollTopBtn = document.createElement('button');
     scrollTopBtn.textContent = '↑';
     scrollTopBtn.classList.add('scroll-to-top');
     scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
     document.body.appendChild(scrollTopBtn);
 
-    // Toggle menu on hamburger icon click
-    if (checkBtn && checkbox) {
-        checkBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            checkbox.checked = !checkbox.checked;
-            // Hide scroll button when menu opens
-            scrollTopBtn.style.display = 'none';
-        });
-    }
+    // Mobile Menu Event Listeners
+    checkBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        checkbox.checked = !checkbox.checked;
+        scrollTopBtn.style.display = 'none';
+    });
 
-    // Close button functionality
-    if (closeBtn) {
-        closeBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
+    closeBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeMobileMenu();
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (checkbox?.checked && 
+            !nav?.contains(e.target) && 
+            !checkBtn?.contains(e.target)) {
             closeMobileMenu();
-        });
-    }
-
-    // Add change event listener to checkbox
-    checkbox?.addEventListener('change', (e) => {
-        if (e.target.checked) {
-            scrollTopBtn.style.display = 'none';
         }
     });
 
+    // Stop propagation for clicks inside nav
+    nav?.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
     // Navigation Links Click Handling
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const targetId = link.getAttribute('href').split('#')[1];
             
@@ -57,32 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.preventDefault();
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) {
-                    // First scroll to the section
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    // Then close the menu after a short delay
-                    setTimeout(() => {
-                        closeMobileMenu();
-                    }, 300);
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    setTimeout(closeMobileMenu, 300);
                 }
             }
         });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        const navLinks = document.querySelector('.nav-links');
-        if (checkbox?.checked) {
-            const isClickInsideMenu = navLinks?.contains(e.target);
-            const isClickOnButton = checkBtn?.contains(e.target);
-            
-            if (!isClickInsideMenu && !isClickOnButton) {
-                closeMobileMenu();
-            }
-        }
     });
 
     // Fade-In Animation
@@ -97,16 +78,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Carousel Arrow Functionality
+    // Team Carousel Functionality
     const teamCarousel = document.querySelector('.team-carousel');
     const leftArrow = document.querySelector('.left-arrow');
     const rightArrow = document.querySelector('.right-arrow');
 
     if (teamCarousel && leftArrow && rightArrow) {
-        leftArrow.addEventListener('click', () => teamCarousel.scrollBy({ left: -300, behavior: 'smooth' }));
-        rightArrow.addEventListener('click', () => teamCarousel.scrollBy({ left: 300, behavior: 'smooth' }));
+        leftArrow.addEventListener('click', () => 
+            teamCarousel.scrollBy({ left: -300, behavior: 'smooth' }));
+        
+        rightArrow.addEventListener('click', () => 
+            teamCarousel.scrollBy({ left: 300, behavior: 'smooth' }));
 
-        // Handle keyboard navigation for accessibility
+        // Keyboard navigation
         teamCarousel.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') {
                 e.preventDefault();
@@ -118,21 +102,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Active Link Highlighting
-    const sections = document.querySelectorAll('section');
-    const navLinksArray = document.querySelectorAll('.nav-links a');
-
+    // Active Link Highlighting & Scroll Button
     window.addEventListener('scroll', () => {
         const scrollPos = window.scrollY + 100;
-        const menuOpen = checkbox?.checked;
         
         // Handle scroll-to-top button visibility
-        scrollTopBtn.style.display = (window.scrollY > 300 && !menuOpen) ? 'block' : 'none';
+        scrollTopBtn.style.display = (window.scrollY > 300 && !checkbox?.checked) ? 'block' : 'none';
         
         // Handle active section highlighting
-        sections.forEach(section => {
-            if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
-                navLinksArray.forEach(link => {
+        document.querySelectorAll('section').forEach(section => {
+            if (section.offsetTop <= scrollPos && 
+                (section.offsetTop + section.offsetHeight) > scrollPos) {
+                navLinks.forEach(link => {
                     link.classList.remove('active');
                     if (link.getAttribute('href').split('#')[1] === section.id) {
                         link.classList.add('active');
@@ -147,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Team Members Array
+    // Team Members Data
     const teamMembers = [
         { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
         { name: "Tasmeer Alam", role: "AI Researcher", image: "images/Tasmeer_Alam.jpeg" },
