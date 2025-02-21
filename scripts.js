@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(response => response.text())
                 .then(data => {
                     container.innerHTML = data;
+                    // After loading components, reinitialize event listeners
+                    initializeEventListeners();
                 })
                 .catch(error => console.error('Error loading component:', error));
         }
@@ -23,85 +25,93 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to close mobile menu
     function closeMobileMenu() {
         const checkbox = document.getElementById('check');
+        const closeBtn = document.querySelector('.close-menu');
         if (checkbox) {
             checkbox.checked = false;
         }
+        if (closeBtn) {
+            closeBtn.style.display = 'none';
+        }
+        // Show scroll-to-top button if we're scrolled down
+        if (window.scrollY > 300) {
+            scrollTopBtn.style.display = 'block';
+        }
     }
 
-    // Mobile Menu Elements
-    const checkBtn = document.querySelector('.checkbtn');
-    const checkbox = document.getElementById('check');
-    const closeBtn = document.querySelector('.close-menu');
+    // Create scroll-to-top button
     const scrollTopBtn = document.createElement('button');
-
-    // Initialize scroll-to-top button
     scrollTopBtn.textContent = '↑';
     scrollTopBtn.classList.add('scroll-to-top');
     scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
     document.body.appendChild(scrollTopBtn);
 
-    // Toggle menu on hamburger icon click
-    if (checkBtn && checkbox) {
-        checkBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            checkbox.checked = !checkbox.checked;
-            scrollTopBtn.style.display = 'none';
-        });
-    }
+    function initializeEventListeners() {
+        // Mobile Menu Elements
+        const checkBtn = document.querySelector('.checkbtn');
+        const checkbox = document.getElementById('check');
+        const closeBtn = document.querySelector('.close-menu');
+        const navLinks = document.querySelector('.nav-links');
 
-    // Close button functionality
-    if (closeBtn) {
-        closeBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            closeMobileMenu();
-        });
-    }
-
-    // Add change event listener to checkbox
-    checkbox?.addEventListener('change', (e) => {
-        if (e.target.checked) {
-            scrollTopBtn.style.display = 'none';
+        // Toggle menu on hamburger icon click
+        if (checkBtn && checkbox) {
+            checkBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                checkbox.checked = !checkbox.checked;
+                if (closeBtn) {
+                    closeBtn.style.display = checkbox.checked ? 'block' : 'none';
+                }
+                scrollTopBtn.style.display = 'none';
+            });
         }
-    });
 
-    // Navigation Links Click Handling
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('href').split('#')[1];
-            
-            if (!targetId) return;
+        // Close button functionality
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeMobileMenu();
+            });
+        }
 
-            if (window.location.pathname.includes('pages/')) {
-                window.location.href = `../index.html#${targetId}`;
-            } else {
-                e.preventDefault();
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    setTimeout(() => {
-                        closeMobileMenu();
-                    }, 300);
+        // Navigation Links Click Handling
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const targetId = link.getAttribute('href').split('#')[1];
+                
+                // Close the mobile menu immediately
+                closeMobileMenu();
+                
+                if (!targetId) return;
+
+                if (window.location.pathname.includes('pages/')) {
+                    window.location.href = `../index.html#${targetId}`;
+                } else {
+                    e.preventDefault();
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (checkbox?.checked) {
+                const isClickInsideMenu = navLinks?.contains(e.target);
+                const isClickOnButton = checkBtn?.contains(e.target);
+                
+                if (!isClickInsideMenu && !isClickOnButton) {
+                    closeMobileMenu();
                 }
             }
         });
-    });
+    }
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        const navLinks = document.querySelector('.nav-links');
-        if (checkbox?.checked) {
-            const isClickInsideMenu = navLinks?.contains(e.target);
-            const isClickOnButton = checkBtn?.contains(e.target);
-            
-            if (!isClickInsideMenu && !isClickOnButton) {
-                closeMobileMenu();
-            }
-        }
-    });
+    // Initialize event listeners for initial load
+    initializeEventListeners();
 
     // Fade-In Animation
     const observer = new IntersectionObserver(entries => {
@@ -136,12 +146,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Active Link Highlighting
+    // Active Link Highlighting and Scroll-to-Top Button Visibility
     const sections = document.querySelectorAll('section');
     const navLinksArray = document.querySelectorAll('.nav-links a');
 
     window.addEventListener('scroll', () => {
         const scrollPos = window.scrollY + 100;
+        const checkbox = document.getElementById('check');
         const menuOpen = checkbox?.checked;
         
         // Handle scroll-to-top button visibility
