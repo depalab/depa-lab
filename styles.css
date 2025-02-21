@@ -36,21 +36,27 @@ body {
     text-align: center;
 }
 
-/* Header Styles */
+/* Header Base Styles */
 .main-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: #ffffff;
     padding: 1rem 2rem;
-    color: #002d62;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
-/* Desktop Navigation */
+.logo-image {
+    height: 40px;
+    width: auto;
+}
+
+/* Navigation Links */
 .nav-links {
     display: flex;
     list-style: none;
@@ -72,6 +78,10 @@ body {
 }
 
 /* Menu Controls */
+.check {
+    display: none;
+}
+
 .checkbtn {
     display: none;
     font-size: 30px;
@@ -79,43 +89,30 @@ body {
     cursor: pointer;
 }
 
-.check {
-    display: none;
-}
-
-/* Close Button */
 .close-menu {
     display: none;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: #002d62;
-    cursor: pointer;
-    padding: 8px;
-    z-index: 1002;
 }
 
-.close-menu:hover {
-    color: #457b9d;
-}
-
+/* Mobile Styles */
 @media (max-width: 768px) {
+    .checkbtn {
+        display: block;
+        z-index: 1002;
+    }
+
     nav {
         position: fixed;
         top: 0;
-        right: 0;
+        right: -100%;
         width: 100%;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.5);
         visibility: hidden;
         opacity: 0;
         transition: all 0.3s ease-in-out;
-        z-index: 1001; /* Keep this higher */
+        z-index: 1001;
     }
-    
+
     .nav-links {
         position: absolute;
         top: 0;
@@ -127,55 +124,7 @@ body {
         justify-content: center;
         align-items: center;
         transition: all 0.3s ease-in-out;
-    }
-
-    /* Ensure the close button is visible and clickable */
-    .close-menu {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 1002; /* This should be higher than nav */
-        display: block;
-        background: none;
-        border: none;
-        font-size: 24px;
-        color: #002d62;
-        cursor: pointer;
-    }
-}
-
-/* Mobile Menu Styles */
-@media (max-width: 768px) {
-    .checkbtn {
-        display: block;
-        z-index: 1002;
-    }
-    
-    nav {
-        position: fixed;
-        top: 0;
-        right: -100%; /* Start offscreen */
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5);
-        visibility: hidden;
-        opacity: 0;
-        transition: all 0.3s ease-in-out;
-        z-index: 1001;
-    }
-    
-    .nav-links {
-        position: absolute;
-        top: 0;
-        right: -100%; /* Start offscreen */
-        width: 75%;
-        height: 100vh;
-        background-color: #ffffff;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s ease-in-out;
-        padding-top: 60px; /* Space for close button */
+        padding-top: 60px;
     }
 
     .nav-links li {
@@ -191,12 +140,16 @@ body {
         position: absolute;
         top: 20px;
         right: 20px;
-        z-index: 1002;
         background: none;
         border: none;
         font-size: 24px;
         color: #002d62;
         cursor: pointer;
+        z-index: 1002;
+    }
+
+    .close-menu:hover {
+        color: #457b9d;
     }
 
     /* Menu Open State */
@@ -212,11 +165,6 @@ body {
 
     #check:checked ~ .checkbtn {
         display: none;
-    }
-
-    /* Show close button when menu is open */
-    #check:checked ~ nav .close-menu {
-        display: block;
     }
 }
 
