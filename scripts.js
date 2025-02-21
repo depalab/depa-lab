@@ -1,38 +1,22 @@
 // scripts.js
-document.addEventListener("DOMContentLoaded", () => {
-    // Load Components First
-    loadComponents().then(() => {
-        initializeUI();
-    });
-});
-
-// Component Loading Function
-async function loadComponents() {
+document.addEventListener("DOMContentLoaded", async () => {
     try {
-        // Load header into header container
-        const headerContainer = document.getElementById('header-container');
-        if (headerContainer) {
-            const headerResponse = await fetch('/components/header.html');
-            const headerHtml = await headerResponse.text();
-            headerContainer.innerHTML = headerHtml;
-        }
+        // Load header
+        const headerResponse = await fetch('/components/header.html');
+        const headerHtml = await headerResponse.text();
+        document.body.insertAdjacentHTML('afterbegin', headerHtml);
 
-        // Create and load footer container if it doesn't exist
-        let footerContainer = document.getElementById('footer-container');
-        if (!footerContainer) {
-            footerContainer = document.createElement('div');
-            footerContainer.id = 'footer-container';
-            document.body.appendChild(footerContainer);
-        }
-        
+        // Load footer
         const footerResponse = await fetch('/components/footer.html');
         const footerHtml = await footerResponse.text();
-        footerContainer.innerHTML = footerHtml;
+        document.body.insertAdjacentHTML('beforeend', footerHtml);
 
+        // Initialize UI after components are loaded
+        initializeUI();
     } catch (error) {
         console.error('Error loading components:', error);
     }
-}
+});
 
 // Main UI Initialization
 function initializeUI() {
