@@ -103,54 +103,11 @@ body {
 }
 
 @media (max-width: 768px) {
-    nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5);
-        visibility: hidden;
-        opacity: 0;
-        transition: all 0.3s ease-in-out;
-        z-index: 1001; /* Keep this higher */
-    }
-    
-    .nav-links {
-        position: absolute;
-        top: 0;
-        right: -100%;
-        width: 75%;
-        height: 100vh;
-        background-color: #ffffff;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s ease-in-out;
-    }
-
-    /* Ensure the close button is visible and clickable */
-    .close-menu {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 1002; /* This should be higher than nav */
-        display: block;
-        background: none;
-        border: none;
-        font-size: 24px;
-        color: #002d62;
-        cursor: pointer;
-    }
-}
-
-/* Mobile Menu Styles */
-@media (max-width: 768px) {
     .checkbtn {
         display: block;
         z-index: 1002;
     }
-    
+
     nav {
         position: fixed;
         top: 0;
@@ -163,7 +120,7 @@ body {
         transition: all 0.3s ease-in-out;
         z-index: 1001;
     }
-    
+
     .nav-links {
         position: absolute;
         top: 0;
@@ -176,24 +133,26 @@ body {
         align-items: center;
         transition: all 0.3s ease-in-out;
     }
+
     .nav-links li {
         margin: 1.5rem 0;
     }
+
     .nav-links li a {
         font-size: 1.2rem;
     }
+
     .close-menu {
         position: absolute;
         top: 20px;
         right: 20px;
-        z-index: 1002; /* This should be higher than nav */
+        z-index: 1002;
         display: block;
         background: none;
         border: none;
         font-size: 24px;
         color: #002d62;
         cursor: pointer;
-        display: None;
     }
 
     /* Menu Open State */
@@ -201,14 +160,36 @@ body {
         visibility: visible;
         opacity: 1;
     }
+
     #check:checked ~ nav .nav-links {
         right: 0;
     }
+
     /* Hide hamburger when menu is open */
     #check:checked ~ .checkbtn {
         display: none;
     }
 }
+
+.main-header .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Responsive adjustment for logo */
+@media (max-width: 768px) {
+    .logo-image {
+        height: 32px;
+    }
+}
+
 
 .main-header .logo {
     display: flex;
