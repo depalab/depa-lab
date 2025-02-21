@@ -36,27 +36,21 @@ body {
     text-align: center;
 }
 
-/* Header Base Styles */
+/* Header Styles */
 .main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #ffffff;
     padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #002d62;
+    position: sticky;
+    top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.logo-image {
-    height: 40px;
-    width: auto;
-}
-
-/* Navigation Links */
+/* Desktop Navigation */
 .nav-links {
     display: flex;
     list-style: none;
@@ -78,10 +72,6 @@ body {
 }
 
 /* Menu Controls */
-.check {
-    display: none;
-}
-
 .checkbtn {
     display: none;
     font-size: 30px;
@@ -89,30 +79,43 @@ body {
     cursor: pointer;
 }
 
-.close-menu {
+.check {
     display: none;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .checkbtn {
-        display: block;
-        z-index: 1002;
-    }
+/* Close Button */
+.close-menu {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #002d62;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1002;
+}
 
+.close-menu:hover {
+    color: #457b9d;
+}
+
+@media (max-width: 768px) {
     nav {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         width: 100%;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.5);
         visibility: hidden;
         opacity: 0;
         transition: all 0.3s ease-in-out;
-        z-index: 1001;
+        z-index: 1001; /* Keep this higher */
     }
-
+    
     .nav-links {
         position: absolute;
         top: 0;
@@ -124,49 +127,89 @@ body {
         justify-content: center;
         align-items: center;
         transition: all 0.3s ease-in-out;
-        padding-top: 60px;
     }
 
-    .nav-links li {
-        margin: 1.5rem 0;
-    }
-
-    .nav-links li a {
-        font-size: 1.2rem;
-    }
-
+    /* Ensure the close button is visible and clickable */
     .close-menu {
-        display: block;
         position: absolute;
         top: 20px;
         right: 20px;
+        z-index: 1002; /* This should be higher than nav */
+        display: block;
         background: none;
         border: none;
         font-size: 24px;
         color: #002d62;
         cursor: pointer;
+    }
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .checkbtn {
+        display: block;
         z-index: 1002;
     }
-
-    .close-menu:hover {
-        color: #457b9d;
+    
+    nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        z-index: 1001;
+    }
+    
+    .nav-links {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: #ffffff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+    }
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+    .nav-links li a {
+        font-size: 1.2rem;
+    }
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1002; /* This should be higher than nav */
+        display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #002d62;
+        cursor: pointer;
+        display: None;
     }
 
     /* Menu Open State */
     #check:checked ~ nav {
-        right: 0;
         visibility: visible;
         opacity: 1;
     }
-
     #check:checked ~ nav .nav-links {
         right: 0;
     }
-
+    /* Hide hamburger when menu is open */
     #check:checked ~ .checkbtn {
         display: none;
     }
 }
+
 .main-header .logo {
     display: flex;
     align-items: center;
