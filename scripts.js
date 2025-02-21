@@ -1,21 +1,44 @@
 // Navigation state management functions
 function restoreNavigationMenu() {
-    const navMenu = document.querySelector('nav');
+    const checkbox = document.getElementById('check');
+    const nav = document.querySelector('nav');
     const navLinks = document.querySelector('.nav-links');
-    if (navMenu && navLinks) {
-        navMenu.style.visibility = 'visible';
-        navMenu.style.opacity = '1';
-        navLinks.style.right = '0';
+    const closeBtn = document.querySelector('.close-menu');
+
+    if (nav) {
+        nav.style.visibility = 'visible';
+        nav.style.opacity = '1';
+    }
+
+    if (navLinks) {
+        navLinks.style.right = '-100%'; // Reset to default closed position
+    }
+
+    if (checkbox) {
+        checkbox.checked = false; // Ensure checkbox is unchecked
+    }
+
+    if (closeBtn) {
+        closeBtn.style.display = 'none';
     }
 }
 
 function handleNavigation(targetUrl) {
-    history.pushState({ menuVisible: true }, '', targetUrl);
+    const menuState = {
+        menuVisible: true,
+        checkboxState: document.getElementById('check')?.checked || false
+    };
+    history.pushState(menuState, '', targetUrl);
 }
 
 window.onpopstate = function(event) {
-    if (event.state && event.state.menuVisible) {
+    if (event.state) {
         restoreNavigationMenu();
+        if (event.state.checkboxState) {
+            toggleMobileMenu(true);
+        } else {
+            toggleMobileMenu(false);
+        }
     }
 };
 
@@ -53,27 +76,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const nav = document.querySelector('nav');
         const navLinks = document.querySelector('.nav-links');
         const closeBtn = document.querySelector('.close-menu');
-
+        
         if (checkbox) {
-            checkbox.checked = show;
+        checkbox.checked = show;
         }
-
+        
         if (nav) {
-            nav.style.visibility = show ? 'visible' : 'hidden';
-            nav.style.opacity = show ? '1' : '0';
+        nav.style.visibility = show ? 'visible' : 'hidden';
+        nav.style.opacity = show ? '1' : '0';
         }
-
+        
         if (navLinks) {
-            navLinks.style.right = show ? '0' : '-100%';
+        navLinks.style.right = show ? '0' : '-100%';
         }
-
+        
         if (closeBtn) {
-            closeBtn.style.display = show ? 'block' : 'none';
+        closeBtn.style.display = show ? 'block' : 'none';
         }
-
+        
+        // Update history state
+        handleNavigation(window.location.href);
         // Handle scroll-to-top button
+        
         if (window.scrollY > 300) {
-            scrollTopBtn.style.display = show ? 'none' : 'block';
+        scrollTopBtn.style.display = show ? 'none' : 'block';
         }
     }
 
