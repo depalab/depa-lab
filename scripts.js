@@ -72,34 +72,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to toggle mobile menu
     function toggleMobileMenu(show) {
-        const checkbox = document.getElementById('check');
         const nav = document.querySelector('nav');
         const navLinks = document.querySelector('.nav-links');
         const closeBtn = document.querySelector('.close-menu');
+        const checkbox = document.getElementById('check');
         
-        if (checkbox) {
-        checkbox.checked = show;
-        }
+        // Check if we're on mobile (window width <= 768px)
+        const isMobile = window.innerWidth <= 768;
         
         if (nav) {
-        nav.style.visibility = show ? 'visible' : 'hidden';
-        nav.style.opacity = show ? '1' : '0';
+            if (isMobile) {
+                nav.dataset.visible = show;
+            } else {
+                nav.dataset.visible = 'true'; // Always true on desktop
+            }
         }
         
-        if (navLinks) {
-        navLinks.style.right = show ? '0' : '-100%';
+        if (checkbox) {
+            checkbox.checked = show && isMobile;
         }
-        
         if (closeBtn) {
-        closeBtn.style.display = show ? 'block' : 'none';
+            closeBtn.style.display = show && isMobile ? 'block' : 'none';
         }
         
-        // Update history state
-        handleNavigation(window.location.href);
         // Handle scroll-to-top button
-        
         if (window.scrollY > 300) {
-        scrollTopBtn.style.display = show ? 'none' : 'block';
+            scrollTopBtn.style.display = show && isMobile ? 'none' : 'block';
         }
     }
 
