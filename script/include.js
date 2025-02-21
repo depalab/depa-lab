@@ -1,14 +1,20 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if we're in a subdirectory by looking at the path
+    // Check if we're on the index page
+    const isIndexPage = window.location.pathname.endsWith('index.html') || 
+                       window.location.pathname.endsWith('/');
     const isInSubdirectory = window.location.pathname.includes('/pages/');
     const basePath = isInSubdirectory ? '../' : '';
     
-    loadComponent('header-container', `${basePath}components/header.html`);
+    // Only load the header component if we're not on the index page
+    if (!isIndexPage) {
+        loadComponent('header-container', `${basePath}components/header.html`);
+    }
+    
+    // Always load the footer component
     loadComponent('footer-container', `${basePath}components/footer.html`);
 });
 
-// Single loadComponent function
 function loadComponent(containerId, componentPath) {
     const container = document.getElementById(containerId);
     if (container) {
