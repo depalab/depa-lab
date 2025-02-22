@@ -52,20 +52,6 @@ body {
 
 /* Desktop Navigation */
 
-nav {
-    visibility: visible !important;
-     z-index: 1000 !important;
-}
-
-.btn, a {
-    position: relative;
-    z-index: 2000 !important; /* Ensure buttons and links are on top */
-}
-
-a {
-    pointer-events: auto !important;
-}
-
 .nav-links {
     display: flex;
     list-style: none;
