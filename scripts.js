@@ -1,4 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
+    // Check if we're in a subdirectory
+    const isInSubdirectory = window.location.pathname.includes('/pages/');
+    const basePath = isInSubdirectory ? '../' : '';
+    
+    // Load components
+    loadComponent('header-container', `${basePath}components/header.html`);
+    loadComponent('footer-container', `${basePath}components/footer.html`);
+
+    // Function to load components
+    function loadComponent(containerId, componentPath) {
+        const container = document.getElementById(containerId);
+        if (container) {
+            fetch(componentPath)
+                .then(response => response.text())
+                .then(data => {
+                    container.innerHTML = data;
+                })
+                .catch(error => console.error('Error loading component:', error));
+        }
+    }
+
     // Function to close mobile menu
     function closeMobileMenu() {
         const checkbox = document.getElementById('check');
@@ -7,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Mobile Menu Toggle
+    // Mobile Menu Elements
     const checkBtn = document.querySelector('.checkbtn');
     const checkbox = document.getElementById('check');
     const closeBtn = document.querySelector('.close-menu');
@@ -24,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
         checkBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             checkbox.checked = !checkbox.checked;
-            // Hide scroll button when menu opens
             scrollTopBtn.style.display = 'none';
         });
     }
@@ -57,13 +77,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.preventDefault();
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) {
-                    // First scroll to the section
                     targetSection.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
                     });
                     
-                    // Then close the menu after a short delay
                     setTimeout(() => {
                         closeMobileMenu();
                     }, 300);
@@ -97,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Carousel Arrow Functionality
+    // Carousel Elements and Functionality
     const teamCarousel = document.querySelector('.team-carousel');
     const leftArrow = document.querySelector('.left-arrow');
     const rightArrow = document.querySelector('.right-arrow');
@@ -147,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Team Members Array
+    // Team Members Data
     const teamMembers = [
         { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
         { name: "Tasmeer Alam", role: "AI Researcher", image: "images/Tasmeer_Alam.jpeg" },
