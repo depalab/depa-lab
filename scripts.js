@@ -22,36 +22,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Function to toggle mobile menu
-    function toggleMobileMenu() {
+    function toggleMobileMenu(show) {
         const checkbox = document.getElementById('check');
         const nav = document.querySelector('nav');
         const navLinks = document.querySelector('.nav-links');
-        const menuIcon = document.querySelector('.checkbtn'); 
+        const closeBtn = document.querySelector('.close-menu');
 
-        const isOpen = menuIcon.classList.contains('menu-open'); 
-        menuIcon.classList.toggle('menu-open', !isOpen); 
-        if (checkbox) checkbox.checked = !isOpen;
+        if (checkbox) checkbox.checked = show;
         if (nav) {
-            nav.style.visibility = !isOpen ? 'visible' : 'hidden';
-            nav.style.opacity = !isOpen ? '1' : '0';
+            nav.style.visibility = show ? 'visible' : 'hidden';
+            nav.style.opacity = show ? '1' : '0';
         }
-        if (navLinks) navLinks.style.right = !isOpen ? '0' : '-100%';
+        if (navLinks) navLinks.style.right = show ? '0' : '-100%';
+        if (closeBtn) closeBtn.style.display = show ? 'block' : 'none';
+
+        if (window.scrollY > 300) {
+            scrollTopBtn.style.display = show ? 'none' : 'block';
+        }
     }
 
     // Function to close mobile menu
     function closeMobileMenu() {
-        const checkbox = document.getElementById('check');
-        const menuIcon = document.querySelector('.checkbtn');
-        const nav = document.querySelector('nav');
-        const navLinks = document.querySelector('.nav-links');
-
-        if (checkbox) checkbox.checked = false;
-        if (nav) {
-            nav.style.visibility = 'hidden';
-            nav.style.opacity = '0';
-        }
-        if (navLinks) navLinks.style.right = '-100%';
-        if (menuIcon) menuIcon.classList.remove('menu-open'); 
+        toggleMobileMenu(false);
     }
 
     // Create scroll-to-top button
@@ -63,12 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initializeEventListeners() {
         const checkBtn = document.querySelector('.checkbtn');
+        const closeBtn = document.querySelector('.close-menu');
         const navLinks = document.querySelector('.nav-links');
 
         if (checkBtn) {
             checkBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                toggleMobileMenu(); 
+                toggleMobileMenu(true);
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeMobileMenu();
             });
         }
 
@@ -76,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', (e) => {
                 const targetId = link.getAttribute('href').split('#')[1];
 
+                // Only close menu on mobile
                 if (window.matchMedia("(max-width: 768px)").matches) {
                     closeMobileMenu();
                 }
@@ -97,10 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             const checkbox = document.getElementById('check');
-            const menuIcon = document.querySelector('.checkbtn'); 
             if (checkbox?.checked) {
                 const isClickInsideMenu = navLinks?.contains(e.target);
-                const isClickOnButton = menuIcon?.contains(e.target);
+                const isClickOnButton = checkBtn?.contains(e.target);
 
                 if (!isClickInsideMenu && !isClickOnButton) {
                     closeMobileMenu();
@@ -190,7 +190,10 @@ document.addEventListener('DOMContentLoaded', () => {
         teamMembers.forEach(member => {
             const cardHTML = `
                 <div class="card" tabindex="0">
-                    <img src="${member.image}" alt="${member.name}" class="team-photo" onerror="this.src='images/placeholder.jpg'">
+                    <img src="${member.image}" 
+                         alt="${member.name}" 
+                         class="team-photo"
+                         onerror="this.src='images/placeholder.jpg'">
                     <h3>${member.name}</h3>
                     <p>${member.role}</p>
                 </div>
