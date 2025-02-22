@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const checkbox = document.getElementById('check');
         const nav = document.querySelector('nav');
         const navLinks = document.querySelector('.nav-links');
-        const closeBtn = document.querySelector('.close-menu');
+        const checkBtn = document.querySelector('.checkbtn');
 
         if (checkbox) checkbox.checked = show;
         if (nav) {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.style.opacity = show ? '1' : '0';
         }
         if (navLinks) navLinks.style.right = show ? '0' : '-100%';
-        if (closeBtn) closeBtn.style.display = show ? 'block' : 'none';
+        if (checkBtn) checkBtn.style.display = show ? 'none' : 'block';
 
         if (window.scrollY > 300) {
             scrollTopBtn.style.display = show ? 'none' : 'block';
@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initializeEventListeners() {
         const checkBtn = document.querySelector('.checkbtn');
-        const closeBtn = document.querySelector('.close-menu');
         const navLinks = document.querySelector('.nav-links');
 
         if (checkBtn) {
@@ -65,18 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        if (closeBtn) {
-            closeBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                closeMobileMenu();
-            });
-        }
-
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', (e) => {
                 const targetId = link.getAttribute('href').split('#')[1];
 
-                // Only close menu on mobile
                 if (window.matchMedia("(max-width: 768px)").matches) {
                     closeMobileMenu();
                 }
@@ -98,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             const checkbox = document.getElementById('check');
+            const checkBtn = document.querySelector('.checkbtn');
             if (checkbox?.checked) {
                 const isClickInsideMenu = navLinks?.contains(e.target);
                 const isClickOnButton = checkBtn?.contains(e.target);
