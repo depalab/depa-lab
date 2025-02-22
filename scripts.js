@@ -63,20 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initializeEventListeners() {
         const checkBtn = document.querySelector('.checkbtn');
-        const closeBtn = document.querySelector('.close-menu');
         const navLinks = document.querySelector('.nav-links');
 
         if (checkBtn) {
             checkBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 toggleMobileMenu(); 
-            });
-        }
-
-        if (closeBtn) {
-            closeBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                closeMobileMenu();
             });
         }
 
