@@ -38,7 +38,7 @@ body {
 
 /* Header Styles */
 .main-header {
-    display: flex!important;
+    display: flex !important;
     align-items: center;
     justify-content: space-between;
     background-color: #ffffff;
@@ -51,14 +51,13 @@ body {
 }
 
 /* Desktop Navigation */
-
 .nav-links {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
     gap: 1.5rem;
-    z-index: 1001 !important; 
+    z-index: 1001 !important;
 }
 
 .nav-links li a {
@@ -73,12 +72,21 @@ body {
     color: #333333;
 }
 
-/* Menu Controls */
+/* Hamburger Menu (☰) - Mobile */
 .checkbtn {
-    display: none;
+    display: block;
     font-size: 30px;
     color: #002d62;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    z-index: 1002;
+}
+
+/* Change Hamburger (☰) to Close (✖) when menu is open */
+.checkbtn.menu-open::before {
+    content: '✖';  /* Unicode for 'X' (Close) */
+    font-size: 32px;
+    color: #002d62;
 }
 
 .check {
@@ -104,55 +112,8 @@ body {
     color: #457b9d;
 }
 
-@media (max-width: 768px) {
-    nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5);
-        visibility: hidden;
-        opacity: 0;
-        transition: all 0.3s ease-in-out;
-        z-index: 1001; /* Keep this higher */
-    }
-    
-    .nav-links {
-        position: absolute;
-        top: 0;
-        right: -100%;
-        width: 75%;
-        height: 100vh;
-        background-color: #ffffff;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s ease-in-out;
-    }
-
-    /* Ensure the close button is visible and clickable */
-    .close-menu {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 1002; /* This should be higher than nav */
-        display: block;
-        background: none;
-        border: none;
-        font-size: 24px;
-        color: #002d62;
-        cursor: pointer;
-    }
-}
-
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
-    .checkbtn {
-        display: block;
-        z-index: 1002;
-    }
-    
     nav {
         position: fixed;
         top: 0;
@@ -165,7 +126,7 @@ body {
         transition: all 0.3s ease-in-out;
         z-index: 1001;
     }
-    
+
     .nav-links {
         position: absolute;
         top: 0;
@@ -178,24 +139,13 @@ body {
         align-items: center;
         transition: all 0.3s ease-in-out;
     }
+
     .nav-links li {
         margin: 1.5rem 0;
     }
+
     .nav-links li a {
         font-size: 1.2rem;
-    }
-    .close-menu {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 1002; /* This should be higher than nav */
-        display: block;
-        background: none;
-        border: none;
-        font-size: 24px;
-        color: #002d62;
-        cursor: pointer;
-        display: None;
     }
 
     /* Menu Open State */
@@ -203,10 +153,12 @@ body {
         visibility: visible;
         opacity: 1;
     }
+
     #check:checked ~ nav .nav-links {
         right: 0;
     }
-    /* Hide hamburger when menu is open */
+
+    /* Hide hamburger menu when menu is open */
     #check:checked ~ .checkbtn {
         display: none;
     }
