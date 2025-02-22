@@ -114,12 +114,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(scrollTopBtn);
 
     function initializeEventListeners() {
-        // Mobile Menu Elements
+    // Mobile Menu Elements
         const checkBtn = document.querySelector('.checkbtn');
         const checkbox = document.getElementById('check');
         const closeBtn = document.querySelector('.close-menu');
         const navLinks = document.querySelector('.nav-links');
-
+        
         // Toggle menu on hamburger icon click
         if (checkBtn) {
             checkBtn.addEventListener('click', (e) => {
@@ -127,28 +127,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 toggleMobileMenu(true);
             });
         }
-
+        
         // Close button functionality
         if (closeBtn) {
             closeBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                closeMobileMenu();
+                toggleMobileMenu(false);
             });
         }
-
+        
         // Navigation Links Click Handling
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', (e) => {
                 const targetId = link.getAttribute('href').split('#')[1];
                 
-                // Close the mobile menu immediately
-                closeMobileMenu();
+                // Force mobile menu to close
+                if (window.innerWidth <= 768) {
+                    toggleMobileMenu(false);
+                    if (checkbox) {
+                        checkbox.checked = false;
+                    }
+                    if (navLinks) {
+                        
+                        navLinks.style.right = '-100%';
+                    }
+                }
                 
                 if (!targetId) return;
-
+                
                 if (window.location.pathname.includes('pages/')) {
+                    
                     window.location.href = `../index.html#${targetId}`;
+                
                 } else {
+                    
                     e.preventDefault();
                     const targetSection = document.getElementById(targetId);
                     if (targetSection) {
