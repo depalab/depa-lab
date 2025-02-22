@@ -51,6 +51,9 @@ body {
 }
 
 /* Desktop Navigation */
+.nav-item {
+    visibility: visible !important;
+}
 
 .nav-links {
     display: flex;
