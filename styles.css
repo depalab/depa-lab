@@ -38,7 +38,7 @@ body {
 
 /* Header Styles */
 .main-header {
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #ffffff;
