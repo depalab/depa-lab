@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const checkbox = document.getElementById('check');
         const nav = document.querySelector('nav');
         const navLinks = document.querySelector('.nav-links');
-        const closeBtn = document.querySelector('.close-menu');
+        const menuIcon = document.querySelector('.checkbtn'); // Select the menu button
 
         if (checkbox) checkbox.checked = show;
         if (nav) {
@@ -34,10 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.style.opacity = show ? '1' : '0';
         }
         if (navLinks) navLinks.style.right = show ? '0' : '-100%';
-        if (closeBtn) closeBtn.style.display = show ? 'block' : 'none';
 
-        if (window.scrollY > 300) {
-            scrollTopBtn.style.display = show ? 'none' : 'block';
+        // Ensure the menu icon changes correctly
+        if (menuIcon) {
+            menuIcon.classList.toggle('menu-open', show);
         }
     }
 
@@ -61,7 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (checkBtn) {
             checkBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                toggleMobileMenu(true);
+                const isMenuOpen = checkBtn.classList.contains('menu-open');
+                toggleMobileMenu(!isMenuOpen); // Toggle based on current state
             });
         }
 
@@ -98,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             const checkbox = document.getElementById('check');
+            const menuIcon = document.querySelector('.checkbtn'); // Ensure icon resets
             if (checkbox?.checked) {
                 const isClickInsideMenu = navLinks?.contains(e.target);
                 const isClickOnButton = checkBtn?.contains(e.target);
