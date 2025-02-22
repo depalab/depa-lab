@@ -74,7 +74,7 @@ body {
 
 /* Hamburger Menu (☰) - Mobile */
 .checkbtn {
-    display: block;
+    display: none; /* Hidden by default */
     font-size: 30px;
     color: #002d62;
     cursor: pointer;
@@ -148,6 +148,23 @@ body {
         font-size: 1.2rem;
     }
 
+    /* Default Hamburger Menu (☰) */
+    .checkbtn {
+        display: block; /* Show hamburger on mobile */
+        font-size: 30px;
+        color: #002d62;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        z-index: 1002;
+    }
+
+    /* Change Hamburger Menu (☰) to Close (✖) when menu is open */
+    .checkbtn.menu-open::before {
+        content: '✖'; /* Show close button (X) when menu is open */
+        font-size: 32px;
+        color: #002d62;
+    }
+
     /* Menu Open State */
     #check:checked ~ nav {
         visibility: visible;
@@ -163,6 +180,14 @@ body {
         display: none;
     }
 }
+
+/* Hide hamburger menu on desktop */
+@media (min-width: 769px) {
+    .checkbtn {
+        display: none;
+    }
+}
+
 
 .main-header .logo {
     display: flex;
