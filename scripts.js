@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check if we're in a subdirectory
     const isInSubdirectory = window.location.pathname.includes('/pages/');
     const basePath = isInSubdirectory ? '../' : '';
-    
+
     // Load components
     loadComponent('header-container', `${basePath}components/header.html`);
     loadComponent('footer-container', `${basePath}components/footer.html`);
@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(response => response.text())
                 .then(data => {
                     container.innerHTML = data;
-                    // After loading components, reinitialize event listeners
                     initializeEventListeners();
                 })
                 .catch(error => console.error('Error loading component:', error));
@@ -29,24 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const navLinks = document.querySelector('.nav-links');
         const closeBtn = document.querySelector('.close-menu');
 
-        if (checkbox) {
-            checkbox.checked = show;
-        }
-
+        if (checkbox) checkbox.checked = show;
         if (nav) {
             nav.style.visibility = show ? 'visible' : 'hidden';
             nav.style.opacity = show ? '1' : '0';
         }
+        if (navLinks) navLinks.style.right = show ? '0' : '-100%';
+        if (closeBtn) closeBtn.style.display = show ? 'block' : 'none';
 
-        if (navLinks) {
-            navLinks.style.right = show ? '0' : '-100%';
-        }
-
-        if (closeBtn) {
-            closeBtn.style.display = show ? 'block' : 'none';
-        }
-
-        // Handle scroll-to-top button
         if (window.scrollY > 300) {
             scrollTopBtn.style.display = show ? 'none' : 'block';
         }
@@ -65,13 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(scrollTopBtn);
 
     function initializeEventListeners() {
-        // Mobile Menu Elements
         const checkBtn = document.querySelector('.checkbtn');
-        const checkbox = document.getElementById('check');
         const closeBtn = document.querySelector('.close-menu');
         const navLinks = document.querySelector('.nav-links');
 
-        // Toggle menu on hamburger icon click
         if (checkBtn) {
             checkBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -79,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Close button functionality
         if (closeBtn) {
             closeBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -87,14 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Navigation Links Click Handling
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', (e) => {
                 const targetId = link.getAttribute('href').split('#')[1];
-                
-                // Close the mobile menu immediately
-                closeMobileMenu();
-                
+
+                // Only close menu on mobile
+                if (window.matchMedia("(max-width: 768px)").matches) {
+                    closeMobileMenu();
+                }
+
                 if (!targetId) return;
 
                 if (window.location.pathname.includes('pages/')) {
@@ -103,10 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     e.preventDefault();
                     const targetSection = document.getElementById(targetId);
                     if (targetSection) {
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 }
             });
@@ -118,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (checkbox?.checked) {
                 const isClickInsideMenu = navLinks?.contains(e.target);
                 const isClickOnButton = checkBtn?.contains(e.target);
-                
+
                 if (!isClickInsideMenu && !isClickOnButton) {
                     closeMobileMenu();
                 }
@@ -126,10 +109,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initialize event listeners for initial load
     initializeEventListeners();
 
-    // Rest of your existing code (Fade-In Animation, Carousel, etc.)
+    // Fade-In Animation
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -150,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
         leftArrow.addEventListener('click', () => teamCarousel.scrollBy({ left: -300, behavior: 'smooth' }));
         rightArrow.addEventListener('click', () => teamCarousel.scrollBy({ left: 300, behavior: 'smooth' }));
 
-        // Handle keyboard navigation for accessibility
         teamCarousel.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') {
                 e.preventDefault();
@@ -170,11 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollPos = window.scrollY + 100;
         const checkbox = document.getElementById('check');
         const menuOpen = checkbox?.checked;
-        
-        // Handle scroll-to-top button visibility
+
         scrollTopBtn.style.display = (window.scrollY > 300 && !menuOpen) ? 'block' : 'none';
-        
-        // Handle active section highlighting
+
         sections.forEach(section => {
             if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
                 navLinksArray.forEach(link => {
@@ -192,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Team Members Data
+    // Complete Team Members Data
     const teamMembers = [
         { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
         { name: "Tasmeer Alam", role: "AI Researcher", image: "images/Tasmeer_Alam.jpeg" },
@@ -207,7 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "David Nyarko", role: "Research Assistant", image: "images/david-nyarko.JPG" }
     ];
 
-    // Populate Team Carousel
     if (teamCarousel) {
         teamMembers.forEach(member => {
             const cardHTML = `
