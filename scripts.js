@@ -1,135 +1,91 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Check if we're in a subdirectory
-    const isInSubdirectory = window.location.pathname.includes('/pages/');
-    const basePath = isInSubdirectory ? '../' : '';
-    
-    // Load components
-    loadComponent('header-container', `${basePath}components/header.html`);
-    loadComponent('footer-container', `${basePath}components/footer.html`);
-
-    // Function to load components
-    function loadComponent(containerId, componentPath) {
-        const container = document.getElementById(containerId);
-        if (container) {
-            fetch(componentPath)
-                .then(response => response.text())
-                .then(data => {
-                    container.innerHTML = data;
-                    // After loading components, reinitialize event listeners
-                    initializeEventListeners();
-                })
-                .catch(error => console.error('Error loading component:', error));
-        }
-    }
-
-    // Function to toggle mobile menu
-    function toggleMobileMenu(show) {
-        const checkbox = document.getElementById('check');
-        const nav = document.querySelector('nav');
-        const navLinks = document.querySelector('.nav-links');
-        const closeBtn = document.querySelector('.close-menu');
-
-        if (checkbox) {
-            checkbox.checked = show;
-        }
-
-        if (nav) {
-            nav.style.visibility = show ? 'visible' : 'hidden';
-            nav.style.opacity = show ? '1' : '0';
-        }
-
-        if (navLinks) {
-            navLinks.style.right = show ? '0' : '-100%';
-        }
-
-        if (closeBtn) {
-            closeBtn.style.display = show ? 'block' : 'none';
-        }
-
-        // Handle scroll-to-top button
-        if (window.scrollY > 300) {
-            scrollTopBtn.style.display = show ? 'none' : 'block';
-        }
-    }
-
+document.addEventListener("DOMContentLoaded", () => {
     // Function to close mobile menu
     function closeMobileMenu() {
-        toggleMobileMenu(false);
+        const checkbox = document.getElementById('check');
+        if (checkbox) {
+            checkbox.checked = false;
+        }
     }
 
-    // Create scroll-to-top button
+    // Mobile Menu Toggle
+    const checkBtn = document.querySelector('.checkbtn');
+    const checkbox = document.getElementById('check');
+    const closeBtn = document.querySelector('.close-menu');
     const scrollTopBtn = document.createElement('button');
+
+    // Initialize scroll-to-top button
     scrollTopBtn.textContent = '↑';
     scrollTopBtn.classList.add('scroll-to-top');
     scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
     document.body.appendChild(scrollTopBtn);
 
-    function initializeEventListeners() {
-        // Mobile Menu Elements
-        const checkBtn = document.querySelector('.checkbtn');
-        const checkbox = document.getElementById('check');
-        const closeBtn = document.querySelector('.close-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        // Toggle menu on hamburger icon click
-        if (checkBtn) {
-            checkBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                toggleMobileMenu(true);
-            });
-        }
-
-        // Close button functionality
-        if (closeBtn) {
-            closeBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                closeMobileMenu();
-            });
-        }
-
-        // Navigation Links Click Handling
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                const targetId = link.getAttribute('href').split('#')[1];
-                
-                // Close the mobile menu immediately
-                closeMobileMenu();
-                
-                if (!targetId) return;
-
-                if (window.location.pathname.includes('pages/')) {
-                    window.location.href = `../index.html#${targetId}`;
-                } else {
-                    e.preventDefault();
-                    const targetSection = document.getElementById(targetId);
-                    if (targetSection) {
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            const checkbox = document.getElementById('check');
-            if (checkbox?.checked) {
-                const isClickInsideMenu = navLinks?.contains(e.target);
-                const isClickOnButton = checkBtn?.contains(e.target);
-                
-                if (!isClickInsideMenu && !isClickOnButton) {
-                    closeMobileMenu();
-                }
-            }
+    // Toggle menu on hamburger icon click
+    if (checkBtn && checkbox) {
+        checkBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            checkbox.checked = !checkbox.checked;
+            // Hide scroll button when menu opens
+            scrollTopBtn.style.display = 'none';
         });
     }
 
-    // Initialize event listeners for initial load
-    initializeEventListeners();
+    // Close button functionality
+    if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeMobileMenu();
+        });
+    }
 
-    // Rest of your existing code (Fade-In Animation, Carousel, etc.)
+    // Add change event listener to checkbox
+    checkbox?.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            scrollTopBtn.style.display = 'none';
+        }
+    });
+
+    // Navigation Links Click Handling
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href').split('#')[1];
+            
+            if (!targetId) return;
+
+            if (window.location.pathname.includes('pages/')) {
+                window.location.href = `../index.html#${targetId}`;
+            } else {
+                e.preventDefault();
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    // First scroll to the section
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Then close the menu after a short delay
+                    setTimeout(() => {
+                        closeMobileMenu();
+                    }, 300);
+                }
+            }
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        const navLinks = document.querySelector('.nav-links');
+        if (checkbox?.checked) {
+            const isClickInsideMenu = navLinks?.contains(e.target);
+            const isClickOnButton = checkBtn?.contains(e.target);
+            
+            if (!isClickInsideMenu && !isClickOnButton) {
+                closeMobileMenu();
+            }
+        }
+    });
+
+    // Fade-In Animation
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -141,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Carousel Elements and Functionality
+    // Carousel Arrow Functionality
     const teamCarousel = document.querySelector('.team-carousel');
     const leftArrow = document.querySelector('.left-arrow');
     const rightArrow = document.querySelector('.right-arrow');
@@ -162,13 +118,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Active Link Highlighting and Scroll-to-Top Button Visibility
+    // Active Link Highlighting
     const sections = document.querySelectorAll('section');
     const navLinksArray = document.querySelectorAll('.nav-links a');
 
     window.addEventListener('scroll', () => {
         const scrollPos = window.scrollY + 100;
-        const checkbox = document.getElementById('check');
         const menuOpen = checkbox?.checked;
         
         // Handle scroll-to-top button visibility
@@ -192,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Team Members Data
+    // Team Members Array
     const teamMembers = [
         { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
         { name: "Tasmeer Alam", role: "AI Researcher", image: "images/Tasmeer_Alam.jpeg" },
