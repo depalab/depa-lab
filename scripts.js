@@ -26,18 +26,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const navLinks = document.querySelector('.nav-links');
         const menuIcon = document.querySelector('.checkbtn'); 
 
-        const isOpen = menuIcon.classList.contains('menu-open'); 
-        menuIcon.classList.toggle('menu-open', !isOpen); 
+        const isOpen = checkbox.checked; // Check if open
+        checkbox.checked = !isOpen; // Toggle the checkbox state
 
-        if (checkbox) checkbox.checked = !isOpen;
+        // Toggle visibility
         if (nav) {
             nav.style.visibility = !isOpen ? 'visible' : 'hidden';
             nav.style.opacity = !isOpen ? '1' : '0';
         }
-        if (navLinks) navLinks.style.right = !isOpen ? '0' : '-100%';
+        if (navLinks) {
+            navLinks.style.right = !isOpen ? '0' : '-100%';
+        }
 
-        // Hide the hamburger menu when open
-        menuIcon.innerHTML = isOpen ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
+        // Toggle the icon
+        if (menuIcon) {
+            menuIcon.innerHTML = isOpen ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
+        }
     }
 
     function closeMobileMenu() {
@@ -53,16 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (navLinks) navLinks.style.right = '-100%';
         if (menuIcon) {
-            menuIcon.classList.remove('menu-open'); 
-            menuIcon.innerHTML = '<i class="fas fa-bars"></i>'; // Reset to hamburger menu
+            menuIcon.innerHTML = '<i class="fas fa-bars"></i>'; // Reset icon to ☰
         }
     }
-
-    const scrollTopBtn = document.createElement('button');
-    scrollTopBtn.textContent = '↑';
-    scrollTopBtn.classList.add('scroll-to-top');
-    scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
-    document.body.appendChild(scrollTopBtn);
 
     function initializeEventListeners() {
         const checkBtn = document.querySelector('.checkbtn');
@@ -114,6 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeEventListeners();
 
     // Scroll-to-top functionality
+    const scrollTopBtn = document.createElement('button');
+    scrollTopBtn.textContent = '↑';
+    scrollTopBtn.classList.add('scroll-to-top');
+    scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
+    document.body.appendChild(scrollTopBtn);
+
     scrollTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
