@@ -54,6 +54,16 @@ body {
 
 nav {
     visibility: visible !important;
+     z-index: 1000 !important;
+}
+
+.btn, a {
+    position: relative;
+    z-index: 2000 !important; /* Ensure buttons and links are on top */
+}
+
+a {
+    pointer-events: auto !important;
 }
 
 .nav-links {
@@ -62,6 +72,7 @@ nav {
     margin: 0;
     padding: 0;
     gap: 1.5rem;
+    z-index: 1001 !important; 
 }
 
 .nav-links li a {
