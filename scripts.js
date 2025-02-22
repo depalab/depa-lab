@@ -22,28 +22,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Function to toggle mobile menu
-    function toggleMobileMenu(show) {
+    function toggleMobileMenu() {
         const checkbox = document.getElementById('check');
         const nav = document.querySelector('nav');
         const navLinks = document.querySelector('.nav-links');
-        const menuIcon = document.querySelector('.checkbtn'); // Select the menu button
+        const menuIcon = document.querySelector('.checkbtn'); 
 
-        if (checkbox) checkbox.checked = show;
+        const isOpen = menuIcon.classList.contains('menu-open'); 
+        menuIcon.classList.toggle('menu-open', !isOpen); 
+        if (checkbox) checkbox.checked = !isOpen;
         if (nav) {
-            nav.style.visibility = show ? 'visible' : 'hidden';
-            nav.style.opacity = show ? '1' : '0';
+            nav.style.visibility = !isOpen ? 'visible' : 'hidden';
+            nav.style.opacity = !isOpen ? '1' : '0';
         }
-        if (navLinks) navLinks.style.right = show ? '0' : '-100%';
-
-        // Ensure the menu icon changes correctly
-        if (menuIcon) {
-            menuIcon.classList.toggle('menu-open', show);
-        }
+        if (navLinks) navLinks.style.right = !isOpen ? '0' : '-100%';
     }
 
     // Function to close mobile menu
     function closeMobileMenu() {
-        toggleMobileMenu(false);
+        const checkbox = document.getElementById('check');
+        const menuIcon = document.querySelector('.checkbtn');
+        const nav = document.querySelector('nav');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (checkbox) checkbox.checked = false;
+        if (nav) {
+            nav.style.visibility = 'hidden';
+            nav.style.opacity = '0';
+        }
+        if (navLinks) navLinks.style.right = '-100%';
+        if (menuIcon) menuIcon.classList.remove('menu-open'); 
     }
 
     // Create scroll-to-top button
@@ -61,8 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (checkBtn) {
             checkBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                const isMenuOpen = checkBtn.classList.contains('menu-open');
-                toggleMobileMenu(!isMenuOpen); // Toggle based on current state
+                toggleMobileMenu(); 
             });
         }
 
@@ -77,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', (e) => {
                 const targetId = link.getAttribute('href').split('#')[1];
 
-                // Only close menu on mobile
                 if (window.matchMedia("(max-width: 768px)").matches) {
                     closeMobileMenu();
                 }
@@ -99,10 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             const checkbox = document.getElementById('check');
-            const menuIcon = document.querySelector('.checkbtn'); // Ensure icon resets
+            const menuIcon = document.querySelector('.checkbtn'); 
             if (checkbox?.checked) {
                 const isClickInsideMenu = navLinks?.contains(e.target);
-                const isClickOnButton = checkBtn?.contains(e.target);
+                const isClickOnButton = menuIcon?.contains(e.target);
 
                 if (!isClickInsideMenu && !isClickOnButton) {
                     closeMobileMenu();
@@ -192,10 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
         teamMembers.forEach(member => {
             const cardHTML = `
                 <div class="card" tabindex="0">
-                    <img src="${member.image}" 
-                         alt="${member.name}" 
-                         class="team-photo"
-                         onerror="this.src='images/placeholder.jpg'">
+                    <img src="${member.image}" alt="${member.name}" class="team-photo" onerror="this.src='images/placeholder.jpg'">
                     <h3>${member.name}</h3>
                     <p>${member.role}</p>
                 </div>
