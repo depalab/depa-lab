@@ -1,52 +1,4 @@
-// Navigation state management functions
-function restoreNavigationMenu() {
-    const checkbox = document.getElementById('check');
-    const nav = document.querySelector('nav');
-    const navLinks = document.querySelector('.nav-links');
-    const closeBtn = document.querySelector('.close-menu');
-
-    if (nav) {
-        nav.style.visibility = 'visible';
-        nav.style.opacity = '1';
-    }
-
-    if (navLinks) {
-        navLinks.style.right = '-100%'; // Reset to default closed position
-    }
-
-    if (checkbox) {
-        checkbox.checked = false; // Ensure checkbox is unchecked
-    }
-
-    if (closeBtn) {
-        closeBtn.style.display = 'none';
-    }
-}
-
-function handleNavigation(targetUrl) {
-    const menuState = {
-        menuVisible: true,
-        checkboxState: document.getElementById('check')?.checked || false
-    };
-    history.pushState(menuState, '', targetUrl);
-}
-
-window.onpopstate = function(event) {
-    if (event.state) {
-        restoreNavigationMenu();
-        if (event.state.checkboxState) {
-            toggleMobileMenu(true);
-        } else {
-            toggleMobileMenu(false);
-        }
-    }
-};
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize history state
-    history.replaceState({ menuVisible: true }, '');
-    restoreNavigationMenu();
-
     // Check if we're in a subdirectory
     const isInSubdirectory = window.location.pathname.includes('/pages/');
     const basePath = isInSubdirectory ? '../' : '';
@@ -72,32 +24,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to toggle mobile menu
     function toggleMobileMenu(show) {
+        const checkbox = document.getElementById('check');
         const nav = document.querySelector('nav');
         const navLinks = document.querySelector('.nav-links');
         const closeBtn = document.querySelector('.close-menu');
-        const checkbox = document.getElementById('check');
-        
-        // Check if we're on mobile (window width <= 768px)
-        const isMobile = window.innerWidth <= 768;
-        
-        if (nav) {
-            if (isMobile) {
-                nav.dataset.visible = show;
-            } else {
-                nav.dataset.visible = 'true'; // Always true on desktop
-            }
-        }
-        
+
         if (checkbox) {
-            checkbox.checked = show && isMobile;
+            checkbox.checked = show;
         }
+
+        if (nav) {
+            nav.style.visibility = show ? 'visible' : 'hidden';
+            nav.style.opacity = show ? '1' : '0';
+        }
+
+        if (navLinks) {
+            navLinks.style.right = show ? '0' : '-100%';
+        }
+
         if (closeBtn) {
-            closeBtn.style.display = show && isMobile ? 'block' : 'none';
+            closeBtn.style.display = show ? 'block' : 'none';
         }
-        
+
         // Handle scroll-to-top button
         if (window.scrollY > 300) {
-            scrollTopBtn.style.display = show && isMobile ? 'none' : 'block';
+            scrollTopBtn.style.display = show ? 'none' : 'block';
         }
     }
 
@@ -114,12 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(scrollTopBtn);
 
     function initializeEventListeners() {
-    // Mobile Menu Elements
+        // Mobile Menu Elements
         const checkBtn = document.querySelector('.checkbtn');
         const checkbox = document.getElementById('check');
         const closeBtn = document.querySelector('.close-menu');
         const navLinks = document.querySelector('.nav-links');
-        
+
         // Toggle menu on hamburger icon click
         if (checkBtn) {
             checkBtn.addEventListener('click', (e) => {
@@ -127,40 +78,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 toggleMobileMenu(true);
             });
         }
-        
+
         // Close button functionality
         if (closeBtn) {
             closeBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                toggleMobileMenu(false);
+                closeMobileMenu();
             });
         }
-        
+
         // Navigation Links Click Handling
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', (e) => {
                 const targetId = link.getAttribute('href').split('#')[1];
                 
-                // Force mobile menu to close
-                if (window.innerWidth <= 768) {
-                    toggleMobileMenu(false);
-                    if (checkbox) {
-                        checkbox.checked = false;
-                    }
-                    if (navLinks) {
-                        
-                        navLinks.style.right = '-100%';
-                    }
-                }
+                // Close the mobile menu immediately
+                closeMobileMenu();
                 
                 if (!targetId) return;
-                
+
                 if (window.location.pathname.includes('pages/')) {
-                    
                     window.location.href = `../index.html#${targetId}`;
-                
                 } else {
-                    
                     e.preventDefault();
                     const targetSection = document.getElementById(targetId);
                     if (targetSection) {
