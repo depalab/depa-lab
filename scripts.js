@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const isOpen = checkbox.checked; // Check if open
         checkbox.checked = !isOpen; // Toggle the checkbox state
 
-        // Toggle visibility
         if (nav) {
             nav.style.visibility = !isOpen ? 'visible' : 'hidden';
             nav.style.opacity = !isOpen ? '1' : '0';
@@ -38,9 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.style.right = !isOpen ? '0' : '-100%';
         }
 
-        // Toggle the icon
+        // Hide or show the hamburger menu
         if (menuIcon) {
-            menuIcon.innerHTML = isOpen ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
+            menuIcon.style.display = isOpen ? 'block' : 'none'; 
         }
     }
 
@@ -56,8 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.style.opacity = '0';
         }
         if (navLinks) navLinks.style.right = '-100%';
+        
+        // Ensure the hamburger menu reappears
         if (menuIcon) {
-            menuIcon.innerHTML = '<i class="fas fa-bars"></i>'; // Reset icon to ☰
+            menuIcon.style.display = 'block';
         }
     }
 
