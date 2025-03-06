@@ -168,14 +168,14 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "images/nyarko.jpg" },
         { name: "Tasmeer Alam", role: "AI Researcher", image: "images/Tasmeer_Alam.jpeg" },
         { name: "Cynthia Nosiri", role: "AI Researcher", image: "images/Cynthia.jpeg" },
-        { name: "Derrick Cook", role: "Research Assistant", image: "images/Derrick_Cook.PNG" },
-        { name: "Rezoan Sultan", role: "Research Assistant", image: "images/Rezoan_Sultan.jpeg" },
+        { name: "Derrick Cook", role: "AI Researcher", image: "images/Derrick_Cook.PNG" },
+        { name: "Rezoan Sultan", role: "Generative AI Researcher", image: "images/Rezoan_Sultan.jpeg" },
         { name: "Benjamin Hall", role: "Researcher", image: "images/Benjamin Hall.jpg" },
-        { name: "Emmanuel Masa-ibi", role: "Research Assistant", image: "images/Emmanuel Masa-ibi.jpeg" },
-        { name: "Awotwi Baffoe", role: "Research Assistant", image: "images/Awotwi_Baffoe.jpg" },
-        { name: "Opeyemi Adeniran", role: "Research Assistant", image: "images/Opeyemi.PNG" },
+        { name: "Emmanuel Masa-ibi", role: "AI Researcher", image: "images/Emmanuel Masa-ibi.jpeg" },
+        { name: "Awotwi Baffoe", role: "AI Researcher", image: "images/Awotwi_Baffoe.jpg" },
+        { name: "Opeyemi Adeniran", role: "AI Researcher", image: "images/Opeyemi.PNG" },
         { name: "Anjolie Anthony", role: "Researcher", image: "images/Anjolie.JPG" },
-        { name: "David Nyarko", role: "Research Assistant", image: "images/david-nyarko.JPG" }
+        { name: "David Nyarko", role: "AI Researcher", image: "images/david-nyarko.JPG" }
     ];
 
     if (teamCarousel) {
