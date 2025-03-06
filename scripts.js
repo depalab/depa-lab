@@ -173,9 +173,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "Benjamin Hall", role: "Researcher", image: "images/Benjamin Hall.jpg" },
         { name: "Emmanuel Masa-ibi", role: "AI Researcher", image: "images/Emmanuel Masa-ibi.jpeg" },
         { name: "Awotwi Baffoe", role: "AI Researcher", image: "images/Awotwi_Baffoe.jpg" },
-        { name: "Opeyemi Adeniran", role: "AI Researcher", image: "images/Opeyemi.PNG" },
+        { name: "Opeyemi Adeniran", role: "AI Researcher", image: "images/opeyemi.JPG" },
         { name: "Anjolie Anthony", role: "Researcher", image: "images/Anjolie.JPG" },
-        { name: "Binisa Giri", role: "AI Researcher", image: "images/images/giri-1.png" },
+        { name: "Binisa Giri", role: "AI Researcher", image: "images/giri-1.png" },
         { name: "David Nyarko", role: "AI Researcher", image: "images/david-nyarko.JPG" }
     ];
 
