@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "Derrick Cook", role: "AI Researcher", image: "images/Derrick_Cook.PNG" },
         { name: "Rezoan Sultan", role: "Generative AI Researcher", image: "images/Rezoan_Sultan.jpeg" },
         { name: "Benjamin Hall", role: "Researcher", image: "images/Benjamin Hall.jpg" },
-        { name: "Emmanuel Masa-ibi", role: "AI Researcher", image: "images/Emmanuel Masa-ibi.jpeg" },
+        { name: "Emmanuel Masa-ibi", role: "Researcher", image: "images/Emmanuel Masa-ibi.jpeg" },
         { name: "Awotwi Baffoe", role: "AI Researcher", image: "images/Awotwi_Baffoe.jpg" },
         { name: "Opeyemi Adeniran", role: "AI Researcher", image: "images/opeyemi.JPG" },
         { name: "Anjolie Anthony", role: "Researcher", image: "images/Anjolie.JPG" },
