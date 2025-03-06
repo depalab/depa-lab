@@ -175,6 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "Awotwi Baffoe", role: "AI Researcher", image: "images/Awotwi_Baffoe.jpg" },
         { name: "Opeyemi Adeniran", role: "AI Researcher", image: "images/Opeyemi.PNG" },
         { name: "Anjolie Anthony", role: "Researcher", image: "images/Anjolie.JPG" },
+        { name: "Binisa Giri", role: "AI Researcher", image: "images/david-nyarko.JPG" },
         { name: "David Nyarko", role: "AI Researcher", image: "images/david-nyarko.JPG" }
     ];
 
