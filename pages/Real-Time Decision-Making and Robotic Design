@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEPA Lab - Research</title>
+    
+    <!-- Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles/pagestyles.css">
+
+      <!-- scripts -->
+    <script defer src="../scripts.js"></script>
+    
+</head>
+
+<body>
+    <div id="header-container"></div>
+
+<main>
+
+<section class="page-banner">
+  <div class="banner-content">
+  </div>
+</section>
+
+<section class="Real-Time Decision-Making and Robotic Design">
+    <div class="container">
+        <h2 class="section-title">Research Overview</h2>
+    <p class="section-subtitle">Research Interests: Edge Computing, Robotics, CAD Modeling, Real-Time Decision-Making, Autonomous Systems</p>
+        <div class="content-single">
+            <div class="content-card">
+                <div class="card-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h3>Advancing Real-Time Decision-Making and Robotic Design through Edge Computing and CAD Optimization</h3>
+                <p>This research leverages edge computing technologies, such as the Nvidia Jetson Nano and Raspberry Pi with Google Coral TPU, to enable real-time, on-device decision-making without relying on cloud-based systems. By integrating software and hardware expertise, the research aims to optimize navigation algorithms for efficiency, accuracy, and adaptability in complex, dynamic settings. Additionally, by leveraging my proficiency in CAD tools, I design innovative robotic solutions that overcome physical limitations through precise modeling and structural optimization to enhance functionality and accessibility. This research contributes to the broader goal of enhancing autonomous systems' capabilities in real-world applications.
+               </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        
+    </main>
+
+    <!-- Footer -->
+   <div id="footer-container"></div>
+</body>
+</html>
