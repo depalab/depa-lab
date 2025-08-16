@@ -193,25 +193,8 @@ const DepaLabHomepage = () => {
       <main className="flex-grow pt-16 sm:pt-20 md:pt-24">
         
         {/* Hero Section */}
-        <section id="hero" className="relative mb-16 sm:mb-24 md:mb-32 pt-8 sm:pt-12 md:pt-20 min-h-screen flex items-center">
-          {/* Hero Background Image */}
-          <div 
-            className="absolute inset-0 z-0"
-            style={{
-              backgroundImage: 'url(/images/hero.jpeg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              backgroundAttachment: 'fixed'
-            }}
-          >
-            {/* Gradient overlay for better text readability and visual depth */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
-            {/* Additional overlay for enhanced contrast */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-transparent to-purple-900/20"></div>
-          </div>
-          
-          <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
+        <section id="hero" className="relative mb-16 sm:mb-24 md:mb-32 pt-8 sm:pt-12 md:pt-20">
+          <div className="container mx-auto px-4 sm:px-6 text-center">
             
             {/* Animated Badge */}
             <div className="flex items-center justify-center gap-2 sm:gap-4 mb-6 sm:mb-8 md:mb-10 animate-pulse">
@@ -250,9 +233,9 @@ const DepaLabHomepage = () => {
               </span>
             </h1>
             
-            <p className="text-xl sm:text-2xl md:text-3xl text-gray-100 mb-8 sm:mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed font-light"
+            <p className="text-xl sm:text-2xl md:text-3xl text-gray-200 mb-8 sm:mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed font-light"
                style={{
-                 textShadow: '2px 2px 6px rgba(0,0,0,0.9)',
+                 textShadow: '1px 1px 3px rgba(0,0,0,0.8)',
                  fontFamily: '"Inter", sans-serif'
                }}>
               Driving innovation at the intersection of technology and impact.
@@ -261,33 +244,10 @@ const DepaLabHomepage = () => {
             <div className="h-1 sm:h-2 w-16 sm:w-24 md:w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full shadow-2xl mb-8 sm:mb-12 md:mb-16"
                  style={{boxShadow: '0 0 40px rgba(59, 130, 246, 0.6)'}}></div>
             
-            {/* Call to Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-              <a 
-                href="#research" 
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-blue-500/30"
-              >
-                Explore Our Research
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </a>
-              
-              <a 
-                href="#projects" 
-                className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white/30 hover:border-white/60 text-white rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm hover:bg-white/10"
-              >
-                View Projects
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
-            
             {/* Floating Elements */}
-            <div className="hidden lg:block absolute top-20 left-10 w-20 h-20 bg-blue-400/20 rounded-full blur-xl animate-bounce"></div>
-            <div className="hidden lg:block absolute bottom-20 right-10 w-32 h-32 bg-purple-400/20 rounded-full blur-xl animate-pulse"></div>
-            <div className="hidden lg:block absolute top-1/2 left-1/4 w-16 h-16 bg-blue-400/20 rounded-full blur-xl animate-ping"></div>
+            <div className="hidden sm:block absolute top-20 left-10 w-20 h-20 bg-blue-400/20 rounded-full blur-xl animate-bounce"></div>
+            <div className="hidden sm:block absolute bottom-20 right-10 w-32 h-32 bg-purple-400/20 rounded-full blur-xl animate-pulse"></div>
+            <div className="hidden sm:block absolute top-1/2 left-1/4 w-16 h-16 bg-blue-400/20 rounded-full blur-xl animate-ping"></div>
           </div>
         </section>
 
@@ -682,13 +642,6 @@ const DepaLabHomepage = () => {
         /* Smooth scrolling */
         html {
           scroll-behavior: smooth;
-        }
-
-        /* Parallax effect for background */
-        @media (min-width: 768px) {
-          .hero-bg {
-            background-attachment: fixed;
-          }
         }
       `}</style>
     </div>
