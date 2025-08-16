@@ -192,9 +192,29 @@ const DepaLabHomepage = () => {
       {/* Main Content */}
       <main className="flex-grow pt-16 sm:pt-20 md:pt-24">
         
-        {/* Hero Section */}
-        <section id="hero" className="relative mb-16 sm:mb-24 md:mb-32 pt-8 sm:pt-12 md:pt-20">
-          <div className="container mx-auto px-4 sm:px-6 text-center">
+        {/* Hero Section with Background Image */}
+        <section id="hero" className="relative mb-16 sm:mb-24 md:mb-32 pt-8 sm:pt-12 md:pt-20 min-h-screen flex items-center">
+          {/* Hero Background Image */}
+          <div 
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: 'url(images/depa2.jpeg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+            }}
+          />
+          
+          {/* Hero Overlay for better text readability */}
+          <div 
+            className="absolute inset-0 z-10"
+            style={{
+              background: 'linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(26,26,46,0.8) 40%, rgba(15,52,96,0.7) 100%)'
+            }}
+          />
+          
+          {/* Hero Content */}
+          <div className="container mx-auto px-4 sm:px-6 text-center relative z-20">
             
             {/* Animated Badge */}
             <div className="flex items-center justify-center gap-2 sm:gap-4 mb-6 sm:mb-8 md:mb-10 animate-pulse">
@@ -219,14 +239,14 @@ const DepaLabHomepage = () => {
                   background: 'linear-gradient(135deg, #ffffff 0%, #e8f4ff 50%, #ffffff 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
-                  textShadow: '0 0 40px rgba(255,255,255,0.3), 0 0 80px rgba(59, 130, 246, 0.2)',
+                  textShadow: '0 0 40px rgba(255,255,255,0.5), 0 0 80px rgba(59, 130, 246, 0.3)',
                   filter: 'drop-shadow(3px 3px 6px rgba(0,0,0,0.9))'
                 }}>
               Welcome to{' '}
               <span className="block mt-2 sm:mt-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-400 to-blue-500"
                     style={{
                       textShadow: 'none',
-                      filter: 'drop-shadow(0 0 20px rgba(59, 130, 246, 0.5))',
+                      filter: 'drop-shadow(0 0 20px rgba(59, 130, 246, 0.7))',
                       animation: 'glow 2s ease-in-out infinite alternate'
                     }}>
                 DEPA Research Lab
@@ -235,19 +255,42 @@ const DepaLabHomepage = () => {
             
             <p className="text-xl sm:text-2xl md:text-3xl text-gray-200 mb-8 sm:mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed font-light"
                style={{
-                 textShadow: '1px 1px 3px rgba(0,0,0,0.8)',
+                 textShadow: '2px 2px 4px rgba(0,0,0,0.9)',
                  fontFamily: '"Inter", sans-serif'
                }}>
               Driving innovation at the intersection of technology and impact.
             </p>
             
-            <div className="h-1 sm:h-2 w-16 sm:w-24 md:w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full shadow-2xl mb-8 sm:mb-12 md:mb-16"
+            {/* Call to Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8 sm:mb-12 md:mb-16">
+              <a 
+                href="#research" 
+                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-blue-500/25"
+              >
+                Explore Our Research
+              </a>
+              <a 
+                href="#projects" 
+                className="px-8 py-4 bg-transparent border-2 border-white/30 hover:border-blue-400 text-white hover:text-blue-300 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
+              >
+                View Projects
+              </a>
+            </div>
+            
+            <div className="h-1 sm:h-2 w-16 sm:w-24 md:w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full shadow-2xl"
                  style={{boxShadow: '0 0 40px rgba(59, 130, 246, 0.6)'}}></div>
             
             {/* Floating Elements */}
             <div className="hidden sm:block absolute top-20 left-10 w-20 h-20 bg-blue-400/20 rounded-full blur-xl animate-bounce"></div>
             <div className="hidden sm:block absolute bottom-20 right-10 w-32 h-32 bg-purple-400/20 rounded-full blur-xl animate-pulse"></div>
             <div className="hidden sm:block absolute top-1/2 left-1/4 w-16 h-16 bg-blue-400/20 rounded-full blur-xl animate-ping"></div>
+          </div>
+          
+          {/* Scroll Down Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+            </div>
           </div>
         </section>
 
@@ -613,8 +656,8 @@ const DepaLabHomepage = () => {
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
         
         @keyframes glow {
-          0%, 100% { filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.5)); }
-          50% { filter: drop-shadow(0 0 40px rgba(59, 130, 246, 0.8)); }
+          0%, 100% { filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.7)); }
+          50% { filter: drop-shadow(0 0 40px rgba(59, 130, 246, 1)); }
         }
         
         * {
