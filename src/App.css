@@ -1,7 +1,39 @@
+// src/App.css
 .App {
   text-align: center;
 }
 
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom scrollbar styles */
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -14,11 +46,20 @@
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(45deg, rgba(59, 130, 246, 0.6), rgba(147, 51, 234, 0.6));
   border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, rgba(59, 130, 246, 0.8), rgba(147, 51, 234, 0.8));
+}
+
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
+
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
   font-family: 'Inter', sans-serif;
