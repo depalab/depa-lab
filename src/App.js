@@ -11,7 +11,7 @@ import Symposium from './components/Symposium';
 import Team from './components/Team';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ResearchComponents from './components/research/ResearchComponents';
+// import GlobalStyles from './components/GlobalStyles'; // Comment this out
 import GlobalStyles from './components/GlobalStyles';
 import './App.css';
 
@@ -64,7 +64,7 @@ const App = () => {
       </main>
 
       <Footer />
-      <GlobalStyles />
+      // {/* <GlobalStyles /> */} {/* Comment this out */}
     </div>
   );
 };
