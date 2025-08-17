@@ -4,6 +4,7 @@ const DepaLabHomepage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [currentTeamIndex, setCurrentTeamIndex] = useState(0);
+  const [currentView, setCurrentView] = useState('home');
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -70,38 +71,359 @@ const DepaLabHomepage = () => {
     }
   ];
 
+  // Updated projects with research links
   const projects = [
     {
       title: "AI Assistive Comprehension Assessor",
       description: "Developing an AI-powered tool to evaluate student comprehension by analyzing essays and generating quizzes in Canvas QTI/XML format.",
-      link: "#"
+      link: "ai-comprehension",
+      icon: "📚"
     },
     {
       title: "Benchmarking LLMs for AAVE & SAE",
       description: "Assessing leading LLMs for their ability to generate dialect-specific text while maintaining semantic consistency.",
-      link: "#"
+      link: "llm-benchmarking",
+      icon: "🗣️"
     },
     {
       title: "Ground Plane Segmentation for Wheelchair Mobility",
       description: "Utilizing real-time segmentation techniques within the SAM framework to improve navigation for wheelchair users.",
-      link: "#"
+      link: "wheelchair-mobility",
+      icon: "♿"
     },
     {
       title: "AI/ML Bench Guard",
       description: "A benchmarking framework for evaluating cloud-based and open-source ML services across various tasks.",
-      link: "#"
+      link: "ml-bench-guard",
+      icon: "📊"
     },
     {
-      title: "Advanced Academic Support System",
-      description: "Integrating Generative AI into an academic advisory system to provide instant, AI-driven responses.",
-      link: "#"
+      title: "AI Models in Action Recognition",
+      description: "Integrating YOLO detections and LLM vision to analyze video frames and generate detailed scene reports.",
+      link: "ai-action-recognition",
+      icon: "🎬"
     },
     {
       title: "Queryable Computer Vision Pipeline",
       description: "Developing a scalable system that allows data analysts to execute SQL-like queries on video content.",
-      link: "#"
+      link: "queryable-cv",
+      icon: "🔍"
+    },
+    {
+      title: "Crack Detection in Structural Materials",
+      description: "Advanced machine learning techniques to detect cracks and structural anomalies in construction materials.",
+      link: "crack-detection",
+      icon: "🔧"
+    },
+    {
+      title: "Multi-Object Tracking in Video Analysis",
+      description: "Innovative approaches to enhance tracking of multiple subjects across video frames in complex scenarios.",
+      link: "multi-object-tracking",
+      icon: "🎯"
+    },
+    {
+      title: "Real-Time Decision-Making and Robotic Design",
+      description: "Leveraging edge computing for autonomous systems with CAD optimization and real-time navigation.",
+      link: "robotic-design",
+      icon: "🤖"
     }
   ];
+
+  // Research Components (these would typically be in separate files)
+  const ResearchComponents = {
+    'ai-comprehension': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                📚
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">AI Assistive Comprehension Assessor</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                The AI Assistive Comprehension Assessor (AACA) is an AI-powered tool designed to help educators evaluate students' comprehension of academic material. By analyzing student-written essays, AACA generates custom quizzes in Canvas QTI/XML format, ensuring that students grasp key concepts rather than relying on AI-generated responses.
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                The system automates quiz creation and processes multiple-choice questions with correct answer validation, streamlining assessment workflows for educators. AACA enhances personalized learning by providing targeted evaluations, improving both student engagement and academic outcomes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'llm-benchmarking': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                🗣️
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">Benchmarking Large Language Models for AAVE and SAE Text Generation</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                Our research explores the performance of state-of-the-art AI language models in generating text in African American Vernacular English (AAVE) and Standard American English (SAE). We are benchmarking six leading models—GPT-4, Claude 3.5 Sonnet, Gemini 1.5 Pro, LLaMA 3.1, Qwen, and GPT-o1—to assess their ability to maintain semantic consistency, lexical similarity, and sentiment alignment when generating dialect-specific text.
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                Using a structured evaluation framework, we analyzed model-generated continuations of AAVE and SAE prompts through BLEU and ROUGE scores for text overlap, cosine similarity for semantic consistency, and sentiment distribution analysis to measure alignment with original text sentiment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'wheelchair-mobility': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                ♿
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">Real-Time Segmentation of the Ground Plane for Enhanced Wheelchair Mobility</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                This research project addresses the critical need for enhancing mobility for wheelchair users by focusing on real-time segmentation of the ground plane while excluding obstacles. The significance lies in overcoming challenges faced by wheelchair users in navigating diverse environments.
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                The objective is to develop a segmentation model within the SAM framework capable of accurately delineating the ground surface to facilitate uninterrupted movement for wheelchair users, utilizing adaptive learning algorithms and machine learning techniques.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'ml-bench-guard': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                📊
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">AI/ML Bench Guard Framework</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Project Overview</h3>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                AI/ML Bench Guard is a comprehensive benchmarking framework for evaluating cloud-based, LLM, and open-source machine learning services. The system conducts automated performance assessments across multiple providers, including AWS, Azure, GCP, and open-source alternatives.
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                By implementing standardized testing protocols and continuous monitoring, the framework enables objective comparison of service performance, reliability, and cost-effectiveness while analyzing potential biases in model outputs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'ai-action-recognition': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                🎬
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">AI Models in Action Recognition Video Analysis</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                The CLAIRE (Cross-Referencing Labels, Actions, and Interactions for Robust Explanations) project aims to integrate YOLO detections and LLM vision to analyze video frames, cross-reference object/person–person/person interactions, and generate detailed reports of the video frame's scene.
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                This research explores both the benefits and restraints of utilizing AI models in action recognition video analysis, extending to CCTV footage and everyday video recordings.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'queryable-cv': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                🔍
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">Queryable Computer Vision Pipeline</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                This research aims to make video data analysis more accessible by creating a scalable architecture that allows data analysts to execute insightful SQL queries without needing advanced computer vision skills.
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                The project leverages cutting-edge algorithms for object detection, tracking, and instance segmentation to develop a framework that extracts pertinent information from video content.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'crack-detection': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                🔧
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">Crack Detection and Classification in Structural Materials</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                This project utilizes advanced machine learning techniques to detect cracks and structural anomalies in materials under stress. By identifying early-stage cracks, monitoring their propagation, and analyzing their orientation, we aim to improve the durability and reliability of materials commonly used in construction and engineering.
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                Early detection of these defects enables proactive maintenance, reducing the risk of structural failures and ensuring long-term safety and performance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'multi-object-tracking': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                🎯
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">Innovative Techniques for Multi-Object Tracking in Video Analysis</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Project Overview</h3>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                This research explores cutting-edge approaches to enhance the ability to track individuals across video frames accurately and consistently. This work focuses on creating systems that can reliably identify and follow multiple subjects, even in complex scenarios where challenges such as overlaps, occlusions, and varying movements arise.
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                By leveraging innovative methodologies for detection, feature extraction, and tracking, this research aims to push the boundaries of video analysis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'robotic-design': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                🤖
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">Advancing Real-Time Decision-Making and Robotic Design</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
+              <p className="text-gray-300 text-lg mb-4">
+                <strong>Research Interests:</strong> Edge Computing, Robotics, CAD Modeling, Real-Time Decision-Making, Autonomous Systems
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                This research leverages edge computing technologies, such as the Nvidia Jetson Nano and Raspberry Pi with Google Coral TPU, to enable real-time, on-device decision-making without relying on cloud-based systems. By integrating software and hardware expertise, the research aims to optimize navigation algorithms for efficiency, accuracy, and adaptability in complex, dynamic settings.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  };
+
+  if (currentView !== 'home' && ResearchComponents[currentView]) {
+    const Component = ResearchComponents[currentView];
+    return <Component />;
+  }
 
   return (
     <div 
@@ -485,7 +807,7 @@ const DepaLabHomepage = () => {
           </div>
         </section>
 
-        {/* Projects Section */}
+        {/* Projects Section - Updated with Links */}
         <section id="projects" className="mb-16 sm:mb-24 md:mb-32">
           <div className="container mx-auto px-4 sm:px-6">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 sm:mb-8 md:mb-12 text-center" 
@@ -511,6 +833,9 @@ const DepaLabHomepage = () => {
               {projects.map((project, index) => (
                 <div key={index} className="group transform hover:scale-105 transition-all duration-500">
                   <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl h-full hover:border-purple-500/40 transition-all duration-300">
+                    <div className="text-center mb-4">
+                      <div className="text-4xl mb-4">{project.icon}</div>
+                    </div>
                     <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-purple-300 transition-colors duration-300" 
                         style={{
                           textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
@@ -525,15 +850,15 @@ const DepaLabHomepage = () => {
                        }}>
                       {project.description}
                     </p>
-                    <a 
-                      href={project.link}
+                    <button 
+                      onClick={() => setCurrentView(project.link)}
                       className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25"
                     >
                       Learn More
                       <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
-                    </a>
+                    </button>
                   </div>
                 </div>
               ))}
