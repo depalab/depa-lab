@@ -1130,16 +1130,6 @@ const DepaLabHomepage = () => {
               </span>
             </h1>
             
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-100 mb-8 sm:mb-12 md:mb-16 max-w-5xl mx-auto leading-relaxed font-light px-4"
-               style={{
-                 textShadow: '2px 2px 4px rgba(0,0,0,0.9), 0 0 20px rgba(255,255,255,0.1)',
-                 fontFamily: '"Inter", sans-serif'
-               }}>
-              Driving innovation at the intersection of{' '}
-              <span className="text-blue-300 font-semibold">technology</span> and{' '}
-              <span className="text-purple-300 font-semibold">impact</span>.
-            </p>
-            
             {/* Enhanced Call to Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8 sm:mb-12 md:mb-16 px-4">
               <a 
