@@ -163,6 +163,406 @@ const DepaLabHomepage = () => {
       </div>
     ),
 
+    'publications': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl font-black text-white mb-8 text-center" 
+                style={{
+                  textShadow: '0 0 30px rgba(255,255,255,0.3), 3px 3px 6px rgba(0,0,0,0.9)',
+                  fontFamily: '"Inter", sans-serif'
+                }}>
+              Research{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-emerald-400 to-green-500">
+                Publications
+              </span>
+            </h1>
+            
+            <p className="text-xl text-gray-200 text-center mb-12 max-w-4xl mx-auto"
+               style={{
+                 textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                 fontFamily: '"Inter", sans-serif'
+               }}>
+              Explore our comprehensive contributions to research and innovation in AI, machine learning, and technology.
+            </p>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Publication 1 - AI/ML Systems Engineering */}
+              <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-3xl p-8 border border-white/20 shadow-2xl hover:border-green-500/40 transition-all duration-300">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white text-3xl shadow-xl">
+                    <i className="fas fa-cogs"></i>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-white mb-3" 
+                        style={{
+                          textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                          fontFamily: '"Inter", sans-serif'
+                        }}>
+                      AI/ML Systems Engineering Workbench Framework
+                    </h3>
+                    <span className="inline-block px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-semibold border border-green-500/30">
+                      IEEE CISS Conference
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 mb-6">
+                  <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
+                    <div className="grid grid-cols-1 gap-3">
+                      <div>
+                        <span className="text-green-300 font-semibold text-lg">Authors: </span>
+                        <span className="text-gray-200 text-lg">Dr. Kofi Nyarko, Emmanual Masa-Ibi</span>
+                      </div>
+                      <div>
+                        <span className="text-green-300 font-semibold text-lg">Published in: </span>
+                        <span className="text-gray-200 text-lg">Conference on Information Sciences and Systems (CISS)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <a 
+                  href="https://ieeexplore.ieee.org/document/10089781/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25"
+                >
+                  <i className="fas fa-external-link-alt mr-2"></i>
+                  Read Full Paper
+                </a>
+              </div>
+
+              {/* Publication 2 - Traffic Video Analysis */}
+              <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-3xl p-8 border border-white/20 shadow-2xl hover:border-green-500/40 transition-all duration-300">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full flex items-center justify-center text-white text-3xl shadow-xl">
+                    <i className="fas fa-video"></i>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-white mb-3" 
+                        style={{
+                          textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                          fontFamily: '"Inter", sans-serif'
+                        }}>
+                      Automated Traffic Video Analysis with Modular Computer Vision Pipeline
+                    </h3>
+                    <span className="inline-block px-4 py-2 bg-orange-500/20 text-orange-300 rounded-full text-sm font-semibold border border-orange-500/30">
+                      CISS - Paper Accepted
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 mb-6">
+                  <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+                    <div className="grid grid-cols-1 gap-3">
+                      <div>
+                        <span className="text-blue-300 font-semibold text-lg">Authors: </span>
+                        <span className="text-gray-200 text-lg">Tasmeer Alam, Dr. Kofi Nyarko</span>
+                      </div>
+                      <div>
+                        <span className="text-blue-300 font-semibold text-lg">Published in: </span>
+                        <span className="text-gray-200 text-lg">Conference on Information Sciences and Systems (CISS)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="inline-flex items-center px-6 py-3 bg-gray-500/20 text-gray-300 rounded-lg font-bold border border-gray-500/30">
+                  <i className="fas fa-clock mr-2"></i>
+                  Publication Pending
+                </div>
+              </div>
+
+              {/* Publication 3 - Network Intrusion */}
+              <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-3xl p-8 border border-white/20 shadow-2xl hover:border-green-500/40 transition-all duration-300">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl shadow-xl">
+                    <i className="fas fa-shield-alt"></i>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-white mb-3" 
+                        style={{
+                          textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                          fontFamily: '"Inter", sans-serif'
+                        }}>
+                      Network Intrusion Visualization with NIVA
+                    </h3>
+                    <span className="inline-block px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-sm font-semibold border border-purple-500/30">
+                      IEEE Haptic Symposium
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 mb-6">
+                  <div className="bg-purple-500/10 border border-purple-500/20 rounded-lg p-4">
+                    <div className="grid grid-cols-1 gap-3">
+                      <div>
+                        <span className="text-purple-300 font-semibold text-lg">Authors: </span>
+                        <span className="text-gray-200 text-lg">Kofi Nyarko, Tanya Capers, Craig Scott, Kemi Ladeji-Osias</span>
+                      </div>
+                      <div>
+                        <span className="text-purple-300 font-semibold text-lg">Published in: </span>
+                        <span className="text-gray-200 text-lg">10th Symposium on Haptic Interfaces for Virtual Environment and Teleoperator Systems</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <a 
+                  href="https://ieeexplore.ieee.org/abstract/document/998969"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-red-600 hover:from-purple-600 hover:to-red-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25"
+                >
+                  <i className="fas fa-external-link-alt mr-2"></i>
+                  Read Full Paper
+                </a>
+              </div>
+
+              {/* Publication 4 - Building Occupancy */}
+              <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-3xl p-8 border border-white/20 shadow-2xl hover:border-green-500/40 transition-all duration-300">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full flex items-center justify-center text-white text-3xl shadow-xl">
+                    <i className="fas fa-building"></i>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-white mb-3" 
+                        style={{
+                          textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                          fontFamily: '"Inter", sans-serif'
+                        }}>
+                      Cloud Based Passive Building Occupancy Characterization
+                    </h3>
+                    <span className="inline-block px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-semibold border border-yellow-500/30">
+                      IEEE HST Conference
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 mb-6">
+                  <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4">
+                    <div className="grid grid-cols-1 gap-3">
+                      <div>
+                        <span className="text-yellow-300 font-semibold text-lg">Authors: </span>
+                        <span className="text-gray-200 text-lg">Kofi Nyarko, Cecelia Wright-Brown</span>
+                      </div>
+                      <div>
+                        <span className="text-yellow-300 font-semibold text-lg">Published in: </span>
+                        <span className="text-gray-200 text-lg">IEEE International Conference on Technologies for Homeland Security (HST)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <a 
+                  href="https://ieeexplore.ieee.org/abstract/document/6699097"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-500/25"
+                >
+                  <i className="fas fa-external-link-alt mr-2"></i>
+                  Read Full Paper
+                </a>
+              </div>
+            </div>
+
+            {/* Research Impact Statement */}
+            <div className="mt-12 text-center">
+              <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500/20 to-emerald-600/20 border border-green-500/30 text-green-300 rounded-full font-bold backdrop-blur-sm text-lg">
+                <i className="fas fa-chart-line mr-3"></i>
+                Contributing to the Future of AI and Technology Research
+                <i className="fas fa-lightbulb ml-3"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'symposium': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl font-black text-white mb-8 text-center" 
+                style={{
+                  textShadow: '0 0 30px rgba(255,255,255,0.3), 3px 3px 6px rgba(0,0,0,0.9)',
+                  fontFamily: '"Inter", sans-serif'
+                }}>
+              CEAMLS Research{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-400 to-purple-500">
+                Symposium 2025
+              </span>
+            </h1>
+            
+            <p className="text-xl text-gray-200 text-center mb-12 max-w-4xl mx-auto"
+               style={{
+                 textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                 fontFamily: '"Inter", sans-serif'
+               }}>
+              Advancing Equitable AI: Our participation in the premier symposium on fairness and inclusivity in artificial intelligence.
+            </p>
+
+            {/* Main Event Card */}
+            <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-3xl p-8 md:p-12 border border-white/20 shadow-2xl mb-12 relative overflow-hidden">
+              
+              {/* Event Badge */}
+              <div className="absolute top-6 right-6">
+                <div className="w-24 h-24 bg-gradient-to-r from-purple-400 to-pink-600 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl animate-pulse">
+                  🎯
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Event Details */}
+                <div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl">
+                      <i className="fas fa-users"></i>
+                    </div>
+                    <div>
+                      <h2 className="text-3xl font-bold text-white" 
+                          style={{
+                            textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                            fontFamily: '"Inter", sans-serif'
+                          }}>
+                        CEAMLS Research Symposium
+                      </h2>
+                      <span className="inline-block px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-lg font-semibold border border-purple-500/30 mt-2">
+                        2025 • Focus: Equitable AI
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <div className="bg-purple-500/10 border border-purple-500/20 rounded-lg p-6">
+                      <h3 className="text-xl font-bold text-purple-300 mb-3">Our Research Presentation</h3>
+                      <p className="text-gray-200 leading-relaxed">
+                        <span className="text-pink-300 font-semibold">"Leveraging AI for Equitable Academic and Career Advisory Systems"</span> - 
+                        Presenting groundbreaking research on how artificial intelligence can be designed and implemented to ensure fair and inclusive 
+                        educational guidance and career counseling for students from diverse backgrounds.
+                      </p>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="bg-pink-500/10 border border-pink-500/20 rounded-lg p-4">
+                        <h4 className="font-semibold text-pink-300 mb-2">Focus Areas</h4>
+                        <ul className="text-gray-200 text-sm space-y-1">
+                          <li>• Bias Detection in AI Systems</li>
+                          <li>• Inclusive Algorithm Design</li>
+                          <li>• Educational Equity</li>
+                          <li>• Career Guidance AI</li>
+                        </ul>
+                      </div>
+                      <div className="bg-purple-500/10 border border-purple-500/20 rounded-lg p-4">
+                        <h4 className="font-semibold text-purple-300 mb-2">Expected Impact</h4>
+                        <ul className="text-gray-200 text-sm space-y-1">
+                          <li>• Enhanced Student Support</li>
+                          <li>• Reduced Educational Bias</li>
+                          <li>• Improved Career Outcomes</li>
+                          <li>• Community Collaboration</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Symposium Goals */}
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-6">Symposium Objectives</h3>
+                  <div className="space-y-4">
+                    <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-lg p-4">
+                      <div className="flex items-center gap-3 mb-2">
+                        <i className="fas fa-balance-scale text-purple-300 text-xl"></i>
+                        <h4 className="font-semibold text-white">Fairness & Inclusivity</h4>
+                      </div>
+                      <p className="text-gray-200 text-sm">Discussing innovative strategies for fostering fairness and inclusivity in AI applications across various domains.</p>
+                    </div>
+                    
+                    <div className="bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20 rounded-lg p-4">
+                      <div className="flex items-center gap-3 mb-2">
+                        <i className="fas fa-handshake text-pink-300 text-xl"></i>
+                        <h4 className="font-semibold text-white">Collaboration</h4>
+                      </div>
+                      <p className="text-gray-200 text-sm">Bringing together thought leaders, researchers, and practitioners to explore collaborative opportunities.</p>
+                    </div>
+                    
+                    <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-lg p-4">
+                      <div className="flex items-center gap-3 mb-2">
+                        <i className="fas fa-lightbulb text-purple-300 text-xl"></i>
+                        <h4 className="font-semibold text-white">Innovation</h4>
+                      </div>
+                      <p className="text-gray-200 text-sm">Sharing cutting-edge research insights and exploring new frontiers in equitable AI development.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute bottom-4 left-4 opacity-10">
+                <div className="text-8xl text-purple-400">🎯</div>
+              </div>
+              <div className="absolute top-1/4 right-1/4 opacity-5">
+                <div className="text-6xl text-pink-400">✨</div>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <a 
+                href="https://www.morgan.edu/ceamls/equitable-ai-symposium/equitable-ai-symposium-(2025)"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-purple-500/25"
+              >
+                <i className="fas fa-calendar-plus mr-3"></i>
+                Register for the Symposium
+                <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+              
+              <a 
+                href="https://www.morgan.edu/ceamls"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-purple-400 hover:border-pink-400 text-purple-300 hover:text-pink-300 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm hover:bg-purple-400/10"
+              >
+                <i className="fas fa-info-circle mr-3"></i>
+                Learn More About CEAMLS
+                <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Mission Statement */}
+            <div className="mt-12 text-center">
+              <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500/20 to-pink-600/20 border border-purple-500/30 text-purple-300 rounded-full font-bold backdrop-blur-sm text-lg">
+                <i className="fas fa-heart mr-3"></i>
+                Building a More Equitable Future Through AI Research and Collaboration
+                <i className="fas fa-users ml-3"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
     'llm-benchmarking': () => (
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
         <div className="container mx-auto px-4 py-16">
@@ -417,6 +817,138 @@ const DepaLabHomepage = () => {
           </div>
         </div>
       </div>
+    ),
+
+    'awards': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl font-black text-white mb-8 text-center" 
+                style={{
+                  textShadow: '0 0 30px rgba(255,255,255,0.3), 3px 3px 6px rgba(0,0,0,0.9)',
+                  fontFamily: '"Inter", sans-serif'
+                }}>
+              Awards and{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500">
+                Recognitions
+              </span>
+            </h1>
+            
+            <p className="text-xl text-gray-200 text-center mb-12 max-w-3xl mx-auto"
+               style={{
+                 textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                 fontFamily: '"Inter", sans-serif'
+               }}>
+              Celebrating excellence and innovation in research and technology.
+            </p>
+
+            {/* First Place Innovation Expo Award - Detailed View */}
+            <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-3xl p-8 md:p-12 border border-white/20 shadow-2xl mb-8 relative overflow-hidden">
+              
+              {/* Award Badge */}
+              <div className="absolute top-6 right-6">
+                <div className="w-20 h-20 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-white text-3xl shadow-2xl animate-pulse">
+                  🏆
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                {/* Award Icon & Title */}
+                <div className="text-center lg:text-left">
+                  <div className="w-32 h-32 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center text-white text-6xl shadow-2xl mx-auto lg:mx-0 mb-6">
+                    <i className="fas fa-award"></i>
+                  </div>
+                  <h2 className="text-3xl font-bold text-white mb-4" 
+                      style={{
+                        textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                        fontFamily: '"Inter", sans-serif'
+                      }}>
+                    First Place Innovation Expo Award
+                  </h2>
+                  <div className="space-y-2">
+                    <span className="block px-4 py-2 bg-yellow-500/20 text-yellow-300 rounded-full text-lg font-semibold border border-yellow-500/30">
+                      Morgan TechFest 2024
+                    </span>
+                    <span className="block px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-lg font-semibold border border-green-500/30">
+                      $2,000 Prize Winner
+                    </span>
+                  </div>
+                </div>
+                
+                {/* Award Details */}
+                <div className="lg:col-span-2">
+                  <h3 className="text-2xl font-bold text-blue-300 mb-4">Award Winner: David Nyarko</h3>
+                  
+                  <h4 className="text-xl font-semibold text-yellow-300 mb-4">
+                    Research Project: "Track-Based Autonomous Wheelchair Navigation for Airport Environments"
+                  </h4>
+                  
+                  <p className="text-gray-200 leading-relaxed text-lg mb-6" 
+                     style={{
+                       textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                       fontFamily: '"Inter", sans-serif'
+                     }}>
+                    The DEPA Lab achieved first place at the Morgan TechFest 2024 Innovation Expo with groundbreaking research in autonomous wheelchair navigation. This AI-driven system integrates advanced technologies including Ultralytics YOLOv8, QR Code navigation, LiDAR, and computer vision cameras to enhance mobility in crowded environments like airports.
+                  </p>
+                  
+                  <div className="mb-6">
+                    <h5 className="text-lg font-semibold text-white mb-3">Key Technologies:</h5>
+                    <div className="flex flex-wrap gap-3">
+                      {[
+                        'Ultralytics YOLOv8', 
+                        'QR Code Navigation', 
+                        'LiDAR Technology', 
+                        'Computer Vision', 
+                        'AI Path Planning',
+                        'Obstacle Avoidance',
+                        'Real-time Processing'
+                      ].map((tech) => (
+                        <span 
+                          key={tech} 
+                          className="px-3 py-2 bg-blue-500/20 text-blue-300 rounded-lg text-sm font-medium border border-blue-500/30 hover:bg-blue-500/30 transition-colors duration-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/20 rounded-lg p-4">
+                    <p className="text-yellow-200 font-medium">
+                      <i className="fas fa-lightbulb mr-2"></i>
+                      Innovation Impact: This research addresses critical mobility challenges in complex environments, ensuring efficient path-following and obstacle avoidance for enhanced accessibility and independence.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute bottom-4 left-4 opacity-10">
+                <div className="text-8xl text-yellow-400">🏆</div>
+              </div>
+              <div className="absolute top-1/4 right-1/4 opacity-5">
+                <div className="text-6xl text-blue-400">⭐</div>
+              </div>
+            </div>
+
+            {/* Future Awards Placeholder */}
+            <div className="text-center">
+              <div className="inline-flex items-center px-6 py-4 bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border border-yellow-500/30 text-yellow-300 rounded-full font-bold backdrop-blur-sm text-lg">
+                <i className="fas fa-trophy mr-3"></i>
+                Continuing Our Journey of Excellence in Research and Innovation
+                <i className="fas fa-star ml-3"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     )
   };
 
@@ -463,7 +995,7 @@ const DepaLabHomepage = () => {
             
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-6 lg:space-x-10">
-              {['Home', 'About', 'Research', 'Projects', 'Team', 'Contact'].map((item) => (
+              {['Home', 'About', 'Research', 'Projects', 'Awards', 'Publications', 'Symposium', 'Team', 'Contact'].map((item) => (
                 <a 
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -494,7 +1026,7 @@ const DepaLabHomepage = () => {
             <div className="md:hidden mt-4 sm:mt-6 pb-4 sm:pb-6 rounded-2xl" 
                  style={{background: 'rgba(0,0,0,0.8)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(20px)'}}>
               <div className="flex flex-col space-y-3 sm:space-y-5 p-4 sm:p-6">
-                {['Home', 'About', 'Research', 'Projects', 'Team', 'Contact'].map((item) => (
+                {['Home', 'About', 'Research', 'Projects', 'Awards', 'Publications', 'Symposium', 'Team', 'Contact'].map((item) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase()}`}
@@ -862,6 +1394,486 @@ const DepaLabHomepage = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Awards Section */}
+        <section id="awards" className="mb-16 sm:mb-24 md:mb-32">
+          <div className="container mx-auto px-4 sm:px-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 sm:mb-8 text-center" 
+                style={{
+                  textShadow: '0 0 30px rgba(255,255,255,0.3), 3px 3px 6px rgba(0,0,0,0.9)',
+                  fontFamily: '"Inter", sans-serif'
+                }}>
+              Awards and{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-400 to-blue-500">
+                Recognitions
+              </span>
+            </h2>
+            
+            <p className="text-lg sm:text-xl text-gray-200 text-center mb-8 sm:mb-12 max-w-3xl mx-auto"
+               style={{
+                 textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                 fontFamily: '"Inter", sans-serif'
+               }}>
+              Celebrating excellence and innovation in research and technology.
+            </p>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
+              {/* First Place Innovation Expo Award */}
+              <div className="group transform hover:scale-105 transition-all duration-500 lg:col-span-2 xl:col-span-3">
+                <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl hover:border-yellow-500/40 transition-all duration-300 relative overflow-hidden">
+                  
+                  {/* Award Badge */}
+                  <div className="absolute top-4 right-4">
+                    <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl animate-pulse">
+                      🏆
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-col lg:flex-row items-start gap-6">
+                    {/* Award Icon */}
+                    <div className="flex-shrink-0">
+                      <div className="w-24 h-24 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl transform group-hover:rotate-12 transition-transform duration-500">
+                        <i className="fas fa-award"></i>
+                      </div>
+                    </div>
+                    
+                    {/* Award Content */}
+                    <div className="flex-grow">
+                      <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-yellow-300 transition-colors duration-300" 
+                          style={{
+                            textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                            fontFamily: '"Inter", sans-serif'
+                          }}>
+                        First Place Innovation Expo Award
+                      </h3>
+                      
+                      <div className="mb-4">
+                        <span className="inline-block px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-semibold border border-yellow-500/30">
+                          Morgan TechFest 2024
+                        </span>
+                        <span className="inline-block ml-2 px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm font-semibold border border-green-500/30">
+                          $2,000 Prize
+                        </span>
+                      </div>
+                      
+                      <p className="text-blue-300 font-semibold mb-3" 
+                         style={{
+                           textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                           fontFamily: '"Inter", sans-serif'
+                         }}>
+                        Award Winner: David Nyarko
+                      </p>
+                      
+                      <p className="text-gray-200 leading-relaxed group-hover:text-gray-100 transition-colors duration-300" 
+                         style={{
+                           textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                           fontFamily: '"Inter", sans-serif'
+                         }}>
+                        The lab won first place at Morgan TechFest 2024 Innovation Expo with its groundbreaking research, <span className="text-yellow-300 font-semibold">'Track-Based Autonomous Wheelchair Navigation for Airport Environments.'</span> This AI-driven system integrates advanced technologies such as Ultralytics YOLOv8, QR Code navigation, LiDAR, and cameras to enhance mobility in crowded spaces like airports, ensuring efficient path-following and obstacle avoidance.
+                      </p>
+                      
+                      {/* Tech Stack */}
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {['YOLOv8', 'QR Navigation', 'LiDAR', 'Computer Vision', 'AI Navigation'].map((tech) => (
+                          <span 
+                            key={tech} 
+                            className="px-2 py-1 bg-blue-500/20 text-blue-300 rounded text-xs font-medium border border-blue-500/30"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Decorative Elements */}
+                  <div className="absolute bottom-4 left-4 opacity-10">
+                    <div className="text-6xl text-yellow-400">🏆</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Placeholder for Future Awards */}
+              <div className="group transform hover:scale-105 transition-all duration-500 opacity-50">
+                <div className="bg-gradient-to-br from-black/20 via-gray-900/20 to-black/20 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-white/10 shadow-xl border-dashed h-full flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-r from-gray-500 to-gray-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4 opacity-50">
+                      <i className="fas fa-plus"></i>
+                    </div>
+                    <p className="text-gray-400 font-medium">More awards coming soon...</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group transform hover:scale-105 transition-all duration-500 opacity-50">
+                <div className="bg-gradient-to-br from-black/20 via-gray-900/20 to-black/20 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-white/10 shadow-xl border-dashed h-full flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-r from-gray-500 to-gray-600 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4 opacity-50">
+                      <i className="fas fa-star"></i>
+                    </div>
+                    <p className="text-gray-400 font-medium">Future recognitions</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center mt-12">
+              <button
+                onClick={() => setCurrentView('awards')}
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-yellow-500/25 mr-4"
+              >
+                <i className="fas fa-trophy mr-2"></i>
+                View All Awards
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </button>
+              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border border-yellow-500/30 text-yellow-300 rounded-full font-bold backdrop-blur-sm">
+                <i className="fas fa-star mr-2"></i>
+                Striving for Excellence in Research and Innovation
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Publications Section */}
+        <section id="publications" className="mb-16 sm:mb-24 md:mb-32">
+          <div className="container mx-auto px-4 sm:px-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 sm:mb-8 text-center" 
+                style={{
+                  textShadow: '0 0 30px rgba(255,255,255,0.3), 3px 3px 6px rgba(0,0,0,0.9)',
+                  fontFamily: '"Inter", sans-serif'
+                }}>
+              Research{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-emerald-400 to-green-500">
+                Publications
+              </span>
+            </h2>
+            
+            <p className="text-lg sm:text-xl text-gray-200 text-center mb-8 sm:mb-12 max-w-3xl mx-auto"
+               style={{
+                 textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                 fontFamily: '"Inter", sans-serif'
+               }}>
+              Explore our contributions to research and innovation in AI and technology.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              {/* Publication 1 */}
+              <div className="group transform hover:scale-105 transition-all duration-500">
+                <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl h-full hover:border-green-500/40 transition-all duration-300">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white text-2xl shadow-xl">
+                      <i className="fas fa-file-alt"></i>
+                    </div>
+                    <div className="flex-grow">
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors duration-300" 
+                          style={{
+                            textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                            fontFamily: '"Inter", sans-serif'
+                          }}>
+                        AI/ML Systems Engineering Workbench Framework
+                      </h3>
+                      <span className="inline-block px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm font-semibold border border-green-500/30 mb-3">
+                        IEEE CISS
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3 mb-6">
+                    <div>
+                      <span className="text-green-300 font-semibold">Authors: </span>
+                      <span className="text-gray-200">Dr. Kofi Nyarko, Emmanual Masa-Ibi</span>
+                    </div>
+                    <div>
+                      <span className="text-green-300 font-semibold">Published in: </span>
+                      <span className="text-gray-200">Conference on Information Sciences and Systems (CISS)</span>
+                    </div>
+                  </div>
+                  
+                  <a 
+                    href="https://ieeexplore.ieee.org/document/10089781/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25"
+                  >
+                    Read More
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Publication 2 */}
+              <div className="group transform hover:scale-105 transition-all duration-500">
+                <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl h-full hover:border-green-500/40 transition-all duration-300">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white text-2xl shadow-xl">
+                      <i className="fas fa-video"></i>
+                    </div>
+                    <div className="flex-grow">
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors duration-300" 
+                          style={{
+                            textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                            fontFamily: '"Inter", sans-serif'
+                          }}>
+                        Automated Traffic Video Analysis with a Modular Computer Vision Pipeline
+                      </h3>
+                      <span className="inline-block px-3 py-1 bg-orange-500/20 text-orange-300 rounded-full text-sm font-semibold border border-orange-500/30 mb-3">
+                        Paper Accepted
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3 mb-6">
+                    <div>
+                      <span className="text-green-300 font-semibold">Authors: </span>
+                      <span className="text-gray-200">Tasmeer Alam, Dr. Kofi Nyarko</span>
+                    </div>
+                    <div>
+                      <span className="text-green-300 font-semibold">Published in: </span>
+                      <span className="text-gray-200">Conference on Information Sciences and Systems (CISS)</span>
+                    </div>
+                  </div>
+                  
+                  <div className="inline-flex items-center px-4 py-2 bg-gray-500/20 text-gray-300 rounded-lg font-semibold border border-gray-500/30">
+                    <i className="fas fa-clock mr-2"></i>
+                    Yet to be public
+                  </div>
+                </div>
+              </div>
+
+              {/* Publication 3 */}
+              <div className="group transform hover:scale-105 transition-all duration-500">
+                <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl h-full hover:border-green-500/40 transition-all duration-300">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white text-2xl shadow-xl">
+                      <i className="fas fa-shield-alt"></i>
+                    </div>
+                    <div className="flex-grow">
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors duration-300" 
+                          style={{
+                            textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                            fontFamily: '"Inter", sans-serif'
+                          }}>
+                        Network Intrusion Visualization with NIVA
+                      </h3>
+                      <span className="inline-block px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm font-semibold border border-green-500/30 mb-3">
+                        IEEE Haptic Symposium
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3 mb-6">
+                    <div>
+                      <span className="text-green-300 font-semibold">Authors: </span>
+                      <span className="text-gray-200">Kofi Nyarko, Tanya Capers, Craig Scott, Kemi Ladeji-Osias</span>
+                    </div>
+                    <div>
+                      <span className="text-green-300 font-semibold">Published in: </span>
+                      <span className="text-gray-200">10th Symposium on Haptic Interfaces for Virtual Environment</span>
+                    </div>
+                  </div>
+                  
+                  <a 
+                    href="https://ieeexplore.ieee.org/abstract/document/998969"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25"
+                  >
+                    Read More
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Publication 4 */}
+              <div className="group transform hover:scale-105 transition-all duration-500">
+                <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl h-full hover:border-green-500/40 transition-all duration-300">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white text-2xl shadow-xl">
+                      <i className="fas fa-building"></i>
+                    </div>
+                    <div className="flex-grow">
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors duration-300" 
+                          style={{
+                            textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                            fontFamily: '"Inter", sans-serif'
+                          }}>
+                        Cloud Based Passive Building Occupancy Characterization
+                      </h3>
+                      <span className="inline-block px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm font-semibold border border-green-500/30 mb-3">
+                        IEEE HST
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3 mb-6">
+                    <div>
+                      <span className="text-green-300 font-semibold">Authors: </span>
+                      <span className="text-gray-200">Kofi Nyarko, Cecelia Wright-Brown</span>
+                    </div>
+                    <div>
+                      <span className="text-green-300 font-semibold">Published in: </span>
+                      <span className="text-gray-200">IEEE International Conference on Technologies for Homeland Security</span>
+                    </div>
+                  </div>
+                  
+                  <a 
+                    href="https://ieeexplore.ieee.org/abstract/document/6699097"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25"
+                  >
+                    Read More
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center mt-12">
+              <button
+                onClick={() => setCurrentView('publications')}
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-green-500/25"
+              >
+                <i className="fas fa-book-open mr-2"></i>
+                View All Publications
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Symposium Section */}
+        <section id="symposium" className="mb-16 sm:mb-24 md:mb-32">
+          <div className="container mx-auto px-4 sm:px-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 sm:mb-8 text-center" 
+                style={{
+                  textShadow: '0 0 30px rgba(255,255,255,0.3), 3px 3px 6px rgba(0,0,0,0.9)',
+                  fontFamily: '"Inter", sans-serif'
+                }}>
+              CEAMLS Research{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-400 to-purple-500">
+                Symposium
+              </span>
+            </h2>
+            
+            <p className="text-lg sm:text-xl text-gray-200 text-center mb-8 sm:mb-12 max-w-4xl mx-auto"
+               style={{
+                 textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                 fontFamily: '"Inter", sans-serif'
+               }}>
+              Learn more about our contributions to the 2025 CEAMLS Research Symposium on Equitable AI.
+            </p>
+
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-3xl p-8 md:p-12 border border-white/20 shadow-2xl relative overflow-hidden">
+                
+                {/* Event Badge */}
+                <div className="absolute top-6 right-6">
+                  <div className="w-20 h-20 bg-gradient-to-r from-purple-400 to-pink-600 rounded-full flex items-center justify-center text-white text-3xl shadow-2xl animate-pulse">
+                    🎯
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                  {/* Event Icon & Title */}
+                  <div className="text-center lg:text-left">
+                    <div className="w-32 h-32 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white text-6xl shadow-2xl mx-auto lg:mx-0 mb-6">
+                      <i className="fas fa-users"></i>
+                    </div>
+                    <h3 className="text-3xl font-bold text-white mb-4" 
+                        style={{
+                          textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                          fontFamily: '"Inter", sans-serif'
+                        }}>
+                      CEAMLS Research Symposium 2025
+                    </h3>
+                    <span className="inline-block px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-lg font-semibold border border-purple-500/30">
+                      Focus: Equitable AI
+                    </span>
+                  </div>
+                  
+                  {/* Event Details */}
+                  <div className="lg:col-span-2">
+                    <h4 className="text-2xl font-bold text-purple-300 mb-6">Our Participation & Research Presentation</h4>
+                    
+                    <div className="space-y-4 mb-6">
+                      <p className="text-gray-200 leading-relaxed text-lg" 
+                         style={{
+                           textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                           fontFamily: '"Inter", sans-serif'
+                         }}>
+                        DEPA Lab is proud to be an active participant in the 2025 CEAMLS Research Symposium, focusing on <span className="text-purple-300 font-semibold">"Equitable AI."</span> This event brings together thought leaders, researchers, and practitioners to discuss innovative strategies for fostering fairness and inclusivity in AI applications.
+                      </p>
+                      
+                      <p className="text-gray-200 leading-relaxed text-lg" 
+                         style={{
+                           textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                           fontFamily: '"Inter", sans-serif'
+                         }}>
+                        During the symposium, our team will present groundbreaking research on <span className="text-pink-300 font-semibold">leveraging AI for equitable academic and career advisory systems.</span> We look forward to engaging with the community to explore collaborative opportunities and share insights.
+                      </p>
+                    </div>
+                    
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <a 
+                        href="https://www.morgan.edu/ceamls/equitable-ai-symposium/equitable-ai-symposium-(2025)"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25"
+                      >
+                        <i className="fas fa-external-link-alt mr-2"></i>
+                        Register for the Symposium
+                      </a>
+                      <a 
+                        href="https://www.morgan.edu/ceamls"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-6 py-3 bg-transparent border-2 border-purple-400 hover:border-pink-400 text-purple-300 hover:text-pink-300 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 backdrop-blur-sm hover:bg-purple-400/10"
+                      >
+                        <i className="fas fa-info-circle mr-2"></i>
+                        Learn More About CEAMLS
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Decorative Elements */}
+                <div className="absolute bottom-4 left-4 opacity-10">
+                  <div className="text-8xl text-purple-400">🎯</div>
+                </div>
+                <div className="absolute top-1/4 right-1/4 opacity-5">
+                  <div className="text-6xl text-pink-400">✨</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center mt-12">
+              <button
+                onClick={() => setCurrentView('symposium')}
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-purple-500/25"
+              >
+                <i className="fas fa-calendar-alt mr-2"></i>
+                Learn More About the Symposium
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </button>
             </div>
           </div>
         </section>
