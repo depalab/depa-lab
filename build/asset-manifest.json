@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/depa-lab/static/css/main.fb99b04f.css",
-    "main.js": "/depa-lab/static/js/main.ad37f7ea.js",
-    "index.html": "/depa-lab/index.html",
-    "main.fb99b04f.css.map": "/depa-lab/static/css/main.fb99b04f.css.map",
-    "main.ad37f7ea.js.map": "/depa-lab/static/js/main.ad37f7ea.js.map"
+    "main.css": "/static/css/main.fb99b04f.css",
+    "main.js": "/static/js/main.a6607d04.js",
+    "index.html": "/index.html",
+    "main.fb99b04f.css.map": "/static/css/main.fb99b04f.css.map",
+    "main.a6607d04.js.map": "/static/js/main.a6607d04.js.map"
   },
   "entrypoints": [
     "static/css/main.fb99b04f.css",
-    "static/js/main.ad37f7ea.js"
+    "static/js/main.a6607d04.js"
   ]
 }
