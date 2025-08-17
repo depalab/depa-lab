@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import ResearchAreas from './components/ResearchAreas';
-import ResearchComponents from './components/ResearchComponents'; // Add this line
+import ResearchComponents from './components/research/ResearchComponents';
 import Projects from './components/Projects';
 import Awards from './components/Awards';
 import Publications from './components/Publications';
@@ -18,7 +18,7 @@ import './App.css';
 const App = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [currentView, setCurrentView] = useState('home');
-
+  
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -27,12 +27,12 @@ const App = () => {
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
-
+  
   // If viewing a research detail page
   if (currentView !== 'home') {
     return <ResearchComponents currentView={currentView} setCurrentView={setCurrentView} />;
   }
-
+  
   return (
     <div 
       className="min-h-screen overflow-hidden flex flex-col relative"
@@ -48,7 +48,6 @@ const App = () => {
           background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.15), transparent 40%)`
         }}
       />
-
       <Header />
       
       <main className="flex-grow pt-16 sm:pt-20 md:pt-24">
@@ -62,9 +61,8 @@ const App = () => {
         <Team />
         <Contact />
       </main>
-
       <Footer />
-      // {/* <GlobalStyles /> */} {/* Comment this out */}
+      <GlobalStyles />
     </div>
   );
 };
