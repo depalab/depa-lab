@@ -1,21 +1,72 @@
-import React from 'react';
+// src/App.js
+import React, { useState, useEffect } from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import ResearchAreas from './components/ResearchAreas';
+import Projects from './components/Projects';
+import Awards from './components/Awards';
+import Publications from './components/Publications';
+import Symposium from './components/Symposium';
+import Team from './components/Team';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import ResearchComponents from './components/research/ResearchComponents';
+import GlobalStyles from './components/GlobalStyles';
+import './App.css';
 
-function App() {
+const App = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [currentView, setCurrentView] = useState('home');
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // If viewing a research detail page
+  if (currentView !== 'home') {
+    return <ResearchComponents currentView={currentView} setCurrentView={setCurrentView} />;
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-6xl font-black mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-          DEPA Lab
-        </h1>
-        <p className="text-xl text-gray-300">
-          Data Engineering and Predictive Analytics Lab
-        </p>
-        <p className="text-lg text-gray-400 mt-2">
-          Morgan State University
-        </p>
-      </div>
+    <div 
+      className="min-h-screen overflow-hidden flex flex-col relative"
+      style={{
+        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Animated background overlay */}
+      <div 
+        className="fixed inset-0 opacity-20 pointer-events-none"
+        style={{
+          background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.15), transparent 40%)`
+        }}
+      />
+
+      <Header />
+      
+      <main className="flex-grow pt-16 sm:pt-20 md:pt-24">
+        <Hero />
+        <About />
+        <ResearchAreas />
+        <Projects setCurrentView={setCurrentView} />
+        <Awards setCurrentView={setCurrentView} />
+        <Publications setCurrentView={setCurrentView} />
+        <Symposium setCurrentView={setCurrentView} />
+        <Team />
+        <Contact />
+      </main>
+
+      <Footer />
+      <GlobalStyles />
     </div>
   );
-}
+};
 
 export default App;
