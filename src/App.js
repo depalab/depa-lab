@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import ResearchAreas from './components/ResearchAreas';
+import ResearchComponents from './components/ResearchComponents'; // Add this line
 import Projects from './components/Projects';
 import Awards from './components/Awards';
 import Publications from './components/Publications';
@@ -11,7 +12,6 @@ import Symposium from './components/Symposium';
 import Team from './components/Team';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-// import GlobalStyles from './components/GlobalStyles'; // Comment this out
 import GlobalStyles from './components/GlobalStyles';
 import './App.css';
 
