@@ -1454,7 +1454,7 @@ const DepaLabHomepage = () => {
               `
             }}
           />
-          
+
           {/* Hero Content */}
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20 w-full">
             
@@ -1475,7 +1475,7 @@ const DepaLabHomepage = () => {
                      style={{boxShadow: '0 0 20px rgba(59, 130, 246, 0.8)'}}></div>
               </div>
             </div>
-            
+         
             {/* Main Title */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black mb-6 sm:mb-8 md:mb-12 leading-[0.9] tracking-tight px-2"
                 style={{
