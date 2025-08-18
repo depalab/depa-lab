@@ -14,25 +14,25 @@ const DepaLabHomepage = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Actual team data with placeholder images
+  // Actual team data with CSS-generated avatars
   const presentTeamMembers = [
-    { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "https://via.placeholder.com/150x150/3B82F6/FFFFFF?text=Dr.+Kofi+Nyarko" },
-    { name: "Tasmeer Alam", role: "AI Researcher", image: "https://via.placeholder.com/150x150/8B5CF6/FFFFFF?text=Tasmeer+Alam" },
-    { name: "Cynthia Nosiri", role: "AI Researcher", image: "https://via.placeholder.com/150x150/10B981/FFFFFF?text=Cynthia+Nosiri" },
-    { name: "Derrick Cook", role: "AI Researcher", image: "https://via.placeholder.com/150x150/F59E0B/FFFFFF?text=Derrick+Cook" },
-    { name: "Rezoan Sultan", role: "Generative AI Researcher", image: "https://via.placeholder.com/150x150/EF4444/FFFFFF?text=Rezoan+Sultan" },
-    { name: "Benjamin Hall", role: "Researcher", image: "https://via.placeholder.com/150x150/6366F1/FFFFFF?text=Benjamin+Hall" },
-    { name: "Emmanuel Masa-ibi", role: "Researcher", image: "https://via.placeholder.com/150x150/EC4899/FFFFFF?text=Emmanuel" },
-    { name: "Awotwi Baffoe", role: "AI Researcher", image: "https://via.placeholder.com/150x150/14B8A6/FFFFFF?text=Awotwi+Baffoe" },
-    { name: "Opeyemi Adeniran", role: "AI Researcher", image: "https://via.placeholder.com/150x150/F97316/FFFFFF?text=Opeyemi" },
-    { name: "Anjolie Anthony", role: "Researcher", image: "https://via.placeholder.com/150x150/84CC16/FFFFFF?text=Anjolie" },
-    { name: "Binisa Giri", role: "AI Researcher", image: "https://via.placeholder.com/150x150/06B6D4/FFFFFF?text=Binisa+Giri" },
-    { name: "Nicholas Cook", role: "AI Researcher", image: "https://via.placeholder.com/150x150/8B5CF6/FFFFFF?text=Nicholas+Cook" },
-    { name: "David Nyarko", role: "Researcher", image: "https://via.placeholder.com/150x150/F59E0B/FFFFFF?text=David+Nyarko" },
+    { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab" },
+    { name: "Tasmeer Alam", role: "AI Researcher" },
+    { name: "Cynthia Nosiri", role: "AI Researcher" },
+    { name: "Derrick Cook", role: "AI Researcher" },
+    { name: "Rezoan Sultan", role: "Generative AI Researcher" },
+    { name: "Benjamin Hall", role: "Researcher" },
+    { name: "Emmanuel Masa-ibi", role: "Researcher" },
+    { name: "Awotwi Baffoe", role: "AI Researcher" },
+    { name: "Opeyemi Adeniran", role: "AI Researcher" },
+    { name: "Anjolie Anthony", role: "Researcher" },
+    { name: "Binisa Giri", role: "AI Researcher" },
+    { name: "Nicholas Cook", role: "AI Researcher" },
+    { name: "David Nyarko", role: "Researcher" },
   ];
 
   const pastTeamMembers = [
-    { name: "Ekata Dhital", role: "Research Assistant", image: "https://via.placeholder.com/150x150/6B7280/FFFFFF?text=Ekata+Dhital" },
+    { name: "Ekata Dhital", role: "Research Assistant" },
   ];
 
   const researchAreas = [
@@ -154,15 +154,16 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <img 
-                  src="https://via.placeholder.com/800x400/1E40AF/FFFFFF?text=XPCI+Crack+Detection+Research" 
-                  alt="XPCI Crack Detection Research"
-                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
-                  style={{
-                    maxHeight: '500px',
-                    objectFit: 'contain'
-                  }}
-                />
+                <div className="w-full h-96 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center"
+                     style={{
+                       background: 'linear-gradient(135deg, #1E40AF 0%, #7C3AED 50%, #1E40AF 100%)',
+                     }}>
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🔬</div>
+                    <h4 className="text-xl font-bold text-white mb-2">XPCI Crack Detection Research</h4>
+                    <p className="text-gray-200">Methodology and Results Visualization</p>
+                  </div>
+                </div>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   XPCI crack detection methodology and results visualization
                 </p>
@@ -245,15 +246,16 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <img 
-                  src="https://via.placeholder.com/800x400/7C3AED/FFFFFF?text=MSU+AI+Academic+Advisor+System" 
-                  alt="MSU AI Academic Advisor System"
-                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
-                  style={{
-                    maxHeight: '500px',
-                    objectFit: 'contain'
-                  }}
-                />
+                <div className="w-full h-96 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center"
+                     style={{
+                       background: 'linear-gradient(135deg, #7C3AED 0%, #3B82F6 50%, #7C3AED 100%)',
+                     }}>
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🎓</div>
+                    <h4 className="text-xl font-bold text-white mb-2">MSU AI Academic Advisor</h4>
+                    <p className="text-gray-200">System Interface and Architecture</p>
+                  </div>
+                </div>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   MSU AI Academic Advisor system interface and architecture
                 </p>
@@ -336,15 +338,16 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <img 
-                  src="https://via.placeholder.com/800x400/059669/FFFFFF?text=Cyber+Shield+System+Architecture" 
-                  alt="Cyber Shield System Architecture"
-                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
-                  style={{
-                    maxHeight: '500px',
-                    objectFit: 'contain'
-                  }}
-                />
+                <div className="w-full h-96 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center"
+                     style={{
+                       background: 'linear-gradient(135deg, #059669 0%, #0891B2 50%, #059669 100%)',
+                     }}>
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🛡️</div>
+                    <h4 className="text-xl font-bold text-white mb-2">Cyber Shield System</h4>
+                    <p className="text-gray-200">Abusive Language Detection Architecture</p>
+                  </div>
+                </div>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   Cyber Shield abusive language detection system architecture
                 </p>
@@ -404,15 +407,16 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <img 
-                  src="https://via.placeholder.com/800x400/DC2626/FFFFFF?text=AAVE+SAE+Benchmarking+Research" 
-                  alt="AAVE and SAE Benchmarking Research Presentation"
-                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
-                  style={{
-                    maxHeight: '500px',
-                    objectFit: 'contain'
-                  }}
-                />
+                <div className="w-full h-96 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center"
+                     style={{
+                       background: 'linear-gradient(135deg, #DC2626 0%, #F59E0B 50%, #DC2626 100%)',
+                     }}>
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🗣️</div>
+                    <h4 className="text-xl font-bold text-white mb-2">AAVE & SAE Benchmarking</h4>
+                    <p className="text-gray-200">Research Methodology and Results</p>
+                  </div>
+                </div>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   Research presentation showcasing AAVE and SAE benchmarking methodology and results
                 </p>
@@ -472,15 +476,16 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <img 
-                  src="https://via.placeholder.com/800x400/F59E0B/FFFFFF?text=Quantized+LLM+Airport+Navigation" 
-                  alt="Quantized LLM Airport Navigation Poster"
-                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
-                  style={{
-                    maxHeight: '500px',
-                    objectFit: 'contain'
-                  }}
-                />
+                <div className="w-full h-96 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center"
+                     style={{
+                       background: 'linear-gradient(135deg, #F59E0B 0%, #EF4444 50%, #F59E0B 100%)',
+                     }}>
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">✈️</div>
+                    <h4 className="text-xl font-bold text-white mb-2">Quantized LLM Navigation</h4>
+                    <p className="text-gray-200">DEPA Lab Poster Presentation</p>
+                  </div>
+                </div>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   DEPA Lab poster presentation on quantized LLM airport navigation system
                 </p>
@@ -686,15 +691,16 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <img 
-                  src="https://via.placeholder.com/800x400/8B5CF6/FFFFFF?text=Forensic+Video+Analysis+Framework" 
-                  alt="Forensic Video Analysis Research"
-                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
-                  style={{
-                    maxHeight: '500px',
-                    objectFit: 'contain'
-                  }}
-                />
+                <div className="w-full h-96 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center"
+                     style={{
+                       background: 'linear-gradient(135deg, #8B5CF6 0%, #EC4899 50%, #8B5CF6 100%)',
+                     }}>
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🎬</div>
+                    <h4 className="text-xl font-bold text-white mb-2">Forensic Video Analysis</h4>
+                    <p className="text-gray-200">Multimodal LLMs Research Framework</p>
+                  </div>
+                </div>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   Research framework for forensic video analysis using multimodal LLMs
                 </p>
@@ -754,15 +760,16 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <img 
-                  src="https://via.placeholder.com/800x400/10B981/FFFFFF?text=Smart+Contract+Reentrancy+Detection" 
-                  alt="Smart Contract Reentrancy Detection Research"
-                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
-                  style={{
-                    maxHeight: '500px',
-                    objectFit: 'contain'
-                  }}
-                />
+                <div className="w-full h-96 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center"
+                     style={{
+                       background: 'linear-gradient(135deg, #10B981 0%, #06B6D4 50%, #10B981 100%)',
+                     }}>
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">⛓️</div>
+                    <h4 className="text-xl font-bold text-white mb-2">Smart Contract Detection</h4>
+                    <p className="text-gray-200">Reentrancy Vulnerability Detection System</p>
+                  </div>
+                </div>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   Automated detection system for reentrancy vulnerabilities in smart contracts
                 </p>
@@ -2512,12 +2519,17 @@ const DepaLabHomepage = () => {
                 {presentTeamMembers.map((member, index) => (
                   <div key={index} className="group transform hover:scale-105 transition-all duration-500">
                     <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl text-center hover:border-blue-500/40 hover:shadow-blue-500/20 transition-all duration-300">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-400/50 shadow-2xl group-hover:border-blue-400/80 transition-all duration-300">
-                        <img 
-                          src={member.image} 
-                          alt={member.name}
-                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
-                        />
+                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-400/50 shadow-2xl group-hover:border-blue-400/80 transition-all duration-300"
+                           style={{
+                             background: `linear-gradient(135deg, ${['#3B82F6', '#8B5CF6', '#10B981', '#F59E0B', '#EF4444', '#6366F1', '#EC4899', '#14B8A6', '#F97316', '#84CC16', '#06B6D4', '#8B5CF6', '#F59E0B'][index]} 0%, ${['#1E40AF', '#7C3AED', '#059669', '#D97706', '#DC2626', '#4F46E5', '#DB2777', '#0F766E', '#EA580C', '#65A30D', '#0891B2', '#7C3AED', '#D97706'][index]} 100%)`,
+                             display: 'flex',
+                             alignItems: 'center',
+                             justifyContent: 'center',
+                             fontSize: '3rem',
+                             color: 'white',
+                             fontWeight: 'bold'
+                           }}>
+                        {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
                       </div>
                       <h4 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300" 
                           style={{
@@ -2553,12 +2565,17 @@ const DepaLabHomepage = () => {
                 {pastTeamMembers.map((member, index) => (
                   <div key={index} className="group transform hover:scale-105 transition-all duration-500">
                     <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl text-center hover:border-purple-500/40 hover:shadow-purple-500/20 transition-all duration-300">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-purple-400/50 shadow-2xl group-hover:border-purple-400/80 transition-all duration-300">
-                        <img 
-                          src={member.image} 
-                          alt={member.name}
-                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
-                        />
+                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-purple-400/50 shadow-2xl group-hover:border-purple-400/80 transition-all duration-300"
+                           style={{
+                             background: 'linear-gradient(135deg, #6B7280 0%, #4B5563 100%)',
+                             display: 'flex',
+                             alignItems: 'center',
+                             justifyContent: 'center',
+                             fontSize: '3rem',
+                             color: 'white',
+                             fontWeight: 'bold'
+                           }}>
+                        {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
                       </div>
                       <h4 className="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300" 
                           style={{
