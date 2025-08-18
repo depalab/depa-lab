@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 const DepaLabHomepage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [currentTeamIndex, setCurrentTeamIndex] = useState(0);
   const [currentView, setCurrentView] = useState('home');
 
   useEffect(() => {
@@ -35,16 +34,6 @@ const DepaLabHomepage = () => {
   const pastTeamMembers = [
     { name: "Ekata Dhital", role: "Research Assistant", image: "public/images/Ekata Dhital.JPG" },
   ];
-
-  const scrollTeam = (direction) => {
-    setCurrentTeamIndex(prev => {
-      if (direction === 'left') {
-        return prev > 0 ? prev - 1 : teamMembers.length - 1;
-      } else {
-        return prev < teamMembers.length - 1 ? prev + 1 : 0;
-      }
-    });
-  };
 
   const researchAreas = [
     {
@@ -1535,7 +1524,7 @@ const DepaLabHomepage = () => {
               <div className="text-center group">
                 <div className="text-2xl sm:text-3xl md:text-4xl font-black text-purple-400 mb-2 group-hover:scale-110 transition-transform duration-300" 
                      style={{textShadow: '0 0 20px rgba(147, 51, 234, 0.6)'}}>
-                  10+
+                  13+
                 </div>
                 <div className="text-gray-300 font-medium">Team Members</div>
               </div>
@@ -2751,7 +2740,7 @@ const DepaLabHomepage = () => {
           }
         }
         
-        /* Background parallax effect for larger screens */}
+        /* Background parallax effect for larger screens */
         @media (min-width: 1024px) {
           #hero .absolute.inset-0.z-0 {
             transform: scale(1.1);
@@ -2759,7 +2748,7 @@ const DepaLabHomepage = () => {
           }
         }
         
-        /* Enhanced button hover effects */}
+        /* Enhanced button hover effects */
         .btn-primary {
           position: relative;
           overflow: hidden;
@@ -2785,7 +2774,7 @@ const DepaLabHomepage = () => {
           left: 100%;
         }
         
-        /* Glass morphism effect */}
+        /* Glass morphism effect */
         .glass {
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
@@ -2793,7 +2782,7 @@ const DepaLabHomepage = () => {
           background: rgba(255, 255, 255, 0.05);
         }
         
-        /* Enhanced mobile responsiveness */}
+        /* Enhanced mobile responsiveness */
         @media (max-width: 475px) {
           .container {
             padding-left: 1rem;
@@ -2805,7 +2794,7 @@ const DepaLabHomepage = () => {
           }
         }
         
-        /* Improved accessibility */}
+        /* Improved accessibility */
         @media (prefers-reduced-motion: reduce) {
           .animate-ping,
           .animate-pulse,
@@ -2815,7 +2804,7 @@ const DepaLabHomepage = () => {
           }
         }
 
-        /* Hide scrollbar for horizontal scroll */}
+        /* Hide scrollbar for horizontal scroll */
         .scrollbar-hide {
           -ms-overflow-style: none;
           scrollbar-width: none;
@@ -2825,7 +2814,7 @@ const DepaLabHomepage = () => {
           display: none;
         }
         
-        /* Smooth horizontal scrolling */}
+        /* Smooth horizontal scrolling */
         .scrollbar-hide {
           scroll-behavior: smooth;
         }
