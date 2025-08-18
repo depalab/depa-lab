@@ -15,12 +15,25 @@ const DepaLabHomepage = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Sample team data - replace with actual team data
-  const teamMembers = [
-    { name: "Dr. Kofi Nyarko", role: "Lab Director", image: "/api/placeholder/150/150" },
-    { name: "Research Scientist", role: "AI/ML Specialist", image: "/api/placeholder/150/150" },
-    { name: "Graduate Student", role: "Computer Vision", image: "/api/placeholder/150/150" },
-    { name: "Research Assistant", role: "Data Analytics", image: "/api/placeholder/150/150" },
+  // Actual team data
+  const presentTeamMembers = [
+    { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "public/images/nyarko.jpg" },
+    { name: "Tasmeer Alam", role: "AI Researcher", image: "public/images/Tasmeer_Alam.jpeg" },
+    { name: "Cynthia Nosiri", role: "AI Researcher", image: "public/images/Cynthia.jpeg" },
+    { name: "Derrick Cook", role: "AI Researcher", image: "public/images/Derrick_Cook.PNG" },
+    { name: "Rezoan Sultan", role: "Generative AI Researcher", image: "public/images/Rezoan_Sultan.jpeg" },
+    { name: "Benjamin Hall", role: "Researcher", image: "public/images/Benjamin Hall.jpg" },
+    { name: "Emmanuel Masa-ibi", role: "Researcher", image: "public/images/Emmanuel Masa-ibi.jpeg" },
+    { name: "Awotwi Baffoe", role: "AI Researcher", image: "public/images/Awotwi_Baffoe.jpg" },
+    { name: "Opeyemi Adeniran", role: "AI Researcher", image: "public/images/Opeyemi.PNG" },
+    { name: "Anjolie Anthony", role: "Researcher", image: "public/images/Anjolie.JPG" },
+    { name: "Binisa Giri", role: "AI Researcher", image: "public/images/giri.jpeg" },
+    { name: "Nicholas Cook", role: "AI Researcher", image: "public/images/NicholasCook.jpg" },
+    { name: "David Nyarko", role: "Researcher", image: "public/images/david-nyarko.JPG" },
+  ];
+
+  const pastTeamMembers = [
+    { name: "Ekata Dhital", role: "Research Assistant", image: "public/images/Ekata Dhital.JPG" },
   ];
 
   const scrollTeam = (direction) => {
@@ -2457,80 +2470,98 @@ const DepaLabHomepage = () => {
                  textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
                  fontFamily: '"Inter", sans-serif'
                }}>
-              Our diverse and talented team is committed to advancing research and innovation, solving real-world problems through technology.
+              Meet the brilliant minds behind DEPA Lab's groundbreaking research and innovation.
             </p>
 
-            {/* Team Carousel */}
-            <div className="relative">
-              <div className="flex items-center justify-center">
-                <button 
-                  onClick={() => scrollTeam('left')}
-                  className="absolute left-0 z-10 w-12 h-12 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-black/80 transition-all duration-300 transform hover:scale-110 shadow-2xl"
-                >
-                  ❮
-                </button>
-                
-                <div className="max-w-md mx-auto">
-                  <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-8 border border-white/20 shadow-2xl text-center">
-                    <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-blue-400/50 shadow-2xl">
-                      <img 
-                        src={teamMembers[currentTeamIndex].image} 
-                        alt={teamMembers[currentTeamIndex].name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-2" 
-                        style={{
-                          textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
-                          fontFamily: '"Inter", sans-serif'
-                        }}>
-                      {teamMembers[currentTeamIndex].name}
-                    </h3>
-                    <p className="text-blue-300 font-semibold" 
-                       style={{
-                         textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
-                         fontFamily: '"Inter", sans-serif'
-                       }}>
-                      {teamMembers[currentTeamIndex].role}
-                    </p>
-                  </div>
-                </div>
-                
-                <button 
-                  onClick={() => scrollTeam('right')}
-                  className="absolute right-0 z-10 w-12 h-12 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-black/80 transition-all duration-300 transform hover:scale-110 shadow-2xl"
-                >
-                  ❯
-                </button>
-              </div>
+            {/* Present Team Section */}
+            <div className="mb-12 sm:mb-16">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8 text-center" 
+                  style={{
+                    textShadow: '0 0 20px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                    fontFamily: '"Inter", sans-serif'
+                  }}>
+                Present Team
+              </h3>
               
-              {/* Team indicators */}
-              <div className="flex justify-center mt-6 space-x-2">
-                {teamMembers.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentTeamIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === currentTeamIndex 
-                        ? 'bg-blue-400 shadow-lg' 
-                        : 'bg-gray-600 hover:bg-gray-500'
-                    }`}
-                  />
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8">
+                {presentTeamMembers.map((member, index) => (
+                  <div key={index} className="group transform hover:scale-105 transition-all duration-500">
+                    <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl text-center hover:border-blue-500/40 hover:shadow-blue-500/20 transition-all duration-300">
+                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-400/50 shadow-2xl group-hover:border-blue-400/80 transition-all duration-300">
+                        <img 
+                          src={member.image} 
+                          alt={member.name}
+                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                        />
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300" 
+                          style={{
+                            textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                            fontFamily: '"Inter", sans-serif'
+                          }}>
+                        {member.name}
+                      </h4>
+                      <p className="text-gray-300 font-medium group-hover:text-gray-200 transition-colors duration-300" 
+                         style={{
+                           textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                           fontFamily: '"Inter", sans-serif'
+                         }}>
+                        {member.role}
+                      </p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
 
-            {/* View All Team Button */}
-            <div className="text-center mt-8 sm:mt-12">
-              <a 
-                href="#team" 
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-blue-500/25"
-              >
-                View All Team Members
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
+            {/* Past Team Section */}
+            <div className="mb-8 sm:mb-12">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8 text-center" 
+                  style={{
+                    textShadow: '0 0 20px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                    fontFamily: '"Inter", sans-serif'
+                  }}>
+                Past Team Members
+              </h3>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8">
+                {pastTeamMembers.map((member, index) => (
+                  <div key={index} className="group transform hover:scale-105 transition-all duration-500">
+                    <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl text-center hover:border-purple-500/40 hover:shadow-purple-500/20 transition-all duration-300">
+                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-purple-400/50 shadow-2xl group-hover:border-purple-400/80 transition-all duration-300">
+                        <img 
+                          src={member.image} 
+                          alt={member.name}
+                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                        />
+                      </div>
+                      <h4 className="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300" 
+                          style={{
+                            textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                            fontFamily: '"Inter", sans-serif'
+                          }}>
+                        {member.name}
+                      </h4>
+                      <p className="text-gray-300 font-medium group-hover:text-gray-200 transition-colors duration-300" 
+                         style={{
+                           textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                           fontFamily: '"Inter", sans-serif'
+                         }}>
+                        {member.role}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Team Statistics */}
+            <div className="text-center">
+              <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500/20 to-purple-600/20 border border-blue-500/30 text-blue-300 rounded-full font-bold backdrop-blur-sm text-lg">
+                <i className="fas fa-users mr-3"></i>
+                {presentTeamMembers.length} Active Researchers Building the Future of AI
+                <i className="fas fa-brain ml-3"></i>
+              </div>
             </div>
           </div>
         </section>
