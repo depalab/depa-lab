@@ -1287,10 +1287,10 @@ const DepaLabHomepage = () => {
           </div>
         </section>
 
-        {/* Research Areas Section */}
-        <section id="research" className="mb-12 sm:mb-20 md:mb-28 lg:mb-32">
+        {/* Research Areas Section - Redesigned */}
+        <section id="research" className="mb-12 sm:mb-16 md:mb-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-8 sm:mb-12 md:mb-16 lg:mb-20 text-center animate-fadeInUp" 
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 sm:mb-8 md:mb-10 text-center animate-fadeInUp" 
                 style={{
                   textShadow: '0 0 30px rgba(255,255,255,0.3), 3px 3px 6px rgba(0,0,0,0.9)',
                   fontFamily: '"Inter", sans-serif'
@@ -1301,30 +1301,105 @@ const DepaLabHomepage = () => {
               </span>
             </h2>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-              {researchAreas.map((area, index) => (
-                <div key={index} className="group transform hover:scale-105 transition-all duration-500 animate-fadeInUp" style={{animationDelay: `${index * 0.1}s`}}>
-                  <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 lg:p-10 border border-white/20 shadow-2xl h-full hover:border-blue-500/40 hover:shadow-blue-500/20 transition-all duration-500 group-hover:bg-black/50">
-                    <div className="text-3xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6 lg:mb-8 transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 text-center">
+            {/* Desktop View - Compact Grid */}
+            <div className="hidden lg:grid lg:grid-cols-4 gap-4 mb-8">
+              {researchAreas.slice(0, 4).map((area, index) => (
+                <div key={index} className="group transform hover:scale-105 transition-all duration-300">
+                  <div className="bg-gradient-to-br from-black/30 via-gray-900/30 to-black/30 backdrop-blur-xl rounded-xl p-4 border border-white/10 shadow-xl hover:border-blue-500/30 hover:shadow-blue-500/10 transition-all duration-300 h-full">
+                    <div className="text-2xl mb-3 transform group-hover:scale-110 transition-transform duration-300 text-center">
                       {area.icon}
                     </div>
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 sm:mb-4 lg:mb-6 group-hover:text-blue-300 transition-colors duration-300 text-center" 
+                    <h3 className="text-sm font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300 text-center leading-tight" 
                         style={{
-                          textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                          textShadow: '0 0 10px rgba(255,255,255,0.2)',
                           fontFamily: '"Inter", sans-serif'
                         }}>
                       {area.title}
                     </h3>
-                    <p className="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300 text-center" 
+                    <p className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300 text-center" 
                        style={{
                          textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
                          fontFamily: '"Inter", sans-serif'
                        }}>
-                      {area.description}
+                      {area.description.split(' ').slice(0, 8).join(' ')}...
                     </p>
                   </div>
                 </div>
               ))}
+            </div>
+            
+            <div className="hidden lg:grid lg:grid-cols-3 gap-4">
+              {researchAreas.slice(4).map((area, index) => (
+                <div key={index + 4} className="group transform hover:scale-105 transition-all duration-300">
+                  <div className="bg-gradient-to-br from-black/30 via-gray-900/30 to-black/30 backdrop-blur-xl rounded-xl p-4 border border-white/10 shadow-xl hover:border-purple-500/30 hover:shadow-purple-500/10 transition-all duration-300 h-full">
+                    <div className="text-2xl mb-3 transform group-hover:scale-110 transition-transform duration-300 text-center">
+                      {area.icon}
+                    </div>
+                    <h3 className="text-sm font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300 text-center leading-tight" 
+                        style={{
+                          textShadow: '0 0 10px rgba(255,255,255,0.2)',
+                          fontFamily: '"Inter", sans-serif'
+                        }}>
+                      {area.title}
+                    </h3>
+                    <p className="text-xs text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300 text-center" 
+                       style={{
+                         textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                         fontFamily: '"Inter", sans-serif'
+                       }}>
+                      {area.description.split(' ').slice(0, 8).join(' ')}...
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile/Tablet View - Horizontal Scroll */}
+            <div className="lg:hidden">
+              <div className="flex overflow-x-auto pb-4 gap-4 scrollbar-hide" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
+                {researchAreas.map((area, index) => (
+                  <div key={index} className="flex-shrink-0 w-64 group transform hover:scale-105 transition-all duration-300">
+                    <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-xl rounded-xl p-5 border border-white/20 shadow-xl hover:border-blue-500/40 hover:shadow-blue-500/20 transition-all duration-300 h-full">
+                      <div className="text-3xl mb-4 transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 text-center">
+                        {area.icon}
+                      </div>
+                      <h3 className="text-base font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300 text-center" 
+                          style={{
+                            textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                            fontFamily: '"Inter", sans-serif'
+                          }}>
+                        {area.title}
+                      </h3>
+                      <p className="text-sm text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300 text-center" 
+                         style={{
+                           textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                           fontFamily: '"Inter", sans-serif'
+                         }}>
+                        {area.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Scroll Indicator */}
+              <div className="flex justify-center mt-4">
+                <div className="flex items-center gap-2 px-3 py-1 bg-black/40 backdrop-blur-sm rounded-full border border-white/20">
+                  <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                  <span className="text-xs text-gray-300 font-medium">Swipe to explore</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Research Excellence Badge */}
+            <div className="text-center mt-8">
+              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-600/20 border border-blue-500/30 text-blue-300 rounded-full font-bold backdrop-blur-sm text-sm">
+                <i className="fas fa-microscope mr-2"></i>
+                7 Cutting-Edge Research Domains
+                <i className="fas fa-brain ml-2"></i>
+              </div>
             </div>
           </div>
         </section>
@@ -2361,6 +2436,21 @@ const DepaLabHomepage = () => {
           .animate-spin {
             animation: none;
           }
+        }
+
+        /* Hide scrollbar for horizontal scroll */
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        
+        /* Smooth horizontal scrolling */
+        .scrollbar-hide {
+          scroll-behavior: smooth;
         }
       `}</style>
     </div>
