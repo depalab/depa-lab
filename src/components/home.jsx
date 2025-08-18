@@ -1415,7 +1415,7 @@ const DepaLabHomepage = () => {
           <div 
             className="absolute inset-0 z-0"
             style={{
-              backgroundImage: 'url(/images/depa2.jpeg)',
+              backgroundImage: 'url(/depa-lab/images/depa2.jpeg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
