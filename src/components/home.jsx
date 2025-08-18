@@ -154,13 +154,15 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <div className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">🔬</div>
-                    <h4 className="text-xl font-bold text-white mb-2">XPCI Crack Detection Research</h4>
-                    <p className="text-gray-300">Research methodology and results visualization</p>
-                  </div>
-                </div>
+                <img 
+                  src="https://via.placeholder.com/800x400/1E40AF/FFFFFF?text=XPCI+Crack+Detection+Research" 
+                  alt="XPCI Crack Detection Research"
+                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
+                  style={{
+                    maxHeight: '500px',
+                    objectFit: 'contain'
+                  }}
+                />
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   XPCI crack detection methodology and results visualization
                 </p>
@@ -243,13 +245,15 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <div className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">🎓</div>
-                    <h4 className="text-xl font-bold text-white mb-2">MSU AI Academic Advisor</h4>
-                    <p className="text-gray-300">System interface and architecture</p>
-                  </div>
-                </div>
+                <img 
+                  src="https://via.placeholder.com/800x400/7C3AED/FFFFFF?text=MSU+AI+Academic+Advisor+System" 
+                  alt="MSU AI Academic Advisor System"
+                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
+                  style={{
+                    maxHeight: '500px',
+                    objectFit: 'contain'
+                  }}
+                />
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   MSU AI Academic Advisor system interface and architecture
                 </p>
@@ -332,13 +336,15 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <div className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">🛡️</div>
-                    <h4 className="text-xl font-bold text-white mb-2">Cyber Shield System</h4>
-                    <p className="text-gray-300">Abusive language detection architecture</p>
-                  </div>
-                </div>
+                <img 
+                  src="https://via.placeholder.com/800x400/059669/FFFFFF?text=Cyber+Shield+System+Architecture" 
+                  alt="Cyber Shield System Architecture"
+                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
+                  style={{
+                    maxHeight: '500px',
+                    objectFit: 'contain'
+                  }}
+                />
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   Cyber Shield abusive language detection system architecture
                 </p>
@@ -398,13 +404,15 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <div className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">🗣️</div>
-                    <h4 className="text-xl font-bold text-white mb-2">AAVE & SAE Benchmarking</h4>
-                    <p className="text-gray-300">Research methodology and results</p>
-                  </div>
-                </div>
+                <img 
+                  src="https://via.placeholder.com/800x400/DC2626/FFFFFF?text=AAVE+SAE+Benchmarking+Research" 
+                  alt="AAVE and SAE Benchmarking Research Presentation"
+                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
+                  style={{
+                    maxHeight: '500px',
+                    objectFit: 'contain'
+                  }}
+                />
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   Research presentation showcasing AAVE and SAE benchmarking methodology and results
                 </p>
@@ -464,13 +472,15 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <div className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">✈️</div>
-                    <h4 className="text-xl font-bold text-white mb-2">Quantized LLM Navigation</h4>
-                    <p className="text-gray-300">DEPA Lab poster presentation</p>
-                  </div>
-                </div>
+                <img 
+                  src="https://via.placeholder.com/800x400/F59E0B/FFFFFF?text=Quantized+LLM+Airport+Navigation" 
+                  alt="Quantized LLM Airport Navigation Poster"
+                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
+                  style={{
+                    maxHeight: '500px',
+                    objectFit: 'contain'
+                  }}
+                />
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   DEPA Lab poster presentation on quantized LLM airport navigation system
                 </p>
@@ -676,13 +686,15 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <div className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">🎬</div>
-                    <h4 className="text-xl font-bold text-white mb-2">Forensic Video Analysis</h4>
-                    <p className="text-gray-300">Multimodal LLMs research framework</p>
-                  </div>
-                </div>
+                <img 
+                  src="https://via.placeholder.com/800x400/8B5CF6/FFFFFF?text=Forensic+Video+Analysis+Framework" 
+                  alt="Forensic Video Analysis Research"
+                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
+                  style={{
+                    maxHeight: '500px',
+                    objectFit: 'contain'
+                  }}
+                />
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   Research framework for forensic video analysis using multimodal LLMs
                 </p>
@@ -742,13 +754,15 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <div className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">⛓️</div>
-                    <h4 className="text-xl font-bold text-white mb-2">Smart Contract Detection</h4>
-                    <p className="text-gray-300">Reentrancy vulnerability detection system</p>
-                  </div>
-                </div>
+                <img 
+                  src="https://via.placeholder.com/800x400/10B981/FFFFFF?text=Smart+Contract+Reentrancy+Detection" 
+                  alt="Smart Contract Reentrancy Detection Research"
+                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
+                  style={{
+                    maxHeight: '500px',
+                    objectFit: 'contain'
+                  }}
+                />
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   Automated detection system for reentrancy vulnerabilities in smart contracts
                 </p>
