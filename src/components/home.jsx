@@ -151,25 +151,6 @@ const DepaLabHomepage = () => {
               <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
             </div>
             
-            {/* Research Image */}
-            <div className="mb-8">
-              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <div className="w-full h-96 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center"
-                     style={{
-                       background: 'linear-gradient(135deg, #1E40AF 0%, #7C3AED 50%, #1E40AF 100%)',
-                     }}>
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">🔬</div>
-                    <h4 className="text-xl font-bold text-white mb-2">XPCI Crack Detection Research</h4>
-                    <p className="text-gray-200">Methodology and Results Visualization</p>
-                  </div>
-                </div>
-                <p className="text-center text-gray-300 text-sm mt-4 italic">
-                  XPCI crack detection methodology and results visualization
-                </p>
-              </div>
-            </div>
-
             {/* Research Video */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl p-6 border border-purple-500/20">
@@ -243,25 +224,6 @@ const DepaLabHomepage = () => {
               <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
             </div>
             
-            {/* Research Image */}
-            <div className="mb-8">
-              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <div className="w-full h-96 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center"
-                     style={{
-                       background: 'linear-gradient(135deg, #7C3AED 0%, #3B82F6 50%, #7C3AED 100%)',
-                     }}>
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">🎓</div>
-                    <h4 className="text-xl font-bold text-white mb-2">MSU AI Academic Advisor</h4>
-                    <p className="text-gray-200">System Interface and Architecture</p>
-                  </div>
-                </div>
-                <p className="text-center text-gray-300 text-sm mt-4 italic">
-                  MSU AI Academic Advisor system interface and architecture
-                </p>
-              </div>
-            </div>
-
             {/* Research Video */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl p-6 border border-purple-500/20">
@@ -1445,11 +1407,20 @@ const DepaLabHomepage = () => {
         
         {/* Hero Section with Background Image */}
         <section id="hero" className="relative mb-8 sm:mb-16 md:mb-24 pt-8 sm:pt-12 md:pt-16 min-h-screen flex items-center overflow-hidden">
-          {/* Hero Background Image */}
+          {/* Hero Background with Pattern */}
           <div 
             className="absolute inset-0 z-0 transform scale-105"
             style={{
-              background: 'linear-gradient(135deg, rgba(26,26,46,0.8) 0%, rgba(15,52,96,0.6) 50%, rgba(26,26,46,0.8) 100%)',
+              background: `
+                linear-gradient(135deg, rgba(26,26,46,0.9) 0%, rgba(15,52,96,0.7) 50%, rgba(26,26,46,0.9) 100%),
+                radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(147, 51, 234, 0.3) 0%, transparent 50%),
+                conic-gradient(from 0deg at 50% 50%, 
+                  rgba(59, 130, 246, 0.1) 0deg, 
+                  rgba(147, 51, 234, 0.1) 120deg, 
+                  rgba(59, 130, 246, 0.1) 240deg, 
+                  rgba(147, 51, 234, 0.1) 360deg)
+              `,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
@@ -2515,39 +2486,99 @@ const DepaLabHomepage = () => {
                 Present Team
               </h3>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8">
-                {presentTeamMembers.map((member, index) => (
-                  <div key={index} className="group transform hover:scale-105 transition-all duration-500">
-                    <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl text-center hover:border-blue-500/40 hover:shadow-blue-500/20 transition-all duration-300">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-400/50 shadow-2xl group-hover:border-blue-400/80 transition-all duration-300"
+              {/* Team Carousel */}
+              <div className="relative max-w-7xl mx-auto">
+                {/* Navigation Arrows */}
+                <button 
+                  onClick={() => {
+                    const container = document.getElementById('team-carousel');
+                    container.scrollBy({ left: -400, behavior: 'smooth' });
+                  }}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-black/80 transition-all duration-300 transform hover:scale-110 shadow-2xl border border-white/20"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                
+                <button 
+                  onClick={() => {
+                    const container = document.getElementById('team-carousel');
+                    container.scrollBy({ left: 400, behavior: 'smooth' });
+                  }}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-black/80 transition-all duration-300 transform hover:scale-110 shadow-2xl border border-white/20"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+
+                {/* Carousel Container */}
+                <div 
+                  id="team-carousel"
+                  className="flex overflow-x-auto gap-6 pb-4 px-12 scrollbar-hide"
+                  style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}
+                >
+                  {presentTeamMembers.map((member, index) => (
+                    <div key={index} className="flex-shrink-0 w-64 group transform hover:scale-105 transition-all duration-500">
+                      <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl text-center hover:border-blue-500/40 hover:shadow-blue-500/20 transition-all duration-300 h-full">
+                        <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-400/50 shadow-2xl group-hover:border-blue-400/80 transition-all duration-300"
+                             style={{
+                               background: `linear-gradient(135deg, ${['#3B82F6', '#8B5CF6', '#10B981', '#F59E0B', '#EF4444', '#6366F1', '#EC4899', '#14B8A6', '#F97316', '#84CC16', '#06B6D4', '#8B5CF6', '#F59E0B'][index]} 0%, ${['#1E40AF', '#7C3AED', '#059669', '#D97706', '#DC2626', '#4F46E5', '#DB2777', '#0F766E', '#EA580C', '#65A30D', '#0891B2', '#7C3AED', '#D97706'][index]} 100%)`,
+                               display: 'flex',
+                               alignItems: 'center',
+                               justifyContent: 'center',
+                               fontSize: '3rem',
+                               color: 'white',
+                               fontWeight: 'bold'
+                             }}>
+                          {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                        </div>
+                        <h4 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300" 
+                            style={{
+                              textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                              fontFamily: '"Inter", sans-serif'
+                            }}>
+                          {member.name}
+                        </h4>
+                        <p className="text-gray-300 font-medium group-hover:text-gray-200 transition-colors duration-300" 
                            style={{
-                             background: `linear-gradient(135deg, ${['#3B82F6', '#8B5CF6', '#10B981', '#F59E0B', '#EF4444', '#6366F1', '#EC4899', '#14B8A6', '#F97316', '#84CC16', '#06B6D4', '#8B5CF6', '#F59E0B'][index]} 0%, ${['#1E40AF', '#7C3AED', '#059669', '#D97706', '#DC2626', '#4F46E5', '#DB2777', '#0F766E', '#EA580C', '#65A30D', '#0891B2', '#7C3AED', '#D97706'][index]} 100%)`,
-                             display: 'flex',
-                             alignItems: 'center',
-                             justifyContent: 'center',
-                             fontSize: '3rem',
-                             color: 'white',
-                             fontWeight: 'bold'
+                             textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                             fontFamily: '"Inter", sans-serif'
                            }}>
-                        {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                          {member.role}
+                        </p>
                       </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300" 
-                          style={{
-                            textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
-                            fontFamily: '"Inter", sans-serif'
-                          }}>
-                        {member.name}
-                      </h4>
-                      <p className="text-gray-300 font-medium group-hover:text-gray-200 transition-colors duration-300" 
-                         style={{
-                           textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
-                           fontFamily: '"Inter", sans-serif'
-                         }}>
-                        {member.role}
-                      </p>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+
+                {/* Scroll Indicator Dots */}
+                <div className="flex justify-center mt-6 space-x-2">
+                  {Array.from({ length: Math.ceil(presentTeamMembers.length / 4) }).map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        const container = document.getElementById('team-carousel');
+                        container.scrollTo({ left: index * 1000, behavior: 'smooth' });
+                      }}
+                      className="w-3 h-3 rounded-full bg-white/30 hover:bg-blue-400 transition-all duration-300 transform hover:scale-125"
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Navigation Hint */}
+              <div className="text-center mt-4">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/30 backdrop-blur-sm rounded-full border border-white/10">
+                  <svg className="w-4 h-4 text-blue-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+                  </svg>
+                  <span className="text-xs text-gray-300 font-medium">Use arrows to explore all team members</span>
+                  <svg className="w-4 h-4 text-blue-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
               </div>
             </div>
 
@@ -2561,39 +2592,47 @@ const DepaLabHomepage = () => {
                 Past Team Members
               </h3>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8">
-                {pastTeamMembers.map((member, index) => (
-                  <div key={index} className="group transform hover:scale-105 transition-all duration-500">
-                    <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl text-center hover:border-purple-500/40 hover:shadow-purple-500/20 transition-all duration-300">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-purple-400/50 shadow-2xl group-hover:border-purple-400/80 transition-all duration-300"
+              {/* Past Team Carousel */}
+              <div className="relative max-w-7xl mx-auto">
+                {/* Carousel Container */}
+                <div 
+                  id="past-team-carousel"
+                  className="flex justify-center overflow-x-auto gap-6 pb-4 px-12 scrollbar-hide"
+                  style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}
+                >
+                  {pastTeamMembers.map((member, index) => (
+                    <div key={index} className="flex-shrink-0 w-64 group transform hover:scale-105 transition-all duration-500">
+                      <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl text-center hover:border-purple-500/40 hover:shadow-purple-500/20 transition-all duration-300 h-full">
+                        <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-purple-400/50 shadow-2xl group-hover:border-purple-400/80 transition-all duration-300"
+                             style={{
+                               background: 'linear-gradient(135deg, #6B7280 0%, #4B5563 100%)',
+                               display: 'flex',
+                               alignItems: 'center',
+                               justifyContent: 'center',
+                               fontSize: '3rem',
+                               color: 'white',
+                               fontWeight: 'bold'
+                             }}>
+                          {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                        </div>
+                        <h4 className="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300" 
+                            style={{
+                              textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                              fontFamily: '"Inter", sans-serif'
+                            }}>
+                          {member.name}
+                        </h4>
+                        <p className="text-gray-300 font-medium group-hover:text-gray-200 transition-colors duration-300" 
                            style={{
-                             background: 'linear-gradient(135deg, #6B7280 0%, #4B5563 100%)',
-                             display: 'flex',
-                             alignItems: 'center',
-                             justifyContent: 'center',
-                             fontSize: '3rem',
-                             color: 'white',
-                             fontWeight: 'bold'
+                             textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                             fontFamily: '"Inter", sans-serif'
                            }}>
-                        {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                          {member.role}
+                        </p>
                       </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300" 
-                          style={{
-                            textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
-                            fontFamily: '"Inter", sans-serif'
-                          }}>
-                        {member.name}
-                      </h4>
-                      <p className="text-gray-300 font-medium group-hover:text-gray-200 transition-colors duration-300" 
-                         style={{
-                           textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
-                           fontFamily: '"Inter", sans-serif'
-                         }}>
-                        {member.role}
-                      </p>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
 
