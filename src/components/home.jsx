@@ -1411,46 +1411,28 @@ const DepaLabHomepage = () => {
         
         {/* Hero Section with Background Image */}
         <section id="hero" className="relative mb-8 sm:mb-16 md:mb-24 pt-8 sm:pt-12 md:pt-16 min-h-screen flex items-center overflow-hidden">
-          {/* Hero Background with Strong Visual Pattern */}
+          {/* Hero Background Image */}
           <div 
             className="absolute inset-0 z-0"
             style={{
-              background: `
-                linear-gradient(45deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #16213e 75%, #1a1a2e 100%),
-                radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.4) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.4) 0%, transparent 50%),
-                radial-gradient(circle at 40% 60%, rgba(16, 185, 129, 0.3) 0%, transparent 40%),
-                conic-gradient(from 45deg at 50% 50%, 
-                  rgba(59, 130, 246, 0.2) 0deg, 
-                  rgba(147, 51, 234, 0.2) 90deg, 
-                  rgba(16, 185, 129, 0.2) 180deg,
-                  rgba(245, 158, 11, 0.2) 270deg,
-                  rgba(59, 130, 246, 0.2) 360deg)
-              `,
+              backgroundImage: 'url(public/images/hero.jpeg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
             }}
           />
           
-          {/* Additional Pattern Overlay */}
+          {/* Dark Overlay for Text Readability */}
           <div 
-            className="absolute inset-0 z-5 opacity-30"
+            className="absolute inset-0 z-5"
             style={{
               background: `
-                repeating-linear-gradient(
-                  45deg,
-                  transparent,
-                  transparent 2px,
-                  rgba(59, 130, 246, 0.1) 2px,
-                  rgba(59, 130, 246, 0.1) 4px
-                ),
-                repeating-linear-gradient(
-                  -45deg,
-                  transparent,
-                  transparent 2px,
-                  rgba(147, 51, 234, 0.1) 2px,
-                  rgba(147, 51, 234, 0.1) 4px
+                linear-gradient(135deg, 
+                  rgba(0,0,0,0.7) 0%, 
+                  rgba(26,26,46,0.6) 25%, 
+                  rgba(15,52,96,0.5) 50%,
+                  rgba(26,26,46,0.6) 75%, 
+                  rgba(0,0,0,0.7) 100%
                 )
               `,
             }}
