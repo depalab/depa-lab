@@ -71,67 +71,67 @@ const DepaLabHomepage = () => {
     }
   ];
 
-  // Updated projects with research links
+  // Updated projects with new research content
   const projects = [
     {
-      title: "AI Assistive Comprehension Assessor",
-      description: "Developing an AI-powered tool to evaluate student comprehension by analyzing essays and generating quizzes in Canvas QTI/XML format.",
-      link: "ai-comprehension",
-      icon: "📚"
+      title: "XPCI Crack Detection and Categorization",
+      description: "Automated crack detection in low-density materials using X-ray Phase Contrast Imaging (XPCI) with YOLOv11 deep learning architecture.",
+      link: "xpci-crack-detection",
+      icon: "🔬"
+    },
+    {
+      title: "MSU AI Academic Advisor",
+      description: "Multi-step agent pipeline leveraging transformer-based LLMs fine-tuned with human feedback for personalized academic guidance.",
+      link: "msu-ai-advisor",
+      icon: "🎓"
+    },
+    {
+      title: "Cyber Shield",
+      description: "Abusive language detection system using DistilBERT model to assess sentiment and detect harmful content in user-generated text.",
+      link: "cyber-shield",
+      icon: "🛡️"
     },
     {
       title: "Benchmarking LLMs for AAVE & SAE",
-      description: "Assessing leading LLMs for their ability to generate dialect-specific text while maintaining semantic consistency.",
+      description: "Research investigating how large language models handle different English dialects, focusing on African American Vernacular English versus Standard American English.",
       link: "llm-benchmarking",
       icon: "🗣️"
     },
     {
-      title: "Ground Plane Segmentation for Wheelchair Mobility",
-      description: "Utilizing real-time segmentation techniques within the SAM framework to improve navigation for wheelchair users.",
-      link: "wheelchair-mobility",
-      icon: "♿"
+      title: "Quantized LLM for Airport Navigation",
+      description: "Lightweight language model system using quantized LLMs for efficient performance on limited hardware for airport assistance.",
+      link: "quantized-llm-navigation",
+      icon: "✈️"
+    },
+    {
+      title: "Vision-based Autonomous Drone Object Tracking",
+      description: "Autonomous wheelchair system with follower drone for luggage tracking using person re-identification and real-time object tracking.",
+      link: "drone-tracking-system",
+      icon: "🚁"
     },
     {
       title: "AI/ML Bench Guard",
-      description: "A benchmarking framework for evaluating cloud-based and open-source ML services across various tasks.",
+      description: "Comprehensive benchmarking framework for evaluating cloud-based, LLM, and open-source machine learning services.",
       link: "ml-bench-guard",
       icon: "📊"
     },
     {
-      title: "AI Models in Action Recognition",
-      description: "Integrating YOLO detections and LLM vision to analyze video frames and generate detailed scene reports.",
-      link: "ai-action-recognition",
+      title: "Multimodal LLMs for Forensic Video Analysis",
+      description: "Investigating prompting strategies in multimodal large language models for human-aligned forensic video analysis applications.",
+      link: "forensic-video-analysis",
       icon: "🎬"
     },
     {
-      title: "Queryable Computer Vision Pipeline",
-      description: "Developing a scalable system that allows data analysts to execute SQL-like queries on video content.",
-      link: "queryable-cv",
-      icon: "🔍"
-    },
-    {
-      title: "Crack Detection in Structural Materials",
-      description: "Advanced machine learning techniques to detect cracks and structural anomalies in construction materials.",
-      link: "crack-detection",
-      icon: "🔧"
-    },
-    {
-      title: "Multi-Object Tracking in Video Analysis",
-      description: "Innovative approaches to enhance tracking of multiple subjects across video frames in complex scenarios.",
-      link: "multi-object-tracking",
-      icon: "🎯"
-    },
-    {
-      title: "Real-Time Decision-Making and Robotic Design",
-      description: "Leveraging edge computing for autonomous systems with CAD optimization and real-time navigation.",
-      link: "robotic-design",
-      icon: "🤖"
+      title: "Smart Contract Reentrancy Detection",
+      description: "Automated detection of reentrancy vulnerabilities in smart contracts using hybrid feature engineering approach.",
+      link: "smart-contract-detection",
+      icon: "⛓️"
     }
   ];
 
-  // Research Components (these would typically be in separate files)
+  // Research Components with new content
   const ResearchComponents = {
-    'ai-comprehension': () => (
+    'xpci-crack-detection': () => (
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
         <div className="container mx-auto px-4 py-16">
           <button
@@ -140,23 +140,631 @@ const DepaLabHomepage = () => {
           >
             ← Back to Home
           </button>
-          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+          <div className="max-w-6xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                📚
+                🔬
               </div>
-              <h1 className="text-4xl font-black text-white mb-4">AI Assistive Comprehension Assessor</h1>
+              <h1 className="text-4xl font-black text-white mb-4">XPCI Crack Detection and Categorization</h1>
               <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            {/* Research Image */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
+                <img 
+                  src="public/images/XPCI_Awotwi.pptx.png" 
+                  alt="XPCI Crack Detection Research"
+                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
+                  style={{
+                    maxHeight: '500px',
+                    objectFit: 'contain'
+                  }}
+                />
+                <p className="text-center text-gray-300 text-sm mt-4 italic">
+                  XPCI crack detection methodology and results visualization
+                </p>
+              </div>
+            </div>
+
+            {/* Research Video */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl p-6 border border-purple-500/20">
+                <h4 className="text-xl font-bold text-purple-300 mb-4 text-center">Research Demonstration Video</h4>
+                <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/20">
+                  <iframe
+                    src="https://www.youtube.com/embed/a2RgwtP6pHg"
+                    title="XPCI Crack Detection Video"
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
             </div>
             
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
               <p className="text-gray-200 leading-relaxed text-lg">
-                The AI Assistive Comprehension Assessor (AACA) is an AI-powered tool designed to help educators evaluate students' comprehension of academic material. By analyzing student-written essays, AACA generates custom quizzes in Canvas QTI/XML format, ensuring that students grasp key concepts rather than relying on AI-generated responses.
+                This project focuses on automated crack detection in low-density and structurally complex materials subjected to mechanical stress, such as crystal quartz, Westerly granite, and boron carbide. It integrates X-ray Phase Contrast Imaging (XPCI), known for its sensitivity to subtle structural variations, with the YOLOv11 deep learning architecture for high-resolution crack localization and classification.
               </p>
               <p className="text-gray-200 leading-relaxed text-lg">
-                The system automates quiz creation and processes multiple-choice questions with correct answer validation, streamlining assessment workflows for educators. AACA enhances personalized learning by providing targeted evaluations, improving both student engagement and academic outcomes.
+                Unlike conventional absorption-based X-ray imaging, XPCI exploits phase shift phenomena to reveal fine internal features, including microcracks and crack tips, with greater clarity. The approach relies on a carefully curated and manually annotated dataset to train and validate the model across a range of material types and stress conditions.
               </p>
+              
+              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-6 border border-purple-500/20 mt-6">
+                <h4 className="text-xl font-bold text-purple-300 mb-4">Key Features</h4>
+                <ul className="text-gray-200 space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>YOLOv11 model optimized for crack pattern detection and categorization</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>High precision detection in noisy or low-contrast XPCI environments</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Advanced non-destructive evaluation for early-stage damage detection</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'msu-ai-advisor': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-6xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                🎓
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">MSU AI Academic Advisor</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            {/* Research Image */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
+                <img 
+                  src="public/images/msu.png" 
+                  alt="MSU AI Academic Advisor System"
+                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
+                  style={{
+                    maxHeight: '500px',
+                    objectFit: 'contain'
+                  }}
+                />
+                <p className="text-center text-gray-300 text-sm mt-4 italic">
+                  MSU AI Academic Advisor system interface and architecture
+                </p>
+              </div>
+            </div>
+
+            {/* Research Video */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl p-6 border border-purple-500/20">
+                <h4 className="text-xl font-bold text-purple-300 mb-4 text-center">System Demo</h4>
+                <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/20">
+                  <iframe
+                    src="https://www.youtube.com/embed/5msFb_V-XaE"
+                    title="MSU AI Academic Advisor Demo"
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Project Overview</h3>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                The AI Academic Advisor project leverages a multi-step agent pipeline built on transformer-based LLMs fine-tuned with human feedback to generate personalized academic guidance. User profile data—including course history, interests, and scheduling constraints—is collected through a conversational REST API that normalizes and encodes inputs for downstream processing.
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                A modular microservices architecture cleanly separates data ingestion, model inference, and output formatting, allowing independent updates to course-planning, internship-suggestion, and study-tip components. This AI Academic advisor truly listens to students' goals, strengths, and challenges, learning and adapting as students interact with it.
+              </p>
+              
+              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-6 border border-purple-500/20 mt-6">
+                <h4 className="text-xl font-bold text-purple-300 mb-4">Key Features</h4>
+                <ul className="text-gray-200 space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>24/7 accessibility on any device</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Adaptive learning based on student interactions</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Personalized course planning and internship suggestions</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'cyber-shield': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-6xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                🛡️
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">Cyber Shield</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            {/* Research Image */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
+                <img 
+                  src="public/images/CyberShield.pptx.png" 
+                  alt="Cyber Shield System Architecture"
+                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
+                  style={{
+                    maxHeight: '500px',
+                    objectFit: 'contain'
+                  }}
+                />
+                <p className="text-center text-gray-300 text-sm mt-4 italic">
+                  Cyber Shield abusive language detection system architecture
+                </p>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">System Overview</h3>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                Cyber Shield is an abusive language detection system designed to analyze user-generated text and identify harmful or inappropriate content. Built to integrate with the Query-able Machine Learning Pipeline (QMLP), the system ingests input in JSON format, applies advanced preprocessing, and uses word embeddings to understand context.
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                At its core, it leverages the DistilBERT model to assess the sentiment of the entire message while also detecting and flagging specific abusive terms. This dual-level analysis helps in both identifying toxic language and understanding the tone of the communication.
+              </p>
+              
+              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-6 border border-purple-500/20 mt-6">
+                <h4 className="text-xl font-bold text-purple-300 mb-4">Key Technologies</h4>
+                <ul className="text-gray-200 space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>DistilBERT model for sentiment assessment</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Advanced text preprocessing and word embeddings</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Dual-level analysis for comprehensive content moderation</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'llm-benchmarking': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-6xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                🗣️
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">Benchmarking LLMs for AAVE & SAE</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            {/* Research Image */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
+                <img 
+                  src="public/images/ppt_cynthia.png" 
+                  alt="AAVE and SAE Benchmarking Research Presentation"
+                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
+                  style={{
+                    maxHeight: '500px',
+                    objectFit: 'contain'
+                  }}
+                />
+                <p className="text-center text-gray-300 text-sm mt-4 italic">
+                  Research presentation showcasing AAVE and SAE benchmarking methodology and results
+                </p>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                This research investigates how large language models (LLMs) handle different English dialects, with a focus on African American Vernacular English (AAVE) versus Standard American English (SAE). Models such as GPT-4, Claude 3.5, Gemini 1.5 Pro, Qwen2, and LLaMA 3 were evaluated across sentiment, refusal rates, and response quality.
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                Findings revealed that even top-tier models often respond more negatively to AAVE or refuse to complete prompts written in the dialect. To address these disparities, a real-time bias framework is being developed to detect, mitigate, and explain model behavior.
+              </p>
+              
+              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-6 border border-purple-500/20 mt-6">
+                <h4 className="text-xl font-bold text-purple-300 mb-4">Key Research Contributions</h4>
+                <ul className="text-gray-200 space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Framework supports both debiasing rewrites and human-in-the-loop flagging</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Advanced AI safety measures for equitable treatment of linguistic communities</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Real-time bias detection and mitigation for high-risk domains</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'quantized-llm-navigation': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-6xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                ✈️
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">Quantized LLM for Airport Navigation</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            {/* Research Image */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
+                <img 
+                  src="public/images/DEPA POSTER.pptx (1)-1.png" 
+                  alt="Quantized LLM Airport Navigation Poster"
+                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
+                  style={{
+                    maxHeight: '500px',
+                    objectFit: 'contain'
+                  }}
+                />
+                <p className="text-center text-gray-300 text-sm mt-4 italic">
+                  DEPA Lab poster presentation on quantized LLM airport navigation system
+                </p>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Project Description</h3>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                For this project, we developed a lightweight language model system using quantized LLMs to enable efficient performance on limited hardware. We experimented with 4-bit and 8-bit quantized models to reduce memory and computational demands while preserving accuracy.
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                The core application is a text-based airport assistant that responds only to navigation-related queries. Users input questions in text, and the LLM provides concise, location-specific responses. This project demonstrates how quantized LLMs can be deployed in real-world scenarios with minimal hardware requirements.
+              </p>
+              
+              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-6 border border-purple-500/20 mt-6">
+                <h4 className="text-xl font-bold text-purple-300 mb-4">Key Achievements</h4>
+                <ul className="text-gray-200 space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Task-specific filtering to improve response relevance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Efficient deployment on minimal hardware requirements</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Real-world application demonstrating quantized LLM capabilities</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'drone-tracking-system': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-6xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                🚁
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">Vision-based Autonomous Drone Object Tracking System</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            {/* Research Video */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl p-6 border border-purple-500/20">
+                <h4 className="text-xl font-bold text-purple-300 mb-4 text-center">System Demonstration</h4>
+                <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/20">
+                  <iframe
+                    src="https://www.youtube.com/embed/b9aJA9C0Q6w"
+                    title="Vision-based Autonomous Drone Object Tracking Demo"
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Project Overview</h3>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                This project focuses on advancing autonomous wheelchair system designed to enhance mobility and independence. This includes multiple integrated components such as a Follower Drone for Luggage: A vision-based autonomous drone system capable of tracking and following the wheelchair user to carry luggage, using person re-identification and real-time object tracking techniques.
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                The system includes a mobile App for Wheelchair Summoning: A user-friendly application that allows users to remotely call and control the wheelchair, enabling greater freedom and convenience in indoor and outdoor settings. Hardware Integration and Development involves hands-on work with the physical wheelchair platform, including lidars, raspberry pi, camera devices, and weight sensing sensors.
+              </p>
+              
+              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-6 border border-purple-500/20 mt-6">
+                <h4 className="text-xl font-bold text-purple-300 mb-4">System Components</h4>
+                <ul className="text-gray-200 space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Person re-identification and real-time object tracking</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Mobile app for remote wheelchair control</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Integrated LiDAR, Raspberry Pi, cameras, and sensors</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'ml-bench-guard': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-6xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                📊
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">AI/ML Bench Guard</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            {/* Research Video */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl p-6 border border-purple-500/20">
+                <h4 className="text-xl font-bold text-purple-300 mb-4 text-center">Benchmarking Framework Demo</h4>
+                <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/20">
+                  <iframe
+                    src="https://www.youtube.com/embed/kIk6zBRpjr4"
+                    title="AI/ML Bench Guard Demo"
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Framework Overview</h3>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                AI/ML Bench Guard is a comprehensive benchmarking framework for evaluating cloud-based, LLM, and open-source machine learning services. The system conducts automated performance assessments across multiple providers, including AWS, Azure, GCP, and open-source alternatives.
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                By implementing standardized testing protocols and continuous monitoring, the framework enables objective comparison of service performance, reliability, and cost-effectiveness while analyzing potential biases in model outputs.
+              </p>
+              
+              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-6 border border-purple-500/20 mt-6">
+                <h4 className="text-xl font-bold text-purple-300 mb-4">Key Features</h4>
+                <ul className="text-gray-200 space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Automated performance assessments across multiple cloud providers</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Standardized testing protocols and continuous monitoring</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Objective comparison of performance, reliability, and cost-effectiveness</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'forensic-video-analysis': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-6xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                🎬
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">Evaluating Prompting Strategies in Multimodal Large Language Models for Human-Aligned Forensic Video Analysis</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            {/* Research Image */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
+                <img 
+                  src="public/images/MD-2.png" 
+                  alt="Forensic Video Analysis Research"
+                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
+                  style={{
+                    maxHeight: '500px',
+                    objectFit: 'contain'
+                  }}
+                />
+                <p className="text-center text-gray-300 text-sm mt-4 italic">
+                  Research framework for forensic video analysis using multimodal LLMs
+                </p>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                This research investigates how different prompting strategies can optimize multimodal large language models for forensic video analysis applications. The study systematically evaluates eight distinct prompting techniques including zero-shot, sequential, least-to-most, ReAct, chain-of-thought, meta-prompting, self-consistency, and iterative approaches across three state-of-the-art AI models: Claude Sonnet 4, GPT-4o, and Gemini 2.0 Flash.
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                The evaluation covers critical forensic dimensions including crime classification, temporal reconstruction, evidence documentation, and narrative generation capabilities, with each technique scored against annotated ground truth standards. This investigation addresses a significant gap in current AI research by focusing specifically on forensic applications.
+              </p>
+              
+              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-6 border border-purple-500/20 mt-6">
+                <h4 className="text-xl font-bold text-purple-300 mb-4">Research Significance</h4>
+                <ul className="text-gray-200 space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>First systematic comparison of prompting strategies for forensic video analysis</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Standardized evaluation framework for human expert-level analytical rigor</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Important implications for criminal justice systems integrating AI assistance</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'smart-contract-detection': () => (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <button
+            onClick={() => setCurrentView('home')}
+            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
+          >
+            ← Back to Home
+          </button>
+          <div className="max-w-6xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
+                ⛓️
+              </div>
+              <h1 className="text-4xl font-black text-white mb-4">Automated Detection of Reentrancy Vulnerabilities in Smart Contracts Using Hybrid Feature Engineering</h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            {/* Research Image */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
+                <img 
+                  src="public/images/Automated Detection-Poster-Template.pptx.png" 
+                  alt="Smart Contract Reentrancy Detection Research"
+                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
+                  style={{
+                    maxHeight: '500px',
+                    objectFit: 'contain'
+                  }}
+                />
+                <p className="text-center text-gray-300 text-sm mt-4 italic">
+                  Automated detection system for reentrancy vulnerabilities in smart contracts
+                </p>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                This research develops an automated system for detecting reentrancy vulnerabilities in smart contracts, which represent one of the most dangerous security flaws in blockchain applications. Reentrancy vulnerabilities occur when malicious actors can repeatedly call functions before previous executions complete, potentially draining funds from contracts—famously demonstrated in the DAO attack that resulted in approximately $50 million in losses.
+              </p>
+              <p className="text-gray-200 leading-relaxed text-lg">
+                The study introduces a hybrid feature engineering approach that combines pattern-based detection with graph-based analysis to identify these vulnerabilities more effectively than traditional methods. The system analyzes smart contract code using multiple feature types including pattern-based signatures, graph-based features, and size-based characteristics.
+              </p>
+              
+              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-6 border border-purple-500/20 mt-6">
+                <h4 className="text-xl font-bold text-purple-300 mb-4">Key Innovations</h4>
+                <ul className="text-gray-200 space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Hybrid methodology combining pattern and graph-based analysis</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Scalable solution for protecting valuable digital assets</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Critical advancement in blockchain security for DeFi applications</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -557,303 +1165,6 @@ const DepaLabHomepage = () => {
                 Building a More Equitable Future Through AI Research and Collaboration
                 <i className="fas fa-users ml-3"></i>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
-
-    'llm-benchmarking': () => (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
-        <div className="container mx-auto px-4 py-16">
-          <button
-            onClick={() => setCurrentView('home')}
-            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
-          >
-            ← Back to Home
-          </button>
-          <div className="max-w-6xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                🗣️
-              </div>
-              <h1 className="text-4xl font-black text-white mb-4">Benchmarking Large Language Models for AAVE and SAE Text Generation</h1>
-              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
-            </div>
-            
-            {/* Research Image */}
-            <div className="mb-8">
-              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <img 
-                  src="public/images/ppt_cynthia.png" 
-                  alt="AAVE and SAE Benchmarking Research Presentation"
-                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
-                  style={{
-                    maxHeight: '500px',
-                    objectFit: 'contain'
-                  }}
-                />
-                <p className="text-center text-gray-300 text-sm mt-4 italic">
-                  Research presentation showcasing AAVE and SAE benchmarking methodology and results
-                </p>
-              </div>
-            </div>
-            
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
-              <p className="text-gray-200 leading-relaxed text-lg">
-                Our research explores the performance of state-of-the-art AI language models in generating text in African American Vernacular English (AAVE) and Standard American English (SAE). We are benchmarking six leading models—GPT-4, Claude 3.5 Sonnet, Gemini 1.5 Pro, LLaMA 3.1, Qwen, and GPT-o1—to assess their ability to maintain semantic consistency, lexical similarity, and sentiment alignment when generating dialect-specific text.
-              </p>
-              <p className="text-gray-200 leading-relaxed text-lg">
-                Using a structured evaluation framework, we analyzed model-generated continuations of AAVE and SAE prompts through BLEU and ROUGE scores for text overlap, cosine similarity for semantic consistency, and sentiment distribution analysis to measure alignment with original text sentiment.
-              </p>
-              
-              {/* Key Findings Section */}
-              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-6 border border-purple-500/20 mt-6">
-                <h4 className="text-xl font-bold text-purple-300 mb-4">Key Research Contributions</h4>
-                <ul className="text-gray-200 space-y-2">
-                  <li className="flex items-start gap-2">
-                    <span className="text-purple-400 mt-1">•</span>
-                    <span>Comprehensive evaluation of 6 leading language models across dialect-specific text generation</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-purple-400 mt-1">•</span>
-                    <span>Novel benchmarking framework for AAVE and SAE linguistic variation assessment</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-purple-400 mt-1">•</span>
-                    <span>Multi-metric analysis including BLEU, ROUGE, cosine similarity, and sentiment alignment</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-purple-400 mt-1">•</span>
-                    <span>Insights into model performance disparities across different linguistic varieties</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
-
-    'wheelchair-mobility': () => (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
-        <div className="container mx-auto px-4 py-16">
-          <button
-            onClick={() => setCurrentView('home')}
-            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
-          >
-            ← Back to Home
-          </button>
-          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                ♿
-              </div>
-              <h1 className="text-4xl font-black text-white mb-4">Real-Time Segmentation of the Ground Plane for Enhanced Wheelchair Mobility</h1>
-              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
-            </div>
-            
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
-              <p className="text-gray-200 leading-relaxed text-lg">
-                This research project addresses the critical need for enhancing mobility for wheelchair users by focusing on real-time segmentation of the ground plane while excluding obstacles. The significance lies in overcoming challenges faced by wheelchair users in navigating diverse environments.
-              </p>
-              <p className="text-gray-200 leading-relaxed text-lg">
-                The objective is to develop a segmentation model within the SAM framework capable of accurately delineating the ground surface to facilitate uninterrupted movement for wheelchair users, utilizing adaptive learning algorithms and machine learning techniques.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
-
-    'ml-bench-guard': () => (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
-        <div className="container mx-auto px-4 py-16">
-          <button
-            onClick={() => setCurrentView('home')}
-            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
-          >
-            ← Back to Home
-          </button>
-          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                📊
-              </div>
-              <h1 className="text-4xl font-black text-white mb-4">AI/ML Bench Guard Framework</h1>
-              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
-            </div>
-            
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-300 mb-4">Project Overview</h3>
-              <p className="text-gray-200 leading-relaxed text-lg">
-                AI/ML Bench Guard is a comprehensive benchmarking framework for evaluating cloud-based, LLM, and open-source machine learning services. The system conducts automated performance assessments across multiple providers, including AWS, Azure, GCP, and open-source alternatives.
-              </p>
-              <p className="text-gray-200 leading-relaxed text-lg">
-                By implementing standardized testing protocols and continuous monitoring, the framework enables objective comparison of service performance, reliability, and cost-effectiveness while analyzing potential biases in model outputs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
-
-    'ai-action-recognition': () => (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
-        <div className="container mx-auto px-4 py-16">
-          <button
-            onClick={() => setCurrentView('home')}
-            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
-          >
-            ← Back to Home
-          </button>
-          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                🎬
-              </div>
-              <h1 className="text-4xl font-black text-white mb-4">AI Models in Action Recognition Video Analysis</h1>
-              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
-            </div>
-            
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
-              <p className="text-gray-200 leading-relaxed text-lg">
-                The CLAIRE (Cross-Referencing Labels, Actions, and Interactions for Robust Explanations) project aims to integrate YOLO detections and LLM vision to analyze video frames, cross-reference object/person–person/person interactions, and generate detailed reports of the video frame's scene.
-              </p>
-              <p className="text-gray-200 leading-relaxed text-lg">
-                This research explores both the benefits and restraints of utilizing AI models in action recognition video analysis, extending to CCTV footage and everyday video recordings.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
-
-    'queryable-cv': () => (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
-        <div className="container mx-auto px-4 py-16">
-          <button
-            onClick={() => setCurrentView('home')}
-            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
-          >
-            ← Back to Home
-          </button>
-          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                🔍
-              </div>
-              <h1 className="text-4xl font-black text-white mb-4">Queryable Computer Vision Pipeline</h1>
-              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
-            </div>
-            
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
-              <p className="text-gray-200 leading-relaxed text-lg">
-                This research aims to make video data analysis more accessible by creating a scalable architecture that allows data analysts to execute insightful SQL queries without needing advanced computer vision skills.
-              </p>
-              <p className="text-gray-200 leading-relaxed text-lg">
-                The project leverages cutting-edge algorithms for object detection, tracking, and instance segmentation to develop a framework that extracts pertinent information from video content.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
-
-    'crack-detection': () => (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
-        <div className="container mx-auto px-4 py-16">
-          <button
-            onClick={() => setCurrentView('home')}
-            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
-          >
-            ← Back to Home
-          </button>
-          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                🔧
-              </div>
-              <h1 className="text-4xl font-black text-white mb-4">Crack Detection and Classification in Structural Materials</h1>
-              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
-            </div>
-            
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
-              <p className="text-gray-200 leading-relaxed text-lg">
-                This project utilizes advanced machine learning techniques to detect cracks and structural anomalies in materials under stress. By identifying early-stage cracks, monitoring their propagation, and analyzing their orientation, we aim to improve the durability and reliability of materials commonly used in construction and engineering.
-              </p>
-              <p className="text-gray-200 leading-relaxed text-lg">
-                Early detection of these defects enables proactive maintenance, reducing the risk of structural failures and ensuring long-term safety and performance.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
-
-    'multi-object-tracking': () => (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
-        <div className="container mx-auto px-4 py-16">
-          <button
-            onClick={() => setCurrentView('home')}
-            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
-          >
-            ← Back to Home
-          </button>
-          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                🎯
-              </div>
-              <h1 className="text-4xl font-black text-white mb-4">Innovative Techniques for Multi-Object Tracking in Video Analysis</h1>
-              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
-            </div>
-            
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-300 mb-4">Project Overview</h3>
-              <p className="text-gray-200 leading-relaxed text-lg">
-                This research explores cutting-edge approaches to enhance the ability to track individuals across video frames accurately and consistently. This work focuses on creating systems that can reliably identify and follow multiple subjects, even in complex scenarios where challenges such as overlaps, occlusions, and varying movements arise.
-              </p>
-              <p className="text-gray-200 leading-relaxed text-lg">
-                By leveraging innovative methodologies for detection, feature extraction, and tracking, this research aims to push the boundaries of video analysis.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
-
-    'robotic-design': () => (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
-        <div className="container mx-auto px-4 py-16">
-          <button
-            onClick={() => setCurrentView('home')}
-            className="mb-8 px-4 py-2 bg-black/60 backdrop-blur-sm text-white rounded-lg hover:bg-black/80 transition-all duration-300"
-          >
-            ← Back to Home
-          </button>
-          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                🤖
-              </div>
-              <h1 className="text-4xl font-black text-white mb-4">Advancing Real-Time Decision-Making and Robotic Design</h1>
-              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
-            </div>
-            
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-300 mb-4">Research Overview</h3>
-              <p className="text-gray-300 text-lg mb-4">
-                <strong>Research Interests:</strong> Edge Computing, Robotics, CAD Modeling, Real-Time Decision-Making, Autonomous Systems
-              </p>
-              <p className="text-gray-200 leading-relaxed text-lg">
-                This research leverages edge computing technologies, such as the Nvidia Jetson Nano and Raspberry Pi with Google Coral TPU, to enable real-time, on-device decision-making without relying on cloud-based systems. By integrating software and hardware expertise, the research aims to optimize navigation algorithms for efficiency, accuracy, and adaptability in complex, dynamic settings.
-              </p>
             </div>
           </div>
         </div>
@@ -2409,7 +2720,7 @@ const DepaLabHomepage = () => {
           }
         }
         
-        /* Background parallax effect for larger screens */
+        /* Background parallax effect for larger screens */}
         @media (min-width: 1024px) {
           #hero .absolute.inset-0.z-0 {
             transform: scale(1.1);
@@ -2417,7 +2728,7 @@ const DepaLabHomepage = () => {
           }
         }
         
-        /* Enhanced button hover effects */
+        /* Enhanced button hover effects */}
         .btn-primary {
           position: relative;
           overflow: hidden;
@@ -2443,7 +2754,7 @@ const DepaLabHomepage = () => {
           left: 100%;
         }
         
-        /* Glass morphism effect */
+        /* Glass morphism effect */}
         .glass {
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
@@ -2451,7 +2762,7 @@ const DepaLabHomepage = () => {
           background: rgba(255, 255, 255, 0.05);
         }
         
-        /* Enhanced mobile responsiveness */
+        /* Enhanced mobile responsiveness */}
         @media (max-width: 475px) {
           .container {
             padding-left: 1rem;
@@ -2463,7 +2774,7 @@ const DepaLabHomepage = () => {
           }
         }
         
-        /* Improved accessibility */
+        /* Improved accessibility */}
         @media (prefers-reduced-motion: reduce) {
           .animate-ping,
           .animate-pulse,
@@ -2473,7 +2784,7 @@ const DepaLabHomepage = () => {
           }
         }
 
-        /* Hide scrollbar for horizontal scroll */
+        /* Hide scrollbar for horizontal scroll */}
         .scrollbar-hide {
           -ms-overflow-style: none;
           scrollbar-width: none;
@@ -2483,7 +2794,7 @@ const DepaLabHomepage = () => {
           display: none;
         }
         
-        /* Smooth horizontal scrolling */
+        /* Smooth horizontal scrolling */}
         .scrollbar-hide {
           scroll-behavior: smooth;
         }
