@@ -14,25 +14,25 @@ const DepaLabHomepage = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Actual team data
+  // Actual team data with placeholder images
   const presentTeamMembers = [
-    { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "public/images/nyarko.jpg" },
-    { name: "Tasmeer Alam", role: "AI Researcher", image: "public/images/Tasmeer_Alam.jpeg" },
-    { name: "Cynthia Nosiri", role: "AI Researcher", image: "public/images/Cynthia.jpeg" },
-    { name: "Derrick Cook", role: "AI Researcher", image: "public/images/Derrick_Cook.PNG" },
-    { name: "Rezoan Sultan", role: "Generative AI Researcher", image: "public/images/Rezoan_Sultan.jpeg" },
-    { name: "Benjamin Hall", role: "Researcher", image: "public/images/Benjamin Hall.jpg" },
-    { name: "Emmanuel Masa-ibi", role: "Researcher", image: "public/images/Emmanuel Masa-ibi.jpeg" },
-    { name: "Awotwi Baffoe", role: "AI Researcher", image: "public/images/Awotwi_Baffoe.jpg" },
-    { name: "Opeyemi Adeniran", role: "AI Researcher", image: "public/images/Opeyemi.PNG" },
-    { name: "Anjolie Anthony", role: "Researcher", image: "public/images/Anjolie.JPG" },
-    { name: "Binisa Giri", role: "AI Researcher", image: "public/images/giri.jpeg" },
-    { name: "Nicholas Cook", role: "AI Researcher", image: "public/images/NicholasCook.jpg" },
-    { name: "David Nyarko", role: "Researcher", image: "public/images/david-nyarko.JPG" },
+    { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "https://via.placeholder.com/150x150/3B82F6/FFFFFF?text=Dr.+Kofi+Nyarko" },
+    { name: "Tasmeer Alam", role: "AI Researcher", image: "https://via.placeholder.com/150x150/8B5CF6/FFFFFF?text=Tasmeer+Alam" },
+    { name: "Cynthia Nosiri", role: "AI Researcher", image: "https://via.placeholder.com/150x150/10B981/FFFFFF?text=Cynthia+Nosiri" },
+    { name: "Derrick Cook", role: "AI Researcher", image: "https://via.placeholder.com/150x150/F59E0B/FFFFFF?text=Derrick+Cook" },
+    { name: "Rezoan Sultan", role: "Generative AI Researcher", image: "https://via.placeholder.com/150x150/EF4444/FFFFFF?text=Rezoan+Sultan" },
+    { name: "Benjamin Hall", role: "Researcher", image: "https://via.placeholder.com/150x150/6366F1/FFFFFF?text=Benjamin+Hall" },
+    { name: "Emmanuel Masa-ibi", role: "Researcher", image: "https://via.placeholder.com/150x150/EC4899/FFFFFF?text=Emmanuel" },
+    { name: "Awotwi Baffoe", role: "AI Researcher", image: "https://via.placeholder.com/150x150/14B8A6/FFFFFF?text=Awotwi+Baffoe" },
+    { name: "Opeyemi Adeniran", role: "AI Researcher", image: "https://via.placeholder.com/150x150/F97316/FFFFFF?text=Opeyemi" },
+    { name: "Anjolie Anthony", role: "Researcher", image: "https://via.placeholder.com/150x150/84CC16/FFFFFF?text=Anjolie" },
+    { name: "Binisa Giri", role: "AI Researcher", image: "https://via.placeholder.com/150x150/06B6D4/FFFFFF?text=Binisa+Giri" },
+    { name: "Nicholas Cook", role: "AI Researcher", image: "https://via.placeholder.com/150x150/8B5CF6/FFFFFF?text=Nicholas+Cook" },
+    { name: "David Nyarko", role: "Researcher", image: "https://via.placeholder.com/150x150/F59E0B/FFFFFF?text=David+Nyarko" },
   ];
 
   const pastTeamMembers = [
-    { name: "Ekata Dhital", role: "Research Assistant", image: "public/images/Ekata Dhital.JPG" },
+    { name: "Ekata Dhital", role: "Research Assistant", image: "https://via.placeholder.com/150x150/6B7280/FFFFFF?text=Ekata+Dhital" },
   ];
 
   const researchAreas = [
@@ -154,15 +154,13 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <img 
-                  src="public/images/XPCI_Awotwi.pptx.png" 
-                  alt="XPCI Crack Detection Research"
-                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
-                  style={{
-                    maxHeight: '500px',
-                    objectFit: 'contain'
-                  }}
-                />
+                <div className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🔬</div>
+                    <h4 className="text-xl font-bold text-white mb-2">XPCI Crack Detection Research</h4>
+                    <p className="text-gray-300">Research methodology and results visualization</p>
+                  </div>
+                </div>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   XPCI crack detection methodology and results visualization
                 </p>
@@ -173,14 +171,21 @@ const DepaLabHomepage = () => {
             <div className="mb-8">
               <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl p-6 border border-purple-500/20">
                 <h4 className="text-xl font-bold text-purple-300 mb-4 text-center">Research Demonstration Video</h4>
-                <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/20">
-                  <iframe
-                    src="https://www.youtube.com/embed/a2RgwtP6pHg"
-                    title="XPCI Crack Detection Video"
-                    className="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🎥</div>
+                    <h4 className="text-xl font-bold text-white mb-2">XPCI Research Demo</h4>
+                    <p className="text-gray-300">Video demonstration available</p>
+                    <a 
+                      href="https://www.youtube.com/watch?v=a2RgwtP6pHg" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center mt-4 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition-all duration-300"
+                    >
+                      <i className="fab fa-youtube mr-2"></i>
+                      Watch on YouTube
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -238,15 +243,13 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <img 
-                  src="public/images/msu.png" 
-                  alt="MSU AI Academic Advisor System"
-                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
-                  style={{
-                    maxHeight: '500px',
-                    objectFit: 'contain'
-                  }}
-                />
+                <div className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🎓</div>
+                    <h4 className="text-xl font-bold text-white mb-2">MSU AI Academic Advisor</h4>
+                    <p className="text-gray-300">System interface and architecture</p>
+                  </div>
+                </div>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   MSU AI Academic Advisor system interface and architecture
                 </p>
@@ -257,14 +260,21 @@ const DepaLabHomepage = () => {
             <div className="mb-8">
               <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl p-6 border border-purple-500/20">
                 <h4 className="text-xl font-bold text-purple-300 mb-4 text-center">System Demo</h4>
-                <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/20">
-                  <iframe
-                    src="https://www.youtube.com/embed/5msFb_V-XaE"
-                    title="MSU AI Academic Advisor Demo"
-                    className="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🎥</div>
+                    <h4 className="text-xl font-bold text-white mb-2">MSU AI Advisor Demo</h4>
+                    <p className="text-gray-300">System demonstration available</p>
+                    <a 
+                      href="https://www.youtube.com/watch?v=5msFb_V-XaE" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center mt-4 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition-all duration-300"
+                    >
+                      <i className="fab fa-youtube mr-2"></i>
+                      Watch on YouTube
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -322,15 +332,13 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <img 
-                  src="public/images/CyberShield.pptx.png" 
-                  alt="Cyber Shield System Architecture"
-                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
-                  style={{
-                    maxHeight: '500px',
-                    objectFit: 'contain'
-                  }}
-                />
+                <div className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🛡️</div>
+                    <h4 className="text-xl font-bold text-white mb-2">Cyber Shield System</h4>
+                    <p className="text-gray-300">Abusive language detection architecture</p>
+                  </div>
+                </div>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   Cyber Shield abusive language detection system architecture
                 </p>
@@ -390,15 +398,13 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <img 
-                  src="public/images/ppt_cynthia.png" 
-                  alt="AAVE and SAE Benchmarking Research Presentation"
-                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
-                  style={{
-                    maxHeight: '500px',
-                    objectFit: 'contain'
-                  }}
-                />
+                <div className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🗣️</div>
+                    <h4 className="text-xl font-bold text-white mb-2">AAVE & SAE Benchmarking</h4>
+                    <p className="text-gray-300">Research methodology and results</p>
+                  </div>
+                </div>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   Research presentation showcasing AAVE and SAE benchmarking methodology and results
                 </p>
@@ -458,15 +464,13 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <img 
-                  src="public/images/DEPA POSTER.pptx (1)-1.png" 
-                  alt="Quantized LLM Airport Navigation Poster"
-                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
-                  style={{
-                    maxHeight: '500px',
-                    objectFit: 'contain'
-                  }}
-                />
+                <div className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">✈️</div>
+                    <h4 className="text-xl font-bold text-white mb-2">Quantized LLM Navigation</h4>
+                    <p className="text-gray-300">DEPA Lab poster presentation</p>
+                  </div>
+                </div>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   DEPA Lab poster presentation on quantized LLM airport navigation system
                 </p>
@@ -527,14 +531,21 @@ const DepaLabHomepage = () => {
             <div className="mb-8">
               <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl p-6 border border-purple-500/20">
                 <h4 className="text-xl font-bold text-purple-300 mb-4 text-center">System Demonstration</h4>
-                <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/20">
-                  <iframe
-                    src="https://www.youtube.com/embed/b9aJA9C0Q6w"
-                    title="Vision-based Autonomous Drone Object Tracking Demo"
-                    className="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🎥</div>
+                    <h4 className="text-xl font-bold text-white mb-2">Drone Tracking Demo</h4>
+                    <p className="text-gray-300">System demonstration available</p>
+                    <a 
+                      href="https://www.youtube.com/watch?v=b9aJA9C0Q6w" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center mt-4 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition-all duration-300"
+                    >
+                      <i className="fab fa-youtube mr-2"></i>
+                      Watch on YouTube
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -593,14 +604,21 @@ const DepaLabHomepage = () => {
             <div className="mb-8">
               <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl p-6 border border-purple-500/20">
                 <h4 className="text-xl font-bold text-purple-300 mb-4 text-center">Benchmarking Framework Demo</h4>
-                <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/20">
-                  <iframe
-                    src="https://www.youtube.com/embed/kIk6zBRpjr4"
-                    title="AI/ML Bench Guard Demo"
-                    className="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🎥</div>
+                    <h4 className="text-xl font-bold text-white mb-2">AI/ML Bench Guard Demo</h4>
+                    <p className="text-gray-300">Framework demonstration available</p>
+                    <a 
+                      href="https://www.youtube.com/watch?v=kIk6zBRpjr4" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center mt-4 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition-all duration-300"
+                    >
+                      <i className="fab fa-youtube mr-2"></i>
+                      Watch on YouTube
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -658,15 +676,13 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <img 
-                  src="public/images/MD-2.png" 
-                  alt="Forensic Video Analysis Research"
-                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
-                  style={{
-                    maxHeight: '500px',
-                    objectFit: 'contain'
-                  }}
-                />
+                <div className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🎬</div>
+                    <h4 className="text-xl font-bold text-white mb-2">Forensic Video Analysis</h4>
+                    <p className="text-gray-300">Multimodal LLMs research framework</p>
+                  </div>
+                </div>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   Research framework for forensic video analysis using multimodal LLMs
                 </p>
@@ -726,15 +742,13 @@ const DepaLabHomepage = () => {
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <img 
-                  src="public/images/Automated Detection-Poster-Template.pptx.png" 
-                  alt="Smart Contract Reentrancy Detection Research"
-                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
-                  style={{
-                    maxHeight: '500px',
-                    objectFit: 'contain'
-                  }}
-                />
+                <div className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">⛓️</div>
+                    <h4 className="text-xl font-bold text-white mb-2">Smart Contract Detection</h4>
+                    <p className="text-gray-300">Reentrancy vulnerability detection system</p>
+                  </div>
+                </div>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   Automated detection system for reentrancy vulnerabilities in smart contracts
                 </p>
@@ -1319,6 +1333,14 @@ const DepaLabHomepage = () => {
         backgroundAttachment: 'fixed'
       }}
     >
+      {/* Font Awesome CDN */}
+      <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+        crossOrigin="anonymous" 
+        referrerPolicy="no-referrer" 
+      />
       {/* Animated background overlay */}
       <div 
         className="fixed inset-0 opacity-20 pointer-events-none"
@@ -1406,7 +1428,7 @@ const DepaLabHomepage = () => {
           <div 
             className="absolute inset-0 z-0 transform scale-105"
             style={{
-              backgroundImage: 'url(images/depa2.jpeg)',
+              background: 'linear-gradient(135deg, rgba(26,26,46,0.8) 0%, rgba(15,52,96,0.6) 50%, rgba(26,26,46,0.8) 100%)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
