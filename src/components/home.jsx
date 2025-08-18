@@ -995,7 +995,7 @@ const DepaLabHomepage = () => {
             
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-6 lg:space-x-10">
-              {['Home', 'About', 'Research', 'Projects', 'Awards', 'Publications', 'Symposium', 'Team', 'Contact'].map((item) => (
+              {['Home', 'About', 'Research', 'Projects', 'Awards', 'Funding', 'Publications', 'Symposium', 'Team', 'Contact'].map((item) => (
                 <a 
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -1026,7 +1026,7 @@ const DepaLabHomepage = () => {
             <div className="md:hidden mt-4 sm:mt-6 pb-4 sm:pb-6 rounded-2xl" 
                  style={{background: 'rgba(0,0,0,0.8)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(20px)'}}>
               <div className="flex flex-col space-y-3 sm:space-y-5 p-4 sm:p-6">
-                {['Home', 'About', 'Research', 'Projects', 'Awards', 'Publications', 'Symposium', 'Team', 'Contact'].map((item) => (
+                {['Home', 'About', 'Research', 'Projects', 'Awards', 'Funding', 'Publications', 'Symposium', 'Team', 'Contact'].map((item) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase()}`}
@@ -1525,6 +1525,155 @@ const DepaLabHomepage = () => {
               <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border border-yellow-500/30 text-yellow-300 rounded-full font-bold backdrop-blur-sm">
                 <i className="fas fa-star mr-2"></i>
                 Striving for Excellence in Research and Innovation
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Funding & Grants Section */}
+        <section id="funding" className="mb-16 sm:mb-24 md:mb-32">
+          <div className="container mx-auto px-4 sm:px-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 sm:mb-8 text-center" 
+                style={{
+                  textShadow: '0 0 30px rgba(255,255,255,0.3), 3px 3px 6px rgba(0,0,0,0.9)',
+                  fontFamily: '"Inter", sans-serif'
+                }}>
+              Current{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-400 to-cyan-500">
+                Funding & Grants
+              </span>
+            </h2>
+            
+            <p className="text-lg sm:text-xl text-gray-200 text-center mb-8 sm:mb-12 max-w-4xl mx-auto"
+               style={{
+                 textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                 fontFamily: '"Inter", sans-serif'
+               }}>
+              Supporting cutting-edge research through strategic funding and partnerships.
+            </p>
+
+            {/* Main Grant Card */}
+            <div className="max-w-6xl mx-auto">
+              <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-3xl p-8 md:p-12 border border-white/20 shadow-2xl hover:border-emerald-500/40 transition-all duration-300 relative overflow-hidden">
+                
+                {/* Grant Amount Badge */}
+                <div className="absolute top-6 right-6">
+                  <div className="w-24 h-24 bg-gradient-to-r from-emerald-400 to-teal-600 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-2xl animate-pulse">
+                    <div className="text-center">
+                      <div className="text-xs">$545K</div>
+                      <div className="text-xs">Grant</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                  {/* Grant Icon & Basic Info */}
+                  <div className="text-center lg:text-left">
+                    <div className="w-32 h-32 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full flex items-center justify-center text-white text-6xl shadow-2xl mx-auto lg:mx-0 mb-6">
+                      <i className="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4" 
+                        style={{
+                          textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+                          fontFamily: '"Inter", sans-serif'
+                        }}>
+                      Cybersecurity AI Research Grant
+                    </h3>
+                    <div className="space-y-2 mb-6">
+                      <span className="block px-4 py-2 bg-emerald-500/20 text-emerald-300 rounded-full text-lg font-semibold border border-emerald-500/30">
+                        $545,589.00
+                      </span>
+                      <span className="block px-4 py-2 bg-teal-500/20 text-teal-300 rounded-full text-sm font-semibold border border-teal-500/30">
+                        Aug 2025 - Aug 2026
+                      </span>
+                    </div>
+                  </div>
+                  
+                  {/* Grant Details */}
+                  <div className="lg:col-span-2">
+                    <h4 className="text-xl sm:text-2xl font-bold text-emerald-300 mb-4">
+                      Project Title: "Evaluating AI-Assisted Cybersecurity Operations"
+                    </h4>
+                    
+                    <h5 className="text-lg font-semibold text-white mb-4">
+                      Comparative Analysis of Human Performance with and without AI Tools
+                    </h5>
+                    
+                    <div className="space-y-4 mb-6">
+                      <p className="text-gray-200 leading-relaxed text-lg" 
+                         style={{
+                           textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                           fontFamily: '"Inter", sans-serif'
+                         }}>
+                        This project systematically evaluates the impact of Artificial Intelligence assistance on human performance in critical cybersecurity tasks, including <span className="text-emerald-300 font-semibold">vulnerability detection, phishing identification, exploit mitigation, and network anomaly detection.</span>
+                      </p>
+                      
+                      <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-6">
+                        <h6 className="text-lg font-semibold text-emerald-300 mb-3">Key Research Questions:</h6>
+                        <ul className="text-gray-200 space-y-2 text-sm">
+                          <li className="flex items-start gap-2">
+                            <span className="text-emerald-400 mt-1">•</span>
+                            <span>How does AI assistance influence task efficiency, accuracy, and error rates compared to manual and traditional tools?</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-emerald-400 mt-1">•</span>
+                            <span>What are the cognitive impacts of AI assistance on cybersecurity professionals?</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-emerald-400 mt-1">•</span>
+                            <span>In what scenarios does AI provide the greatest operational benefit, and where might it introduce risks?</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    {/* Research Methodology */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                      <div className="bg-teal-500/10 border border-teal-500/20 rounded-lg p-4">
+                        <h6 className="font-semibold text-teal-300 mb-2">Study Design</h6>
+                        <ul className="text-gray-200 text-sm space-y-1">
+                          <li>• 30 Cybersecurity Professionals</li>
+                          <li>• Controlled Experimental Design</li>
+                          <li>• Three Testing Conditions</li>
+                          <li>• Statistical Analysis (ANOVA)</li>
+                        </ul>
+                      </div>
+                      <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-4">
+                        <h6 className="font-semibold text-emerald-300 mb-2">AI Models Tested</h6>
+                        <ul className="text-gray-200 text-sm space-y-1">
+                          <li>• GPT-4 Integration</li>
+                          <li>• Claude 3.5 Testing</li>
+                          <li>• Frontier Model Analysis</li>
+                          <li>• Performance Benchmarking</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-500/20 rounded-lg p-4">
+                      <p className="text-emerald-200 font-medium">
+                        <i className="fas fa-target mr-2"></i>
+                        <strong>Expected Impact:</strong> This research will inform best practices for deploying AI technologies responsibly in cybersecurity, ensuring they enhance human capabilities while maintaining operational safety and trustworthiness.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Decorative Elements */}
+                <div className="absolute bottom-4 left-4 opacity-10">
+                  <div className="text-8xl text-emerald-400">🔬</div>
+                </div>
+                <div className="absolute top-1/4 right-1/4 opacity-5">
+                  <div className="text-6xl text-teal-400">🛡️</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Research Impact Statement */}
+            <div className="mt-12 text-center">
+              <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500/20 to-teal-600/20 border border-emerald-500/30 text-emerald-300 rounded-full font-bold backdrop-blur-sm text-lg">
+                <i className="fas fa-chart-line mr-3"></i>
+                Advancing Cybersecurity Through AI Research Excellence
+                <i className="fas fa-shield-alt ml-3"></i>
               </div>
             </div>
           </div>
