@@ -1312,7 +1312,11 @@ const DepaLabHomepage = () => {
     <div 
       className="min-h-screen overflow-hidden flex flex-col relative"
       style={{
-        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
+        background: `
+          linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #16213e 75%, #1a1a2e 100%),
+          radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.2) 0%, transparent 60%),
+          radial-gradient(circle at 70% 30%, rgba(147, 51, 234, 0.2) 0%, transparent 60%)
+        `,
         backgroundAttachment: 'fixed'
       }}
     >
@@ -1407,24 +1411,48 @@ const DepaLabHomepage = () => {
         
         {/* Hero Section with Background Image */}
         <section id="hero" className="relative mb-8 sm:mb-16 md:mb-24 pt-8 sm:pt-12 md:pt-16 min-h-screen flex items-center overflow-hidden">
-          {/* Hero Background with Pattern */}
+          {/* Hero Background with Strong Visual Pattern */}
           <div 
-            className="absolute inset-0 z-0 transform scale-105"
+            className="absolute inset-0 z-0"
             style={{
               background: `
-                linear-gradient(135deg, rgba(26,26,46,0.9) 0%, rgba(15,52,96,0.7) 50%, rgba(26,26,46,0.9) 100%),
-                radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(147, 51, 234, 0.3) 0%, transparent 50%),
-                conic-gradient(from 0deg at 50% 50%, 
-                  rgba(59, 130, 246, 0.1) 0deg, 
-                  rgba(147, 51, 234, 0.1) 120deg, 
-                  rgba(59, 130, 246, 0.1) 240deg, 
-                  rgba(147, 51, 234, 0.1) 360deg)
+                linear-gradient(45deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #16213e 75%, #1a1a2e 100%),
+                radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(16, 185, 129, 0.3) 0%, transparent 40%),
+                conic-gradient(from 45deg at 50% 50%, 
+                  rgba(59, 130, 246, 0.2) 0deg, 
+                  rgba(147, 51, 234, 0.2) 90deg, 
+                  rgba(16, 185, 129, 0.2) 180deg,
+                  rgba(245, 158, 11, 0.2) 270deg,
+                  rgba(59, 130, 246, 0.2) 360deg)
               `,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
-              backgroundAttachment: 'fixed',
+            }}
+          />
+          
+          {/* Additional Pattern Overlay */}
+          <div 
+            className="absolute inset-0 z-5 opacity-30"
+            style={{
+              background: `
+                repeating-linear-gradient(
+                  45deg,
+                  transparent,
+                  transparent 2px,
+                  rgba(59, 130, 246, 0.1) 2px,
+                  rgba(59, 130, 246, 0.1) 4px
+                ),
+                repeating-linear-gradient(
+                  -45deg,
+                  transparent,
+                  transparent 2px,
+                  rgba(147, 51, 234, 0.1) 2px,
+                  rgba(147, 51, 234, 0.1) 4px
+                )
+              `,
             }}
           />
           
@@ -1454,7 +1482,7 @@ const DepaLabHomepage = () => {
               `
             }}
           />
-
+          
           {/* Hero Content */}
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20 w-full">
             
@@ -1475,7 +1503,7 @@ const DepaLabHomepage = () => {
                      style={{boxShadow: '0 0 20px rgba(59, 130, 246, 0.8)'}}></div>
               </div>
             </div>
-         
+            
             {/* Main Title */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black mb-6 sm:mb-8 md:mb-12 leading-[0.9] tracking-tight px-2"
                 style={{
