@@ -572,13 +572,31 @@ const DepaLabHomepage = () => {
           >
             ← Back to Home
           </button>
-          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+          <div className="max-w-6xl mx-auto bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
                 🗣️
               </div>
               <h1 className="text-4xl font-black text-white mb-4">Benchmarking Large Language Models for AAVE and SAE Text Generation</h1>
               <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            {/* Research Image */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
+                <img 
+                  src="public/images/ppt_cynthia.png" 
+                  alt="AAVE and SAE Benchmarking Research Presentation"
+                  className="w-full h-auto rounded-xl shadow-2xl border border-white/20"
+                  style={{
+                    maxHeight: '500px',
+                    objectFit: 'contain'
+                  }}
+                />
+                <p className="text-center text-gray-300 text-sm mt-4 italic">
+                  Research presentation showcasing AAVE and SAE benchmarking methodology and results
+                </p>
+              </div>
             </div>
             
             <div className="space-y-6">
@@ -589,6 +607,29 @@ const DepaLabHomepage = () => {
               <p className="text-gray-200 leading-relaxed text-lg">
                 Using a structured evaluation framework, we analyzed model-generated continuations of AAVE and SAE prompts through BLEU and ROUGE scores for text overlap, cosine similarity for semantic consistency, and sentiment distribution analysis to measure alignment with original text sentiment.
               </p>
+              
+              {/* Key Findings Section */}
+              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-6 border border-purple-500/20 mt-6">
+                <h4 className="text-xl font-bold text-purple-300 mb-4">Key Research Contributions</h4>
+                <ul className="text-gray-200 space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Comprehensive evaluation of 6 leading language models across dialect-specific text generation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Novel benchmarking framework for AAVE and SAE linguistic variation assessment</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Multi-metric analysis including BLEU, ROUGE, cosine similarity, and sentiment alignment</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>Insights into model performance disparities across different linguistic varieties</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
