@@ -956,6 +956,60 @@ const pastTeamMembers = [
               </div>
             </div>
 
+            {/* Publication 5 - SmartPattern */}
+<div className="group transform hover:scale-105 transition-all duration-500">
+  <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl h-full hover:border-green-500/40 transition-all duration-300">
+    <div className="flex items-start gap-4 mb-6">
+      <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white text-2xl shadow-xl">
+        <i className="fas fa-shield-alt"></i>
+      </div>
+      <div className="flex-grow">
+        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors duration-300" 
+            style={{
+              textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+              fontFamily: '"Inter", sans-serif'
+            }}>
+          SmartPattern: A Machine Learning Framework for Detecting Reentrancy Vulnerabilities in Blockchain Smart Contracts
+        </h3>
+        <span className="inline-block px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm font-semibold border border-green-500/30 mb-3">
+          IEEE Publication
+        </span>
+      </div>
+    </div>
+    
+    <div className="space-y-3 mb-6">
+      <div>
+        <span className="text-green-300 font-semibold">Research Focus: </span>
+        <span className="text-gray-200">Machine Learning Framework for Blockchain Security</span>
+      </div>
+      <div>
+        <span className="text-green-300 font-semibold">Key Achievement: </span>
+        <span className="text-gray-200">94% detection accuracy analyzing 40,000 smart contracts</span>
+      </div>
+      <div>
+        <span className="text-green-300 font-semibold">Models Used: </span>
+        <span className="text-gray-200">Random Forest, Support Vector Classifier</span>
+      </div>
+    </div>
+    
+    <p className="text-gray-300 text-sm leading-relaxed mb-6 group-hover:text-gray-200 transition-colors duration-300">
+      SmartPattern introduces a novel machine learning-based framework to detect reentrancy attacks in smart contracts, achieving superior performance over traditional static analysis tools and transformer-based approaches.
+    </p>
+    
+    <a 
+      href="https://ieeexplore.ieee.org/abstract/document/10944738"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/25"
+    >
+      Read Full Paper
+      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
+    </a>
+  </div>
+</div>
+
             {/* Research Impact Statement */}
             <div className="mt-12 text-center">
               <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500/20 to-emerald-600/20 border border-green-500/30 text-green-300 rounded-full font-bold backdrop-blur-sm text-lg">
@@ -2415,7 +2469,7 @@ const pastTeamMembers = [
               Explore our contributions to research and innovation in AI and technology.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {/* Publication 1 */}
               <div className="group transform hover:scale-105 transition-all duration-500">
                 <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl h-full hover:border-green-500/40 transition-all duration-300">
