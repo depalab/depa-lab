@@ -2531,17 +2531,26 @@ const pastTeamMembers = [
                   {presentTeamMembers.map((member, index) => (
                     <div key={index} className="flex-shrink-0 w-64 group transform hover:scale-105 transition-all duration-500">
                       <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl text-center hover:border-blue-500/40 hover:shadow-blue-500/20 transition-all duration-300 h-full">
-                        <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-400/50 shadow-2xl group-hover:border-blue-400/80 transition-all duration-300"
-                             style={{
-                               background: `linear-gradient(135deg, ${['#3B82F6', '#8B5CF6', '#10B981', '#F59E0B', '#EF4444', '#6366F1', '#EC4899', '#14B8A6', '#F97316', '#84CC16', '#06B6D4', '#8B5CF6', '#F59E0B'][index]} 0%, ${['#1E40AF', '#7C3AED', '#059669', '#D97706', '#DC2626', '#4F46E5', '#DB2777', '#0F766E', '#EA580C', '#65A30D', '#0891B2', '#7C3AED', '#D97706'][index]} 100%)`,
-                               display: 'flex',
-                               alignItems: 'center',
-                               justifyContent: 'center',
-                               fontSize: '3rem',
-                               color: 'white',
-                               fontWeight: 'bold'
-                             }}>
-                          {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                        <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-400/50 shadow-2xl group-hover:border-blue-400/80 transition-all duration-300 relative">
+                          <img 
+                            src={`/depa-lab/images/${member.image}`}
+                            alt={member.name}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              // Fallback to initials if image fails to load
+                              e.target.style.display = 'none';
+                              e.target.nextSibling.style.display = 'flex';
+                            }}
+                            />
+                          <div 
+                            className="w-full h-full absolute inset-0 flex items-center justify-center text-3xl text-white font-bold"
+                            style={{
+                              background: `linear-gradient(135deg, ${['#3B82F6', '#8B5CF6', '#10B981', '#F59E0B', '#EF4444', '#6366F1', '#EC4899', '#14B8A6', '#F97316', '#84CC16', '#06B6D4', '#8B5CF6', '#F59E0B'][index]} 0%, ${['#1E40AF', '#7C3AED', '#059669', '#D97706', '#DC2626', '#4F46E5', '#DB2777', '#0F766E', '#EA580C', '#65A30D', '#0891B2', '#7C3AED', '#D97706'][index]} 100%)`,
+                              display: 'none'
+                            }}
+                            >
+                            {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                          </div>
                         </div>
                         <h4 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300" 
                             style={{
