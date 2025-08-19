@@ -24,8 +24,9 @@ const DepaLabHomepage = () => {
   { name: "Awotwi Baffoe", role: "AI Researcher", image: "Awotwi_Baffoe.jpg" },
   { name: "Opeyemi Adeniran", role: "AI Researcher", image: "Opeyemi.PNG" },
   { name: "Anjolie Anthony", role: "Researcher", image: "Anjolie.JPG" },
-  { name: "Binisa Giri", role: "AI Researcher", image: "giri.jpeg" },
+  { name: "Binisa Giri", role: "AI Researcher", image: "Binisa_Giri.jpeg" },
   { name: "Nicholas Cook", role: "AI Researcher", image: "NicholasCook.jpg" },
+  { name: "Temitope Ajibola", role: "Researcher", image: "Temi.JPG" },
   { name: "David Nyarko", role: "Researcher", image: "david-nyarko.JPG" },
 ];
 
