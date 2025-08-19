@@ -14,26 +14,26 @@ const DepaLabHomepage = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Actual team data with CSS-generated avatars
-  const presentTeamMembers = [
-    { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab" },
-    { name: "Tasmeer Alam", role: "AI Researcher" },
-    { name: "Cynthia Nosiri", role: "AI Researcher" },
-    { name: "Derrick Cook", role: "AI Researcher" },
-    { name: "Rezoan Sultan", role: "Generative AI Researcher" },
-    { name: "Benjamin Hall", role: "Researcher" },
-    { name: "Emmanuel Masa-ibi", role: "Researcher" },
-    { name: "Awotwi Baffoe", role: "AI Researcher" },
-    { name: "Opeyemi Adeniran", role: "AI Researcher" },
-    { name: "Anjolie Anthony", role: "Researcher" },
-    { name: "Binisa Giri", role: "AI Researcher" },
-    { name: "Nicholas Cook", role: "AI Researcher" },
-    { name: "David Nyarko", role: "Researcher" },
-  ];
+  // Replace the existing presentTeamMembers array with this updated version:
+const presentTeamMembers = [
+  { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "kofi.jpeg" },
+  { name: "Tasmeer Alam", role: "AI Researcher", image: "tasmeer.jpeg" },
+  { name: "Cynthia Nosiri", role: "AI Researcher", image: "Cynthia.jpeg" },
+  { name: "Derrick Cook", role: "AI Researcher", image: "derrick.jpeg" },
+  { name: "Rezoan Sultan", role: "Generative AI Researcher", image: "rezoan.jpeg" },
+  { name: "Benjamin Hall", role: "Researcher", image: "benjamin.jpeg" },
+  { name: "Emmanuel Masa-ibi", role: "Researcher", image: "emmanuel.jpeg" },
+  { name: "Awotwi Baffoe", role: "AI Researcher", image: "awotwi.jpeg" },
+  { name: "Opeyemi Adeniran", role: "AI Researcher", image: "opeyemi.jpeg" },
+  { name: "Anjolie Anthony", role: "Researcher", image: "anjolie.jpeg" },
+  { name: "Binisa Giri", role: "AI Researcher", image: "binisa.jpeg" },
+  { name: "Nicholas Cook", role: "AI Researcher", image: "nicholas.jpeg" },
+  { name: "David Nyarko", role: "Researcher", image: "david.jpeg" },
+];
 
-  const pastTeamMembers = [
-    { name: "Ekata Dhital", role: "Research Assistant" },
-  ];
+const pastTeamMembers = [
+  { name: "Ekata Dhital", role: "Research Assistant", image: "ekata.jpeg" },
+];
 
   const researchAreas = [
     {
