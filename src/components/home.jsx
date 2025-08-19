@@ -1288,6 +1288,91 @@ const pastTeamMembers = [
               </div>
             </div>
 
+            {/* Awotwi Baffoe Top Poster Award */}
+<div className="group transform hover:scale-105 transition-all duration-500 lg:col-span-2 xl:col-span-3">
+  <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl hover:border-blue-500/40 transition-all duration-300 relative overflow-hidden">
+    
+    {/* Award Badge */}
+    <div className="absolute top-4 right-4">
+      <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl animate-pulse">
+        🏆
+      </div>
+    </div>
+    
+    <div className="flex flex-col lg:flex-row items-start gap-6">
+      {/* Award Icon */}
+      <div className="flex-shrink-0">
+        <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl transform group-hover:rotate-12 transition-transform duration-500">
+          <i className="fas fa-chart-line"></i>
+        </div>
+      </div>
+      
+      {/* Award Content */}
+      <div className="flex-grow">
+        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300" 
+            style={{
+              textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+              fontFamily: '"Inter", sans-serif'
+            }}>
+          Top Poster Award - MSEE Annual Technical Review 2025
+        </h3>
+        
+        <div className="mb-4">
+          <span className="inline-block px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-semibold border border-blue-500/30">
+            Johns Hopkins University
+          </span>
+          <span className="inline-block ml-2 px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm font-semibold border border-purple-500/30">
+            Washington, D.C.
+          </span>
+        </div>
+        
+        <p className="text-blue-300 font-semibold mb-3" 
+           style={{
+             textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+             fontFamily: '"Inter", sans-serif'
+           }}>
+          Award Winner: Awotwi Baffoe
+        </p>
+        
+        <p className="text-gray-200 leading-relaxed group-hover:text-gray-100 transition-colors duration-300 mb-4" 
+           style={{
+             textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+             fontFamily: '"Inter", sans-serif'
+           }}>
+          Awotwi Baffoe was recognized as one of the <span className="text-blue-300 font-semibold">top poster award recipients</span> at the MSEE (Material Science in Extreme Environment) Annual Technical Review 2025. The award-winning poster showcased groundbreaking research on automated crack detection in low-density, structurally complex materials under stress using the <span className="text-blue-300 font-semibold">YOLOv11 deep learning model and X-ray Phase Contrast Imaging (XPCI)</span> dataset.
+        </p>
+        
+        {/* Research Materials */}
+        <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-lg p-4 mb-4">
+          <h6 className="font-semibold text-blue-300 mb-2">Materials Studied:</h6>
+          <div className="flex flex-wrap gap-2">
+            {['Quartz Crystal', 'Pink Westerly Granite', 'Boron Carbide'].map((material) => (
+              <span 
+                key={material} 
+                className="px-2 py-1 bg-purple-500/20 text-purple-300 rounded text-xs font-medium border border-purple-500/30"
+              >
+                {material}
+              </span>
+            ))}
+          </div>
+        </div>
+        
+        <div className="bg-gradient-to-r from-blue-500/10 to-blue-600/10 border border-blue-500/20 rounded-lg p-4">
+          <p className="text-blue-200 font-medium">
+            <i className="fas fa-microscope mr-2"></i>
+            <strong>Research Impact:</strong> This innovative approach advances non-destructive evaluation techniques for early-stage damage detection in critical materials, contributing significantly to materials science in extreme environments.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    {/* Decorative Elements */}
+    <div className="absolute bottom-4 left-4 opacity-10">
+      <div className="text-6xl text-blue-400">🔬</div>
+    </div>
+  </div>
+</div>
+
             {/* Future Awards Placeholder */}
             <div className="text-center">
               <div className="inline-flex items-center px-6 py-4 bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border border-yellow-500/30 text-yellow-300 rounded-full font-bold backdrop-blur-sm text-lg">
