@@ -1328,9 +1328,6 @@ const DepaLabHomepage = () => {
         crossOrigin="anonymous" 
         referrerPolicy="no-referrer" 
       />
-      {/* Favicon */}
-      <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9InVybCgjZ3JhZGllbnQwX2xpbmVhcl8xXzEpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MF9saW5lYXJfMV8xIiB4MT0iMCIgeTE9IjAiIHgyPSIzMiIgeTI9IjMyIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMzQjgyRjYiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOEI1Q0Y2Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHR0ZXh0IHg9IjE2IiB5PSIyMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkQ8L3RleHQ+Cjwvc3ZnPgo=" />
-      
       {/* Animated background overlay */}
       <div 
         className="fixed inset-0 opacity-20 pointer-events-none"
@@ -1782,231 +1779,6 @@ const DepaLabHomepage = () => {
         {/* Projects Section - Updated with Links */}
         <section id="projects" className="mb-16 sm:mb-24 md:mb-32">
           <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                D
-              </div>
-              <span className="text-2xl font-black" 
-                    style={{
-                      textShadow: '0 0 20px rgba(59, 130, 246, 0.5), 2px 2px 4px rgba(0,0,0,0.8)',
-                      fontFamily: '"Inter", sans-serif'
-                    }}>
-                DEPA Research Lab
-              </span>
-            </div>
-            
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto"
-               style={{
-                 textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
-                 fontFamily: '"Inter", sans-serif'
-               }}>
-              Data Engineering and Predictive Analytics Lab at Morgan State University
-            </p>
-            
-            <div className="border-t border-white/10 pt-6">
-              <p className="text-gray-300" 
-                 style={{
-                   textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
-                   fontFamily: '"Inter", sans-serif'
-                 }}>
-                © {new Date().getFullYear()} DEPA Research Lab. All rights reserved.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-      {/* Custom Styles */}
-      <style jsx>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-        
-        @keyframes glow {
-          0%, 100% { filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.8)); }
-          50% { filter: drop-shadow(0 0 60px rgba(59, 130, 246, 1)); }
-        }
-        
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-        
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes shimmer {
-          0% { background-position: -200% 0; }
-          100% { background-position: 200% 0; }
-        }
-        
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-        
-        .animate-fadeInUp {
-          animation: fadeInUp 0.8s ease-out;
-        }
-        
-        .shimmer {
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.2),
-            transparent
-          );
-          background-size: 200% 100%;
-          animation: shimmer 3s infinite;
-        }
-        
-        * {
-          font-family: 'Inter', sans-serif;
-        }
-        
-        /* Enhanced scrollbar */
-        ::-webkit-scrollbar {
-          width: 10px;
-        }
-        
-        ::-webkit-scrollbar-track {
-          background: rgba(0, 0, 0, 0.1);
-          border-radius: 10px;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-          background: linear-gradient(45deg, rgba(59, 130, 246, 0.6), rgba(147, 51, 234, 0.6));
-          border-radius: 10px;
-          border: 2px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(45deg, rgba(59, 130, 246, 0.8), rgba(147, 51, 234, 0.8));
-        }
-
-        /* Smooth scrolling */
-        html {
-          scroll-behavior: smooth;
-        }
-        
-        /* Responsive text scaling */
-        @media (max-width: 640px) {
-          .hero-title {
-            font-size: clamp(2rem, 8vw, 3rem);
-          }
-          .hero-subtitle {
-            font-size: clamp(1rem, 4vw, 1.25rem);
-          }
-        }
-        
-        @media (min-width: 641px) and (max-width: 1024px) {
-          .hero-title {
-            font-size: clamp(3rem, 6vw, 4rem);
-          }
-          .hero-subtitle {
-            font-size: clamp(1.25rem, 3vw, 1.5rem);
-          }
-        }
-        
-        @media (min-width: 1025px) {
-          .hero-title {
-            font-size: clamp(4rem, 5vw, 6rem);
-          }
-          .hero-subtitle {
-            font-size: clamp(1.5rem, 2vw, 2rem);
-          }
-        }
-        
-        /* Background parallax effect for larger screens */
-        @media (min-width: 1024px) {
-          #hero .absolute.inset-0.z-0 {
-            transform: scale(1.1);
-            transition: transform 0.3s ease-out;
-          }
-        }
-        
-        /* Enhanced button hover effects */
-        .btn-primary {
-          position: relative;
-          overflow: hidden;
-        }
-        
-        .btn-primary::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.2),
-            transparent
-          );
-          transition: left 0.5s;
-        }
-        
-        .btn-primary:hover::before {
-          left: 100%;
-        }
-        
-        /* Glass morphism effect */
-        .glass {
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          background: rgba(255, 255, 255, 0.05);
-        }
-        
-        /* Enhanced mobile responsiveness */
-        @media (max-width: 475px) {
-          .container {
-            padding-left: 1rem;
-            padding-right: 1rem;
-          }
-          
-          .hero-content {
-            padding: 0 0.5rem;
-          }
-        }
-        
-        /* Improved accessibility */
-        @media (prefers-reduced-motion: reduce) {
-          .animate-ping,
-          .animate-pulse,
-          .animate-bounce,
-          .animate-spin {
-            animation: none;
-          }
-        }
-
-        /* Hide scrollbar for horizontal scroll */
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        
-        /* Smooth horizontal scrolling */
-        .scrollbar-hide {
-          scroll-behavior: smooth;
-        }
-      `}</style>
-    </div>
-  );
-};
-
-export default DepaLabHomepage;
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 sm:mb-8 md:mb-12 text-center" 
                 style={{
                   textShadow: '0 0 30px rgba(255,255,255,0.3), 3px 3px 6px rgba(0,0,0,0.9)',
@@ -2760,25 +2532,17 @@ export default DepaLabHomepage;
                   {presentTeamMembers.map((member, index) => (
                     <div key={index} className="flex-shrink-0 w-64 group transform hover:scale-105 transition-all duration-500">
                       <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl text-center hover:border-blue-500/40 hover:shadow-blue-500/20 transition-all duration-300 h-full">
-                        <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-400/50 shadow-2xl group-hover:border-blue-400/80 transition-all duration-300">
-                          <img 
-                            src={`/depa-lab/images/${member.name.split(' ')[0]}.jpeg`}
-                            alt={member.name}
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              // Fallback to initials if image doesn't load
-                              e.target.style.display = 'none';
-                              e.target.nextSibling.style.display = 'flex';
-                            }}
-                          />
-                          <div 
-                            className="w-full h-full hidden items-center justify-center text-3xl text-white font-bold"
-                            style={{
-                              background: `linear-gradient(135deg, ${['#3B82F6', '#8B5CF6', '#10B981', '#F59E0B', '#EF4444', '#6366F1', '#EC4899', '#14B8A6', '#F97316', '#84CC16', '#06B6D4', '#8B5CF6', '#F59E0B'][index]} 0%, ${['#1E40AF', '#7C3AED', '#059669', '#D97706', '#DC2626', '#4F46E5', '#DB2777', '#0F766E', '#EA580C', '#65A30D', '#0891B2', '#7C3AED', '#D97706'][index]} 100%)`
-                            }}
-                          >
-                            {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
-                          </div>
+                        <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-400/50 shadow-2xl group-hover:border-blue-400/80 transition-all duration-300"
+                             style={{
+                               background: `linear-gradient(135deg, ${['#3B82F6', '#8B5CF6', '#10B981', '#F59E0B', '#EF4444', '#6366F1', '#EC4899', '#14B8A6', '#F97316', '#84CC16', '#06B6D4', '#8B5CF6', '#F59E0B'][index]} 0%, ${['#1E40AF', '#7C3AED', '#059669', '#D97706', '#DC2626', '#4F46E5', '#DB2777', '#0F766E', '#EA580C', '#65A30D', '#0891B2', '#7C3AED', '#D97706'][index]} 100%)`,
+                               display: 'flex',
+                               alignItems: 'center',
+                               justifyContent: 'center',
+                               fontSize: '3rem',
+                               color: 'white',
+                               fontWeight: 'bold'
+                             }}>
+                          {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
                         </div>
                         <h4 className="text-lg font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300" 
                             style={{
@@ -2849,25 +2613,17 @@ export default DepaLabHomepage;
                   {pastTeamMembers.map((member, index) => (
                     <div key={index} className="flex-shrink-0 w-64 group transform hover:scale-105 transition-all duration-500">
                       <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 border border-white/20 shadow-2xl text-center hover:border-purple-500/40 hover:shadow-purple-500/20 transition-all duration-300 h-full">
-                        <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-purple-400/50 shadow-2xl group-hover:border-purple-400/80 transition-all duration-300">
-                          <img 
-                            src={`/depa-lab/images/${member.name.split(' ')[0]}.jpeg`}
-                            alt={member.name}
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              // Fallback to initials if image doesn't load
-                              e.target.style.display = 'none';
-                              e.target.nextSibling.style.display = 'flex';
-                            }}
-                          />
-                          <div 
-                            className="w-full h-full hidden items-center justify-center text-3xl text-white font-bold"
-                            style={{
-                              background: 'linear-gradient(135deg, #6B7280 0%, #4B5563 100%)'
-                            }}
-                          >
-                            {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
-                          </div>
+                        <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-purple-400/50 shadow-2xl group-hover:border-purple-400/80 transition-all duration-300"
+                             style={{
+                               background: 'linear-gradient(135deg, #6B7280 0%, #4B5563 100%)',
+                               display: 'flex',
+                               alignItems: 'center',
+                               justifyContent: 'center',
+                               fontSize: '3rem',
+                               color: 'white',
+                               fontWeight: 'bold'
+                             }}>
+                          {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
                         </div>
                         <h4 className="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300" 
                             style={{
