@@ -299,16 +299,11 @@ const pastTeamMembers = [
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <div className="w-full h-96 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center"
-                     style={{
-                       background: 'linear-gradient(135deg, #059669 0%, #0891B2 50%, #059669 100%)',
-                     }}>
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">🛡️</div>
-                    <h4 className="text-xl font-bold text-white mb-2">Cyber Shield System</h4>
-                    <p className="text-gray-200">Abusive Language Detection Architecture</p>
-                  </div>
-                </div>
+                <img 
+  src="/depa-lab/images/CyberShield.pptx.png"
+  alt="Cyber Shield System Architecture"
+  className="w-full h-96 rounded-xl shadow-2xl border border-white/20 object-cover"
+/>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   Cyber Shield abusive language detection system architecture
                 </p>
@@ -368,16 +363,11 @@ const pastTeamMembers = [
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <div className="w-full h-96 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center"
-                     style={{
-                       background: 'linear-gradient(135deg, #DC2626 0%, #F59E0B 50%, #DC2626 100%)',
-                     }}>
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">🗣️</div>
-                    <h4 className="text-xl font-bold text-white mb-2">AAVE & SAE Benchmarking</h4>
-                    <p className="text-gray-200">Research Methodology and Results</p>
-                  </div>
-                </div>
+  <img 
+  src="/depa-lab/images/ppt_cynthia.png"
+  alt="AAVE & SAE Benchmarking Research"
+  className="w-full h-96 rounded-xl shadow-2xl border border-white/20 object-cover"
+/>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   Research presentation showcasing AAVE and SAE benchmarking methodology and results
                 </p>
@@ -437,16 +427,11 @@ const pastTeamMembers = [
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <div className="w-full h-96 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center"
-                     style={{
-                       background: 'linear-gradient(135deg, #F59E0B 0%, #EF4444 50%, #F59E0B 100%)',
-                     }}>
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">✈️</div>
-                    <h4 className="text-xl font-bold text-white mb-2">Quantized LLM Navigation</h4>
-                    <p className="text-gray-200">DEPA Lab Poster Presentation</p>
-                  </div>
-                </div>
+  <img 
+  src="/depa-lab/images/DEPA POSTER.pptx (1)-1.png"
+  alt="Quantized LLM Airport Navigation System"
+  className="w-full h-96 rounded-xl shadow-2xl border border-white/20 object-cover"
+/>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   DEPA Lab poster presentation on quantized LLM airport navigation system
                 </p>
@@ -652,16 +637,11 @@ const pastTeamMembers = [
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <div className="w-full h-96 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center"
-                     style={{
-                       background: 'linear-gradient(135deg, #8B5CF6 0%, #EC4899 50%, #8B5CF6 100%)',
-                     }}>
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">🎬</div>
-                    <h4 className="text-xl font-bold text-white mb-2">Forensic Video Analysis</h4>
-                    <p className="text-gray-200">Multimodal LLMs Research Framework</p>
-                  </div>
-                </div>
+<img 
+  src="/depa-lab/images/MD-2.png"
+  alt="Forensic Video Analysis Framework"
+  className="w-full h-96 rounded-xl shadow-2xl border border-white/20 object-cover"
+/>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   Research framework for forensic video analysis using multimodal LLMs
                 </p>
@@ -721,16 +701,11 @@ const pastTeamMembers = [
             {/* Research Image */}
             <div className="mb-8">
               <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-500/20">
-                <div className="w-full h-96 rounded-xl shadow-2xl border border-white/20 flex items-center justify-center"
-                     style={{
-                       background: 'linear-gradient(135deg, #10B981 0%, #06B6D4 50%, #10B981 100%)',
-                     }}>
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">⛓️</div>
-                    <h4 className="text-xl font-bold text-white mb-2">Smart Contract Detection</h4>
-                    <p className="text-gray-200">Reentrancy Vulnerability Detection System</p>
-                  </div>
-                </div>
+<img 
+  src="/depa-lab/images/Automated Detection-Poster-Template.pptx.png"
+  alt="Smart Contract Reentrancy Detection System"
+  className="w-full h-96 rounded-xl shadow-2xl border border-white/20 object-cover"
+/>
                 <p className="text-center text-gray-300 text-sm mt-4 italic">
                   Automated detection system for reentrancy vulnerabilities in smart contracts
                 </p>
