@@ -1373,6 +1373,213 @@ const pastTeamMembers = [
   </div>
 </div>
 
+            {/* MIT Hack the Climate Hackathon First Place Award */}
+<div className="group transform hover:scale-105 transition-all duration-500 lg:col-span-2 xl:col-span-3">
+  <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl hover:border-green-500/40 transition-all duration-300 relative overflow-hidden">
+    
+    {/* Award Badge */}
+    <div className="absolute top-4 right-4">
+      <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-emerald-600 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl animate-pulse">
+        🥇
+      </div>
+    </div>
+    
+    <div className="flex flex-col lg:flex-row items-start gap-6">
+      {/* Award Icon */}
+      <div className="flex-shrink-0">
+        <div className="w-24 h-24 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl transform group-hover:rotate-12 transition-transform duration-500">
+          <i className="fas fa-leaf"></i>
+        </div>
+      </div>
+      
+      {/* Award Content */}
+      <div className="flex-grow">
+        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-green-300 transition-colors duration-300" 
+            style={{
+              textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+              fontFamily: '"Inter", sans-serif'
+            }}>
+          First Place - MIT Hack the Climate Hackathon
+        </h3>
+        
+        <div className="mb-4">
+          <span className="inline-block px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm font-semibold border border-green-500/30">
+            MIT RAISE AI & Education Summit
+          </span>
+          <span className="inline-block ml-2 px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-sm font-semibold border border-emerald-500/30">
+            July 2025
+          </span>
+        </div>
+        
+        <div className="mb-4">
+          <h4 className="text-lg font-semibold text-green-300 mb-2">Winning Team Members:</h4>
+          <div className="flex flex-wrap gap-2">
+            <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-lg text-sm font-medium border border-blue-500/30">
+              Kianna Spencer (CECE Lab)
+            </span>
+            <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-lg text-sm font-medium border border-purple-500/30">
+              Koby Nyarkon (DEPA Lab)
+            </span>
+            <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-lg text-sm font-medium border border-blue-500/30">
+              Jamal Williamson (CECE Lab)
+            </span>
+          </div>
+        </div>
+        
+        <h4 className="text-xl font-bold text-emerald-300 mb-3">
+          Project: ThermaWise
+        </h4>
+        
+        <p className="text-gray-200 leading-relaxed group-hover:text-gray-100 transition-colors duration-300 mb-4" 
+           style={{
+             textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+             fontFamily: '"Inter", sans-serif'
+           }}>
+          A team of CEAMLS students claimed <span className="text-green-300 font-semibold">first place</span> at the prestigious MIT Hack the Climate Hackathon. The winning team developed <span className="text-emerald-300 font-semibold">ThermaWise</span>, a powerful AI-powered platform that delivers creative, data-driven energy-saving strategies rooted in passive design and building science.
+        </p>
+        
+        {/* Project Features */}
+        <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-lg p-4 mb-4">
+          <h6 className="font-semibold text-green-300 mb-2">ThermaWise Key Features:</h6>
+          <ul className="text-gray-200 space-y-1 text-sm">
+            <li className="flex items-start gap-2">
+              <span className="text-green-400 mt-1">•</span>
+              <span>AI-powered energy optimization algorithms</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-green-400 mt-1">•</span>
+              <span>Data-driven passive design recommendations</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-green-400 mt-1">•</span>
+              <span>Building science integration for sustainable solutions</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div className="bg-gradient-to-r from-emerald-500/10 to-green-600/10 border border-emerald-500/20 rounded-lg p-4">
+          <p className="text-emerald-200 font-medium">
+            <i className="fas fa-globe-americas mr-2"></i>
+            <strong>Climate Impact:</strong> ThermaWise represents a significant advancement in sustainable building technology, combining artificial intelligence with proven building science principles to create actionable solutions for climate change mitigation.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    {/* Decorative Elements */}
+    <div className="absolute bottom-4 left-4 opacity-10">
+      <div className="text-6xl text-green-400">🌱</div>
+    </div>
+    <div className="absolute top-1/4 right-1/4 opacity-5">
+      <div className="text-6xl text-emerald-400">🏆</div>
+    </div>
+  </div>
+</div>
+
+            {/* Datathon '25 First and Third Place Awards */}
+<div className="group transform hover:scale-105 transition-all duration-500 lg:col-span-2 xl:col-span-3">
+  <div className="bg-gradient-to-br from-black/40 via-gray-900/40 to-black/40 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl hover:border-cyan-500/40 transition-all duration-300 relative overflow-hidden">
+    
+    {/* Award Badges */}
+    <div className="absolute top-4 right-4 flex gap-2">
+      <div className="w-14 h-14 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-white text-lg shadow-2xl animate-pulse">
+        🥇
+      </div>
+      <div className="w-14 h-14 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white text-lg shadow-2xl animate-pulse">
+        🥉
+      </div>
+    </div>
+    
+    <div className="flex flex-col lg:flex-row items-start gap-6">
+      {/* Award Icon */}
+      <div className="flex-shrink-0">
+        <div className="w-24 h-24 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl transform group-hover:rotate-12 transition-transform duration-500">
+          <i className="fas fa-chart-bar"></i>
+        </div>
+      </div>
+      
+      {/* Award Content */}
+      <div className="flex-grow">
+        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300" 
+            style={{
+              textShadow: '0 0 15px rgba(255,255,255,0.3), 2px 2px 4px rgba(0,0,0,0.9)',
+              fontFamily: '"Inter", sans-serif'
+            }}>
+          First & Third Place - Datathon '25
+        </h3>
+        
+        <div className="mb-4">
+          <span className="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm font-semibold border border-cyan-500/30">
+            HITI Lab
+          </span>
+          <span className="inline-block ml-2 px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-semibold border border-blue-500/30">
+            Emory University School of Medicine
+          </span>
+        </div>
+        
+        <div className="mb-4">
+          <h4 className="text-lg font-semibold text-cyan-300 mb-2">Award-Winning Team Members:</h4>
+          <div className="flex flex-wrap gap-2">
+            <span className="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-lg text-sm font-medium border border-yellow-500/30">
+              David Nyarko (DEPA Lab)
+            </span>
+            <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-lg text-sm font-medium border border-purple-500/30">
+              Cynthia Nosiri (DEPA Lab)
+            </span>
+            <span className="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-lg text-sm font-medium border border-cyan-500/30">
+              Team Members
+            </span>
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <div className="bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/20 rounded-lg p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-white text-sm">
+                🥇
+              </div>
+              <h5 className="font-semibold text-yellow-300">First Place</h5>
+            </div>
+            <p className="text-gray-200 text-sm">Outstanding data analysis and innovative solution delivery</p>
+          </div>
+          <div className="bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-500/20 rounded-lg p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white text-sm">
+                🥉
+              </div>
+              <h5 className="font-semibold text-orange-300">Third Place</h5>
+            </div>
+            <p className="text-gray-200 text-sm">Exceptional teamwork and technical implementation</p>
+          </div>
+        </div>
+        
+        <p className="text-gray-200 leading-relaxed group-hover:text-gray-100 transition-colors duration-300 mb-4" 
+           style={{
+             textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+             fontFamily: '"Inter", sans-serif'
+           }}>
+          The DEPA Lab team achieved remarkable success at <span className="text-cyan-300 font-semibold">Datathon '25</span>, securing both <span className="text-yellow-300 font-semibold">first place and third place</span> in the prestigious competition organized by HITI Lab at Emory University School of Medicine. This outstanding performance demonstrates the team's exceptional data science capabilities and innovative problem-solving skills in healthcare analytics.
+        </p>
+        
+        <div className="bg-gradient-to-r from-cyan-500/10 to-blue-600/10 border border-cyan-500/20 rounded-lg p-4">
+          <p className="text-cyan-200 font-medium">
+            <i className="fas fa-stethoscope mr-2"></i>
+            <strong>Healthcare Impact:</strong> This dual achievement highlights DEPA Lab's excellence in applying advanced data science techniques to solve complex healthcare challenges, contributing to the advancement of medical research and patient care.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    {/* Decorative Elements */}
+    <div className="absolute bottom-4 left-4 opacity-10">
+      <div className="text-6xl text-cyan-400">📊</div>
+    </div>
+    <div className="absolute top-1/4 right-1/6 opacity-5">
+      <div className="text-6xl text-blue-400">⚕️</div>
+    </div>
+  </div>
+</div>
+
             {/* Future Awards Placeholder */}
             <div className="text-center">
               <div className="inline-flex items-center px-6 py-4 bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border border-yellow-500/30 text-yellow-300 rounded-full font-bold backdrop-blur-sm text-lg">
