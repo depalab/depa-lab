@@ -1663,18 +1663,16 @@ const pastTeamMembers = [
         <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <div className="flex items-center group">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 mr-2 sm:mr-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold transform group-hover:scale-110 transition-transform duration-300">
-                  D
-                </div>
-                <span className="text-lg sm:text-2xl font-black text-white tracking-wide" 
-                      style={{
-                        textShadow: '0 0 20px rgba(59, 130, 246, 0.5), 2px 2px 4px rgba(0,0,0,0.8)',
-                        fontFamily: '"Inter", sans-serif'
-                      }}>
-                  DEPA Lab
-                </span>
-              </div>
+<div className="flex items-center group">
+  <img 
+    src="/depa-lab/images/DEPA-logo.png"
+    alt="DEPA Lab Logo"
+    className="h-8 sm:h-10 md:h-12 w-auto mr-2 sm:mr-4 transform group-hover:scale-110 transition-transform duration-300"
+    style={{
+      filter: 'drop-shadow(0 0 20px rgba(59, 130, 246, 0.5)) drop-shadow(2px 2px 4px rgba(0,0,0,0.8))'
+    }}
+  />
+</div>
             </div>
             
             {/* Desktop Navigation */}
