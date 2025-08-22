@@ -1656,73 +1656,118 @@ const pastTeamMembers = [
           background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.15), transparent 40%)`
         }}
       />
-
+      
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50" 
-              style={{background: 'linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, transparent 100%)'}}>
-        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-5">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-<div className="flex items-center group">
-  <img 
-    src="/depa-lab/images/DEPA-logo.png"
-    alt="DEPA Lab Logo"
-    className="h-8 sm:h-10 md:h-12 w-auto mr-2 sm:mr-4 transform group-hover:scale-110 transition-transform duration-300"
-    style={{
-      filter: 'drop-shadow(0 0 20px rgba(59, 130, 246, 0.5)) drop-shadow(2px 2px 4px rgba(0,0,0,0.8))'
-    }}
-  />
-</div>
-            </div>
-            
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-6 lg:space-x-10">
-              {['Home', 'About', 'Research', 'Projects', 'Awards', 'Funding', 'Publications', 'Symposium', 'Team', 'Contact'].map((item) => (
+      <header className="fixed top-0 left-0 right-0 z-50">
+        <div className="bg-white/10 backdrop-blur-2xl border-b border-white/10 shadow-2xl">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="flex items-center justify-between h-20">
+              {/* Logo Section */}
+              <div className="flex items-center group">
+                <div className="relative">
+                  <img 
+                    src="/depa-lab/images/DEPA-logo.png"
+                    alt="DEPA Lab Logo"
+                    className="h-10 md:h-12 w-auto transform group-hover:scale-110 transition-all duration-500"
+                    style={{
+                      filter: 'drop-shadow(0 4px 20px rgba(59, 130, 246, 0.3))'
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div className="ml-3 hidden sm:block">
+                  <h1 className="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                    DEPA Lab
+                  </h1>
+                  <p className="text-xs text-gray-500 -mt-1">Research & Innovation</p>
+                </div>
+              </div>
+              
+              {/* Desktop Navigation */}
+              <nav className="hidden lg:flex items-center">
+                <div className="flex items-center bg-white/80 backdrop-blur-xl rounded-full px-2 py-2 shadow-xl border border-white/20">
+                  {['Home', 'About', 'Research', 'Projects', 'Awards', 'Publications', 'Team', 'Contact'].map((item, index) => (
+                    <a 
+                      key={item}
+                      href={`#${item.toLowerCase()}`}
+                      className="relative px-4 py-2 mx-1 text-sm font-medium text-gray-700 hover:text-white rounded-full transition-all duration-300 group"
+                    >
+                      <span className="relative z-10">{item}</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 blur-xl"></div>
+                    </a>
+                  ))}
+                </div>
+              </nav>
+              
+              {/* CTA Button for Desktop */}
+              <div className="hidden lg:block">
                 <a 
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="text-white/90 hover:text-blue-400 font-semibold transition-all duration-300 relative group text-sm lg:text-base" 
-                  style={{textShadow: '1px 1px 2px rgba(0,0,0,0.8)'}}
+                  href="#contact"
+                  className="relative inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group overflow-hidden"
                 >
-                  {item}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+                  <span className="relative z-10">Get In Touch</span>
+                  <svg className="w-4 h-4 ml-2 relative z-10 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
-              ))}
-            </nav>
-            
-            {/* Mobile Menu Button */}
-            <div className="md:hidden">
-              <button 
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
-                className="text-white hover:text-blue-400 focus:outline-none p-2 rounded-lg bg-black/30 backdrop-blur-sm border border-white/20 transition-all duration-300"
-              >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-                </svg>
-              </button>
+              </div>
+              
+              {/* Mobile & Tablet Menu Button */}
+              <div className="lg:hidden">
+                <button 
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+                  className="relative group p-3 bg-white/80 backdrop-blur-xl rounded-2xl shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="flex flex-col justify-center items-center w-6 h-6">
+                    <span className={`bg-gray-700 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${mobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
+                    <span className={`bg-gray-700 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                    <span className={`bg-gray-700 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${mobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
-          
-          {/* Mobile Menu */}
-          {mobileMenuOpen && (
-            <div className="md:hidden mt-4 sm:mt-6 pb-4 sm:pb-6 rounded-2xl" 
-                 style={{background: 'rgba(0,0,0,0.8)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(20px)'}}>
-              <div className="flex flex-col space-y-3 sm:space-y-5 p-4 sm:p-6">
-                {['Home', 'About', 'Research', 'Projects', 'Awards', 'Funding', 'Publications', 'Symposium', 'Team', 'Contact'].map((item) => (
+        </div>
+        
+        {/* Mobile Menu Overlay */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden fixed inset-0 top-20 bg-black/20 backdrop-blur-sm z-40" onClick={() => setMobileMenuOpen(false)}>
+            <div className="bg-white/95 backdrop-blur-2xl m-4 rounded-3xl shadow-2xl border border-white/20 p-8 max-w-sm mx-auto animate-slideDown">
+              <div className="space-y-6">
+                {['Home', 'About', 'Research', 'Projects', 'Awards', 'Funding', 'Publications', 'Symposium', 'Team', 'Contact'].map((item, index) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase()}`}
-                    className="text-white hover:text-blue-400 font-semibold transition-colors text-base sm:text-lg" 
-                    style={{textShadow: '1px 1px 2px rgba(0,0,0,0.8)'}}
                     onClick={() => setMobileMenuOpen(false)}
+                    className="group flex items-center justify-between p-4 bg-gradient-to-r from-gray-50 to-white rounded-2xl hover:from-blue-50 hover:to-purple-50 transition-all duration-300 border border-gray-100 hover:border-blue-200 hover:shadow-lg"
+                    style={{animationDelay: `${index * 50}ms`}}
                   >
-                    {item}
+                    <span className="text-gray-800 font-semibold group-hover:text-blue-600 transition-colors duration-300">{item}</span>
+                    <svg className="w-5 h-5 text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </a>
                 ))}
+                
+                {/* Mobile CTA */}
+                <div className="pt-4 border-t border-gray-200">
+                  <a 
+                    href="#contact"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center justify-center w-full px-6 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  >
+                    <span>Get In Touch</span>
+                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </header>
 
       {/* Main Content */}
