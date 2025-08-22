@@ -1656,7 +1656,7 @@ const pastTeamMembers = [
           background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.15), transparent 40%)`
         }}
       />
-      
+
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50">
         <div className="bg-white/10 backdrop-blur-2xl border-b border-white/10 shadow-2xl">
@@ -1664,7 +1664,7 @@ const pastTeamMembers = [
             <div className="flex items-center justify-between h-20">
               {/* Logo Section */}
               <div className="flex items-center group">
-                <div className="relative">
+                <div className="relative bg-white rounded-lg p-2 shadow-sm">
                   <img 
                     src="/depa-lab/images/DEPA-logo.png"
                     alt="DEPA Lab Logo"
@@ -1673,23 +1673,17 @@ const pastTeamMembers = [
                       filter: 'drop-shadow(0 4px 20px rgba(59, 130, 246, 0.3))'
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                <div className="ml-3 hidden sm:block">
-                  <h1 className="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-                    DEPA Lab
-                  </h1>
-                  <p className="text-xs text-gray-500 -mt-1">Research & Innovation</p>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
               </div>
               
               {/* Desktop Navigation */}
               <nav className="hidden lg:flex items-center">
                 <div className="flex items-center bg-white/80 backdrop-blur-xl rounded-full px-2 py-2 shadow-xl border border-white/20">
-                  {['Home', 'About', 'Research', 'Projects', 'Awards', 'Publications', 'Team', 'Contact'].map((item, index) => (
+                  {['Home', 'About', 'Research', 'Projects', 'Awards', 'Publications', 'Team'].map((item, index) => (
                     <a 
                       key={item}
-                      href={`#${item.toLowerCase()}`}
+                      href={item === 'Home' ? '#hero' : `#${item.toLowerCase()}`}
                       className="relative px-4 py-2 mx-1 text-sm font-medium text-gray-700 hover:text-white rounded-full transition-all duration-300 group"
                     >
                       <span className="relative z-10">{item}</span>
@@ -1736,10 +1730,10 @@ const pastTeamMembers = [
           <div className="lg:hidden fixed inset-0 top-20 bg-black/20 backdrop-blur-sm z-40" onClick={() => setMobileMenuOpen(false)}>
             <div className="bg-white/95 backdrop-blur-2xl m-4 rounded-3xl shadow-2xl border border-white/20 p-8 max-w-sm mx-auto animate-slideDown">
               <div className="space-y-6">
-                {['Home', 'About', 'Research', 'Projects', 'Awards', 'Funding', 'Publications', 'Symposium', 'Team', 'Contact'].map((item, index) => (
+                {['Home', 'About', 'Research', 'Projects', 'Awards', 'Funding', 'Publications', 'Symposium', 'Team'].map((item, index) => (
                   <a
                     key={item}
-                    href={`#${item.toLowerCase()}`}
+                    href={item === 'Home' ? '#hero' : `#${item.toLowerCase()}`}
                     onClick={() => setMobileMenuOpen(false)}
                     className="group flex items-center justify-between p-4 bg-gradient-to-r from-gray-50 to-white rounded-2xl hover:from-blue-50 hover:to-purple-50 transition-all duration-300 border border-gray-100 hover:border-blue-200 hover:shadow-lg"
                     style={{animationDelay: `${index * 50}ms`}}
@@ -1769,7 +1763,7 @@ const pastTeamMembers = [
           </div>
         )}
       </header>
-
+      
       {/* Main Content */}
       <main className="flex-grow pt-16 sm:pt-20 md:pt-24">
         
