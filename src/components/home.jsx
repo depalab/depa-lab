@@ -1798,7 +1798,7 @@ const pastTeamMembers = [
                         fontFamily: '"Inter", sans-serif',
                         letterSpacing: '0.1em'
                       }}>
-                  🔬 Driving Innovation at the Intersection of Technology and Impact
+                  🔬 Transforming Data to Decisions Through Intelligent Systems
                 </span>
                 <div className="h-2 w-2 sm:h-3 sm:w-3 md:h-4 md:w-4 bg-blue-400 rounded-full animate-ping shadow-lg" 
                      style={{boxShadow: '0 0 20px rgba(59, 130, 246, 0.8)'}}></div>
