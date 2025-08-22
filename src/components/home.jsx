@@ -2326,7 +2326,6 @@ const pastTeamMembers = [
                 <div className="absolute top-6 right-6">
                   <div className="w-24 h-24 bg-gradient-to-r from-emerald-400 to-teal-600 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-2xl animate-pulse">
                     <div className="text-center">
-                      <div className="text-xs">$545K</div>
                       <div className="text-xs">Grant</div>
                     </div>
                   </div>
@@ -2346,9 +2345,6 @@ const pastTeamMembers = [
                       Cybersecurity AI Research Grant
                     </h3>
                     <div className="space-y-2 mb-6">
-                      <span className="block px-4 py-2 bg-emerald-500/20 text-emerald-300 rounded-full text-lg font-semibold border border-emerald-500/30">
-                        $545,589.00
-                      </span>
                       <span className="block px-4 py-2 bg-teal-500/20 text-teal-300 rounded-full text-sm font-semibold border border-teal-500/30">
                         Aug 2025 - Aug 2026
                       </span>
