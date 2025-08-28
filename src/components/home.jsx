@@ -18,15 +18,15 @@ const DepaLabHomepage = () => {
   { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "nyarko.jpg" },
   { name: "Cynthia Nosiri", role: "AI Researcher", image: "Cynthia.jpeg" },
   { name: "Derrick Cook", role: "AI Researcher", image: "Derrick_Cook.PNG" },
-  { name: "Rezoan Sultan", role: "Generative AI Researcher", image: "Rezoan_Sultan.jpeg" },
+  { name: "Rezoan Sultan", role: "Human-AI Interaction Research Engineer", image: "Rezoan_Sultan.jpeg" },
   { name: "Benjamin Hall", role: "Researcher", image: "Benjamin Hall.jpg" },
   { name: "Emmanuel Masa-ibi", role: "Researcher", image: "Emmanuel Masa-ibi.jpeg" },
   { name: "Awotwi Baffoe", role: "AI Researcher", image: "Awotwi_Baffoe.jpg" },
-  { name: "Opeyemi Adeniran", role: "AI Researcher", image: "Opeyemi.PNG" },
+  { name: "Opeyemi Adeniran", role: "AI Research Engineer", image: "Opeyemi.PNG" },
   { name: "Anjolie Anthony", role: "Researcher", image: "Anjolie.JPG" },
   { name: "Binisa Giri", role: "AI Researcher", image: "Binisa_Giri.jpeg" },
   { name: "Nicholas Cook", role: "AI Researcher", image: "NicholasCook.jpg" },
-  { name: "Temitope Ajibola", role: "Researcher", image: "Temi.JPG" },
+  { name: "Temitope Ajibola", role: "AI Researcher", image: "Temi.JPG" },
   { name: "David Nyarko", role: "Researcher", image: "david-nyarko.JPG" },
 ];
 
