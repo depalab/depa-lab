@@ -734,16 +734,281 @@ const pastTeamMembers = [
               Celebrating excellence and innovation in research and technology.
             </p>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-              {/* Awards content would go here - simplified */}
-              <div className="bg-blue-50 rounded-2xl p-8 border border-blue-200 shadow-lg">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-4">
-                    🏆
+            <div className="grid grid-cols-1 gap-8">
+              {/* First Place Innovation Expo Award */}
+              <div className="bg-blue-50 rounded-3xl p-12 border border-blue-200 shadow-xl">
+                <div className="flex flex-col lg:flex-row items-start gap-8">
+                  <div className="flex-shrink-0 text-center lg:text-left">
+                    <div className="w-32 h-32 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-6xl shadow-2xl mx-auto lg:mx-0 mb-6">
+                      🏆
+                    </div>
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                      First Place Innovation Expo Award
+                    </h2>
+                    <div className="space-y-2">
+                      <span className="block px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-lg font-semibold border border-orange-300">
+                        Morgan TechFest 2024
+                      </span>
+                      <span className="block px-4 py-2 bg-green-100 text-green-700 rounded-full text-lg font-semibold border border-green-300">
+                        $2,000 Prize Winner
+                      </span>
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">First Place Innovation Expo</h3>
-                  <p className="text-gray-700">Morgan TechFest 2024 - David Nyarko</p>
+                  
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-blue-600 mb-4">Award Winner: David Nyarko</h3>
+                    
+                    <h4 className="text-xl font-semibold text-orange-600 mb-4">
+                      Research Project: "Track-Based Autonomous Wheelchair Navigation for Airport Environments"
+                    </h4>
+                    
+                    <p className="text-gray-700 leading-relaxed text-lg mb-6">
+                      The DEPA Lab achieved first place at the Morgan TechFest 2024 Innovation Expo with groundbreaking research in autonomous wheelchair navigation. This AI-driven system integrates advanced technologies including Ultralytics YOLOv8, QR Code navigation, LiDAR, and computer vision cameras to enhance mobility in crowded environments like airports.
+                    </p>
+                    
+                    <div className="mb-6">
+                      <h5 className="text-lg font-semibold text-gray-900 mb-3">Key Technologies:</h5>
+                      <div className="flex flex-wrap gap-3">
+                        {[
+                          'Ultralytics YOLOv8', 
+                          'QR Code Navigation', 
+                          'LiDAR Technology', 
+                          'Computer Vision', 
+                          'AI Path Planning',
+                          'Obstacle Avoidance',
+                          'Real-time Processing'
+                        ].map((tech) => (
+                          <span 
+                            key={tech} 
+                            className="px-3 py-2 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium border border-blue-300"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white rounded-lg p-4 border border-orange-300">
+                      <p className="text-orange-700 font-medium">
+                        <i className="fas fa-lightbulb mr-2"></i>
+                        Innovation Impact: This research addresses critical mobility challenges in complex environments, ensuring efficient path-following and obstacle avoidance for enhanced accessibility and independence.
+                      </p>
+                    </div>
+                  </div>
                 </div>
+              </div>
+
+              {/* Awotwi Baffoe Top Poster Award */}
+              <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl">
+                <div className="flex flex-col lg:flex-row items-start gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-24 h-24 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl">
+                      🏆
+                    </div>
+                  </div>
+                  
+                  <div className="flex-grow">
+                    <h3 className="text-3xl font-bold text-gray-900 mb-3">
+                      Top Poster Award - MSEE Annual Technical Review 2025
+                    </h3>
+                    
+                    <div className="mb-4">
+                      <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300">
+                        Johns Hopkins University
+                      </span>
+                      <span className="inline-block ml-2 px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold border border-purple-300">
+                        Washington, D.C.
+                      </span>
+                    </div>
+                    
+                    <p className="text-blue-600 font-semibold mb-3">
+                      Award Winner: Awotwi Baffoe
+                    </p>
+                    
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      Awotwi Baffoe was recognized as one of the <span className="text-blue-600 font-semibold">top poster award recipients</span> at the MSEE (Material Science in Extreme Environment) Annual Technical Review 2025. The award-winning poster showcased groundbreaking research on automated crack detection in low-density, structurally complex materials under stress using the <span className="text-blue-600 font-semibold">YOLOv11 deep learning model and X-ray Phase Contrast Imaging (XPCI)</span> dataset.
+                    </p>
+                    
+                    <div className="bg-white rounded-lg p-4 border border-blue-300 mb-4">
+                      <h6 className="font-semibold text-blue-600 mb-2">Materials Studied:</h6>
+                      <div className="flex flex-wrap gap-2">
+                        {['Quartz Crystal', 'Pink Westerly Granite', 'Boron Carbide'].map((material) => (
+                          <span 
+                            key={material} 
+                            className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium border border-purple-300"
+                          >
+                            {material}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white rounded-lg p-4 border border-blue-300">
+                      <p className="text-blue-700 font-medium">
+                        <i className="fas fa-microscope mr-2"></i>
+                        <strong>Research Impact:</strong> This innovative approach advances non-destructive evaluation techniques for early-stage damage detection in critical materials.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* MIT Hack the Climate Hackathon */}
+              <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl">
+                <div className="flex flex-col lg:flex-row items-start gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-24 h-24 bg-gradient-to-r from-green-600 to-green-700 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl">
+                      🥇
+                    </div>
+                  </div>
+                  
+                  <div className="flex-grow">
+                    <h3 className="text-3xl font-bold text-gray-900 mb-3">
+                      First Place - MIT Hack the Climate Hackathon
+                    </h3>
+                    
+                    <div className="mb-4">
+                      <span className="inline-block px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold border border-green-300">
+                        MIT RAISE AI & Education Summit
+                      </span>
+                      <span className="inline-block ml-2 px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold border border-emerald-300">
+                        July 2025
+                      </span>
+                    </div>
+                    
+                    <div className="mb-4">
+                      <h4 className="text-lg font-semibold text-green-600 mb-2">Winning Team Members:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium border border-blue-300">
+                          Kianna Spencer (CECE Lab)
+                        </span>
+                        <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-lg text-sm font-medium border border-purple-300">
+                          Koby Nyarkon (DEPA Lab)
+                        </span>
+                        <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium border border-blue-300">
+                          Jamal Williamson (CECE Lab)
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <h4 className="text-xl font-bold text-green-600 mb-3">
+                      Project: ThermaWise
+                    </h4>
+                    
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      A team of CEAMLS students claimed <span className="text-green-600 font-semibold">first place</span> at the prestigious MIT Hack the Climate Hackathon. The winning team developed <span className="text-green-600 font-semibold">ThermaWise</span>, a powerful AI-powered platform that delivers creative, data-driven energy-saving strategies rooted in passive design and building science.
+                    </p>
+                    
+                    <div className="bg-white rounded-lg p-4 border border-green-300 mb-4">
+                      <h6 className="font-semibold text-green-600 mb-2">ThermaWise Key Features:</h6>
+                      <ul className="text-gray-700 space-y-1 text-sm">
+                        <li className="flex items-start gap-2">
+                          <span className="text-green-500 mt-1">•</span>
+                          <span>AI-powered energy optimization algorithms</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-green-500 mt-1">•</span>
+                          <span>Data-driven passive design recommendations</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-green-500 mt-1">•</span>
+                          <span>Building science integration for sustainable solutions</span>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <div className="bg-white rounded-lg p-4 border border-green-300">
+                      <p className="text-green-700 font-medium">
+                        <i className="fas fa-globe-americas mr-2"></i>
+                        <strong>Climate Impact:</strong> ThermaWise represents a significant advancement in sustainable building technology, combining AI with building science principles to create actionable solutions for climate change mitigation.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Datathon '25 Awards */}
+              <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl">
+                <div className="flex flex-col lg:flex-row items-start gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="flex gap-2">
+                      <div className="w-20 h-20 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl">
+                        🥇
+                      </div>
+                      <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl">
+                        🥉
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex-grow">
+                    <h3 className="text-3xl font-bold text-gray-900 mb-3">
+                      First & Third Place - Datathon '25
+                    </h3>
+                    
+                    <div className="mb-4">
+                      <span className="inline-block px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm font-semibold border border-cyan-300">
+                        HITI Lab
+                      </span>
+                      <span className="inline-block ml-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300">
+                        Emory University School of Medicine
+                      </span>
+                    </div>
+                    
+                    <div className="mb-4">
+                      <h4 className="text-lg font-semibold text-cyan-600 mb-2">Award-Winning Team Members:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-lg text-sm font-medium border border-yellow-300">
+                          David Nyarko (DEPA Lab)
+                        </span>
+                        <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-lg text-sm font-medium border border-purple-300">
+                          Cynthia Nosiri (DEPA Lab)
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                      <div className="bg-white rounded-lg p-4 border border-yellow-300">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-white text-sm">
+                            🥇
+                          </div>
+                          <h5 className="font-semibold text-yellow-700">First Place</h5>
+                        </div>
+                        <p className="text-gray-700 text-sm">Outstanding data analysis and innovative solution delivery</p>
+                      </div>
+                      <div className="bg-white rounded-lg p-4 border border-orange-300">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white text-sm">
+                            🥉
+                          </div>
+                          <h5 className="font-semibold text-orange-700">Third Place</h5>
+                        </div>
+                        <p className="text-gray-700 text-sm">Exceptional teamwork and technical implementation</p>
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      The DEPA Lab team achieved remarkable success at <span className="text-cyan-600 font-semibold">Datathon '25</span>, securing both <span className="text-yellow-600 font-semibold">first place and third place</span> in the prestigious competition organized by HITI Lab at Emory University School of Medicine.
+                    </p>
+                    
+                    <div className="bg-white rounded-lg p-4 border border-cyan-300">
+                      <p className="text-cyan-700 font-medium">
+                        <i className="fas fa-stethoscope mr-2"></i>
+                        <strong>Healthcare Impact:</strong> This dual achievement highlights DEPA Lab's excellence in applying advanced data science techniques to solve complex healthcare challenges.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Impact Statement */}
+            <div className="mt-12 text-center">
+              <div className="inline-flex items-center px-8 py-4 bg-blue-100 border border-blue-300 text-blue-700 rounded-full font-bold text-lg">
+                <i className="fas fa-trophy mr-3"></i>
+                Continuing Our Journey of Excellence in Research and Innovation
+                <i className="fas fa-star ml-3"></i>
               </div>
             </div>
           </div>
@@ -774,18 +1039,231 @@ const pastTeamMembers = [
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Publications content simplified */}
-              <div className="bg-blue-50 rounded-2xl p-8 border border-blue-200 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">AI/ML Systems Engineering Workbench</h3>
-                <p className="text-gray-700 mb-4">Dr. Kofi Nyarko, Emmanual Masa-Ibi</p>
+              {/* Publication 1 - AI/ML Systems Engineering */}
+              <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl shadow-xl">
+                    <i className="fas fa-cogs"></i>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                      AI/ML Systems Engineering Workbench Framework
+                    </h3>
+                    <span className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold border border-green-300">
+                      IEEE CISS Conference
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 mb-6">
+                  <div className="bg-white border border-blue-200 rounded-lg p-4">
+                    <div className="grid grid-cols-1 gap-3">
+                      <div>
+                        <span className="text-blue-600 font-semibold text-lg">Authors: </span>
+                        <span className="text-gray-700 text-lg">Dr. Kofi Nyarko, Emmanual Masa-Ibi</span>
+                      </div>
+                      <div>
+                        <span className="text-blue-600 font-semibold text-lg">Published in: </span>
+                        <span className="text-gray-700 text-lg">Conference on Information Sciences and Systems (CISS)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
                 <a 
                   href="https://ieeexplore.ieee.org/document/10089781/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-semibold"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
+                  <i className="fas fa-external-link-alt mr-2"></i>
                   Read Full Paper
                 </a>
+              </div>
+
+              {/* Publication 2 - Traffic Video Analysis */}
+              <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl shadow-xl">
+                    <i className="fas fa-video"></i>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                      Automated Traffic Video Analysis with Modular Computer Vision Pipeline
+                    </h3>
+                    <span className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300">
+                      IEEE CISS Conference
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 mb-6">
+                  <div className="bg-white border border-blue-200 rounded-lg p-4">
+                    <div className="grid grid-cols-1 gap-3">
+                      <div>
+                        <span className="text-blue-600 font-semibold text-lg">Authors: </span>
+                        <span className="text-gray-700 text-lg">Tasmeer Alam, Dr. Kofi Nyarko</span>
+                      </div>
+                      <div>
+                        <span className="text-blue-600 font-semibold text-lg">Published in: </span>
+                        <span className="text-gray-700 text-lg">Conference on Information Sciences and Systems (CISS)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <a 
+                  href="https://ieeexplore.ieee.org/document/10944672"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  <i className="fas fa-external-link-alt mr-2"></i>
+                  Read Full Paper
+                </a>
+              </div>
+
+              {/* Publication 3 - Network Intrusion */}
+              <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-red-600 to-purple-700 rounded-full flex items-center justify-center text-white text-3xl shadow-xl">
+                    <i className="fas fa-shield-alt"></i>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                      Network Intrusion Visualization with NIVA
+                    </h3>
+                    <span className="inline-block px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold border border-purple-300">
+                      IEEE Haptic Symposium
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 mb-6">
+                  <div className="bg-white border border-blue-200 rounded-lg p-4">
+                    <div className="grid grid-cols-1 gap-3">
+                      <div>
+                        <span className="text-purple-600 font-semibold text-lg">Authors: </span>
+                        <span className="text-gray-700 text-lg">Kofi Nyarko, Tanya Capers, Craig Scott, Kemi Ladeji-Osias</span>
+                      </div>
+                      <div>
+                        <span className="text-purple-600 font-semibold text-lg">Published in: </span>
+                        <span className="text-gray-700 text-lg">10th Symposium on Haptic Interfaces for Virtual Environment and Teleoperator Systems</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <a 
+                  href="https://ieeexplore.ieee.org/abstract/document/998969"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  <i className="fas fa-external-link-alt mr-2"></i>
+                  Read Full Paper
+                </a>
+              </div>
+
+              {/* Publication 4 - Building Occupancy */}
+              <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-yellow-600 to-orange-700 rounded-full flex items-center justify-center text-white text-3xl shadow-xl">
+                    <i className="fas fa-building"></i>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                      Cloud Based Passive Building Occupancy Characterization
+                    </h3>
+                    <span className="inline-block px-4 py-2 bg-yellow-100 text-yellow-700 rounded-full text-sm font-semibold border border-yellow-300">
+                      IEEE HST Conference
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 mb-6">
+                  <div className="bg-white border border-blue-200 rounded-lg p-4">
+                    <div className="grid grid-cols-1 gap-3">
+                      <div>
+                        <span className="text-yellow-700 font-semibold text-lg">Authors: </span>
+                        <span className="text-gray-700 text-lg">Kofi Nyarko, Cecelia Wright-Brown</span>
+                      </div>
+                      <div>
+                        <span className="text-yellow-700 font-semibold text-lg">Published in: </span>
+                        <span className="text-gray-700 text-lg">IEEE International Conference on Technologies for Homeland Security (HST)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <a 
+                  href="https://ieeexplore.ieee.org/abstract/document/6699097"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  <i className="fas fa-external-link-alt mr-2"></i>
+                  Read Full Paper
+                </a>
+              </div>
+
+              {/* Publication 5 - SmartPattern */}
+              <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300 lg:col-span-2">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl shadow-xl">
+                    <i className="fas fa-shield-alt"></i>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                      SmartPattern: A Machine Learning Framework for Detecting Reentrancy Vulnerabilities in Blockchain Smart Contracts
+                    </h3>
+                    <span className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold border border-green-300">
+                      IEEE Publication
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 mb-6">
+                  <div className="bg-white border border-blue-200 rounded-lg p-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <span className="text-green-600 font-semibold">Research Focus: </span>
+                        <span className="text-gray-700">Machine Learning Framework for Blockchain Security</span>
+                      </div>
+                      <div>
+                        <span className="text-green-600 font-semibold">Key Achievement: </span>
+                        <span className="text-gray-700">94% detection accuracy analyzing 40,000 smart contracts</span>
+                      </div>
+                      <div>
+                        <span className="text-green-600 font-semibold">Models Used: </span>
+                        <span className="text-gray-700">Random Forest, Support Vector Classifier</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    SmartPattern introduces a novel machine learning-based framework to detect reentrancy attacks in smart contracts, achieving superior performance over traditional static analysis tools and transformer-based approaches.
+                  </p>
+                </div>
+                
+                <a 
+                  href="https://ieeexplore.ieee.org/abstract/document/10944738"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  <i className="fas fa-external-link-alt mr-2"></i>
+                  Read Full Paper
+                </a>
+              </div>
+            </div>
+
+            {/* Research Impact Statement */}
+            <div className="mt-12 text-center">
+              <div className="inline-flex items-center px-8 py-4 bg-blue-100 border border-blue-300 text-blue-700 rounded-full font-bold backdrop-blur-sm text-lg">
+                <i className="fas fa-chart-line mr-3"></i>
+                Contributing to the Future of AI and Technology Research
+                <i className="fas fa-lightbulb ml-3"></i>
               </div>
             </div>
           </div>
@@ -815,23 +1293,133 @@ const pastTeamMembers = [
               Advancing Equitable AI: Our participation in the premier symposium on fairness and inclusivity in artificial intelligence.
             </p>
 
-            <div className="bg-blue-50 rounded-3xl p-12 border border-blue-200 shadow-xl">
-              <div className="text-center">
-                <div className="w-32 h-32 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-6xl mx-auto mb-6">
+            {/* Main Event Card */}
+            <div className="bg-blue-50 rounded-3xl p-12 border border-blue-200 shadow-2xl mb-12 relative overflow-hidden">
+              
+              {/* Event Badge */}
+              <div className="absolute top-6 right-6">
+                <div className="w-24 h-24 bg-gradient-to-r from-purple-400 to-pink-600 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl animate-pulse">
                   🎯
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">CEAMLS Research Symposium</h2>
-                <p className="text-gray-700 text-lg leading-relaxed mb-8">
-                  DEPA Lab is proud to be an active participant in the 2025 CEAMLS Research Symposium, focusing on "Equitable AI."
-                </p>
-                <a 
-                  href="https://www.morgan.edu/ceamls/equitable-ai-symposium/equitable-ai-symposium-(2025)"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full font-bold"
-                >
-                  Register for the Symposium
-                </a>
+              </div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Event Details */}
+                <div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl">
+                      <i className="fas fa-users"></i>
+                    </div>
+                    <div>
+                      <h2 className="text-3xl font-bold text-gray-900">
+                        CEAMLS Research Symposium
+                      </h2>
+                      <span className="inline-block px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-lg font-semibold border border-purple-300 mt-2">
+                        2025 • Focus: Equitable AI
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <div className="bg-white rounded-lg p-6 border border-purple-300">
+                      <h3 className="text-xl font-bold text-purple-600 mb-3">Our Research Presentation</h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        <span className="text-pink-600 font-semibold">"Leveraging AI for Equitable Academic and Career Advisory Systems"</span> - 
+                        Presenting groundbreaking research on how artificial intelligence can be designed and implemented to ensure fair and inclusive 
+                        educational guidance and career counseling for students from diverse backgrounds.
+                      </p>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="bg-pink-50 border border-pink-300 rounded-lg p-4">
+                        <h4 className="font-semibold text-pink-600 mb-2">Focus Areas</h4>
+                        <ul className="text-gray-700 text-sm space-y-1">
+                          <li>• Bias Detection in AI Systems</li>
+                          <li>• Inclusive Algorithm Design</li>
+                          <li>• Educational Equity</li>
+                          <li>• Career Guidance AI</li>
+                        </ul>
+                      </div>
+                      <div className="bg-purple-50 border border-purple-300 rounded-lg p-4">
+                        <h4 className="font-semibold text-purple-600 mb-2">Expected Impact</h4>
+                        <ul className="text-gray-700 text-sm space-y-1">
+                          <li>• Enhanced Student Support</li>
+                          <li>• Reduced Educational Bias</li>
+                          <li>• Improved Career Outcomes</li>
+                          <li>• Community Collaboration</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Symposium Goals */}
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6">Symposium Objectives</h3>
+                  <div className="space-y-4">
+                    <div className="bg-white rounded-lg p-4 border border-purple-300">
+                      <div className="flex items-center gap-3 mb-2">
+                        <i className="fas fa-balance-scale text-purple-600 text-xl"></i>
+                        <h4 className="font-semibold text-gray-900">Fairness & Inclusivity</h4>
+                      </div>
+                      <p className="text-gray-700 text-sm">Discussing innovative strategies for fostering fairness and inclusivity in AI applications across various domains.</p>
+                    </div>
+                    
+                    <div className="bg-white rounded-lg p-4 border border-pink-300">
+                      <div className="flex items-center gap-3 mb-2">
+                        <i className="fas fa-handshake text-pink-600 text-xl"></i>
+                        <h4 className="font-semibold text-gray-900">Collaboration</h4>
+                      </div>
+                      <p className="text-gray-700 text-sm">Bringing together thought leaders, researchers, and practitioners to explore collaborative opportunities.</p>
+                    </div>
+                    
+                    <div className="bg-white rounded-lg p-4 border border-purple-300">
+                      <div className="flex items-center gap-3 mb-2">
+                        <i className="fas fa-lightbulb text-purple-600 text-xl"></i>
+                        <h4 className="font-semibold text-gray-900">Innovation</h4>
+                      </div>
+                      <p className="text-gray-700 text-sm">Sharing cutting-edge research insights and exploring new frontiers in equitable AI development.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <a 
+                href="https://www.morgan.edu/ceamls/equitable-ai-symposium/equitable-ai-symposium-(2025)"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl"
+              >
+                <i className="fas fa-calendar-plus mr-3"></i>
+                Register for the Symposium
+                <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+              
+              <a 
+                href="https://www.morgan.edu/ceamls"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-blue-400 hover:border-pink-400 text-blue-600 hover:text-pink-600 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:bg-blue-50"
+              >
+                <i className="fas fa-info-circle mr-3"></i>
+                Learn More About CEAMLS
+                <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Mission Statement */}
+            <div className="mt-12 text-center">
+              <div className="inline-flex items-center px-8 py-4 bg-purple-100 border border-purple-300 text-purple-700 rounded-full font-bold backdrop-blur-sm text-lg">
+                <i className="fas fa-heart mr-3"></i>
+                Building a More Equitable Future Through AI Research and Collaboration
+                <i className="fas fa-users ml-3"></i>
               </div>
             </div>
           </div>
@@ -1504,7 +2092,7 @@ const pastTeamMembers = [
         </section>
 
         {/* Symposium Section */}
-        <section id="symposium" className="mb-24 py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
+        <section id="symposium" className="py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
           <div className="container mx-auto px-4 sm:px-6">
             <h2 className="text-5xl font-black text-white mb-8 text-center">
               CEAMLS Research{' '}
