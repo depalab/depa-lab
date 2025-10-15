@@ -735,6 +735,155 @@ const pastTeamMembers = [
             </p>
 
             <div className="grid grid-cols-1 gap-8">
+              {/* National Innovation Venture Competition - $100K Prize */}
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-12 border-2 border-green-300 shadow-2xl">
+                <div className="flex flex-col lg:flex-row items-start gap-8">
+                  <div className="flex-shrink-0 text-center lg:text-left">
+                    <div className="w-40 h-40 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white text-7xl shadow-2xl mx-auto lg:mx-0 mb-6 animate-pulse">
+                      🏆
+                    </div>
+                    <h2 className="text-4xl font-black text-gray-900 mb-4">
+                      First Place National Competition
+                    </h2>
+                    <div className="space-y-2">
+                      <span className="block px-6 py-3 bg-green-200 text-green-900 rounded-full text-xl font-black border-2 border-green-400">
+                        $100,000 Top Prize
+                      </span>
+                      <span className="block px-6 py-3 bg-emerald-200 text-emerald-900 rounded-full text-lg font-bold border-2 border-emerald-400">
+                        National Innovation Venture Competition
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex-grow">
+                    <h3 className="text-3xl font-black text-green-700 mb-4">Graduate Students Win First Place Victory for Morgan State</h3>
+                    
+                    <div className="mb-6">
+                      <h4 className="text-xl font-bold text-gray-900 mb-3">Winning Team - AgroVision:</h4>
+                      <div className="flex flex-wrap gap-3">
+                        {[
+                          'David Nyarko',
+                          'Obiageli Nwachukwu',
+                          'Marvellous Ododoh',
+                          'Dapiriye Briggs'
+                        ].map((member) => (
+                          <span 
+                            key={member} 
+                            className="px-4 py-2 bg-white text-green-700 rounded-lg text-base font-bold border-2 border-green-400 shadow-md"
+                          >
+                            {member}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <h4 className="text-2xl font-bold text-emerald-700 mb-4">
+                      Tier 3 (Graduate-Level) Champion
+                    </h4>
+                    
+                    <p className="text-gray-800 leading-relaxed text-lg mb-6 font-medium">
+                      Team AgroVision emerged as the <span className="text-green-700 font-black">Tier 3 (graduate-level) champion</span> at the national competition for their revolutionary <span className="text-emerald-700 font-bold">AI-powered modular hydroponic farming system</span>. Their innovative solution leverages artificial intelligence, renewable energy, and smart agriculture technologies to tackle food insecurity, climate volatility, and resource scarcity in farming.
+                    </p>
+                    
+                    <div className="mb-6">
+                      <h5 className="text-xl font-bold text-gray-900 mb-4">Innovation Highlights:</h5>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {[
+                          'AI-Powered Agriculture',
+                          'Modular Hydroponic System',
+                          'Renewable Energy Integration',
+                          'Smart Farming Technologies',
+                          'Food Security Solutions',
+                          'Climate-Resilient Design'
+                        ].map((tech) => (
+                          <div 
+                            key={tech} 
+                            className="flex items-center gap-2 px-4 py-3 bg-white rounded-lg text-sm font-bold border-2 border-green-300 shadow-sm"
+                          >
+                            <span className="text-green-600 text-lg">✓</span>
+                            <span className="text-gray-800">{tech}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white rounded-lg p-6 border-2 border-green-400 shadow-lg">
+                      <p className="text-green-800 font-bold text-lg">
+                        <i className="fas fa-seedling mr-2"></i>
+                        <strong>Global Impact:</strong> AgroVision's breakthrough technology addresses critical challenges in food insecurity, climate change adaptation, and sustainable agriculture, demonstrating how AI and renewable energy can revolutionize farming for communities worldwide.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* HBCUniverse 30 Under 30 Award */}
+              <div className="group transform hover:scale-105 transition-all duration-500 lg:col-span-2 xl:col-span-3">
+                <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8 border-2 border-purple-300 shadow-xl hover:shadow-2xl transition-all duration-300">
+                  <div className="flex flex-col lg:flex-row items-start gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-32 h-32 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-5xl shadow-2xl">
+                        ⭐
+                      </div>
+                    </div>
+                    
+                    <div className="flex-grow">
+                      <h3 className="text-3xl font-bold text-gray-900 mb-3">
+                        HBCUniverse 30 Under 30 Award 2025
+                      </h3>
+                      
+                      <div className="mb-4">
+                        <span className="inline-block px-4 py-2 bg-purple-200 text-purple-900 rounded-full text-lg font-bold border-2 border-purple-400 mr-2">
+                          Two Recipients
+                        </span>
+                        <span className="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold border border-indigo-300">
+                          Recognition Excellence
+                        </span>
+                      </div>
+                      
+                      <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+                        We are excited to announce that <span className="text-purple-700 font-bold">two of our members have been selected as recipients</span> of the 2025 HBCUniverse 30 Under 30 Award!
+                      </p>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                        <div className="bg-white rounded-lg p-5 border-2 border-purple-300 shadow-md">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xl shadow-lg">
+                              🔬
+                            </div>
+                            <div>
+                              <h4 className="font-bold text-purple-700 text-lg">David Nyarko</h4>
+                              <p className="text-sm text-gray-600 font-medium">STEM and Research Category</p>
+                            </div>
+                          </div>
+                          <p className="text-gray-700 text-sm">Recognized for outstanding contributions to STEM research and innovation.</p>
+                        </div>
+                        
+                        <div className="bg-white rounded-lg p-5 border-2 border-indigo-300 shadow-md">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-xl shadow-lg">
+                              💼
+                            </div>
+                            <div>
+                              <h4 className="font-bold text-indigo-700 text-lg">Temitope Ajibola</h4>
+                              <p className="text-sm text-gray-600 font-medium">Business and Corporate Category</p>
+                            </div>
+                          </div>
+                          <p className="text-gray-700 text-sm">Recognized for exceptional business leadership and corporate impact.</p>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-white rounded-lg p-4 border-2 border-purple-300">
+                        <p className="text-purple-700 font-bold">
+                          <i className="fas fa-award mr-2"></i>
+                          <strong>Recognition Impact:</strong> The HBCUniverse 30 Under 30 Award celebrates young leaders making significant contributions in their fields, highlighting excellence across STEM, business, and corporate innovation.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* First Place Innovation Expo Award */}
               <div className="bg-blue-50 rounded-3xl p-12 border border-blue-200 shadow-xl">
                 <div className="flex flex-col lg:flex-row items-start gap-8">
@@ -792,6 +941,120 @@ const pastTeamMembers = [
                       <p className="text-orange-700 font-medium">
                         <i className="fas fa-lightbulb mr-2"></i>
                         Innovation Impact: This research addresses critical mobility challenges in complex environments, ensuring efficient path-following and obstacle avoidance for enhanced accessibility and independence.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* HBCUniverse 30 Under 30 Award - Detailed */}
+              <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl p-12 border-2 border-purple-300 shadow-2xl">
+                <div className="flex flex-col lg:flex-row items-start gap-8">
+                  <div className="flex-shrink-0 text-center lg:text-left">
+                    <div className="w-40 h-40 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-7xl shadow-2xl mx-auto lg:mx-0 mb-6">
+                      ⭐
+                    </div>
+                    <h2 className="text-4xl font-black text-gray-900 mb-4">
+                      HBCUniverse 30 Under 30 Award
+                    </h2>
+                    <div className="space-y-2">
+                      <span className="block px-6 py-3 bg-purple-200 text-purple-900 rounded-full text-xl font-black border-2 border-purple-400">
+                        2025 Recipients
+                      </span>
+                      <span className="block px-6 py-3 bg-indigo-200 text-indigo-900 rounded-full text-lg font-bold border-2 border-indigo-400">
+                        Two DEPA Lab Members
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex-grow">
+                    <h3 className="text-3xl font-black text-purple-700 mb-6">Celebrating Young Leaders in STEM and Business</h3>
+                    
+                    <p className="text-gray-800 leading-relaxed text-lg mb-8 font-medium">
+                      We are excited to announce that <span className="text-purple-700 font-black">two of our members have been selected as recipients</span> of the prestigious 2025 HBCUniverse 30 Under 30 Award, recognizing their outstanding contributions and impact in their respective fields!
+                    </p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                      {/* David Nyarko Card */}
+                      <div className="bg-white rounded-2xl p-6 border-2 border-purple-400 shadow-xl">
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl shadow-lg">
+                            🔬
+                          </div>
+                          <div>
+                            <h4 className="font-black text-purple-700 text-2xl">David Nyarko</h4>
+                            <p className="text-purple-600 font-bold">STEM and Research</p>
+                          </div>
+                        </div>
+                        <div className="bg-purple-50 rounded-lg p-4 border border-purple-300 mb-4">
+                          <p className="text-gray-800 font-semibold mb-2">Recognition Category:</p>
+                          <p className="text-purple-700 font-bold text-lg">STEM and Research Category</p>
+                        </div>
+                        <p className="text-gray-700 leading-relaxed">
+                          Recognized for exceptional contributions to STEM research, innovation in AI and autonomous systems, and leadership in advancing cutting-edge technology solutions.
+                        </p>
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {['AI Research', 'Innovation', 'STEM Leadership'].map((tag) => (
+                            <span key={tag} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-bold border border-purple-300">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      {/* Temitope Ajibola Card */}
+                      <div className="bg-white rounded-2xl p-6 border-2 border-indigo-400 shadow-xl">
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-3xl shadow-lg">
+                            💼
+                          </div>
+                          <div>
+                            <h4 className="font-black text-indigo-700 text-2xl">Temitope Ajibola</h4>
+                            <p className="text-indigo-600 font-bold">Business & Corporate</p>
+                          </div>
+                        </div>
+                        <div className="bg-indigo-50 rounded-lg p-4 border border-indigo-300 mb-4">
+                          <p className="text-gray-800 font-semibold mb-2">Recognition Category:</p>
+                          <p className="text-indigo-700 font-bold text-lg">Business and Corporate Category</p>
+                        </div>
+                        <p className="text-gray-700 leading-relaxed">
+                          Recognized for outstanding business acumen, corporate leadership, and significant impact in driving innovation and excellence in the business sector.
+                        </p>
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {['Business Impact', 'Leadership', 'Innovation'].map((tag) => (
+                            <span key={tag} className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-bold border border-indigo-300">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white rounded-lg p-6 border-2 border-purple-400 shadow-lg mb-6">
+                      <h5 className="text-xl font-bold text-purple-700 mb-4">About HBCUniverse 30 Under 30</h5>
+                      <p className="text-gray-700 leading-relaxed mb-4">
+                        The HBCUniverse 30 Under 30 Award celebrates young leaders under 30 who are making significant contributions across various fields including STEM, business, arts, and social impact. This prestigious recognition highlights the exceptional talent and innovation emerging from HBCU communities.
+                      </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div className="text-center p-3 bg-purple-50 rounded-lg border border-purple-200">
+                          <p className="text-2xl font-black text-purple-700">30</p>
+                          <p className="text-xs text-gray-600 font-semibold">Leaders Recognized</p>
+                        </div>
+                        <div className="text-center p-3 bg-indigo-50 rounded-lg border border-indigo-200">
+                          <p className="text-2xl font-black text-indigo-700">2025</p>
+                          <p className="text-xs text-gray-600 font-semibold">Award Year</p>
+                        </div>
+                        <div className="text-center p-3 bg-purple-50 rounded-lg border border-purple-200">
+                          <p className="text-2xl font-black text-purple-700">2</p>
+                          <p className="text-xs text-gray-600 font-semibold">DEPA Lab Winners</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white rounded-lg p-6 border-2 border-purple-400 shadow-lg">
+                      <p className="text-purple-800 font-bold text-lg">
+                        <i className="fas fa-star mr-2"></i>
+                        <strong>Excellence Recognition:</strong> This achievement showcases DEPA Lab's commitment to developing outstanding leaders who make meaningful impacts in both technical research and business innovation, representing the next generation of HBCU excellence.
                       </p>
                     </div>
                   </div>
@@ -1836,6 +2099,53 @@ const pastTeamMembers = [
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+              {/* National Innovation Venture Competition - $100K */}
+              <div className="group transform hover:scale-105 transition-all duration-500 lg:col-span-2 xl:col-span-3">
+                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border-2 border-green-300 shadow-xl hover:shadow-2xl transition-all duration-300">
+                  <div className="flex flex-col lg:flex-row items-start gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-32 h-32 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white text-5xl shadow-2xl animate-pulse">
+                        🏆
+                      </div>
+                    </div>
+                    
+                    <div className="flex-grow">
+                      <h3 className="text-3xl font-bold text-gray-900 mb-3">
+                        First Place - National Innovation Venture Competition
+                      </h3>
+                      
+                      <div className="mb-4">
+                        <span className="inline-block px-4 py-2 bg-green-200 text-green-900 rounded-full text-lg font-black border-2 border-green-400 mr-2">
+                          $100,000 Top Prize
+                        </span>
+                        <span className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold border border-emerald-300">
+                          Tier 3 Graduate Champion
+                        </span>
+                      </div>
+                      
+                      <p className="text-green-700 font-bold mb-3 text-xl">
+                        Team AgroVision: David Nyarko, Obiageli Nwachukwu, Marvellous Ododoh, Dapiriye Briggs
+                      </p>
+                      
+                      <p className="text-gray-700 leading-relaxed mb-4">
+                        Graduate students win first place victory for Morgan State, earning the <span className="text-green-700 font-bold">$100K top prize</span> with their revolutionary <span className="text-emerald-700 font-semibold">AI-powered modular hydroponic farming system</span> that leverages artificial intelligence, renewable energy, and smart agriculture technologies to tackle food insecurity and climate volatility.
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-2">
+                        {['AI-Powered Agriculture', 'Hydroponic System', 'Renewable Energy', 'Smart Farming', 'Food Security'].map((tech) => (
+                          <span 
+                            key={tech} 
+                            className="px-3 py-1 bg-green-100 text-green-700 rounded text-xs font-medium border border-green-300"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* First Place Innovation Expo Award */}
               <div className="group transform hover:scale-105 transition-all duration-500 lg:col-span-2 xl:col-span-3">
                 <div className="bg-blue-50 rounded-2xl p-8 border border-blue-200 shadow-lg hover:shadow-xl transition-all duration-300">
