@@ -816,118 +816,121 @@ const pastTeamMembers = [
             </div>
           </div>
 
-          {/* HBCUniverse 30 Under 30 Award */}
-          <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl p-8 lg:p-12 border-2 border-purple-300 shadow-xl">
-            <div className="flex flex-col lg:flex-row items-start gap-8">
-              <div className="flex-shrink-0 text-center lg:text-left">
-                <div className="w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-6xl lg:text-7xl shadow-2xl mx-auto lg:mx-0 mb-6">
-                  ⭐
-                </div>
-                <h2 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4">
-                  HBCUniverse 30 Under 30 Award
-                </h2>
-                <div className="space-y-2">
-                  <span className="block px-6 py-3 bg-purple-200 text-purple-900 rounded-full text-xl font-black border-2 border-purple-400">
-                    2025 Recipients
-                  </span>
-                  <span className="block px-6 py-3 bg-indigo-200 text-indigo-900 rounded-full text-lg font-bold border-2 border-indigo-400">
-                    Two DEPA Lab Members
-                  </span>
-                </div>
-              </div>
-              
-              <div className="flex-grow">
-                <h3 className="text-2xl lg:text-3xl font-black text-purple-700 mb-6">Celebrating Young Leaders in STEM and Business</h3>
-                
-                <p className="text-gray-800 leading-relaxed text-lg mb-8 font-medium">
-                  We are excited to announce that <span className="text-purple-700 font-black">two of our members have been selected as recipients</span> of the prestigious 2025 HBCUniverse 30 Under 30 Award, recognizing their outstanding contributions and impact in their respective fields!
-                </p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  {/* David Nyarko Card */}
-                  <div className="bg-white rounded-2xl p-6 border-2 border-purple-400 shadow-xl">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl shadow-lg">
-                        🔬
-                      </div>
-                      <div>
-                        <h4 className="font-black text-purple-700 text-2xl">David Nyarko</h4>
-                        <p className="text-purple-600 font-bold">STEM and Research</p>
-                      </div>
-                    </div>
-                    <div className="bg-purple-50 rounded-lg p-4 border border-purple-300 mb-4">
-                      <p className="text-gray-800 font-semibold mb-2">Recognition Category:</p>
-                      <p className="text-purple-700 font-bold text-lg">STEM and Research Category</p>
-                    </div>
-                    <p className="text-gray-700 leading-relaxed">
-                      Recognized for exceptional contributions to STEM research, innovation in AI and autonomous systems, and leadership in advancing cutting-edge technology solutions.
-                    </p>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {['AI Research', 'Innovation', 'STEM Leadership'].map((tag) => (
-                        <span key={tag} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-bold border border-purple-300">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {/* Temitope Ajibola Card */}
-                  <div className="bg-white rounded-2xl p-6 border-2 border-indigo-400 shadow-xl">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-3xl shadow-lg">
-                        💼
-                      </div>
-                      <div>
-                        <h4 className="font-black text-indigo-700 text-2xl">Temitope Ajibola</h4>
-                        <p className="text-indigo-600 font-bold">Business & Corporate</p>
-                      </div>
-                    </div>
-                    <div className="bg-indigo-50 rounded-lg p-4 border border-indigo-300 mb-4">
-                      <p className="text-gray-800 font-semibold mb-2">Recognition Category:</p>
-                      <p className="text-indigo-700 font-bold text-lg">Business and Corporate Category</p>
-                    </div>
-                    <p className="text-gray-700 leading-relaxed">
-                      Recognized for outstanding business acumen, corporate leadership, and significant impact in driving innovation and excellence in the business sector.
-                    </p>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {['Business Impact', 'Leadership', 'Innovation'].map((tag) => (
-                        <span key={tag} className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-bold border border-indigo-300">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-white rounded-lg p-6 border-2 border-purple-400 shadow-lg mb-6">
-                  <h5 className="text-xl font-bold text-purple-700 mb-4">About HBCUniverse 30 Under 30</h5>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    The HBCUniverse 30 Under 30 Award celebrates young leaders under 30 who are making significant contributions across various fields including STEM, business, arts, and social impact. This prestigious recognition highlights the exceptional talent and innovation emerging from HBCU communities.
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <div className="text-center p-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <p className="text-2xl font-black text-purple-700">30</p>
-                      <p className="text-xs text-gray-600 font-semibold">Leaders Recognized</p>
-                    </div>
-                    <div className="text-center p-3 bg-indigo-50 rounded-lg border border-indigo-200">
-                      <p className="text-2xl font-black text-indigo-700">2025</p>
-                      <p className="text-xs text-gray-600 font-semibold">Award Year</p>
-                    </div>
-                    <div className="text-center p-3 bg-purple-50 rounded-lg border border-purple-200">
-                      <p className="text-2xl font-black text-purple-700">2</p>
-                      <p className="text-xs text-gray-600 font-semibold">DEPA Lab Winners</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-white rounded-lg p-6 border-2 border-purple-400 shadow-lg">
-                  <p className="text-purple-800 font-bold text-lg">
-                    <strong>Excellence Recognition:</strong> This achievement showcases DEPA Lab's commitment to developing outstanding leaders who make meaningful impacts in both technical research and business innovation, representing the next generation of HBCU excellence.
-                  </p>
-                </div>
-              </div>
+{/* HBCUniverse 30 Under 30 Award */}
+<div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl p-8 lg:p-12 border-2 border-purple-300 shadow-xl">
+  <div className="flex flex-col lg:flex-row items-start gap-8">
+    <div className="flex-shrink-0 text-center lg:text-left">
+      <div className="w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-6xl lg:text-7xl shadow-2xl mx-auto lg:mx-0 mb-6">
+        ⭐
+      </div>
+      <h2 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4">
+        HBCUniverse 30 Under 30 Award
+      </h2>
+      <div className="space-y-2">
+        <span className="block px-6 py-3 bg-purple-200 text-purple-900 rounded-full text-xl font-black border-2 border-purple-400">
+          2025 Recipients
+        </span>
+        <span className="block px-6 py-3 bg-indigo-200 text-indigo-900 rounded-full text-lg font-bold border-2 border-indigo-400">
+          Two DEPA Lab Members
+        </span>
+      </div>
+    </div>
+    
+    <div className="flex-grow">
+      <h3 className="text-2xl lg:text-3xl font-black text-purple-700 mb-6">Celebrating Young Leaders in STEM and Business</h3>
+      
+      <p className="text-gray-800 leading-relaxed text-lg mb-8 font-medium">
+        We are excited to announce that <span className="text-purple-700 font-black">two of our members have been selected as recipients</span> of the prestigious 2025 HBCUniverse 30 Under 30 Award, recognizing their outstanding contributions and impact in their respective fields!
+      </p>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        {/* David Nyarko Card */}
+        <div className="bg-white rounded-2xl p-6 border-2 border-purple-400 shadow-xl">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl shadow-lg">
+              🔬
+            </div>
+            <div>
+              <h4 className="font-black text-purple-700 text-2xl">David Nyarko</h4>
+              <p className="text-purple-600 font-bold">STEM and Research</p>
             </div>
           </div>
+          <div className="bg-purple-50 rounded-lg p-4 border border-purple-300 mb-4">
+            <p className="text-gray-800 font-semibold mb-2">Recognition Category:</p>
+            <p className="text-purple-700 font-bold text-lg">STEM and Research Category</p>
+          </div>
+          <p className="text-gray-700 leading-relaxed">
+            Recognized for exceptional contributions to STEM research, innovation in AI and autonomous systems, and leadership in advancing cutting-edge technology solutions.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {['AI Research', 'Innovation', 'STEM Leadership'].map((tag) => (
+              <span key={tag} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-bold border border-purple-300">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+        
+        {/* Temitope Ajibola Card */}
+        <div className="bg-white rounded-2xl p-6 border-2 border-indigo-400 shadow-xl">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-3xl shadow-lg">
+              💼
+            </div>
+            <div>
+              <h4 className="font-black text-indigo-700 text-2xl">Temitope Ajibola</h4>
+              <p className="text-indigo-600 font-bold">Business & Corporate</p>
+            </div>
+          </div>
+          <div className="bg-indigo-50 rounded-lg p-4 border border-indigo-300 mb-4">
+            <p className="text-gray-800 font-semibold mb-2">Recognition Category:</p>
+            <p className="text-indigo-700 font-bold text-lg">Business and Corporate Category</p>
+          </div>
+          <p className="text-gray-700 leading-relaxed">
+            Recognized for outstanding business acumen, corporate leadership, and significant impact in driving innovation and excellence in the business sector.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {['Business Impact', 'Leadership', 'Innovation'].map((tag) => (
+              <span key={tag} className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-bold border border-indigo-300">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  {/* About Section - Now outside the flex container */}
+  <div className="mt-8 space-y-6">
+    <div className="bg-white rounded-lg p-6 border-2 border-purple-400 shadow-lg">
+      <h5 className="text-xl font-bold text-purple-700 mb-4">About HBCUniverse 30 Under 30</h5>
+      <p className="text-gray-700 leading-relaxed mb-4">
+        The HBCUniverse 30 Under 30 Award celebrates young leaders under 30 who are making significant contributions across various fields including STEM, business, arts, and social impact. This prestigious recognition highlights the exceptional talent and innovation emerging from HBCU communities.
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="text-center p-3 bg-purple-50 rounded-lg border border-purple-200">
+          <p className="text-2xl font-black text-purple-700">30</p>
+          <p className="text-xs text-gray-600 font-semibold">Leaders Recognized</p>
+        </div>
+        <div className="text-center p-3 bg-indigo-50 rounded-lg border border-indigo-200">
+          <p className="text-2xl font-black text-indigo-700">2025</p>
+          <p className="text-xs text-gray-600 font-semibold">Award Year</p>
+        </div>
+        <div className="text-center p-3 bg-purple-50 rounded-lg border border-purple-200">
+          <p className="text-2xl font-black text-purple-700">2</p>
+          <p className="text-xs text-gray-600 font-semibold">DEPA Lab Winners</p>
+        </div>
+      </div>
+    </div>
+    
+    <div className="bg-white rounded-lg p-6 border-2 border-purple-400 shadow-lg">
+      <p className="text-purple-800 font-bold text-lg">
+        <strong>Excellence Recognition:</strong> This achievement showcases DEPA Lab's commitment to developing outstanding leaders who make meaningful impacts in both technical research and business innovation, representing the next generation of HBCU excellence.
+      </p>
+    </div>
+  </div>
+</div>
 
           {/* First Place Innovation Expo Award */}
           <div className="bg-blue-50 rounded-3xl p-8 lg:p-12 border-2 border-blue-200 shadow-xl">
