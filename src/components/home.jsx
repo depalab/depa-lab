@@ -1121,80 +1121,124 @@ const pastTeamMembers = [
             </div>
           </div>
 
-          {/* Datathon '25 Awards */}
-          <div className="bg-cyan-50 rounded-3xl p-8 border-2 border-cyan-200 shadow-xl">
-            <div className="flex flex-col lg:flex-row items-start gap-6">
-              <div className="flex-shrink-0">
-                <div className="flex gap-2">
-                  <div className="w-20 h-20 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl">
-                    🥇
-                  </div>
-                  <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl">
-                    🥉
-                  </div>
-                </div>
-              </div>
-              
-              <div className="flex-grow">
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
-                  First & Third Place - Datathon '25
-                </h3>
-                
-                <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm font-semibold border border-cyan-300">
-                    HITI Lab
-                  </span>
-                  <span className="inline-block ml-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300">
-                    Emory University School of Medicine
-                  </span>
-                </div>
-                
-                <div className="mb-4">
-                  <h4 className="text-lg font-semibold text-cyan-600 mb-2">Award-Winning Team Members:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-lg text-sm font-medium border border-yellow-300">
-                      David Nyarko (DEPA Lab)
-                    </span>
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-lg text-sm font-medium border border-purple-300">
-                      Cynthia Nosiri (DEPA Lab)
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                  <div className="bg-white rounded-lg p-4 border border-yellow-300">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-white text-sm">
-                        🥇
-                      </div>
-                      <h5 className="font-semibold text-yellow-700">First Place</h5>
-                    </div>
-                    <p className="text-gray-700 text-sm">Outstanding data analysis and innovative solution delivery</p>
-                  </div>
-                  <div className="bg-white rounded-lg p-4 border border-orange-300">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white text-sm">
-                        🥉
-                      </div>
-                      <h5 className="font-semibold text-orange-700">Third Place</h5>
-                    </div>
-                    <p className="text-gray-700 text-sm">Exceptional teamwork and technical implementation</p>
-                  </div>
-                </div>
-                
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  The DEPA Lab team achieved remarkable success at <span className="text-cyan-600 font-semibold">Datathon '25</span>, securing both <span className="text-yellow-600 font-semibold">first place and third place</span> in the prestigious competition organized by HITI Lab at Emory University School of Medicine.
-                </p>
-                
-                <div className="bg-white rounded-lg p-4 border border-cyan-300">
-                  <p className="text-cyan-700 font-medium">
-                    <strong>Healthcare Impact:</strong> This dual achievement highlights DEPA Lab's excellence in applying advanced data science techniques to solve complex healthcare challenges.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+       {/* Datathon '24 Awards */}
+<div className="bg-cyan-50 rounded-3xl p-8 border-2 border-cyan-200 shadow-xl">
+  <div className="flex flex-col lg:flex-row items-start gap-6">
+    <div className="flex-shrink-0">
+      <div className="flex gap-2">
+        <div className="w-20 h-20 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl">
+          🥇
         </div>
+        <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl">
+          🥉
+        </div>
+      </div>
+    </div>
+    
+    <div className="flex-grow">
+      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+        First & Third Place - Datathon '24
+      </h3>
+      
+      <div className="mb-4">
+        <span className="inline-block px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm font-semibold border border-cyan-300">
+          HITI Lab
+        </span>
+        <span className="inline-block ml-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300">
+          Emory University School of Medicine
+        </span>
+      </div>
+      
+      <div className="mb-4">
+        <h4 className="text-lg font-semibold text-cyan-600 mb-2">Award-Winning Team Members:</h4>
+        <div className="flex flex-wrap gap-2">
+          <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-lg text-sm font-medium border border-yellow-300">
+            David Nyarko (DEPA Lab)
+          </span>
+          <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-lg text-sm font-medium border border-purple-300">
+            Cynthia Nosiri (DEPA Lab)
+          </span>
+        </div>
+      </div>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+        <div className="bg-white rounded-lg p-4 border border-yellow-300">
+          <div className="flex items-center gap-2 mb-2">
+            <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-white text-sm">
+              🥇
+            </div>
+            <h5 className="font-semibold text-yellow-700">First Place</h5>
+          </div>
+          <p className="text-gray-700 text-sm">Outstanding data analysis and innovative solution delivery</p>
+        </div>
+        <div className="bg-white rounded-lg p-4 border border-orange-300">
+          <div className="flex items-center gap-2 mb-2">
+            <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white text-sm">
+              🥉
+            </div>
+            <h5 className="font-semibold text-orange-700">Third Place</h5>
+          </div>
+          <p className="text-gray-700 text-sm">Exceptional teamwork and technical implementation</p>
+        </div>
+      </div>
+      
+      <p className="text-gray-700 leading-relaxed mb-4">
+        The DEPA Lab team achieved remarkable success at <span className="text-cyan-600 font-semibold">Datathon '24</span>, securing both <span className="text-yellow-600 font-semibold">first place and third place</span> in the prestigious competition organized by HITI Lab at Emory University School of Medicine.
+      </p>
+      
+      <div className="bg-white rounded-lg p-4 border border-cyan-300">
+        <p className="text-cyan-700 font-medium">
+          <strong>Healthcare Impact:</strong> This dual achievement highlights DEPA Lab's excellence in applying advanced data science techniques to solve complex healthcare challenges.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{/* Datathon '25 Award - Third Place */}
+<div className="bg-blue-50 rounded-3xl p-8 border-2 border-blue-200 shadow-xl">
+  <div className="flex flex-col lg:flex-row items-start gap-6">
+    <div className="flex-shrink-0">
+      <div className="w-24 h-24 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl">
+        🥉
+      </div>
+    </div>
+    
+    <div className="flex-grow">
+      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+        Third Place - Datathon '25
+      </h3>
+      
+      <div className="mb-4">
+        <span className="inline-block px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm font-semibold border border-cyan-300">
+          HITI Lab
+        </span>
+        <span className="inline-block ml-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300">
+          Emory University School of Medicine
+        </span>
+      </div>
+      
+      <div className="mb-4">
+        <h4 className="text-lg font-semibold text-blue-600 mb-2">Award-Winning Team Lead:</h4>
+        <div className="flex flex-wrap gap-2">
+          <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-lg text-sm font-medium border border-orange-300">
+            Cynthia Nosiri (DEPA Lab)
+          </span>
+        </div>
+      </div>
+      
+      <p className="text-gray-700 leading-relaxed mb-4">
+        Building on previous success, Cynthia Nosiri's team secured <span className="text-orange-600 font-semibold">third place</span> at <span className="text-cyan-600 font-semibold">Datathon '25</span>, demonstrating continued excellence and innovation in healthcare data science at the HITI Lab competition hosted by Emory University School of Medicine.
+      </p>
+      
+      <div className="bg-white rounded-lg p-4 border border-blue-300">
+        <p className="text-blue-700 font-medium">
+          <strong>Continued Excellence:</strong> This consecutive recognition showcases DEPA Lab's sustained commitment to advancing healthcare analytics and solving critical medical challenges through innovative data science approaches.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
         {/* Impact Statement */}
         <div className="mt-12 text-center">
