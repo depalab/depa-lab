@@ -30,6 +30,7 @@ const DepaLabHomepage = () => {
   { name: "David Nyarko", role: "Researcher", image: "david-nyarko.JPG" },
 ];
 
+// eslint-disable-next-line no-unused-vars
 const pastTeamMembers = [
   { name: "Ekata Dhital", role: "Research Assistant", image: "Ekata Dhital.JPG" },
   { name: "Tasmeer Alam", role: "AI Researcher", image: "Tasmeer_Alam.jpeg" },
