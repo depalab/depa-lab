@@ -1239,6 +1239,7 @@ const pastTeamMembers = [
     </div>
   </div>
 </div>
+            </div>  {/* This closes the space-y-12 div */}
 
         {/* Impact Statement */}
         <div className="mt-12 text-center">
