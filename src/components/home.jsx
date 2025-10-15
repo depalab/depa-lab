@@ -2147,7 +2147,7 @@ const pastTeamMembers = [
               </div>
 
               {/* First Place Innovation Expo Award */}
-              <div className="group transform hover:scale-105 transition-all duration-500 lg:col-span-2 xl:col-span-3">
+              <div className="group transform hover:scale-105 transition-all duration-500">
                 <div className="bg-blue-50 rounded-2xl p-8 border border-blue-200 shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="flex flex-col lg:flex-row items-start gap-6">
                     <div className="flex-shrink-0">
