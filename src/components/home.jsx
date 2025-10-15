@@ -2060,42 +2060,81 @@ const pastTeamMembers = [
           </div>
         </section>
 
-{/* Awards Section Preview */}
-<section id="awards" className="mb-24 py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
-  <div className="container mx-auto px-4 sm:px-6">
-    <h2 className="text-5xl font-black text-white mb-8 text-center">
-      Awards and{' '}
-      <span className="text-white">
-        Recognitions
-      </span>
-    </h2>
-    
-    <p className="text-xl text-blue-100 text-center mb-12 max-w-3xl mx-auto">
-      Celebrating excellence and innovation in research and technology.
-    </p>
+        {/* Awards Section */}
+        <section id="awards" className="mb-24 py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6">
+            <h2 className="text-5xl font-black text-gray-900 mb-8 text-center">
+              Awards and{' '}
+              <span className="text-blue-600">
+                Recognitions
+              </span>
+            </h2>
+            
+            <p className="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">
+              Celebrating excellence and innovation in research and technology.
+            </p>
 
-    <div className="max-w-5xl mx-auto bg-white rounded-3xl p-8 shadow-2xl">
-      <div className="text-center">
-        <div className="text-6xl mb-6">🏆</div>
-        <h3 className="text-3xl font-bold text-gray-900 mb-4">
-          $100,000 Top Prize Winner
-        </h3>
-        <p className="text-xl text-gray-700 mb-6">
-          National Innovation Venture Competition - First Place
-        </p>
-        <button
-          onClick={() => setCurrentView('awards')}
-          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
-        >
-          View All Awards
-          <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+              {/* First Place Innovation Expo Award */}
+              <div className="group transform hover:scale-105 transition-all duration-500 lg:col-span-2 xl:col-span-3">
+                <div className="bg-blue-50 rounded-2xl p-8 border border-blue-200 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="flex flex-col lg:flex-row items-start gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-24 h-24 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl">
+                        🏆
+                      </div>
+                    </div>
+                    
+                    <div className="flex-grow">
+                      <h3 className="text-3xl font-bold text-gray-900 mb-3">
+                        First Place Innovation Expo Award
+                      </h3>
+                      
+                      <div className="mb-4">
+                        <span className="inline-block px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold border border-orange-300">
+                          Morgan TechFest 2024
+                        </span>
+                        <span className="inline-block ml-2 px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold border border-green-300">
+                          $2,000 Prize
+                        </span>
+                      </div>
+                      
+                      <p className="text-blue-600 font-semibold mb-3">
+                        Award Winner: David Nyarko
+                      </p>
+                      
+                      <p className="text-gray-700 leading-relaxed">
+                        The lab won first place at Morgan TechFest 2024 Innovation Expo with its groundbreaking research, <span className="text-orange-600 font-semibold">'Track-Based Autonomous Wheelchair Navigation for Airport Environments.'</span> This AI-driven system integrates advanced technologies such as Ultralytics YOLOv8, QR Code navigation, LiDAR, and cameras.
+                      </p>
+                      
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {['YOLOv8', 'QR Navigation', 'LiDAR', 'Computer Vision', 'AI Navigation'].map((tech) => (
+                          <span 
+                            key={tech} 
+                            className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium border border-blue-300"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <button
+                onClick={() => setCurrentView('awards')}
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-lg mr-4"
+              >
+                <i className="fas fa-trophy mr-2"></i>
+                View All Awards
+              </button>
+            </div>
+          </div>
+        </section>
+
 
         {/* Funding Section */}
         <section id="funding" className="mb-24 py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
