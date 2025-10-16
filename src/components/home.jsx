@@ -1794,99 +1794,112 @@ const pastTeamMembers = [
       <main className="flex-grow pt-20">
         
         {/* Hero Section */}
-        <section id="hero" className="relative mb-16 pt-16 min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
-          
-          {/* Hero Background Pattern */}
-          <div className="absolute inset-0 z-0 opacity-10">
-            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full animate-ping"></div>
-            <div className="absolute top-3/4 left-1/3 w-1 h-1 bg-white rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
-            <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-white rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
-          </div>
-          
-          {/* Hero Content */}
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20 w-full">
-            
-            {/* Animated Badge */}
-            <div className="flex justify-center mb-8">
-              <div className="flex items-center gap-4 animate-pulse">
-                <div className="h-3 w-3 bg-orange-400 rounded-full animate-ping"></div>
-                <span className="text-white uppercase tracking-wider text-sm font-bold px-4 py-2 rounded-full border border-white/30 bg-white/10">
-                  🔬 Transforming Data to Decisions Through Intelligent Systems
-                </span>
-                <div className="h-3 w-3 bg-orange-400 rounded-full animate-ping"></div>
-              </div>
-            </div>
-            
-            {/* Main Title */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-12 leading-tight text-white">
-              Welcome to{' '}
-              <span className="block mt-4 text-white drop-shadow-2xl">
-                DEPA Research Lab
-              </span>
-            </h1>
-            
-            {/* Call to Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-              <a 
-                href="#research" 
-                className="w-full sm:w-auto group px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full font-bold text-lg transition-all duration-500 transform hover:scale-105 shadow-2xl"
-              >
-                <span className="relative z-10 flex items-center justify-center">
-                  Explore Our Research
-                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </span>
-              </a>
-              <a 
-                href="#projects" 
-                className="w-full sm:w-auto group px-8 py-4 bg-white text-blue-600 hover:bg-blue-50 rounded-full font-bold text-lg transition-all duration-500 transform hover:scale-105 shadow-2xl"
-              >
-                <span className="relative z-10 flex items-center justify-center">
-                  View Projects
-                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </span>
-              </a>
-            </div>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="text-center group">
-                <div className="text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">
-                  50+
-                </div>
-                <div className="text-blue-100 font-medium">Research Projects</div>
-              </div>
-              <div className="text-center group">
-                <div className="text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">
-                  13+
-                </div>
-                <div className="text-blue-100 font-medium">Team Members</div>
-              </div>
-              <div className="text-center group">
-                <div className="text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">
-                  7
-                </div>
-                <div className="text-blue-100 font-medium">Research Areas</div>
-              </div>
-            </div>
-            
-            <div className="h-2 w-32 bg-orange-500 mx-auto rounded-full shadow-2xl animate-pulse mt-12"></div>
-          </div>
-          
-          {/* Scroll Down Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-            <div className="flex flex-col items-center group cursor-pointer">
-              <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center">
-                <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-              </div>
-              <span className="text-white text-xs mt-2">Scroll</span>
-            </div>
-          </div>
-        </section>
-
+<section id="hero" className="relative mb-16 pt-16 min-h-screen flex items-center overflow-hidden">
+  
+  {/* Hero Background Image */}
+  <div 
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundImage: 'url(/depa-lab/images/depa2.jpeg)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }}
+  />
+  
+  {/* Dark Overlay for Text Readability */}
+  <div className="absolute inset-0 z-10 bg-gradient-to-br from-blue-900/90 via-blue-800/85 to-blue-900/90" />
+  
+  {/* Hero Background Pattern */}
+  <div className="absolute inset-0 z-10 opacity-10">
+    <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full animate-ping"></div>
+    <div className="absolute top-3/4 left-1/3 w-1 h-1 bg-white rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
+    <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-white rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+  </div>
+  
+  {/* Hero Content */}
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20 w-full">
+    
+    {/* Animated Badge */}
+    <div className="flex justify-center mb-8">
+      <div className="flex items-center gap-4 animate-pulse">
+        <div className="h-3 w-3 bg-orange-400 rounded-full animate-ping"></div>
+        <span className="text-white uppercase tracking-wider text-sm font-bold px-4 py-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm">
+          🔬 Transforming Data to Decisions Through Intelligent Systems
+        </span>
+        <div className="h-3 w-3 bg-orange-400 rounded-full animate-ping"></div>
+      </div>
+    </div>
+    
+    {/* Main Title */}
+    <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-12 leading-tight text-white">
+      Welcome to{' '}
+      <span className="block mt-4 text-white drop-shadow-2xl">
+        DEPA Research Lab
+      </span>
+    </h1>
+    
+    {/* Call to Action Buttons */}
+    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+      <a 
+        href="#research" 
+        className="w-full sm:w-auto group px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full font-bold text-lg transition-all duration-500 transform hover:scale-105 shadow-2xl"
+      >
+        <span className="relative z-10 flex items-center justify-center">
+          Explore Our Research
+          <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </span>
+      </a>
+      <a 
+        href="#projects" 
+        className="w-full sm:w-auto group px-8 py-4 bg-white text-blue-600 hover:bg-blue-50 rounded-full font-bold text-lg transition-all duration-500 transform hover:scale-105 shadow-2xl"
+      >
+        <span className="relative z-10 flex items-center justify-center">
+          View Projects
+          <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </span>
+      </a>
+    </div>
+    
+    {/* Stats */}
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <div className="text-center group">
+        <div className="text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">
+          50+
+        </div>
+        <div className="text-blue-100 font-medium">Research Projects</div>
+      </div>
+      <div className="text-center group">
+        <div className="text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">
+          13+
+        </div>
+        <div className="text-blue-100 font-medium">Team Members</div>
+      </div>
+      <div className="text-center group">
+        <div className="text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">
+          7
+        </div>
+        <div className="text-blue-100 font-medium">Research Areas</div>
+      </div>
+    </div>
+    
+    <div className="h-2 w-32 bg-orange-500 mx-auto rounded-full shadow-2xl animate-pulse mt-12"></div>
+  </div>
+  
+  {/* Scroll Down Indicator */}
+  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+    <div className="flex flex-col items-center group cursor-pointer">
+      <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center">
+        <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+      </div>
+      <span className="text-white text-xs mt-2">Scroll</span>
+    </div>
+  </div>
+</section>
         {/* About Section */}
         <section id="about" className="mb-24 py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
