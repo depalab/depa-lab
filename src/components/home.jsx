@@ -1,20 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 
-const DepaLabHomepage = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [currentView, setCurrentView] = useState('home');
+// -----------------------------------------------------------------------------
+// Static data — declared once at module scope (not re-created on every render).
+// -----------------------------------------------------------------------------
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  const presentTeamMembers = [
+const presentTeamMembers = [
   { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "nyarko.jpg" },
   { name: "Cynthia Nosiri", role: "AI Researcher", image: "Cynthia.jpeg" },
   { name: "Derrick Cook", role: "AI Researcher", image: "Derrick_Cook.PNG" },
@@ -35,6 +25,47 @@ const pastTeamMembers = [
   { name: "Ekata Dhital", role: "Research Assistant", image: "Ekata Dhital.JPG" },
   { name: "Tasmeer Alam", role: "AI Researcher", image: "Tasmeer_Alam.jpeg" },
 ];
+
+const DepaLabHomepage = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentView, setCurrentView] = useState('home');
+
+  // Ref to the animated background overlay. We update its style directly on
+  // mousemove instead of calling setState — this avoids re-rendering the entire
+  // ~2,500-line component tree on every pixel of mouse movement, which was the
+  // cause of the browser hanging/crashing.
+  const overlayRef = useRef(null);
+
+  useEffect(() => {
+    let rafId = null;
+    let pendingX = 0;
+    let pendingY = 0;
+
+    const applyUpdate = () => {
+      rafId = null;
+      const el = overlayRef.current;
+      if (el) {
+        el.style.background =
+          `radial-gradient(400px circle at ${pendingX}px ${pendingY}px, ` +
+          `rgba(37, 99, 235, 0.15), transparent 40%)`;
+      }
+    };
+
+    const handleMouseMove = (e) => {
+      pendingX = e.clientX;
+      pendingY = e.clientY;
+      // Coalesce multiple mousemove events into one DOM write per frame.
+      if (rafId === null) {
+        rafId = requestAnimationFrame(applyUpdate);
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
+  }, []);
 
   const researchAreas = [
     {
@@ -131,8 +162,11 @@ const pastTeamMembers = [
     }
   ];
 
-  // Research Components
-  const ResearchComponents = {
+  // Research Components — memoized so the 12 inner component functions are not
+  // re-allocated on every render. setCurrentView is a stable reference from
+  // useState, so an empty dependency array is correct.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const ResearchComponents = useMemo(() => ({
     'xpci-crack-detection': () => (
       <div className="min-h-screen bg-white">
         <div className="container mx-auto px-4 py-16">
@@ -1665,7 +1699,7 @@ const pastTeamMembers = [
         </div>
       </div>
     ),
-  };
+  }), []);
 
   if (currentView !== 'home' && ResearchComponents[currentView]) {
     const Component = ResearchComponents[currentView];
@@ -1684,12 +1718,11 @@ const pastTeamMembers = [
         referrerPolicy="no-referrer" 
       />
 
-      {/* Animated background overlay */}
-      <div 
+      {/* Animated background overlay — updated via ref/rAF on mousemove,
+          no React re-renders. See the useEffect at the top of the component. */}
+      <div
+        ref={overlayRef}
         className="fixed inset-0 opacity-5 pointer-events-none"
-        style={{
-          background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(37, 99, 235, 0.15), transparent 40%)`
-        }}
       />
 
       {/* Header */}
