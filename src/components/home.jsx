@@ -933,231 +933,213 @@ const DepaLabHomepage = () => {
     },
 
    
-    'publications': () => (
-      <div className="min-h-screen bg-white">
-        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
-<div className="max-w-6xl mx-auto">
-            <h1 className="text-5xl font-black text-gray-900 mb-8 text-center">
-              Research{' '}
-              <span className="text-blue-600">
-                Publications
+'publications': () => {
+      // Unified publication card design - all publications use the same layout
+      // pattern. Each entry is described by a data object below; the component
+      // renders them identically so the page reads as one consistent set of
+      // cards (matching the awards page design).
+      const publications = [
+        {
+          title: "AI/ML Systems Engineering Workbench Framework",
+          tags: ["IEEE CISS Conference", "Systems Engineering"],
+          authorsLabel: "Authors:",
+          authors: [
+            { name: "Dr. Kofi Nyarko", accent: "orange" },
+            { name: "Emmanual Masa-Ibi", accent: "blue" },
+          ],
+          highlights: [
+            { label: "Venue", note: "Conference on Information Sciences and Systems (CISS)" },
+          ],
+          body: (
+            <>This paper presents a <span className="text-blue-600 font-semibold">workbench framework</span> for AI/ML systems engineering, providing a structured environment for developing, evaluating, and deploying machine learning systems at scale.</>
+          ),
+          impactLabel: "Research Impact:",
+          impact: "Establishes a reusable engineering foundation for building reliable AI/ML systems across diverse application domains.",
+          link: "https://ieeexplore.ieee.org/document/10089781/",
+        },
+        {
+          title: "Automated Traffic Video Analysis with Modular Computer Vision Pipeline",
+          tags: ["IEEE CISS Conference", "Computer Vision"],
+          authorsLabel: "Authors:",
+          authors: [
+            { name: "Tasmeer Alam", accent: "orange" },
+            { name: "Dr. Kofi Nyarko", accent: "blue" },
+          ],
+          highlights: [
+            { label: "Venue", note: "Conference on Information Sciences and Systems (CISS)" },
+          ],
+          body: (
+            <>A <span className="text-blue-600 font-semibold">modular computer vision pipeline</span> for automated traffic video analysis, enabling scalable detection, classification, and tracking of vehicles and traffic events in real-world footage.</>
+          ),
+          impactLabel: "Research Impact:",
+          impact: "Provides a flexible CV architecture that supports rapid extension to new traffic analytics tasks without rebuilding the underlying pipeline.",
+          link: "https://ieeexplore.ieee.org/document/10944672",
+        },
+        {
+          title: "Network Intrusion Visualization with NIVA",
+          tags: ["IEEE Haptic Symposium", "Cybersecurity"],
+          authorsLabel: "Authors:",
+          authors: [
+            { name: "Kofi Nyarko", accent: "orange" },
+            { name: "Tanya Capers", accent: "blue" },
+            { name: "Craig Scott", accent: "orange" },
+            { name: "Kemi Ladeji-Osias", accent: "blue" },
+          ],
+          highlights: [
+            { label: "Venue", note: "10th Symposium on Haptic Interfaces for Virtual Environment and Teleoperator Systems" },
+          ],
+          body: (
+            <>NIVA introduces a <span className="text-blue-600 font-semibold">visualization-driven approach</span> to network intrusion analysis, combining haptic interfaces with intuitive graphical representations to help analysts identify and respond to threats more effectively.</>
+          ),
+          impactLabel: "Research Impact:",
+          impact: "Advances multi-modal interaction techniques for cybersecurity, demonstrating how visualization and haptics together improve threat detection.",
+          link: "https://ieeexplore.ieee.org/abstract/document/998969",
+        },
+        {
+          title: "Cloud Based Passive Building Occupancy Characterization",
+          tags: ["IEEE HST Conference", "Smart Buildings"],
+          authorsLabel: "Authors:",
+          authors: [
+            { name: "Kofi Nyarko", accent: "orange" },
+            { name: "Cecelia Wright-Brown", accent: "blue" },
+          ],
+          highlights: [
+            { label: "Venue", note: "IEEE International Conference on Technologies for Homeland Security (HST)" },
+          ],
+          body: (
+            <>A <span className="text-blue-600 font-semibold">cloud-based passive sensing approach</span> for characterizing building occupancy without active user input, enabling smarter building management and homeland security applications.</>
+          ),
+          impactLabel: "Research Impact:",
+          impact: "Demonstrates how passive cloud-connected sensing can deliver accurate occupancy intelligence for safety and efficiency at building scale.",
+          link: "https://ieeexplore.ieee.org/abstract/document/6699097",
+        },
+        {
+          title: "SmartPattern: A Machine Learning Framework for Detecting Reentrancy Vulnerabilities in Blockchain Smart Contracts",
+          tags: ["IEEE Publication", "Blockchain Security", "Machine Learning"],
+          authorsLabel: "Research Team:",
+          authors: [
+            { name: "DEPA Lab Research Team", accent: "orange" },
+          ],
+          highlights: [
+            { label: "Detection Accuracy", note: "94% on 40,000 smart contracts" },
+            { label: "Models Used", note: "Random Forest and Support Vector Classifier" },
+          ],
+          body: (
+            <>SmartPattern introduces a <span className="text-blue-600 font-semibold">machine learning framework</span> for detecting <span className="text-orange-600 font-semibold">reentrancy attacks</span> in smart contracts, achieving superior performance over traditional static analysis tools and transformer-based approaches.</>
+          ),
+          impactLabel: "Research Impact:",
+          impact: "Strengthens DeFi and blockchain security by giving developers a high-accuracy, scalable tool for identifying reentrancy vulnerabilities before deployment.",
+          link: "https://ieeexplore.ieee.org/abstract/document/10944738",
+        },
+      ];
+
+      const PublicationCard = ({ data }) => (
+        <div className="bg-blue-50 rounded-3xl p-6 sm:p-8 border border-blue-200 shadow-md">
+          <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-4">
+            {data.title}
+          </h2>
+
+          <div className="flex flex-wrap gap-2 mb-5">
+            {data.tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300"
+              >
+                {tag}
               </span>
-            </h1>
-            
-            <p className="text-xl text-gray-900 text-center mb-12 max-w-4xl mx-auto">
-              Explore our comprehensive contributions to research and innovation in AI, machine learning, and technology.
+            ))}
+          </div>
+
+          <h4 className="text-base font-bold text-blue-700 mb-2">
+            {data.authorsLabel}
+          </h4>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {data.authors.map((a) => (
+              <span
+                key={a.name}
+                className={
+                  a.accent === 'orange'
+                    ? "px-3 py-1 bg-orange-100 text-orange-700 rounded-lg text-sm font-medium border border-orange-300"
+                    : "px-3 py-1 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium border border-blue-300"
+                }
+              >
+                {a.name}
+              </span>
+            ))}
+          </div>
+
+          <div
+            className={
+              data.highlights.length > 1
+                ? "grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6"
+                : "grid grid-cols-1 gap-4 mb-6"
+            }
+          >
+            {data.highlights.map((h) => (
+              <div
+                key={h.label}
+                className="bg-white rounded-lg p-4 border border-orange-300"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="inline-block w-4 h-4 rounded-full bg-orange-500"></span>
+                  <h5 className="font-bold text-orange-700">{h.label}</h5>
+                </div>
+                <p className="text-gray-900 text-sm">{h.note}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-gray-900 leading-relaxed mb-5">
+            {data.body}
+          </p>
+
+          <div className="bg-white rounded-lg p-4 border border-blue-300 mb-5">
+            <p className="text-blue-700">
+              <strong className="font-bold">{data.impactLabel}</strong>{' '}
+              <span className="font-medium">{data.impact}</span>
             </p>
+          </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Publication 1 - AI/ML Systems Engineering */}
-              <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300">
-                <div className="flex items-start gap-6 mb-6">
-                  <div className="flex-grow">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                      AI/ML Systems Engineering Workbench Framework
-                    </h3>
-                    <span className="inline-block px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold border border-orange-300">
-                      IEEE CISS Conference
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="space-y-4 mb-6">
-                  <div className="bg-white border border-blue-200 rounded-lg p-4">
-                    <div className="grid grid-cols-1 gap-3">
-                      <div>
-                        <span className="text-blue-600 font-semibold text-lg">Authors: </span>
-                        <span className="text-gray-900 text-lg">Dr. Kofi Nyarko, Emmanual Masa-Ibi</span>
-                      </div>
-                      <div>
-                        <span className="text-blue-600 font-semibold text-lg">Published in: </span>
-                        <span className="text-gray-900 text-lg">Conference on Information Sciences and Systems (CISS)</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <a 
-                  href="https://ieeexplore.ieee.org/document/10089781/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  Read Full Paper
-                </a>
+          <a
+            href={data.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            Read Full Paper
+          </a>
+        </div>
+      );
+
+      return (
+        <div className="min-h-screen bg-white">
+          <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
+            <div className="max-w-6xl mx-auto">
+              <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-6 text-center">
+                Research{' '}
+                <span className="text-blue-600">Publications</span>
+              </h1>
+
+              <p className="text-lg sm:text-xl text-gray-900 text-center mb-12 max-w-4xl mx-auto">
+                Explore our comprehensive contributions to research and innovation in AI, machine learning, and technology.
+              </p>
+
+              <div className="space-y-8">
+                {publications.map((p) => (
+                  <PublicationCard key={p.title} data={p} />
+                ))}
               </div>
 
-              {/* Publication 2 - Traffic Video Analysis */}
-              <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300">
-                <div className="flex items-start gap-6 mb-6">
-                  <div className="flex-grow">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                      Automated Traffic Video Analysis with Modular Computer Vision Pipeline
-                    </h3>
-                    <span className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300">
-                      IEEE CISS Conference
-                    </span>
-                  </div>
+              <div className="mt-12 text-center">
+                <div className="inline-block px-6 sm:px-8 py-4 bg-blue-50 border border-blue-300 text-blue-700 rounded-full font-bold text-base sm:text-lg">
+                  Contributing to the Future of AI and Technology Research
                 </div>
-                
-                <div className="space-y-4 mb-6">
-                  <div className="bg-white border border-blue-200 rounded-lg p-4">
-                    <div className="grid grid-cols-1 gap-3">
-                      <div>
-                        <span className="text-blue-600 font-semibold text-lg">Authors: </span>
-                        <span className="text-gray-900 text-lg">Tasmeer Alam, Dr. Kofi Nyarko</span>
-                      </div>
-                      <div>
-                        <span className="text-blue-600 font-semibold text-lg">Published in: </span>
-                        <span className="text-gray-900 text-lg">Conference on Information Sciences and Systems (CISS)</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <a 
-                  href="https://ieeexplore.ieee.org/document/10944672"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  Read Full Paper
-                </a>
               </div>
-
-              {/* Publication 3 - Network Intrusion */}
-              <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300">
-                <div className="flex items-start gap-6 mb-6">
-                  <div className="flex-grow">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                      Network Intrusion Visualization with NIVA
-                    </h3>
-                    <span className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300">
-                      IEEE Haptic Symposium
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="space-y-4 mb-6">
-                  <div className="bg-white border border-blue-200 rounded-lg p-4">
-                    <div className="grid grid-cols-1 gap-3">
-                      <div>
-                        <span className="text-blue-600 font-semibold text-lg">Authors: </span>
-                        <span className="text-gray-900 text-lg">Kofi Nyarko, Tanya Capers, Craig Scott, Kemi Ladeji-Osias</span>
-                      </div>
-                      <div>
-                        <span className="text-blue-600 font-semibold text-lg">Published in: </span>
-                        <span className="text-gray-900 text-lg">10th Symposium on Haptic Interfaces for Virtual Environment and Teleoperator Systems</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <a 
-                  href="https://ieeexplore.ieee.org/abstract/document/998969"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  Read Full Paper
-                </a>
-              </div>
-
-              {/* Publication 4 - Building Occupancy */}
-              <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300">
-                <div className="flex items-start gap-6 mb-6">
-                  <div className="flex-grow">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                      Cloud Based Passive Building Occupancy Characterization
-                    </h3>
-                    <span className="inline-block px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold border border-orange-300">
-                      IEEE HST Conference
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="space-y-4 mb-6">
-                  <div className="bg-white border border-blue-200 rounded-lg p-4">
-                    <div className="grid grid-cols-1 gap-3">
-                      <div>
-                        <span className="text-orange-700 font-semibold text-lg">Authors: </span>
-                        <span className="text-gray-900 text-lg">Kofi Nyarko, Cecelia Wright-Brown</span>
-                      </div>
-                      <div>
-                        <span className="text-orange-700 font-semibold text-lg">Published in: </span>
-                        <span className="text-gray-900 text-lg">IEEE International Conference on Technologies for Homeland Security (HST)</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <a 
-                  href="https://ieeexplore.ieee.org/abstract/document/6699097"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  Read Full Paper
-                </a>
-              </div>
-
-              {/* Publication 5 - SmartPattern */}
-              <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300 lg:col-span-2">
-                <div className="flex items-start gap-6 mb-6">
-                  <div className="flex-grow">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                      SmartPattern: A Machine Learning Framework for Detecting Reentrancy Vulnerabilities in Blockchain Smart Contracts
-                    </h3>
-                    <span className="inline-block px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold border border-orange-300">
-                      IEEE Publication
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="space-y-4 mb-6">
-                  <div className="bg-white border border-blue-200 rounded-lg p-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <span className="text-orange-600 font-semibold">Research Focus: </span>
-                        <span className="text-gray-900">Machine Learning Framework for Blockchain Security</span>
-                      </div>
-                      <div>
-                        <span className="text-orange-600 font-semibold">Key Achievement: </span>
-                        <span className="text-gray-900">94% detection accuracy analyzing 40,000 smart contracts</span>
-                      </div>
-                      <div>
-                        <span className="text-orange-600 font-semibold">Models Used: </span>
-                        <span className="text-gray-900">Random Forest, Support Vector Classifier</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-900 text-sm leading-relaxed">
-                    SmartPattern introduces a novel machine learning-based framework to detect reentrancy attacks in smart contracts, achieving superior performance over traditional static analysis tools and transformer-based approaches.
-                  </p>
-                </div>
-                
-                <a 
-                  href="https://ieeexplore.ieee.org/abstract/document/10944738"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  Read Full Paper
-                </a>
-              </div>
-            </div>
-
-            {/* Research Impact Statement */}
-            <div className="mt-12 text-center">
-              <div className="inline-flex items-center px-8 py-4 bg-blue-100 border border-blue-300 text-blue-700 rounded-full font-bold backdrop-blur-sm text-lg">
-                Contributing to the Future of AI and Technology Research
-                </div>
             </div>
           </div>
         </div>
-      </div>
-    ),
+      );
+    },
 
     'symposium': () => (
       <div className="min-h-screen bg-white">
@@ -1473,7 +1455,9 @@ const DepaLabHomepage = () => {
         showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'
       } hover:scale-110 focus:outline-none`}
     >
-      <span className="text-xs font-bold">Top</span>
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" />
+      </svg>
       </button>
   );
 
@@ -1679,18 +1663,26 @@ const DepaLabHomepage = () => {
                   const container = document.getElementById('research-carousel');
                   container.scrollBy({ left: -400, behavior: 'smooth' });
                 }}
+                aria-label="Scroll research carousel left"
                 className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full hidden sm:flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
               >
-                </button>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
               
               <button 
                 onClick={() => {
                   const container = document.getElementById('research-carousel');
                   container.scrollBy({ left: 400, behavior: 'smooth' });
                 }}
+                aria-label="Scroll research carousel right"
                 className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full hidden sm:flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
               >
-                </button>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
 
               {/* Carousel Container */}
               <div 
@@ -2093,18 +2085,26 @@ const DepaLabHomepage = () => {
                   const container = document.getElementById('team-carousel');
                   container.scrollBy({ left: -400, behavior: 'smooth' });
                 }}
+                aria-label="Scroll team carousel left"
                 className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full hidden sm:flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
               >
-                </button>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
               
               <button 
                 onClick={() => {
                   const container = document.getElementById('team-carousel');
                   container.scrollBy({ left: 400, behavior: 'smooth' });
                 }}
+                aria-label="Scroll team carousel right"
                 className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full hidden sm:flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
               >
-                </button>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
 
               <div 
                 id="team-carousel"
