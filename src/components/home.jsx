@@ -346,6 +346,7 @@ const DepaLabHomepage = () => {
               <div className="bg-white rounded-2xl p-6 border border-blue-200">
                 <img 
                   src="/depa-lab/images/CyberShield.pptx.png"
+                  loading="lazy"
                   alt="Cyber Shield System Architecture"
                   className="w-full h-96 rounded-xl shadow-2xl border border-blue-200 object-cover"
                 />
@@ -397,6 +398,7 @@ const DepaLabHomepage = () => {
               <div className="bg-white rounded-2xl p-6 border border-blue-200">
                 <img 
                   src="/depa-lab/images/ppt_cynthia.png"
+                  loading="lazy"
                   alt="AAVE & SAE Benchmarking Research"
                   className="w-full h-96 rounded-xl shadow-2xl border border-blue-200 object-cover"
                 />
@@ -448,6 +450,7 @@ const DepaLabHomepage = () => {
               <div className="bg-white rounded-2xl p-6 border border-blue-200">
                 <img 
                   src="/depa-lab/images/DEPA POSTER.pptx (1)-1.png"
+                  loading="lazy"
                   alt="Quantized LLM Airport Navigation System"
                   className="w-full h-96 rounded-xl shadow-2xl border border-blue-200 object-cover"
                 />
@@ -615,6 +618,7 @@ const DepaLabHomepage = () => {
               <div className="bg-white rounded-2xl p-6 border border-blue-200">
                 <img 
                   src="/depa-lab/images/MD-2.png"
+                  loading="lazy"
                   alt="Forensic Video Analysis Framework"
                   className="w-full h-96 rounded-xl shadow-2xl border border-blue-200 object-cover"
                 />
@@ -666,6 +670,7 @@ const DepaLabHomepage = () => {
               <div className="bg-white rounded-2xl p-6 border border-blue-200">
                 <img 
                   src="/depa-lab/images/Automated Detection-Poster-Template.pptx.png"
+                  loading="lazy"
                   alt="Smart Contract Reentrancy Detection System"
                   className="w-full h-96 rounded-xl shadow-2xl border border-blue-200 object-cover"
                 />
@@ -1145,7 +1150,7 @@ const DepaLabHomepage = () => {
       <div className="min-h-screen bg-white">
         <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
 <div className="max-w-6xl mx-auto">
-            <h1 className="text-5xl font-black text-gray-900 mb-8 text-center">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-8 text-center">
               CEAMLS Research{' '}
               <span className="text-blue-600">
                 Symposium 2025
@@ -1157,7 +1162,7 @@ const DepaLabHomepage = () => {
             </p>
 
             {/* Main Event Card */}
-            <div className="bg-blue-50 rounded-3xl p-12 border border-blue-200 shadow-2xl mb-12 relative overflow-hidden">
+            <div className="bg-blue-50 rounded-3xl p-6 sm:p-10 lg:p-12 border border-blue-200 shadow-2xl mb-12 relative overflow-hidden">
               
               {/* Event Badge */}
               <div className="absolute top-6 right-6">
@@ -1477,7 +1482,7 @@ const DepaLabHomepage = () => {
 
   return (
     <div 
-      className="min-h-screen overflow-hidden flex flex-col relative bg-white"
+      className="min-h-screen overflow-x-hidden flex flex-col relative bg-white"
     >
       {/* Animated background overlay — updated via ref/rAF on mousemove,
           no React re-renders. See the useEffect at the top of the component. */}
@@ -1489,7 +1494,7 @@ const DepaLabHomepage = () => {
       {headerJSX}
       
       {/* Main Content */}
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-16 sm:pt-20">
         
         {/* Hero Section */}
 <section id="hero" className="relative mb-16 pt-16 min-h-screen flex items-center overflow-hidden">
@@ -1595,9 +1600,9 @@ const DepaLabHomepage = () => {
         {/* About Section */}
         <section id="about" className="mb-24 py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-blue-50 rounded-3xl p-12 border border-blue-200 shadow-xl">
+            <div className="bg-blue-50 rounded-3xl p-6 sm:p-10 lg:p-12 border border-blue-200 shadow-xl">
               
-              <h2 className="text-5xl font-black text-gray-900 mb-12 text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-12 text-center">
                 About{' '}
                 <span className="text-blue-600">
                   DEPA Lab
@@ -1613,7 +1618,7 @@ const DepaLabHomepage = () => {
                 
                 {/* Mission Card */}
                 <div className="group transform hover:scale-105 transition-all duration-500">
-                  <div className="bg-white rounded-2xl p-10 border border-blue-200 shadow-lg h-full">
+                  <div className="bg-white rounded-2xl p-6 sm:p-8 lg:p-10 border border-blue-200 shadow-lg h-full">
                     <div className="flex items-center mb-8">
                       <h3 className="text-3xl font-black text-gray-900">
                         Our Mission
@@ -1628,7 +1633,7 @@ const DepaLabHomepage = () => {
 
                 {/* Vision Card */}
                 <div className="group transform hover:scale-105 transition-all duration-500">
-                  <div className="bg-white rounded-2xl p-10 border border-blue-200 shadow-lg h-full">
+                  <div className="bg-white rounded-2xl p-6 sm:p-8 lg:p-10 border border-blue-200 shadow-lg h-full">
                     <div className="flex items-center mb-8">
                       <h3 className="text-3xl font-black text-gray-900">
                         Our Vision
@@ -1648,7 +1653,7 @@ const DepaLabHomepage = () => {
         {/* Research Areas Section */}
         <section id="research" className="mb-24 py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-5xl font-black text-white mb-10 text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-10 text-center">
               Core Research{' '}
               <span className="text-white">
                 Areas
@@ -1661,7 +1666,7 @@ const DepaLabHomepage = () => {
               <button 
                 onClick={() => {
                   const container = document.getElementById('research-carousel');
-                  container.scrollBy({ left: -400, behavior: 'smooth' });
+                  if (container) container.scrollBy({ left: -400, behavior: 'smooth' });
                 }}
                 aria-label="Scroll research carousel left"
                 className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full hidden sm:flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
@@ -1674,7 +1679,7 @@ const DepaLabHomepage = () => {
               <button 
                 onClick={() => {
                   const container = document.getElementById('research-carousel');
-                  container.scrollBy({ left: 400, behavior: 'smooth' });
+                  if (container) container.scrollBy({ left: 400, behavior: 'smooth' });
                 }}
                 aria-label="Scroll research carousel right"
                 className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full hidden sm:flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
@@ -1692,9 +1697,6 @@ const DepaLabHomepage = () => {
                 {researchAreas.map((area, index) => (
                   <div key={index} className="flex-shrink-0 w-80 group transform hover:scale-105 transition-all duration-500">
                     <div className="bg-white rounded-2xl p-8 border border-blue-200 shadow-xl h-full">
-                      <div className="text-5xl mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 text-center">
-                        {area.icon}
-                      </div>
                       <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
                         {area.title}
                       </h3>
@@ -1719,7 +1721,7 @@ const DepaLabHomepage = () => {
         {/* Projects Section */}
         <section id="projects" className="mb-24 py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6">
-            <h2 className="text-5xl font-black text-gray-900 mb-12 text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-12 text-center">
               Innovative Projects and{' '}
               <span className="text-blue-600">
                 Research Highlights
@@ -1759,7 +1761,7 @@ const DepaLabHomepage = () => {
         {/* Awards Section */}
         <section id="awards" className="mb-24 py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6">
-            <h2 className="text-5xl font-black text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-8 text-center">
               Awards and{' '}
               <span className="text-blue-600">
                 Recognitions
@@ -1828,7 +1830,7 @@ const DepaLabHomepage = () => {
         {/* Funding Section */}
         <section id="funding" className="mb-24 py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
           <div className="container mx-auto px-4 sm:px-6">
-            <h2 className="text-5xl font-black text-white mb-8 text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-8 text-center">
               Current{' '}
               <span className="text-white">
                 Funding & Grants
@@ -1840,7 +1842,7 @@ const DepaLabHomepage = () => {
             </p>
 
             <div className="max-w-6xl mx-auto">
-              <div className="bg-white rounded-3xl p-12 border border-blue-200 shadow-2xl">
+              <div className="bg-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-blue-200 shadow-2xl">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                   <div className="text-center lg:text-left">
                     <h3 className="text-3xl font-bold text-gray-900 mb-4">
@@ -1887,7 +1889,7 @@ const DepaLabHomepage = () => {
         {/* Publications Section */}
         <section id="publications" className="mb-24 py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6">
-            <h2 className="text-5xl font-black text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-8 text-center">
               Research{' '}
               <span className="text-blue-600">
                 Publications
@@ -2010,7 +2012,7 @@ const DepaLabHomepage = () => {
         {/* Symposium Section */}
         <section id="symposium" className="py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
           <div className="container mx-auto px-4 sm:px-6">
-            <h2 className="text-5xl font-black text-white mb-8 text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-8 text-center">
               CEAMLS Research{' '}
               <span className="text-white">
                 Symposium
@@ -2022,7 +2024,7 @@ const DepaLabHomepage = () => {
             </p>
 
             <div className="max-w-4xl mx-auto">
-              <div className="bg-white rounded-3xl p-12 border border-blue-200 shadow-2xl">
+              <div className="bg-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-blue-200 shadow-2xl">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
                   <div className="text-center lg:text-left">
                     <h3 className="text-3xl font-bold text-gray-900 mb-4">
@@ -2067,7 +2069,7 @@ const DepaLabHomepage = () => {
         </section>
         <section id="team" className="mb-24 py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
           <div className="container mx-auto px-4 sm:px-6">
-            <h2 className="text-5xl font-black text-white mb-8 text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-8 text-center">
               Meet Our{' '}
               <span className="text-white">
                 Team
@@ -2083,7 +2085,7 @@ const DepaLabHomepage = () => {
               <button 
                 onClick={() => {
                   const container = document.getElementById('team-carousel');
-                  container.scrollBy({ left: -400, behavior: 'smooth' });
+                  if (container) container.scrollBy({ left: -400, behavior: 'smooth' });
                 }}
                 aria-label="Scroll team carousel left"
                 className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full hidden sm:flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
@@ -2096,7 +2098,7 @@ const DepaLabHomepage = () => {
               <button 
                 onClick={() => {
                   const container = document.getElementById('team-carousel');
-                  container.scrollBy({ left: 400, behavior: 'smooth' });
+                  if (container) container.scrollBy({ left: 400, behavior: 'smooth' });
                 }}
                 aria-label="Scroll team carousel right"
                 className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full hidden sm:flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
@@ -2113,14 +2115,16 @@ const DepaLabHomepage = () => {
                 {presentTeamMembers.map((member, index) => (
                   <div key={index} className="flex-shrink-0 w-56 sm:w-64 snap-start group transform hover:scale-105 transition-all duration-500">
                     <div className="bg-white rounded-2xl p-6 border border-blue-200 shadow-xl text-center h-full">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-400 shadow-2xl">
+                      <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-400 shadow-2xl">
                         <img 
                           src={`/depa-lab/images/${member.image}`}
                           alt={member.name}
+                          loading="lazy"
                           className="w-full h-full object-cover"
                           onError={(e) => {
                             e.target.style.display = 'none';
-                            e.target.nextSibling.style.display = 'flex';
+                            const fallback = e.target.nextSibling;
+                            if (fallback && fallback.style) fallback.style.display = 'flex';
                           }}
                         />
                         <div 
@@ -2156,8 +2160,8 @@ const DepaLabHomepage = () => {
         {/* Contact Section */}
         <section id="contact" className="mb-24 py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6">
-            <div className="bg-blue-50 rounded-3xl p-12 border border-blue-200 shadow-xl text-center">
-              <h2 className="text-5xl font-black text-gray-900 mb-8">
+            <div className="bg-blue-50 rounded-3xl p-6 sm:p-10 lg:p-12 border border-blue-200 shadow-xl text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-8">
                 Contact{' '}
                 <span className="text-blue-600">
                   Us
