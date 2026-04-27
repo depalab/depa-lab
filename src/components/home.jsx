@@ -219,9 +219,6 @@ const DepaLabHomepage = () => {
         <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
 <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                
-              </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">XPCI Crack Detection and Categorization</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
@@ -231,8 +228,7 @@ const DepaLabHomepage = () => {
                 <h4 className="text-xl font-bold text-blue-600 mb-4 text-center">Research Demonstration Video</h4>
                 <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-blue-200 bg-blue-50 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="text-6xl mb-4"></div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">XPCI Research Demo</h4>
+<h4 className="text-xl font-bold text-gray-900 mb-2">XPCI Research Demo</h4>
                     <p className="text-gray-800">Video demonstration available</p>
                     <a 
                       href="https://www.youtube.com/watch?v=a2RgwtP6pHg" 
@@ -284,9 +280,6 @@ const DepaLabHomepage = () => {
         <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
 <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                
-              </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">MSU AI Academic Advisor</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
@@ -296,8 +289,7 @@ const DepaLabHomepage = () => {
                 <h4 className="text-xl font-bold text-blue-600 mb-4 text-center">System Demo</h4>
                 <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-blue-200 bg-blue-50 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="text-6xl mb-4"></div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">MSU AI Advisor Demo</h4>
+<h4 className="text-xl font-bold text-gray-900 mb-2">MSU AI Advisor Demo</h4>
                     <p className="text-gray-800">System demonstration available</p>
                     <a 
                       href="https://www.youtube.com/watch?v=5msFb_V-XaE" 
@@ -346,9 +338,6 @@ const DepaLabHomepage = () => {
         <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
 <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                
-              </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">Cyber Shield</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
@@ -400,9 +389,6 @@ const DepaLabHomepage = () => {
         <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
 <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                
-              </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">Benchmarking LLMs for AAVE & SAE</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
@@ -454,9 +440,6 @@ const DepaLabHomepage = () => {
         <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
 <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                
-              </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">Quantized LLM for Airport Navigation</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
@@ -508,9 +491,6 @@ const DepaLabHomepage = () => {
         <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
 <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                
-              </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">Vision-based Autonomous Drone Object Tracking System</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
@@ -520,8 +500,7 @@ const DepaLabHomepage = () => {
                 <h4 className="text-xl font-bold text-blue-600 mb-4 text-center">System Demonstration</h4>
                 <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-blue-200 bg-blue-50 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="text-6xl mb-4"></div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">Drone Tracking Demo</h4>
+<h4 className="text-xl font-bold text-gray-900 mb-2">Drone Tracking Demo</h4>
                     <p className="text-gray-800">System demonstration available</p>
                     <a 
                       href="https://www.youtube.com/watch?v=b9aJA9C0Q6w" 
@@ -570,9 +549,6 @@ const DepaLabHomepage = () => {
         <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
 <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                
-              </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">AI/ML Bench Guard</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
@@ -582,8 +558,7 @@ const DepaLabHomepage = () => {
                 <h4 className="text-xl font-bold text-blue-600 mb-4 text-center">Benchmarking Framework Demo</h4>
                 <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-blue-200 bg-blue-50 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="text-6xl mb-4"></div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">AI/ML Bench Guard Demo</h4>
+<h4 className="text-xl font-bold text-gray-900 mb-2">AI/ML Bench Guard Demo</h4>
                     <p className="text-gray-800">Framework demonstration available</p>
                     <a 
                       href="https://www.youtube.com/watch?v=kIk6zBRpjr4" 
@@ -632,9 +607,6 @@ const DepaLabHomepage = () => {
         <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
 <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                
-              </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">Multimodal LLMs for Forensic Video Analysis</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
@@ -686,9 +658,6 @@ const DepaLabHomepage = () => {
         <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
 <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
-                
-              </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">Smart Contract Reentrancy Detection</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
@@ -735,540 +704,233 @@ const DepaLabHomepage = () => {
       </div>
     ),
 
-    'awards': () => (
-  <div className="min-h-screen bg-white">
-    <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
-<div className="max-w-6xl mx-auto">
-        <h1 className="text-5xl font-black text-gray-900 mb-8 text-center">
-          Awards and{' '}
-          <span className="text-blue-600">
-            Recognitions
-          </span>
-        </h1>
-        
-        <p className="text-xl text-gray-900 text-center mb-12 max-w-4xl mx-auto">
-          Celebrating excellence and innovation in research and technology.
-        </p>
+'awards': () => {
+      // Unified award card design - all awards use the same layout pattern.
+      // Each award is described by a data object below; the component renders
+      // them identically so the page reads as one consistent set of cards.
+      const awards = [
+        {
+          title: "First Place - National Innovation Venture Competition",
+          tags: ["AgroVision", "Tier 3 Graduate Champion", "$100,000 Top Prize"],
+          membersLabel: "Award-Winning Team Members:",
+          members: [
+            { name: "David Nyarko (DEPA Lab)", accent: "orange" },
+            { name: "Obiageli Nwachukwu", accent: "blue" },
+            { name: "Marvellous Ododoh", accent: "orange" },
+            { name: "Dapiriye Briggs", accent: "blue" },
+          ],
+          outcomes: [
+            { place: "First Place", note: "AI-powered modular hydroponic farming system" },
+            { place: "Tier 3 Champion", note: "Graduate-level national winners" },
+          ],
+          body: (
+            <>Team AgroVision emerged as the <span className="text-orange-600 font-semibold">Tier 3 (graduate-level) champion</span> at the <span className="text-blue-600 font-semibold">National Innovation Venture Competition</span>, winning the <span className="text-orange-600 font-semibold">$100,000 top prize</span> for their AI-powered modular hydroponic farming system that addresses food insecurity, climate volatility, and resource scarcity in farming.</>
+          ),
+          impactLabel: "Global Impact:",
+          impact: "AgroVision's breakthrough technology addresses critical challenges in food insecurity, climate change adaptation, and sustainable agriculture, demonstrating how AI and renewable energy can revolutionize farming for communities worldwide.",
+        },
+        {
+          title: "HBCUniverse 30 Under 30 Award",
+          tags: ["2025 Recipients", "STEM and Research", "Business and Corporate"],
+          membersLabel: "Award-Winning Team Members:",
+          members: [
+            { name: "David Nyarko (DEPA Lab)", accent: "orange" },
+            { name: "Temitope Ajibola (DEPA Lab)", accent: "blue" },
+          ],
+          outcomes: [
+            { place: "STEM and Research", note: "Recognized for AI research and autonomous systems leadership" },
+            { place: "Business and Corporate", note: "Recognized for corporate leadership and business innovation" },
+          ],
+          body: (
+            <>Two DEPA Lab members were selected as recipients of the prestigious <span className="text-blue-600 font-semibold">2025 HBCUniverse 30 Under 30 Award</span>, recognizing young leaders under 30 making significant contributions across <span className="text-orange-600 font-semibold">STEM, business, and innovation</span>.</>
+          ),
+          impactLabel: "Excellence Recognition:",
+          impact: "This achievement showcases DEPA Lab's commitment to developing outstanding leaders who make meaningful impacts in both technical research and business innovation, representing the next generation of HBCU excellence.",
+        },
+        {
+          title: "First Place - Morgan TechFest 2024 Innovation Expo",
+          tags: ["Morgan TechFest 2024", "Morgan State University", "$2,000 Prize"],
+          membersLabel: "Award-Winning Team Member:",
+          members: [
+            { name: "David Nyarko (DEPA Lab)", accent: "orange" },
+          ],
+          outcomes: [
+            { place: "First Place", note: "Track-Based Autonomous Wheelchair Navigation for Airport Environments" },
+          ],
+          body: (
+            <>The DEPA Lab achieved <span className="text-orange-600 font-semibold">first place</span> at the <span className="text-blue-600 font-semibold">Morgan TechFest 2024 Innovation Expo</span> with research integrating YOLOv8, QR code navigation, LiDAR, and computer vision to enhance autonomous mobility in crowded environments like airports.</>
+          ),
+          impactLabel: "Innovation Impact:",
+          impact: "This research addresses critical mobility challenges in complex environments, ensuring efficient path-following and obstacle avoidance for enhanced accessibility and independence.",
+        },
+        {
+          title: "Top Poster Award - MSEE Annual Technical Review 2025",
+          tags: ["Johns Hopkins University", "Washington, D.C.", "MSEE 2025"],
+          membersLabel: "Award-Winning Team Member:",
+          members: [
+            { name: "Awotwi Baffoe (DEPA Lab)", accent: "orange" },
+          ],
+          outcomes: [
+            { place: "Top Poster Award", note: "Automated crack detection in low-density, structurally complex materials under stress" },
+          ],
+          body: (
+            <>Awotwi Baffoe was recognized as one of the <span className="text-blue-600 font-semibold">top poster award recipients</span> at the MSEE Annual Technical Review 2025 for research on automated crack detection using the <span className="text-orange-600 font-semibold">YOLOv11 deep learning model and X-ray Phase Contrast Imaging (XPCI)</span> dataset, applied to quartz crystal, pink Westerly granite, and boron carbide.</>
+          ),
+          impactLabel: "Research Impact:",
+          impact: "This innovative approach advances non-destructive evaluation techniques for early-stage damage detection in critical materials.",
+        },
+        {
+          title: "First Place - MIT Hack the Climate Hackathon",
+          tags: ["MIT RAISE AI & Education Summit", "July 2025", "ThermaWise"],
+          membersLabel: "Award-Winning Team Members:",
+          members: [
+            { name: "Kianna Spencer (CECE Lab)", accent: "blue" },
+            { name: "Koby Nyarkon (DEPA Lab)", accent: "orange" },
+            { name: "Jamal Williamson (CECE Lab)", accent: "blue" },
+          ],
+          outcomes: [
+            { place: "First Place", note: "ThermaWise — AI-powered platform for energy-saving strategies" },
+          ],
+          body: (
+            <>A team of CEAMLS students claimed <span className="text-orange-600 font-semibold">first place</span> at the prestigious <span className="text-blue-600 font-semibold">MIT Hack the Climate Hackathon</span>, developing ThermaWise — a platform that delivers creative, data-driven energy-saving strategies rooted in passive design and building science.</>
+          ),
+          impactLabel: "Climate Impact:",
+          impact: "ThermaWise represents a significant advancement in sustainable building technology, combining AI with building science principles to create actionable solutions for climate change mitigation.",
+        },
+        {
+          title: "First & Third Place - Datathon '24",
+          tags: ["HITI Lab", "Emory University School of Medicine"],
+          membersLabel: "Award-Winning Team Members:",
+          members: [
+            { name: "David Nyarko (DEPA Lab)", accent: "orange" },
+            { name: "Cynthia Nosiri (DEPA Lab)", accent: "blue" },
+          ],
+          outcomes: [
+            { place: "First Place", note: "Outstanding data analysis and innovative solution delivery" },
+            { place: "Third Place", note: "Exceptional teamwork and technical implementation" },
+          ],
+          body: (
+            <>The DEPA Lab team achieved remarkable success at <span className="text-blue-600 font-semibold">Datathon '24</span>, securing both <span className="text-orange-600 font-semibold">first place and third place</span> in the prestigious competition organized by HITI Lab at Emory University School of Medicine.</>
+          ),
+          impactLabel: "Healthcare Impact:",
+          impact: "This dual achievement highlights DEPA Lab's excellence in applying advanced data science techniques to solve complex healthcare challenges.",
+        },
+        {
+          title: "Third Place - Datathon '25",
+          tags: ["HITI Lab", "Emory University School of Medicine"],
+          membersLabel: "Award-Winning Team Lead:",
+          members: [
+            { name: "Cynthia Nosiri (DEPA Lab)", accent: "orange" },
+          ],
+          outcomes: [
+            { place: "Third Place", note: "Continued excellence and innovation in healthcare data science" },
+          ],
+          body: (
+            <>Building on previous success, Cynthia Nosiri's team secured <span className="text-orange-600 font-semibold">third place</span> at <span className="text-blue-600 font-semibold">Datathon '25</span>, demonstrating continued excellence and innovation in healthcare data science at the HITI Lab competition hosted by Emory University School of Medicine.</>
+          ),
+          impactLabel: "Continued Excellence:",
+          impact: "This consecutive recognition showcases DEPA Lab's sustained commitment to advancing healthcare analytics and solving critical medical challenges through innovative data science approaches.",
+        },
+      ];
 
-        <div className="space-y-12">
-          {/* National Innovation Venture Competition - $100K Prize */}
-          <div className="bg-gradient-to-br from-orange-50 to-orange-50 rounded-3xl p-8 lg:p-12 border-2 border-orange-300 shadow-xl">
-            <div className="flex flex-col lg:flex-row items-start gap-8">
-              <div className="flex-shrink-0 text-center lg:text-left">
-                <div className="w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-6xl lg:text-7xl shadow-2xl mx-auto lg:mx-0 mb-6">
-                  
-                </div>
-                <h2 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4">
-                  First Place National Competition
-                </h2>
-                <div className="space-y-2">
-                  <span className="block px-6 py-3 bg-orange-200 text-orange-900 rounded-full text-xl font-black border-2 border-orange-400">
-                    $100,000 Top Prize
-                  </span>
-                  <span className="block px-6 py-3 bg-orange-200 text-orange-900 rounded-full text-lg font-bold border-2 border-orange-400">
-                    National Innovation Venture Competition
-                  </span>
-                </div>
-              </div>
-              
-              <div className="flex-grow">
-                <h3 className="text-2xl lg:text-3xl font-black text-orange-700 mb-4">Graduate Students Win First Place Victory for Morgan State</h3>
-                
-                <div className="mb-6">
-                  <h4 className="text-xl font-bold text-gray-900 mb-3">Winning Team - AgroVision:</h4>
-                  <div className="flex flex-wrap gap-3">
-                    {[
-                      'David Nyarko',
-                      'Obiageli Nwachukwu',
-                      'Marvellous Ododoh',
-                      'Dapiriye Briggs'
-                    ].map((member) => (
-                      <span 
-                        key={member} 
-                        className="px-4 py-2 bg-white text-orange-700 rounded-lg text-base font-bold border-2 border-orange-400 shadow-md"
-                      >
-                        {member}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                
-                <h4 className="text-2xl font-bold text-orange-700 mb-4">
-                  Tier 3 (Graduate-Level) Champion
-                </h4>
-                
-                <p className="text-gray-900 leading-relaxed text-lg mb-6 font-medium">
-                  Team AgroVision emerged as the <span className="text-orange-700 font-black">Tier 3 (graduate-level) champion</span> at the national competition for their revolutionary <span className="text-orange-700 font-bold">AI-powered modular hydroponic farming system</span>. Their innovative solution leverages artificial intelligence, renewable energy, and smart agriculture technologies to tackle food insecurity, climate volatility, and resource scarcity in farming.
-                </p>
-                
-                <div className="mb-6">
-                  <h5 className="text-xl font-bold text-gray-900 mb-4">Innovation Highlights:</h5>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {[
-                      'AI-Powered Agriculture',
-                      'Modular Hydroponic System',
-                      'Renewable Energy Integration',
-                      'Smart Farming Technologies',
-                      'Food Security Solutions',
-                      'Climate-Resilient Design'
-                    ].map((tech) => (
-                      <div 
-                        key={tech} 
-                        className="flex items-center gap-2 px-4 py-3 bg-white rounded-lg text-sm font-bold border-2 border-orange-300 shadow-sm"
-                      >
-                        <span className="text-orange-600 text-lg"></span>
-                        <span className="text-gray-900">{tech}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="bg-white rounded-lg p-6 border-2 border-orange-400 shadow-lg">
-                  <p className="text-orange-800 font-bold text-lg">
-                    <strong>Global Impact:</strong> AgroVision's breakthrough technology addresses critical challenges in food insecurity, climate change adaptation, and sustainable agriculture, demonstrating how AI and renewable energy can revolutionize farming for communities worldwide.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+      const AwardCard = ({ data }) => (
+        <div className="bg-blue-50 rounded-3xl p-6 sm:p-8 border border-blue-200 shadow-md">
+          <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-4">
+            {data.title}
+          </h2>
 
-{/* HBCUniverse 30 Under 30 Award */}
-<div className="bg-gradient-to-br from-blue-50 to-blue-50 rounded-3xl p-8 lg:p-12 border-2 border-blue-300 shadow-xl">
-  <div className="flex flex-col lg:flex-row items-start gap-8">
-    <div className="flex-shrink-0 text-center lg:text-left">
-      <div className="w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-6xl lg:text-7xl shadow-2xl mx-auto lg:mx-0 mb-6">
-        ⭐
-      </div>
-      <h2 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4">
-        HBCUniverse 30 Under 30 Award
-      </h2>
-      <div className="space-y-2">
-        <span className="block px-6 py-3 bg-blue-200 text-blue-900 rounded-full text-xl font-black border-2 border-blue-400">
-          2025 Recipients
-        </span>
-        <span className="block px-6 py-3 bg-blue-200 text-blue-900 rounded-full text-lg font-bold border-2 border-blue-400">
-          Two DEPA Lab Members
-        </span>
-      </div>
-    </div>
-    
-    <div className="flex-grow">
-      <h3 className="text-2xl lg:text-3xl font-black text-blue-700 mb-6">Celebrating Young Leaders in STEM and Business</h3>
-      
-      <p className="text-gray-900 leading-relaxed text-lg mb-8 font-medium">
-        We are excited to announce that <span className="text-blue-700 font-black">two of our members have been selected as recipients</span> of the prestigious 2025 HBCUniverse 30 Under 30 Award, recognizing their outstanding contributions and impact in their respective fields!
-      </p>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        {/* David Nyarko Card */}
-        <div className="bg-white rounded-2xl p-6 border-2 border-blue-400 shadow-xl">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-3xl shadow-lg">
-              
-            </div>
-            <div>
-              <h4 className="font-black text-blue-700 text-2xl">David Nyarko</h4>
-              <p className="text-blue-600 font-bold">STEM and Research</p>
-            </div>
-          </div>
-          <div className="bg-blue-50 rounded-lg p-4 border border-blue-300 mb-4">
-            <p className="text-gray-900 font-semibold mb-2">Recognition Category:</p>
-            <p className="text-blue-700 font-bold text-lg">STEM and Research Category</p>
-          </div>
-          <p className="text-gray-900 leading-relaxed">
-            Recognized for exceptional contributions to STEM research, innovation in AI and autonomous systems, and leadership in advancing cutting-edge technology solutions.
-          </p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {['AI Research', 'Innovation', 'STEM Leadership'].map((tag) => (
-              <span key={tag} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold border border-blue-300">
+          <div className="flex flex-wrap gap-2 mb-5">
+            {data.tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300"
+              >
                 {tag}
               </span>
             ))}
           </div>
-        </div>
-        
-        {/* Temitope Ajibola Card */}
-        <div className="bg-white rounded-2xl p-6 border-2 border-blue-400 shadow-xl">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-3xl shadow-lg">
-              
-            </div>
-            <div>
-              <h4 className="font-black text-blue-700 text-2xl">Temitope Ajibola</h4>
-              <p className="text-blue-600 font-bold">Business & Corporate</p>
-            </div>
-          </div>
-          <div className="bg-blue-50 rounded-lg p-4 border border-blue-300 mb-4">
-            <p className="text-gray-900 font-semibold mb-2">Recognition Category:</p>
-            <p className="text-blue-700 font-bold text-lg">Business and Corporate Category</p>
-          </div>
-          <p className="text-gray-900 leading-relaxed">
-            Recognized for outstanding business acumen, corporate leadership, and significant impact in driving innovation and excellence in the business sector.
-          </p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {['Business Impact', 'Leadership', 'Innovation'].map((tag) => (
-              <span key={tag} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold border border-blue-300">
-                {tag}
+
+          <h4 className="text-base font-bold text-blue-700 mb-2">
+            {data.membersLabel}
+          </h4>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {data.members.map((m) => (
+              <span
+                key={m.name}
+                className={
+                  m.accent === 'orange'
+                    ? "px-3 py-1 bg-orange-100 text-orange-700 rounded-lg text-sm font-medium border border-orange-300"
+                    : "px-3 py-1 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium border border-blue-300"
+                }
+              >
+                {m.name}
               </span>
             ))}
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  {/* About Section - Now outside the flex container */}
-  <div className="mt-8 space-y-6">
-    <div className="bg-white rounded-lg p-6 border-2 border-blue-400 shadow-lg">
-      <h5 className="text-xl font-bold text-blue-700 mb-4">About HBCUniverse 30 Under 30</h5>
-      <p className="text-gray-900 leading-relaxed mb-4">
-        The HBCUniverse 30 Under 30 Award celebrates young leaders under 30 who are making significant contributions across various fields including STEM, business, arts, and social impact. This prestigious recognition highlights the exceptional talent and innovation emerging from HBCU communities.
-      </p>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <div className="text-center p-3 bg-blue-50 rounded-lg border border-blue-200">
-          <p className="text-2xl font-black text-blue-700">30</p>
-          <p className="text-xs text-gray-800 font-semibold">Leaders Recognized</p>
-        </div>
-        <div className="text-center p-3 bg-blue-50 rounded-lg border border-blue-200">
-          <p className="text-2xl font-black text-blue-700">2025</p>
-          <p className="text-xs text-gray-800 font-semibold">Award Year</p>
-        </div>
-        <div className="text-center p-3 bg-blue-50 rounded-lg border border-blue-200">
-          <p className="text-2xl font-black text-blue-700">2</p>
-          <p className="text-xs text-gray-800 font-semibold">DEPA Lab Winners</p>
-        </div>
-      </div>
-    </div>
-    
-    <div className="bg-white rounded-lg p-6 border-2 border-blue-400 shadow-lg">
-      <p className="text-blue-800 font-bold text-lg">
-        <strong>Excellence Recognition:</strong> This achievement showcases DEPA Lab's commitment to developing outstanding leaders who make meaningful impacts in both technical research and business innovation, representing the next generation of HBCU excellence.
-      </p>
-    </div>
-  </div>
-</div>
 
-          {/* First Place Innovation Expo Award */}
-          <div className="bg-blue-50 rounded-3xl p-8 lg:p-12 border-2 border-blue-200 shadow-xl">
-            <div className="flex flex-col lg:flex-row items-start gap-8">
-              <div className="flex-shrink-0 text-center lg:text-left">
-                <div className="w-24 h-24 lg:w-32 lg:h-32 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-5xl lg:text-6xl shadow-2xl mx-auto lg:mx-0 mb-6">
-                  
+          <div
+            className={
+              data.outcomes.length > 1
+                ? "grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6"
+                : "grid grid-cols-1 gap-4 mb-6"
+            }
+          >
+            {data.outcomes.map((o) => (
+              <div
+                key={o.place}
+                className="bg-white rounded-lg p-4 border border-orange-300"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="inline-block w-4 h-4 rounded-full bg-orange-500"></span>
+                  <h5 className="font-bold text-orange-700">{o.place}</h5>
                 </div>
-                <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
-                  First Place Innovation Expo Award
-                </h2>
-                <div className="space-y-2">
-                  <span className="block px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-lg font-semibold border border-orange-300">
-                    Morgan TechFest 2024
-                  </span>
-                  <span className="block px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-lg font-semibold border border-orange-300">
-                    $2,000 Prize Winner
-                  </span>
-                </div>
+                <p className="text-gray-900 text-sm">{o.note}</p>
               </div>
-              
-              <div className="flex-grow">
-                <h3 className="text-2xl font-bold text-blue-600 mb-4">Award Winner: David Nyarko</h3>
-                
-                <h4 className="text-xl font-semibold text-orange-600 mb-4">
-                  Research Project: "Track-Based Autonomous Wheelchair Navigation for Airport Environments"
-                </h4>
-                
-                <p className="text-gray-900 leading-relaxed text-lg mb-6">
-                  The DEPA Lab achieved first place at the Morgan TechFest 2024 Innovation Expo with groundbreaking research in autonomous wheelchair navigation. This AI-driven system integrates advanced technologies including Ultralytics YOLOv8, QR Code navigation, LiDAR, and computer vision cameras to enhance mobility in crowded environments like airports.
-                </p>
-                
-                <div className="mb-6">
-                  <h5 className="text-lg font-semibold text-gray-900 mb-3">Key Technologies:</h5>
-                  <div className="flex flex-wrap gap-3">
-                    {[
-                      'Ultralytics YOLOv8', 
-                      'QR Code Navigation', 
-                      'LiDAR Technology', 
-                      'Computer Vision', 
-                      'AI Path Planning',
-                      'Obstacle Avoidance',
-                      'Real-time Processing'
-                    ].map((tech) => (
-                      <span 
-                        key={tech} 
-                        className="px-3 py-2 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium border border-blue-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="bg-white rounded-lg p-4 border border-orange-300">
-                  <p className="text-orange-700 font-medium">
-                    <strong>Innovation Impact:</strong> This research addresses critical mobility challenges in complex environments, ensuring efficient path-following and obstacle avoidance for enhanced accessibility and independence.
-                  </p>
+            ))}
+          </div>
+
+          <p className="text-gray-900 leading-relaxed mb-5">
+            {data.body}
+          </p>
+
+          <div className="bg-white rounded-lg p-4 border border-blue-300">
+            <p className="text-blue-700">
+              <strong className="font-bold">{data.impactLabel}</strong>{' '}
+              <span className="font-medium">{data.impact}</span>
+            </p>
+          </div>
+        </div>
+      );
+
+      return (
+        <div className="min-h-screen bg-white">
+          <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
+            <div className="max-w-6xl mx-auto">
+              <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-6 text-center">
+                Awards and{' '}
+                <span className="text-blue-600">Recognitions</span>
+              </h1>
+
+              <p className="text-lg sm:text-xl text-gray-900 text-center mb-12 max-w-4xl mx-auto">
+                Celebrating excellence and innovation in research and technology.
+              </p>
+
+              <div className="space-y-8">
+                {awards.map((a) => (
+                  <AwardCard key={a.title} data={a} />
+                ))}
+              </div>
+
+              <div className="mt-12 text-center">
+                <div className="inline-block px-6 sm:px-8 py-4 bg-blue-50 border border-blue-300 text-blue-700 rounded-full font-bold text-base sm:text-lg">
+                  Continuing Our Journey of Excellence in Research and Innovation
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Awotwi Baffoe Top Poster Award */}
-          <div className="bg-blue-50 rounded-3xl p-8 border-2 border-blue-200 shadow-xl">
-            <div className="flex flex-col lg:flex-row items-start gap-6">
-              <div className="flex-shrink-0">
-                <div className="w-24 h-24 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl">
-                  
-                </div>
-              </div>
-              
-              <div className="flex-grow">
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
-                  Top Poster Award - MSEE Annual Technical Review 2025
-                </h3>
-                
-                <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300">
-                    Johns Hopkins University
-                  </span>
-                  <span className="inline-block ml-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300">
-                    Washington, D.C.
-                  </span>
-                </div>
-                
-                <p className="text-blue-600 font-semibold mb-3">
-                  Award Winner: Awotwi Baffoe
-                </p>
-                
-                <p className="text-gray-900 leading-relaxed mb-4">
-                  Awotwi Baffoe was recognized as one of the <span className="text-blue-600 font-semibold">top poster award recipients</span> at the MSEE (Material Science in Extreme Environment) Annual Technical Review 2025. The award-winning poster showcased groundbreaking research on automated crack detection in low-density, structurally complex materials under stress using the <span className="text-blue-600 font-semibold">YOLOv11 deep learning model and X-ray Phase Contrast Imaging (XPCI)</span> dataset.
-                </p>
-                
-                <div className="bg-white rounded-lg p-4 border border-blue-300 mb-4">
-                  <h6 className="font-semibold text-blue-600 mb-2">Materials Studied:</h6>
-                  <div className="flex flex-wrap gap-2">
-                    {['Quartz Crystal', 'Pink Westerly Granite', 'Boron Carbide'].map((material) => (
-                      <span 
-                        key={material} 
-                        className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium border border-blue-300"
-                      >
-                        {material}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="bg-white rounded-lg p-4 border border-blue-300">
-                  <p className="text-blue-700 font-medium">
-                    <strong>Research Impact:</strong> This innovative approach advances non-destructive evaluation techniques for early-stage damage detection in critical materials.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* MIT Hack the Climate Hackathon */}
-          <div className="bg-orange-50 rounded-3xl p-8 border-2 border-orange-200 shadow-xl">
-            <div className="flex flex-col lg:flex-row items-start gap-6">
-              <div className="flex-shrink-0">
-                <div className="w-24 h-24 bg-gradient-to-r from-orange-600 to-orange-700 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl">
-                  
-                </div>
-              </div>
-              
-              <div className="flex-grow">
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
-                  First Place - MIT Hack the Climate Hackathon
-                </h3>
-                
-                <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold border border-orange-300">
-                    MIT RAISE AI & Education Summit
-                  </span>
-                  <span className="inline-block ml-2 px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold border border-orange-300">
-                    July 2025
-                  </span>
-                </div>
-                
-                <div className="mb-4">
-                  <h4 className="text-lg font-semibold text-orange-600 mb-2">Winning Team Members:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium border border-blue-300">
-                      Kianna Spencer (CECE Lab)
-                    </span>
-                    <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium border border-blue-300">
-                      Koby Nyarkon (DEPA Lab)
-                    </span>
-                    <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium border border-blue-300">
-                      Jamal Williamson (CECE Lab)
-                    </span>
-                  </div>
-                </div>
-                
-                <h4 className="text-xl font-bold text-orange-600 mb-3">
-                  Project: ThermaWise
-                </h4>
-                
-                <p className="text-gray-900 leading-relaxed mb-4">
-                  A team of CEAMLS students claimed <span className="text-orange-600 font-semibold">first place</span> at the prestigious MIT Hack the Climate Hackathon. The winning team developed <span className="text-orange-600 font-semibold">ThermaWise</span>, a powerful AI-powered platform that delivers creative, data-driven energy-saving strategies rooted in passive design and building science.
-                </p>
-                
-                <div className="bg-white rounded-lg p-4 border border-orange-300 mb-4">
-                  <h6 className="font-semibold text-orange-600 mb-2">ThermaWise Key Features:</h6>
-                  <ul className="text-gray-900 space-y-1 text-sm">
-                    <li className="flex items-start gap-2">
-                      <span className="text-orange-500 mt-1">•</span>
-                      <span>AI-powered energy optimization algorithms</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-orange-500 mt-1">•</span>
-                      <span>Data-driven passive design recommendations</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-orange-500 mt-1">•</span>
-                      <span>Building science integration for sustainable solutions</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div className="bg-white rounded-lg p-4 border border-orange-300">
-                  <p className="text-orange-700 font-medium">
-                    <strong>Climate Impact:</strong> ThermaWise represents a significant advancement in sustainable building technology, combining AI with building science principles to create actionable solutions for climate change mitigation.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-       {/* Datathon '24 Awards */}
-<div className="bg-blue-50 rounded-3xl p-8 border-2 border-blue-200 shadow-xl">
-  <div className="flex flex-col lg:flex-row items-start gap-6">
-    <div className="flex-shrink-0">
-      <div className="flex gap-2">
-        <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl">
-          
         </div>
-        <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl">
-          
-        </div>
-      </div>
-    </div>
-    
-    <div className="flex-grow">
-      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
-        First & Third Place - Datathon '24
-      </h3>
-      
-      <div className="mb-4">
-        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300">
-          HITI Lab
-        </span>
-        <span className="inline-block ml-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300">
-          Emory University School of Medicine
-        </span>
-      </div>
-      
-      <div className="mb-4">
-        <h4 className="text-lg font-semibold text-blue-600 mb-2">Award-Winning Team Members:</h4>
-        <div className="flex flex-wrap gap-2">
-          <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-lg text-sm font-medium border border-orange-300">
-            David Nyarko (DEPA Lab)
-          </span>
-          <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium border border-blue-300">
-            Cynthia Nosiri (DEPA Lab)
-          </span>
-        </div>
-      </div>
-      
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-        <div className="bg-white rounded-lg p-4 border border-orange-300">
-          <div className="flex items-center gap-2 mb-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white text-sm">
-              
-            </div>
-            <h5 className="font-semibold text-orange-700">First Place</h5>
-          </div>
-          <p className="text-gray-900 text-sm">Outstanding data analysis and innovative solution delivery</p>
-        </div>
-        <div className="bg-white rounded-lg p-4 border border-orange-300">
-          <div className="flex items-center gap-2 mb-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white text-sm">
-              
-            </div>
-            <h5 className="font-semibold text-orange-700">Third Place</h5>
-          </div>
-          <p className="text-gray-900 text-sm">Exceptional teamwork and technical implementation</p>
-        </div>
-      </div>
-      
-      <p className="text-gray-900 leading-relaxed mb-4">
-        The DEPA Lab team achieved remarkable success at <span className="text-blue-600 font-semibold">Datathon '24</span>, securing both <span className="text-orange-600 font-semibold">first place and third place</span> in the prestigious competition organized by HITI Lab at Emory University School of Medicine.
-      </p>
-      
-      <div className="bg-white rounded-lg p-4 border border-blue-300">
-        <p className="text-blue-700 font-medium">
-          <strong>Healthcare Impact:</strong> This dual achievement highlights DEPA Lab's excellence in applying advanced data science techniques to solve complex healthcare challenges.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-{/* Datathon '25 Award - Third Place */}
-<div className="bg-blue-50 rounded-3xl p-8 border-2 border-blue-200 shadow-xl">
-  <div className="flex flex-col lg:flex-row items-start gap-6">
-    <div className="flex-shrink-0">
-      <div className="w-24 h-24 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl">
-        
-      </div>
-    </div>
-    
-    <div className="flex-grow">
-      <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
-        Third Place - Datathon '25
-      </h3>
-      
-      <div className="mb-4">
-        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300">
-          HITI Lab
-        </span>
-        <span className="inline-block ml-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300">
-          Emory University School of Medicine
-        </span>
-      </div>
-      
-      <div className="mb-4">
-        <h4 className="text-lg font-semibold text-blue-600 mb-2">Award-Winning Team Lead:</h4>
-        <div className="flex flex-wrap gap-2">
-          <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-lg text-sm font-medium border border-orange-300">
-            Cynthia Nosiri (DEPA Lab)
-          </span>
-        </div>
-      </div>
-      
-      <p className="text-gray-900 leading-relaxed mb-4">
-        Building on previous success, Cynthia Nosiri's team secured <span className="text-orange-600 font-semibold">third place</span> at <span className="text-blue-600 font-semibold">Datathon '25</span>, demonstrating continued excellence and innovation in healthcare data science at the HITI Lab competition hosted by Emory University School of Medicine.
-      </p>
-      
-      <div className="bg-white rounded-lg p-4 border border-blue-300">
-        <p className="text-blue-700 font-medium">
-          <strong>Continued Excellence:</strong> This consecutive recognition showcases DEPA Lab's sustained commitment to advancing healthcare analytics and solving critical medical challenges through innovative data science approaches.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-            </div>  {/* This closes the space-y-12 div */}
-
-        {/* Impact Statement */}
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center px-8 py-4 bg-blue-100 border border-blue-300 text-blue-700 rounded-full font-bold text-lg">
-            <span className="mr-3"></span>
-            Continuing Our Journey of Excellence in Research and Innovation
-            <span className="ml-3">⭐</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-),
+      );
+    },
 
    
     'publications': () => (
@@ -1290,8 +952,6 @@ const DepaLabHomepage = () => {
               {/* Publication 1 - AI/ML Systems Engineering */}
               <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-start gap-6 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl shadow-xl">
-                    </div>
                   <div className="flex-grow">
                     <h3 className="text-2xl font-bold text-gray-900 mb-3">
                       AI/ML Systems Engineering Workbench Framework
@@ -1330,8 +990,6 @@ const DepaLabHomepage = () => {
               {/* Publication 2 - Traffic Video Analysis */}
               <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-start gap-6 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl shadow-xl">
-                    </div>
                   <div className="flex-grow">
                     <h3 className="text-2xl font-bold text-gray-900 mb-3">
                       Automated Traffic Video Analysis with Modular Computer Vision Pipeline
@@ -1370,8 +1028,6 @@ const DepaLabHomepage = () => {
               {/* Publication 3 - Network Intrusion */}
               <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-start gap-6 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-orange-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl shadow-xl">
-                    </div>
                   <div className="flex-grow">
                     <h3 className="text-2xl font-bold text-gray-900 mb-3">
                       Network Intrusion Visualization with NIVA
@@ -1410,8 +1066,6 @@ const DepaLabHomepage = () => {
               {/* Publication 4 - Building Occupancy */}
               <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-start gap-6 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-orange-600 to-orange-700 rounded-full flex items-center justify-center text-white text-3xl shadow-xl">
-                    </div>
                   <div className="flex-grow">
                     <h3 className="text-2xl font-bold text-gray-900 mb-3">
                       Cloud Based Passive Building Occupancy Characterization
@@ -1450,8 +1104,6 @@ const DepaLabHomepage = () => {
               {/* Publication 5 - SmartPattern */}
               <div className="bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300 lg:col-span-2">
                 <div className="flex items-start gap-6 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl shadow-xl">
-                    </div>
                   <div className="flex-grow">
                     <h3 className="text-2xl font-bold text-gray-900 mb-3">
                       SmartPattern: A Machine Learning Framework for Detecting Reentrancy Vulnerabilities in Blockchain Smart Contracts
@@ -1527,17 +1179,12 @@ const DepaLabHomepage = () => {
               
               {/* Event Badge */}
               <div className="absolute top-6 right-6">
-                <div className="w-24 h-24 bg-gradient-to-r from-blue-400 to-orange-600 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl animate-pulse">
-                  
-                </div>
               </div>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Event Details */}
                 <div>
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl">
-                      </div>
                     <div>
                       <h2 className="text-3xl font-bold text-gray-900">
                         CEAMLS Research Symposium
@@ -1984,9 +1631,6 @@ const DepaLabHomepage = () => {
                 <div className="group transform hover:scale-105 transition-all duration-500">
                   <div className="bg-white rounded-2xl p-10 border border-blue-200 shadow-lg h-full">
                     <div className="flex items-center mb-8">
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mr-6 shadow-xl transform group-hover:rotate-12 transition-transform duration-500">
-                        
-                      </div>
                       <h3 className="text-3xl font-black text-gray-900">
                         Our Mission
                       </h3>
@@ -2002,9 +1646,6 @@ const DepaLabHomepage = () => {
                 <div className="group transform hover:scale-105 transition-all duration-500">
                   <div className="bg-white rounded-2xl p-10 border border-blue-200 shadow-lg h-full">
                     <div className="flex items-center mb-8">
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mr-6 shadow-xl transform group-hover:rotate-12 transition-transform duration-500">
-                        
-                      </div>
                       <h3 className="text-3xl font-black text-gray-900">
                         Our Vision
                       </h3>
@@ -2142,13 +1783,7 @@ const DepaLabHomepage = () => {
               <div className="group transform hover:scale-105 transition-all duration-500 lg:col-span-2 xl:col-span-3">
                 <div className="bg-blue-50 rounded-2xl p-8 border border-blue-200 shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="flex flex-col lg:flex-row items-start gap-6">
-                    <div className="flex-shrink-0">
-                      <div className="w-24 h-24 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-4xl shadow-2xl">
-                        
-                      </div>
-                    </div>
-                    
-                    <div className="flex-grow">
+<div className="flex-grow">
                       <h3 className="text-3xl font-bold text-gray-900 mb-3">
                         First Place Innovation Expo Award
                       </h3>
@@ -2216,9 +1851,6 @@ const DepaLabHomepage = () => {
               <div className="bg-white rounded-3xl p-12 border border-blue-200 shadow-2xl">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                   <div className="text-center lg:text-left">
-                    <div className="w-32 h-32 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-6xl shadow-2xl mx-auto lg:mx-0 mb-6">
-                      
-                    </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4">
                       Cybersecurity AI Research Grant
                     </h3>
@@ -2279,9 +1911,6 @@ const DepaLabHomepage = () => {
               <div className="group transform hover:scale-105 transition-all duration-500">
                 <div className="bg-blue-50 rounded-2xl p-8 border border-blue-200 shadow-lg h-full hover:shadow-xl transition-all duration-300">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-2xl shadow-xl">
-                      
-                    </div>
                     <div className="flex-grow">
                       <h3 className="text-xl font-bold text-gray-900 mb-2">
                         AI/ML Systems Engineering Workbench Framework
@@ -2314,9 +1943,6 @@ const DepaLabHomepage = () => {
               <div className="group transform hover:scale-105 transition-all duration-500">
                 <div className="bg-blue-50 rounded-2xl p-8 border border-blue-200 shadow-lg h-full hover:shadow-xl transition-all duration-300">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-2xl shadow-xl">
-                      
-                    </div>
                     <div className="flex-grow">
                       <h3 className="text-xl font-bold text-gray-900 mb-2">
                         Automated Traffic Video Analysis
@@ -2349,9 +1975,6 @@ const DepaLabHomepage = () => {
               <div className="group transform hover:scale-105 transition-all duration-500">
                 <div className="bg-blue-50 rounded-2xl p-8 border border-blue-200 shadow-lg h-full hover:shadow-xl transition-all duration-300">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-2xl shadow-xl">
-                      
-                    </div>
                     <div className="flex-grow">
                       <h3 className="text-xl font-bold text-gray-900 mb-2">
                         Network Intrusion Visualization
@@ -2410,9 +2033,6 @@ const DepaLabHomepage = () => {
               <div className="bg-white rounded-3xl p-12 border border-blue-200 shadow-2xl">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
                   <div className="text-center lg:text-left">
-                    <div className="w-32 h-32 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-6xl shadow-2xl mx-auto lg:mx-0 mb-6">
-                      
-                    </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4">
                       CEAMLS Research Symposium 2025
                     </h3>
