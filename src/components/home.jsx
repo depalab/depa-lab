@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 
 // -----------------------------------------------------------------------------
 // Static data — declared once at module scope (not re-created on every render).
@@ -65,6 +65,53 @@ const DepaLabHomepage = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       if (rafId !== null) cancelAnimationFrame(rafId);
     };
+  }, []);
+
+  // Show a "scroll to top" button after the user scrolls past the first viewport.
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShowScrollTop(window.scrollY > 400);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // When switching between research detail views (or back to home from one),
+  // jump to the top of the new page so users don't land mid-scroll.
+  // Skipped on the very first render and only fires on actual view changes.
+  const prevViewRef = useRef(currentView);
+  useEffect(() => {
+    if (prevViewRef.current !== currentView) {
+      prevViewRef.current = currentView;
+      // Only auto-jump when ENTERING a research detail. Going back to home
+      // is handled by `navigate()` which scrolls to a specific section.
+      if (currentView !== 'home') {
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      }
+    }
+  }, [currentView]);
+
+  // Smart navigation. If we're on a research detail view, return to home first
+  // and then scroll to the requested section once the home tree has mounted.
+  // Otherwise, scroll directly. Used by every nav button (header, footer, CTAs).
+  const navigate = useCallback((sectionId) => {
+    setMobileMenuOpen(false);
+    const scroll = () => {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else if (sectionId === 'hero') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+    setCurrentView((prev) => {
+      if (prev !== 'home') {
+        // Wait two frames so the home view's sections are in the DOM.
+        requestAnimationFrame(() => requestAnimationFrame(scroll));
+        return 'home';
+      }
+      scroll();
+      return prev;
+    });
   }, []);
 
   const researchAreas = [
@@ -169,19 +216,19 @@ const DepaLabHomepage = () => {
   const ResearchComponents = useMemo(() => ({
     'xpci-crack-detection': () => (
       <div className="min-h-screen bg-white">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
           <button
             onClick={() => setCurrentView('home')}
             className="mb-8 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300"
           >
             ← Back to Home
           </button>
-          <div className="max-w-6xl mx-auto bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl">
+          <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
                 🔬
               </div>
-              <h1 className="text-4xl font-black text-gray-900 mb-4">XPCI Crack Detection and Categorization</h1>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">XPCI Crack Detection and Categorization</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
             
@@ -241,19 +288,19 @@ const DepaLabHomepage = () => {
 
     'msu-ai-advisor': () => (
       <div className="min-h-screen bg-white">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
           <button
             onClick={() => setCurrentView('home')}
             className="mb-8 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300"
           >
             ← Back to Home
           </button>
-          <div className="max-w-6xl mx-auto bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl">
+          <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
                 🎓
               </div>
-              <h1 className="text-4xl font-black text-gray-900 mb-4">MSU AI Academic Advisor</h1>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">MSU AI Academic Advisor</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
             
@@ -310,19 +357,19 @@ const DepaLabHomepage = () => {
 
     'cyber-shield': () => (
       <div className="min-h-screen bg-white">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
           <button
             onClick={() => setCurrentView('home')}
             className="mb-8 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300"
           >
             ← Back to Home
           </button>
-          <div className="max-w-6xl mx-auto bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl">
+          <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
                 🛡️
               </div>
-              <h1 className="text-4xl font-black text-gray-900 mb-4">Cyber Shield</h1>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">Cyber Shield</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
             
@@ -370,19 +417,19 @@ const DepaLabHomepage = () => {
 
     'llm-benchmarking': () => (
       <div className="min-h-screen bg-white">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
           <button
             onClick={() => setCurrentView('home')}
             className="mb-8 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300"
           >
             ← Back to Home
           </button>
-          <div className="max-w-6xl mx-auto bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl">
+          <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
                 🗣️
               </div>
-              <h1 className="text-4xl font-black text-gray-900 mb-4">Benchmarking LLMs for AAVE & SAE</h1>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">Benchmarking LLMs for AAVE & SAE</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
             
@@ -430,19 +477,19 @@ const DepaLabHomepage = () => {
 
     'quantized-llm-navigation': () => (
       <div className="min-h-screen bg-white">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
           <button
             onClick={() => setCurrentView('home')}
             className="mb-8 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300"
           >
             ← Back to Home
           </button>
-          <div className="max-w-6xl mx-auto bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl">
+          <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
                 ✈️
               </div>
-              <h1 className="text-4xl font-black text-gray-900 mb-4">Quantized LLM for Airport Navigation</h1>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">Quantized LLM for Airport Navigation</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
             
@@ -490,19 +537,19 @@ const DepaLabHomepage = () => {
 
     'drone-tracking-system': () => (
       <div className="min-h-screen bg-white">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
           <button
             onClick={() => setCurrentView('home')}
             className="mb-8 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300"
           >
             ← Back to Home
           </button>
-          <div className="max-w-6xl mx-auto bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl">
+          <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
                 🚁
               </div>
-              <h1 className="text-4xl font-black text-gray-900 mb-4">Vision-based Autonomous Drone Object Tracking System</h1>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">Vision-based Autonomous Drone Object Tracking System</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
             
@@ -559,19 +606,19 @@ const DepaLabHomepage = () => {
 
     'ml-bench-guard': () => (
       <div className="min-h-screen bg-white">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
           <button
             onClick={() => setCurrentView('home')}
             className="mb-8 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300"
           >
             ← Back to Home
           </button>
-          <div className="max-w-6xl mx-auto bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl">
+          <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
                 📊
               </div>
-              <h1 className="text-4xl font-black text-gray-900 mb-4">AI/ML Bench Guard</h1>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">AI/ML Bench Guard</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
             
@@ -628,19 +675,19 @@ const DepaLabHomepage = () => {
 
     'forensic-video-analysis': () => (
       <div className="min-h-screen bg-white">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
           <button
             onClick={() => setCurrentView('home')}
             className="mb-8 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300"
           >
             ← Back to Home
           </button>
-          <div className="max-w-6xl mx-auto bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl">
+          <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
                 🎬
               </div>
-              <h1 className="text-4xl font-black text-gray-900 mb-4">Multimodal LLMs for Forensic Video Analysis</h1>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">Multimodal LLMs for Forensic Video Analysis</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
             
@@ -688,19 +735,19 @@ const DepaLabHomepage = () => {
 
     'smart-contract-detection': () => (
       <div className="min-h-screen bg-white">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
           <button
             onClick={() => setCurrentView('home')}
             className="mb-8 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300"
           >
             ← Back to Home
           </button>
-          <div className="max-w-6xl mx-auto bg-blue-50 rounded-3xl p-8 border border-blue-200 shadow-xl">
+          <div className="max-w-6xl mx-auto bg-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-blue-200 shadow-xl">
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-6">
                 ⛓️
               </div>
-              <h1 className="text-4xl font-black text-gray-900 mb-4">Smart Contract Reentrancy Detection</h1>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 px-2">Smart Contract Reentrancy Detection</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
             
@@ -748,7 +795,7 @@ const DepaLabHomepage = () => {
 
     'awards': () => (
   <div className="min-h-screen bg-white">
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
       <button
         onClick={() => setCurrentView('home')}
         className="mb-8 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
@@ -1291,7 +1338,7 @@ const DepaLabHomepage = () => {
    
     'publications': () => (
       <div className="min-h-screen bg-white">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
           <button
             onClick={() => setCurrentView('home')}
             className="mb-8 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300"
@@ -1546,7 +1593,7 @@ const DepaLabHomepage = () => {
 
     'symposium': () => (
       <div className="min-h-screen bg-white">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
           <button
             onClick={() => setCurrentView('home')}
             className="mb-8 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300"
@@ -1701,9 +1748,216 @@ const DepaLabHomepage = () => {
     ),
   }), []);
 
+  // ---- Reusable layout fragments ------------------------------------------
+  // The same header and footer render on the home view AND on every research
+  // detail view, so the nav menu is always visible.
+
+  const NAV_ITEMS = ['Home', 'About', 'Research', 'Projects', 'Awards', 'Funding', 'Publications', 'Symposium', 'Team'];
+
+  const headerJSX = (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-blue-100 shadow-lg">
+      <div className="container mx-auto px-3 sm:px-4 lg:px-6">
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          {/* Logo (clicking it returns to home/top) */}
+          <button
+            onClick={() => navigate('hero')}
+            className="flex items-center group focus:outline-none"
+            aria-label="DEPA Lab — home"
+          >
+            <div className="bg-blue-50 rounded-lg p-1.5 sm:p-2 shadow-sm">
+              <img
+                src="/depa-lab/images/DEPA-logo.png"
+                alt="DEPA Lab Logo"
+                className="h-8 sm:h-10 md:h-12 w-auto transform group-hover:scale-110 transition-all duration-500"
+              />
+            </div>
+          </button>
+
+          {/* Desktop nav */}
+          <nav className="hidden lg:flex items-center">
+            <div className="flex items-center bg-blue-50/80 backdrop-blur-xl rounded-full px-2 py-2 shadow-lg border border-blue-100">
+              {NAV_ITEMS.map((item) => {
+                const sectionId = item === 'Home' ? 'hero' : item.toLowerCase();
+                return (
+                  <button
+                    key={item}
+                    onClick={() => navigate(sectionId)}
+                    className="relative px-3 xl:px-4 py-2 mx-0.5 text-sm font-medium text-gray-700 hover:text-white rounded-full transition-all duration-300 group focus:outline-none"
+                  >
+                    <span className="relative z-10">{item}</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100"></div>
+                  </button>
+                );
+              })}
+            </div>
+          </nav>
+
+          {/* Desktop CTA */}
+          <div className="hidden lg:block">
+            <button
+              onClick={() => navigate('contact')}
+              className="relative inline-flex items-center px-5 py-2.5 xl:px-6 xl:py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group overflow-hidden focus:outline-none"
+            >
+              <span>Get In Touch</span>
+              <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
+              className="relative group p-2.5 sm:p-3 bg-blue-50 rounded-2xl shadow-lg border border-blue-100 focus:outline-none"
+            >
+              <div className="flex flex-col justify-center items-center w-6 h-6">
+                <span className={`bg-blue-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${mobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
+                <span className={`bg-blue-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`bg-blue-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${mobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile menu overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="lg:hidden fixed inset-0 top-16 sm:top-20 bg-black/30 backdrop-blur-sm z-40"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          <div
+            className="bg-white m-3 sm:m-4 rounded-3xl shadow-2xl border border-blue-100 p-5 sm:p-6 max-w-md mx-auto max-h-[calc(100vh-6rem)] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="space-y-2.5 sm:space-y-3">
+              {NAV_ITEMS.map((item) => {
+                const sectionId = item === 'Home' ? 'hero' : item.toLowerCase();
+                return (
+                  <button
+                    key={item}
+                    onClick={() => navigate(sectionId)}
+                    className="group flex items-center justify-between w-full p-3 sm:p-4 bg-blue-50 rounded-2xl hover:bg-blue-100 transition-all duration-300 border border-blue-100 focus:outline-none"
+                  >
+                    <span className="text-gray-800 font-semibold group-hover:text-blue-600 transition-colors duration-300 text-base">{item}</span>
+                    <svg className="w-5 h-5 text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                );
+              })}
+              <div className="pt-3 border-t border-blue-200">
+                <button
+                  onClick={() => navigate('contact')}
+                  className="flex items-center justify-center w-full px-6 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none"
+                >
+                  <span>Get In Touch</span>
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+
+  const footerJSX = (
+    <footer className="bg-gradient-to-br from-blue-700 via-blue-800 to-blue-900 text-white pt-12 pb-8">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+          {/* Brand */}
+          <div className="text-center md:text-left">
+            <button
+              onClick={() => navigate('hero')}
+              className="flex items-center justify-center md:justify-start mb-4 group focus:outline-none"
+            >
+              <div className="w-10 h-10 bg-white text-blue-700 rounded-full flex items-center justify-center font-black mr-3 group-hover:scale-110 transition-transform">
+                D
+              </div>
+              <span className="text-xl sm:text-2xl font-black tracking-tight">DEPA Research Lab</span>
+            </button>
+            <p className="text-blue-100 text-sm sm:text-base leading-relaxed max-w-sm mx-auto md:mx-0">
+              Data Engineering and Predictive Analytics Lab at Morgan State University &mdash; building a more equitable future through AI research.
+            </p>
+          </div>
+
+          {/* Quick links */}
+          <div className="text-center md:text-left">
+            <h4 className="text-base sm:text-lg font-bold mb-4 uppercase tracking-wider text-orange-300">Explore</h4>
+            <ul className="space-y-2 text-blue-100 text-sm sm:text-base">
+              {['About', 'Research', 'Projects', 'Publications', 'Team'].map((item) => (
+                <li key={item}>
+                  <button
+                    onClick={() => navigate(item.toLowerCase())}
+                    className="hover:text-white transition-colors focus:outline-none"
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="text-center md:text-left">
+            <h4 className="text-base sm:text-lg font-bold mb-4 uppercase tracking-wider text-orange-300">Contact</h4>
+            <p className="text-blue-100 text-sm sm:text-base mb-2">
+              <a
+                href="mailto:kofi.nyarko@morgan.edu"
+                className="hover:text-white transition-colors break-all"
+              >
+                kofi.nyarko@morgan.edu
+              </a>
+            </p>
+            <address className="not-italic text-blue-100 text-sm leading-relaxed">
+              Rooms 112 &amp; 113, Schaefer Engineering Building<br />
+              Morgan State University<br />
+              1700 E Cold Spring Ln<br />
+              Baltimore, MD 21251
+            </address>
+          </div>
+        </div>
+
+        <div className="border-t border-white/20 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-blue-100 text-xs sm:text-sm">
+          <span>&copy; {new Date().getFullYear()} DEPA Research Lab. All rights reserved.</span>
+          <span>Morgan State University &middot; Baltimore, MD</span>
+        </div>
+      </div>
+    </footer>
+  );
+
+  const scrollToTopJSX = (
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      aria-label="Scroll to top"
+      className={`fixed bottom-5 right-5 sm:bottom-8 sm:right-8 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-2xl flex items-center justify-center transition-all duration-300 ${
+        showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'
+      } hover:scale-110 focus:outline-none`}
+    >
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+      </svg>
+    </button>
+  );
+
   if (currentView !== 'home' && ResearchComponents[currentView]) {
     const Component = ResearchComponents[currentView];
-    return <Component />;
+    return (
+      <div className="min-h-screen flex flex-col bg-white relative overflow-x-hidden">
+        {headerJSX}
+        <main className="flex-grow pt-16 sm:pt-20">
+          <Component />
+        </main>
+        {footerJSX}
+        {scrollToTopJSX}
+      </div>
+    );
   }
 
   return (
@@ -1725,103 +1979,7 @@ const DepaLabHomepage = () => {
         className="fixed inset-0 opacity-5 pointer-events-none"
       />
 
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-blue-100 shadow-lg">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo Section */}
-            <div className="flex items-center group">
-              <div className="relative bg-blue-50 rounded-lg p-2 shadow-sm">
-                <img 
-                  src="/depa-lab/images/DEPA-logo.png"
-                  alt="DEPA Lab Logo"
-                  className="h-10 md:h-12 w-auto transform group-hover:scale-110 transition-all duration-500"
-                />
-              </div>
-            </div>
-            
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center">
-              <div className="flex items-center bg-blue-50/80 backdrop-blur-xl rounded-full px-2 py-2 shadow-lg border border-blue-100">
-                {['Home', 'About', 'Research', 'Projects', 'Awards', 'Funding', 'Publications', 'Symposium', 'Team'].map((item) => (
-                  <a 
-                    key={item}
-                    href={item === 'Home' ? '#hero' : `#${item.toLowerCase()}`}
-                    className="relative px-4 py-2 mx-1 text-sm font-medium text-gray-700 hover:text-white rounded-full transition-all duration-300 group"
-                  >
-                    <span className="relative z-10">{item}</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100"></div>
-                  </a>
-                ))}
-              </div>
-            </nav>
-            
-            {/* CTA Button for Desktop */}
-            <div className="hidden lg:block">
-              <a 
-                href="#contact"
-                className="relative inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group overflow-hidden"
-              >
-                <span className="relative z-10">Get In Touch</span>
-                <svg className="w-4 h-4 ml-2 relative z-10 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
-            
-            {/* Mobile Menu Button */}
-            <div className="lg:hidden">
-              <button 
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
-                className="relative group p-3 bg-blue-50 rounded-2xl shadow-lg border border-blue-100"
-              >
-                <div className="flex flex-col justify-center items-center w-6 h-6">
-                  <span className={`bg-blue-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${mobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
-                  <span className={`bg-blue-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                  <span className={`bg-blue-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${mobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
-                </div>
-              </button>
-            </div>
-          </div>
-        </div>
-        
-        {/* Mobile Menu Overlay */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 top-20 bg-black/20 backdrop-blur-sm z-40" onClick={() => setMobileMenuOpen(false)}>
-            <div className="bg-white m-4 rounded-3xl shadow-2xl border border-blue-100 p-8 max-w-sm mx-auto">
-              <div className="space-y-6">
-                {['Home', 'About', 'Research', 'Projects', 'Awards', 'Funding', 'Publications', 'Symposium', 'Team'].map((item, index) => (
-                  <a
-                    key={item}
-                    href={item === 'Home' ? '#hero' : `#${item.toLowerCase()}`}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="group flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-50 rounded-2xl hover:from-blue-100 hover:to-blue-100 transition-all duration-300 border border-blue-100"
-                  >
-                    <span className="text-gray-800 font-semibold group-hover:text-blue-600 transition-colors duration-300">{item}</span>
-                    <svg className="w-5 h-5 text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                ))}
-                
-                {/* Mobile CTA */}
-                <div className="pt-4 border-t border-blue-200">
-                  <a 
-                    href="#contact"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center justify-center w-full px-6 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                  >
-                    <span>Get In Touch</span>
-                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </header>
+      {headerJSX}
       
       {/* Main Content */}
       <main className="flex-grow pt-20">
@@ -2010,7 +2168,7 @@ const DepaLabHomepage = () => {
                   const container = document.getElementById('research-carousel');
                   container.scrollBy({ left: -400, behavior: 'smooth' });
                 }}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full hidden sm:flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -2022,7 +2180,7 @@ const DepaLabHomepage = () => {
                   const container = document.getElementById('research-carousel');
                   container.scrollBy({ left: 400, behavior: 'smooth' });
                 }}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full hidden sm:flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -2032,7 +2190,7 @@ const DepaLabHomepage = () => {
               {/* Carousel Container */}
               <div 
                 id="research-carousel"
-                className="flex overflow-x-auto gap-6 pb-4 px-12 scrollbar-hide"
+                className="flex overflow-x-auto gap-4 sm:gap-6 pb-4 px-2 sm:px-12 scrollbar-hide snap-x snap-mandatory"
               >
                 {researchAreas.map((area, index) => (
                   <div key={index} className="flex-shrink-0 w-80 group transform hover:scale-105 transition-all duration-500">
@@ -2458,7 +2616,7 @@ const DepaLabHomepage = () => {
                   const container = document.getElementById('team-carousel');
                   container.scrollBy({ left: -400, behavior: 'smooth' });
                 }}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full hidden sm:flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -2470,7 +2628,7 @@ const DepaLabHomepage = () => {
                   const container = document.getElementById('team-carousel');
                   container.scrollBy({ left: 400, behavior: 'smooth' });
                 }}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full hidden sm:flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -2479,10 +2637,10 @@ const DepaLabHomepage = () => {
 
               <div 
                 id="team-carousel"
-                className="flex overflow-x-auto gap-6 pb-4 px-12 scrollbar-hide"
+                className="flex overflow-x-auto gap-4 sm:gap-6 pb-4 px-2 sm:px-12 scrollbar-hide snap-x snap-mandatory"
               >
                 {presentTeamMembers.map((member, index) => (
-                  <div key={index} className="flex-shrink-0 w-64 group transform hover:scale-105 transition-all duration-500">
+                  <div key={index} className="flex-shrink-0 w-56 sm:w-64 snap-start group transform hover:scale-105 transition-all duration-500">
                     <div className="bg-white rounded-2xl p-6 border border-blue-200 shadow-xl text-center h-full">
                       <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-400 shadow-2xl">
                         <img 
@@ -2553,34 +2711,11 @@ const DepaLabHomepage = () => {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-12">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-10 h-10 bg-white text-blue-600 rounded-full flex items-center justify-center font-bold mr-4">
-                D
-              </div>
-              <span className="text-2xl font-black">
-                DEPA Research Lab
-              </span>
-            </div>
-            
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Data Engineering and Predictive Analytics Lab at Morgan State University
-            </p>
-            
-            <div className="border-t border-white/20 pt-6">
-              <p className="text-blue-100">
-                © {new Date().getFullYear()} DEPA Research Lab. All rights reserved.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      {footerJSX}
+      {scrollToTopJSX}
 
       {/* Custom Styles */}
-      <style jsx>{`
+      <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
         
         * {
