@@ -1797,10 +1797,13 @@ const DepaLabHomepage = () => {
                   <span className="h-px w-10 bg-orange-500"></span>
                   <span className="eyebrow text-orange-500">Morgan State University &middot; CEAMLS</span>
                 </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#0c2b4d] leading-[1.04] mb-6">
-                  Data Engineering &amp; Predictive Analytics for <span className="text-orange-500">Intelligent, Trustworthy Systems</span>
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0c2b4d] leading-[0.98] mb-4">
+                  DEPA <span className="text-orange-500">Research Lab</span>
                 </h1>
-                <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl">
+                <p className="text-lg sm:text-xl font-semibold text-[#124d89] mb-5 max-w-2xl">
+                  Data Engineering &amp; Predictive Analytics for Intelligent, Trustworthy Systems
+                </p>
+                <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-8 max-w-2xl">
                   The DEPA Lab at Morgan State University builds data-intensive AI systems that turn complex engineering data into predictive insight, reliable decisions, and deployable technologies &mdash; across data engineering, computer vision, trustworthy AI, cybersecurity, intelligent transportation, autonomous mobility, and decision support.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -1827,29 +1830,26 @@ const DepaLabHomepage = () => {
 
               {/* Honeycomb image cluster */}
               <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-                <svg viewBox="0 0 440 600" className="w-full max-w-[380px] sm:max-w-[440px] h-auto" role="img" aria-label="DEPA Lab research imagery arranged as a honeycomb">
+                <svg viewBox="0 0 460 600" className="w-full max-w-[400px] sm:max-w-[460px] h-auto" role="img" aria-label="DEPA Lab researchers and team">
                   <defs>
-                    <clipPath id="heroHexA">
-                      <path d="M150,200 L236.6,250 L236.6,350 L150,400 L63.4,350 L63.4,250 Z" />
-                    </clipPath>
+                    <clipPath id="hxC"><path d="M230,190 L316.6,240 L316.6,340 L230,390 L143.4,340 L143.4,240 Z" /></clipPath>
+                    <clipPath id="hxNE"><path d="M316.6,40 L403.2,90 L403.2,190 L316.6,240 L230,190 L230,90 Z" /></clipPath>
+                    <clipPath id="hxNW"><path d="M143.4,40 L230,90 L230,190 L143.4,240 L56.8,190 L56.8,90 Z" /></clipPath>
+                    <clipPath id="hxSE"><path d="M316.6,340 L403.2,390 L403.2,490 L316.6,540 L230,490 L230,390 Z" /></clipPath>
                   </defs>
-                  {/* Photo hexagon */}
-                  <image href="/depa-lab/images/depa2.jpeg" x="63.4" y="200" width="173.2" height="200" preserveAspectRatio="xMidYMid slice" clipPath="url(#heroHexA)" />
-                  <path d="M150,200 L236.6,250 L236.6,350 L150,400 L63.4,350 L63.4,250 Z" fill="none" stroke="#ffffff" strokeWidth="4" />
-                  {/* Orange accent hexagon (top) with data nodes */}
-                  <path d="M236.6,50 L323.2,100 L323.2,200 L236.6,250 L150,200 L150,100 Z" fill="#f97316" />
-                  <circle cx="220" cy="150" r="6" fill="#fff" opacity="0.9" />
-                  <circle cx="253" cy="135" r="6" fill="#fff" opacity="0.9" />
-                  <circle cx="253" cy="168" r="6" fill="#fff" opacity="0.9" />
-                  <path d="M220,150 L253,135 M220,150 L253,168" stroke="#fff" strokeWidth="2" opacity="0.7" />
-                  {/* Navy accent hexagon (right) */}
-                  <path d="M323,200 L409.6,250 L409.6,350 L323,400 L236.4,350 L236.4,250 Z" fill="#124d89" />
-                  <circle cx="323" cy="300" r="7" fill="#f97316" />
-                  <circle cx="300" cy="278" r="4" fill="#ffffff" opacity="0.7" />
-                  <circle cx="346" cy="322" r="4" fill="#ffffff" opacity="0.7" />
-                  {/* Outline hexagon (bottom) */}
-                  <path d="M236.6,350 L323.2,400 L323.2,500 L236.6,550 L150,500 L150,400 Z" fill="none" stroke="#124d89" strokeWidth="3" />
-                  <circle cx="236.6" cy="450" r="6" fill="#f97316" />
+                  <image href="/depa-lab/images/depa2.jpeg" x="143.4" y="190" width="173.2" height="200" preserveAspectRatio="xMidYMid slice" clipPath="url(#hxC)" />
+                  <image href="/depa-lab/images/nyarko.jpg" x="230" y="40" width="173.2" height="200" preserveAspectRatio="xMidYMin slice" clipPath="url(#hxNE)" />
+                  <image href="/depa-lab/images/Cynthia.jpeg" x="56.8" y="40" width="173.2" height="200" preserveAspectRatio="xMidYMin slice" clipPath="url(#hxNW)" />
+                  <image href="/depa-lab/images/Rezoan_Sultan.jpeg" x="230" y="340" width="173.2" height="200" preserveAspectRatio="xMidYMin slice" clipPath="url(#hxSE)" />
+                  <path d="M230,190 L316.6,240 L316.6,340 L230,390 L143.4,340 L143.4,240 Z" fill="none" stroke="#ffffff" strokeWidth="4" />
+                  <path d="M316.6,40 L403.2,90 L403.2,190 L316.6,240 L230,190 L230,90 Z" fill="none" stroke="#ffffff" strokeWidth="4" />
+                  <path d="M143.4,40 L230,90 L230,190 L143.4,240 L56.8,190 L56.8,90 Z" fill="none" stroke="#ffffff" strokeWidth="4" />
+                  <path d="M316.6,340 L403.2,390 L403.2,490 L316.6,540 L230,490 L230,390 Z" fill="none" stroke="#ffffff" strokeWidth="4" />
+                  <path d="M143.4,340 L230,390 L230,490 L143.4,540 L56.8,490 L56.8,390 Z" fill="#f97316" />
+                  <circle cx="120" cy="440" r="7" fill="#ffffff" />
+                  <circle cx="165" cy="422" r="7" fill="#ffffff" />
+                  <circle cx="165" cy="458" r="7" fill="#ffffff" />
+                  <path d="M120,440 L165,422 M120,440 L165,458" stroke="#ffffff" strokeWidth="2.5" opacity="0.85" />
                 </svg>
               </div>
 
