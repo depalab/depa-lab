@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 
 // -----------------------------------------------------------------------------
-// Static data — declared once at module scope (not re-created on every render).
+// Static data - declared once at module scope (not re-created on every render).
 // -----------------------------------------------------------------------------
 
 const projects = [
@@ -127,12 +127,12 @@ const impactMetrics = [
 
 // Recent Results cards. Guide 4.4.
 const recentResults = [
-  { category: "Patent", title: "Autonomous Mobility System", status: "U.S. Patent No. 12,622,826 \u2014 May 2026", blurb: "A mobility system integrating sensing, localization, planning, and control for autonomous operation of a powered wheelchair platform.", view: "innovation-ip" },
+  { category: "Patent", title: "Autonomous Mobility System", status: "U.S. Patent No. 12,622,826 \u00b7 May 2026", blurb: "A mobility system integrating sensing, localization, planning, and control for autonomous operation of a powered wheelchair platform.", view: "innovation-ip" },
   { category: "Patent", title: "Egress Obstruction Detection via Computer Vision", status: "All claims allowed; award pending", blurb: "A computer-vision system for detecting and reporting obstructions that may interfere with safe building egress.", view: "innovation-ip" },
-  { category: "Publication", title: "Alarm-Budgeted Event-Level Evaluation of ICS Anomaly Detection: Lessons from SWaT and WADI", status: "IEEE Access \u2014 Published 2026", blurb: "Event-level evaluation of industrial control system anomaly detection under explicit false-alarm constraints.", view: "trustworthy-ai" },
+  { category: "Publication", title: "Alarm-Budgeted Event-Level Evaluation of ICS Anomaly Detection: Lessons from SWaT and WADI", status: "IEEE Access \u00b7 Published 2026", blurb: "Event-level evaluation of industrial control system anomaly detection under explicit false-alarm constraints.", view: "trustworthy-ai" },
   { category: "Project", title: "UrbanFlow: Hybrid Vision-LiDAR Autonomous Wheelchair Navigation", status: "Active flagship project", blurb: "A retrofit autonomous mobility platform supporting safe navigation across complex indoor and outdoor environments.", view: "urbanflow" },
   { category: "Demonstration", title: "UrbanFlow at the World Bank Transforming Transportation event", status: "2025", blurb: "Public demonstration of accessible autonomous mobility research to an international transportation audience.", view: "news" },
-  { category: "Publication", title: "AI-Driven Climate Resilience Education: A Framework for Predictive Thinking in Engineering Classrooms", status: "ASEE 2026 \u2014 Draft approved", blurb: "A framework for embedding predictive thinking and climate resilience into engineering education.", view: "publications" },
+  { category: "Publication", title: "AI-Driven Climate Resilience Education: A Framework for Predictive Thinking in Engineering Classrooms", status: "ASEE 2026 \u00b7 Draft approved", blurb: "A framework for embedding predictive thinking and climate resilience into engineering education.", view: "publications" },
 ];
 
 // Searchable Publications page records. Guide 7.1-7.2.
@@ -172,8 +172,8 @@ const studentAchievements = [
   { date: "2025", students: "Awotwi Baffoe and Kelechi Nwachukwu", recognition: "Best Poster, Materials Science in Extreme Environments event" },
   { date: "2025", students: "Opeyemi Adeniran", recognition: "Second Place, Wealth Summit Live Pitch Competition" },
   { date: "2025", students: "David Nyarko", recognition: "Best Presentation, 13th International Conference on Control, Mechatronics and Automation" },
-  { date: "December 2025", students: "Kelechi Nwachukwu, Hashmath Fathima, Awotwi Baffoe, and Binisa Giri", recognition: "First Place, Humane Intelligence Bias Bounty \u2014 Accessibility in Design" },
-  { date: "December 2025", students: "Cynthia Nosiri", recognition: "First Place, Humane Intelligence Bias Bounty \u2014 Accessibility in Data" },
+  { date: "December 2025", students: "Kelechi Nwachukwu, Hashmath Fathima, Awotwi Baffoe, and Binisa Giri", recognition: "First Place, Humane Intelligence Bias Bounty \u00b7 Accessibility in Design" },
+  { date: "December 2025", students: "Cynthia Nosiri", recognition: "First Place, Humane Intelligence Bias Bounty \u00b7 Accessibility in Data" },
 ];
 
 // Selected funded research (awarded only). Guide 9.1.
@@ -207,7 +207,7 @@ const newsTimeline = [
 // Expanded People profiles. Guide 8.1. Bios/links pending member approval.
 const peopleProfiles = [
   { name: "Dr. Kofi Nyarko", program: "Director, DEPA Lab", image: "nyarko.jpg", interests: "Data-intensive AI, computer vision, trustworthy AI, autonomous mobility, decision support", project: "UrbanFlow; Trustworthy AI for Cybersecurity", links: [{ label: "Email", href: "mailto:kofi.nyarko@morgan.edu" }] },
-  { name: "Cynthia Nosiri", program: "AI Researcher", image: "Cynthia.jpeg", interests: "Trustworthy AI, bias and fairness, healthcare data science", project: "Bias evaluation and accessibility in data", award: "First Place, Humane Intelligence Bias Bounty \u2014 Accessibility in Data (2025)" },
+  { name: "Cynthia Nosiri", program: "AI Researcher", image: "Cynthia.jpeg", interests: "Trustworthy AI, bias and fairness, healthcare data science", project: "Bias evaluation and accessibility in data", award: "First Place, Humane Intelligence Bias Bounty \u00b7 Accessibility in Data (2025)" },
   { name: "Derrick Cook", program: "AI Researcher", image: "Derrick_Cook.PNG", interests: "Machine learning, applied analytics", project: "DEPA research portfolio" },
   { name: "Rezoan Sultan", program: "Human-AI Interaction Research Engineer", image: "Rezoan_Sultan.jpeg", interests: "Human-AI interaction, AI-assisted workflow evaluation", project: "Evaluating AI-assisted cybersecurity operations" },
   { name: "Benjamin Hall", program: "Researcher", image: "Benjamin Hall.jpg", interests: "Data engineering and analytics", project: "DEPA research portfolio" },
@@ -215,7 +215,7 @@ const peopleProfiles = [
   { name: "Awotwi Baffoe", program: "AI Researcher", image: "Awotwi_Baffoe.jpg", interests: "Computer vision, non-destructive evaluation", project: "XPCI crack detection", award: "Best Poster, Materials Science in Extreme Environments (2025)" },
   { name: "Opeyemi Adeniran", program: "AI Research Engineer", image: "Opeyemi.PNG", interests: "Applied AI, entrepreneurship", project: "DEPA research portfolio", award: "Second Place, Wealth Summit Live Pitch Competition (2025)" },
   { name: "Anjolie Anthony", program: "Researcher", image: "Anjolie.JPG", interests: "AI research", project: "DEPA research portfolio" },
-  { name: "Binisa Giri", program: "AI Researcher", image: "Binisa_Giri.jpeg", interests: "Accessibility in AI design, bias evaluation", project: "Accessibility in design", award: "First Place, Humane Intelligence Bias Bounty \u2014 Accessibility in Design (2025)" },
+  { name: "Binisa Giri", program: "AI Researcher", image: "Binisa_Giri.jpeg", interests: "Accessibility in AI design, bias evaluation", project: "Accessibility in design", award: "First Place, Humane Intelligence Bias Bounty \u00b7 Accessibility in Design (2025)" },
   { name: "Nicholas Cook", program: "AI Researcher", image: "NicholasCook.jpg", interests: "Machine learning", project: "DEPA research portfolio" },
   { name: "Temitope Ajibola", program: "AI Researcher", image: "Temi.JPG", interests: "Autonomous systems, AI research", project: "DEPA research portfolio" },
   { name: "David Nyarko", program: "Researcher", image: "david-nyarko.JPG", interests: "Autonomous systems, computer vision, entrepreneurship", project: "Autonomous mobility research", award: "Best Presentation, ICCMA (2025)" },
@@ -228,12 +228,12 @@ const peopleAlumni = [
 
 // ---------------------------------------------------------------------------
 // Research visuals (Guide 5.1: one diagram per program). Custom inline SVGs in
-// the existing blue/orange palette — no new colors or fonts, no stock imagery.
+// the existing blue/orange palette - no new colors or fonts, no stock imagery.
 // ---------------------------------------------------------------------------
 const ProgramVisual = ({ index }) => {
   const svg = { className: 'w-full h-auto block', preserveAspectRatio: 'xMidYMid meet', role: 'img' };
 
-  // 0 — Data Engineering & Intelligent Workflows: many sources -> pipeline -> decision-ready store
+  // 0 - Data Engineering & Intelligent Workflows: many sources -> pipeline -> decision-ready store
   if (index === 0) {
     return (
       <svg viewBox="0 0 440 150" {...svg} aria-label="Many data sources flowing through a pipeline into a decision-ready data store">
@@ -263,7 +263,7 @@ const ProgramVisual = ({ index }) => {
     );
   }
 
-  // 1 — Predictive Analytics & Decision Support: history + forecast with a confidence band
+  // 1 - Predictive Analytics & Decision Support: history + forecast with a confidence band
   if (index === 1) {
     return (
       <svg viewBox="0 0 440 150" {...svg} aria-label="A trend line continuing into a forecast with a confidence band">
@@ -282,7 +282,7 @@ const ProgramVisual = ({ index }) => {
     );
   }
 
-  // 2 — Trustworthy AI & Cybersecurity: a verified shield linked to its guarantees
+  // 2 - Trustworthy AI & Cybersecurity: a verified shield linked to its guarantees
   if (index === 2) {
     const chips = [
       { x: 24, y: 26, w: 86, label: 'Robust' },
@@ -310,7 +310,7 @@ const ProgramVisual = ({ index }) => {
     );
   }
 
-  // 3 — Computer Vision & Autonomous Systems: a platform sensing and detecting objects
+  // 3 - Computer Vision & Autonomous Systems: a platform sensing and detecting objects
   return (
     <svg viewBox="0 0 440 150" {...svg} aria-label="An autonomous platform sensing its surroundings and detecting a pedestrian">
       <rect width="440" height="150" rx="16" fill="#eff6ff" />
@@ -540,7 +540,7 @@ const DepaLabHomepage = () => {
   const [currentView, setCurrentView] = useState('home');
 
   // Ref to the animated background overlay. We update its style directly on
-  // mousemove instead of calling setState — this avoids re-rendering the entire
+  // mousemove instead of calling setState - this avoids re-rendering the entire
   // ~2,500-line component tree on every pixel of mouse movement, which was the
   // cause of the browser hanging/crashing.
   const overlayRef = useRef(null);
@@ -637,7 +637,7 @@ const DepaLabHomepage = () => {
 
 
 
-  // Research Components — memoized so the inner component functions are not
+  // Research Components - memoized so the inner component functions are not
   // re-allocated on every render. All data referenced is module-scope and
   // setCurrentView is a stable useState reference, so [] is correct.
   const ResearchComponents = useMemo(() => ({
@@ -734,7 +734,7 @@ const DepaLabHomepage = () => {
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-[#124d89] mb-4">Project Overview</h3>
               <p className="text-gray-900 leading-relaxed text-lg">
-                The AI Academic Advisor project leverages a multi-step agent pipeline built on transformer-based LLMs fine-tuned with human feedback to generate personalized academic guidance. User profile data—including course history, interests, and scheduling constraints—is collected through a conversational REST API that normalizes and encodes inputs for downstream processing.
+                The AI Academic Advisor project leverages a multi-step agent pipeline built on transformer-based LLMs fine-tuned with human feedback to generate personalized academic guidance. User profile data, including course history, interests, and scheduling constraints, is collected through a conversational REST API that normalizes and encodes inputs for downstream processing.
               </p>
               
               <div className="bg-white rounded-xl p-6 border border-blue-200 mt-6">
@@ -1156,7 +1156,7 @@ const DepaLabHomepage = () => {
                 alt="UrbanFlow accessible autonomous mobility research at the DEPA Lab"
                 className="w-full h-64 sm:h-96 rounded-2xl object-cover border border-blue-200"
               />
-              <p className="text-center text-gray-700 text-sm mt-3 italic">Representative laboratory image &mdash; replace with an approved UrbanFlow demonstration photo.</p>
+              <p className="text-center text-gray-700 text-sm mt-3 italic">Representative laboratory image. Replace with an approved UrbanFlow demonstration photo.</p>
             </div>
 
             <section className="mb-8">
@@ -1577,7 +1577,7 @@ const DepaLabHomepage = () => {
           <button
             onClick={() => navigate('hero')}
             className="flex items-center group focus:outline-none"
-            aria-label="DEPA Lab — home"
+            aria-label="DEPA Lab home"
           >
             <div className="bg-blue-50 rounded-lg p-1.5 sm:p-2 shadow-sm">
               <img
@@ -1683,7 +1683,7 @@ const DepaLabHomepage = () => {
               <span className="text-xl sm:text-2xl font-black tracking-tight">DEPA Research Lab</span>
             </button>
             <p className="text-blue-100 text-sm sm:text-base leading-relaxed max-w-sm mx-auto md:mx-0">
-              Data Engineering and Predictive Analytics Lab at Morgan State University &mdash; building a more equitable future through AI research.
+              Data Engineering and Predictive Analytics Lab at Morgan State University, building a more equitable future through AI research.
             </p>
           </div>
 
@@ -1771,7 +1771,7 @@ const DepaLabHomepage = () => {
     <div 
       className="min-h-screen overflow-x-hidden flex flex-col relative bg-white"
     >
-      {/* Animated background overlay — updated via ref/rAF on mousemove,
+      {/* Animated background overlay - updated via ref/rAF on mousemove,
           no React re-renders. See the useEffect at the top of the component. */}
       <div
         ref={overlayRef}
@@ -1804,7 +1804,7 @@ const DepaLabHomepage = () => {
                   Data Engineering &amp; Predictive Analytics for Intelligent, Trustworthy Systems
                 </p>
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-8 max-w-2xl">
-                  The DEPA Lab at Morgan State University builds data-intensive AI systems that turn complex engineering data into predictive insight, reliable decisions, and deployable technologies &mdash; across data engineering, computer vision, trustworthy AI, cybersecurity, intelligent transportation, autonomous mobility, and decision support.
+                  The DEPA Lab at Morgan State University builds data-intensive AI systems that turn complex engineering data into predictive insight, reliable decisions, and deployable technologies, across data engineering, computer vision, trustworthy AI, cybersecurity, intelligent transportation, autonomous mobility, and decision support.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-10">
                   <a
