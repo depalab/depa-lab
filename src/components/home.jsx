@@ -20,11 +20,282 @@ const presentTeamMembers = [
   { name: "David Nyarko", role: "Researcher", image: "david-nyarko.JPG" },
 ];
 
-// eslint-disable-next-line no-unused-vars
-const pastTeamMembers = [
-  { name: "Ekata Dhital", role: "Research Assistant", image: "Ekata Dhital.JPG" },
-  { name: "Tasmeer Alam", role: "AI Researcher", image: "Tasmeer_Alam.jpeg" },
+// Snapshot date shown wherever counts/metrics appear. Update on each content review.
+const METRICS_AS_OF = "As of June 2026";
+
+// Four research programs (replaces the flat topic list). Guide 5.1.
+const researchPrograms = [
+  {
+    title: "Data Engineering and Intelligent Workflows",
+    description:
+      "We design scalable data pipelines, data integration methods, agentic workflows, and computing architectures that convert heterogeneous data into reliable, decision-ready information.",
+  },
+  {
+    title: "Predictive Analytics and Decision Support",
+    description:
+      "We develop forecasting, optimization, simulation, and explainable predictive models for transportation, infrastructure, aerospace, health, and other high-consequence settings.",
+  },
+  {
+    title: "Trustworthy AI and Cybersecurity",
+    description:
+      "We study robustness, fairness, privacy, explainability, anomaly detection, and human oversight in AI-enabled cybersecurity and cyber-physical systems.",
+    view: "trustworthy-ai",
+  },
+  {
+    title: "Computer Vision and Autonomous Systems",
+    description:
+      "We combine computer vision, LiDAR, intelligent sensing, localization, and planning to support accessible mobility, transportation safety, public safety, and autonomous operation.",
+    view: "urbanflow",
+  },
 ];
+
+// Scannable capability list. Guide 5.2.
+const technicalCapabilities = [
+  "Data pipeline design, integration, cleaning, and analytics",
+  "Predictive modeling, forecasting, and optimization",
+  "Computer vision, video analytics, and multimodal sensing",
+  "LiDAR processing, localization, mapping, and navigation",
+  "Explainable, fair, privacy-preserving, and robust AI",
+  "Cybersecurity analytics and anomaly detection",
+  "Simulation, digital twins, and scientific visualization",
+  "Edge AI and real-time decision support",
+  "Human-AI workflow evaluation",
+  "Dataset development, benchmarking, and model validation",
+];
+
+// Impact metrics strip. Guide 4.3. Dated snapshot; confirm counts before launch.
+const impactMetrics = [
+  { value: "28", label: "Scholarly records involving the DEPA director in the CEAMLS Activities database" },
+  { value: "5", label: "Patents or intellectual property disclosures involving the DEPA director" },
+  { value: "9", label: "Recorded external presentations, panels, or technical demonstrations" },
+  { value: "8", label: "Recorded student or faculty recognitions under DEPA direction" },
+  { value: "Federal \u00b7 Industry \u00b7 Community", label: "Research and collaboration spanning agencies, industry, and community partners", wide: true },
+];
+
+// Recent Results cards. Guide 4.4.
+const recentResults = [
+  { category: "Patent", title: "Autonomous Mobility System", status: "U.S. Patent No. 12,622,826 \u2014 May 2026", blurb: "A mobility system integrating sensing, localization, planning, and control for autonomous operation of a powered wheelchair platform.", view: "innovation-ip" },
+  { category: "Patent", title: "Egress Obstruction Detection via Computer Vision", status: "All claims allowed; award pending", blurb: "A computer-vision system for detecting and reporting obstructions that may interfere with safe building egress.", view: "innovation-ip" },
+  { category: "Publication", title: "Alarm-Budgeted Event-Level Evaluation of ICS Anomaly Detection: Lessons from SWaT and WADI", status: "IEEE Access \u2014 Published 2026", blurb: "Event-level evaluation of industrial control system anomaly detection under explicit false-alarm constraints.", view: "trustworthy-ai" },
+  { category: "Project", title: "UrbanFlow: Hybrid Vision-LiDAR Autonomous Wheelchair Navigation", status: "Active flagship project", blurb: "A retrofit autonomous mobility platform supporting safe navigation across complex indoor and outdoor environments.", view: "urbanflow" },
+  { category: "Demonstration", title: "UrbanFlow at the World Bank Transforming Transportation event", status: "2025", blurb: "Public demonstration of accessible autonomous mobility research to an international transportation audience.", view: "news" },
+  { category: "Publication", title: "AI-Driven Climate Resilience Education: A Framework for Predictive Thinking in Engineering Classrooms", status: "ASEE 2026 \u2014 Draft approved", blurb: "A framework for embedding predictive thinking and climate resilience into engineering education.", view: "publications" },
+];
+
+// Searchable Publications page records. Guide 7.1-7.2.
+// status: Published | Accepted | Submitted | Draft Approved | Preprint | Rejected | Verify
+const publicationsData = [
+  { title: "UrbanFlow: A Hybrid Vision-LiDAR Retrofit Architecture for Autonomous Wheelchair Navigation in Complex Indoor Environments", authors: "DEPA Lab Research Team", type: "Conference", venue: "ICCMA", year: 2025, status: "Accepted", area: "Computer Vision and Autonomous Systems", link: "" },
+  { title: "Alarm-Budgeted Event-Level Evaluation of ICS Anomaly Detection: Lessons from SWaT and WADI", authors: "DEPA Lab Research Team", type: "Journal", venue: "IEEE Access", year: 2026, status: "Published", area: "Trustworthy AI and Cybersecurity", link: "" },
+  { title: "Automated Traffic Video Analysis with a Modular Computer Vision Pipeline and SQL-Based Analytics", authors: "Tasmeer Alam, Kofi Nyarko", type: "Conference", venue: "IEEE CISS", year: 2025, status: "Published", area: "Computer Vision and Autonomous Systems", link: "https://ieeexplore.ieee.org/document/10944672" },
+  { title: "SmartPattern: A Machine Learning Framework for Detecting Reentrancy Vulnerabilities in Blockchain Smart Contracts", authors: "DEPA Lab Research Team", type: "Conference", venue: "IEEE", year: 2025, status: "Published", area: "Trustworthy AI and Cybersecurity", link: "https://ieeexplore.ieee.org/abstract/document/10944738" },
+  { title: "Real-Time Flight Delay Prediction Using Integrated Machine Learning and Meteorological Intelligence for CNS/ATM Decision Support", authors: "DEPA Lab Research Team", type: "Conference", venue: "To be confirmed", year: 2025, status: "Accepted", area: "Predictive Analytics and Decision Support", link: "" },
+  { title: "Hierarchical Caching for Agentic Workflows: A Multi-Level Architecture to Reduce Tool-Execution Overhead", authors: "DEPA Lab Research Team", type: "Conference", venue: "To be confirmed", year: 2025, status: "Accepted", area: "Data Engineering and Intelligent Workflows", link: "" },
+  { title: "Cross-Domain Limits and Bounded-Perturbation Instability in Tabular CAN Intrusion Detection", authors: "DEPA Lab Research Team", type: "Conference", venue: "Under review", year: 2025, status: "Submitted", area: "Trustworthy AI and Cybersecurity", link: "" },
+  { title: "A Synthetic Dataset for Anomaly Detection in Data-Center Power Infrastructure", authors: "DEPA Lab Research Team", type: "Dataset", venue: "To be confirmed", year: 2025, status: "Verify", area: "Trustworthy AI and Cybersecurity", link: "" },
+  { title: "RIPPLE: Differential Testing of Exact-Value Restoration Boundaries in Privacy-Preserving LLM Pipelines", authors: "DEPA Lab Research Team", type: "Conference", venue: "Under review", year: 2025, status: "Submitted", area: "Trustworthy AI and Cybersecurity", link: "" },
+  { title: "AI-Driven Climate Resilience Education: A Framework for Predictive Thinking in Engineering Classrooms", authors: "DEPA Lab Research Team", type: "Conference", venue: "ASEE", year: 2026, status: "Draft Approved", area: "Predictive Analytics and Decision Support", link: "" },
+  { title: "AI/ML Systems Engineering Workbench Framework", authors: "Kofi Nyarko, Emmanuel Masa-Ibi", type: "Conference", venue: "IEEE CISS", year: 2023, status: "Published", area: "Data Engineering and Intelligent Workflows", link: "https://ieeexplore.ieee.org/document/10089781/" },
+  { title: "Network Intrusion Visualization with NIVA", authors: "Kofi Nyarko, Tanya Capers, Craig Scott, Kemi Ladeji-Osias", type: "Conference", venue: "IEEE Haptics Symposium", year: 2002, status: "Published", area: "Trustworthy AI and Cybersecurity", link: "https://ieeexplore.ieee.org/abstract/document/998969" },
+  { title: "GraphAE: Plant-Informed Graph Autoencoder for ICS Anomaly Detection with SHAP-Based Explanations", authors: "DEPA Lab Research Team", type: "Conference", venue: "To be confirmed", year: 2025, status: "Verify", area: "Trustworthy AI and Cybersecurity", link: "" },
+];
+
+// Innovation & IP records. Guide 7.3.
+const ipIssued = [
+  { title: "Autonomous Mobility System", inventors: "Kofi Nyarko and Mansoureh Jeihani", number: "U.S. Patent No. 12,622,826", date: "Issued: May 12, 2026", summary: "A mobility system that integrates sensing, localization, planning, and control to support autonomous operation of a powered wheelchair platform." },
+];
+const ipPending = [
+  { title: "Egress Obstruction Detection via Computer Vision", inventors: "Kofi Nyarko and Ismail Idowu", status: "All claims allowed; patent award pending", summary: "A computer-vision system for detecting and reporting obstructions that may interfere with safe building egress." },
+];
+const ipDisclosures = [
+  "Method for Machine Learning for Detecting Reentrancy Vulnerabilities in Blockchain Contracts",
+  "TrustWatch: Crowd-Sourced AI Trust & Safety Registry",
+];
+
+// Student achievements. Guide 8.2.
+const studentAchievements = [
+  { date: "August 2024", students: "David Nyarko", recognition: "First Place, Emory University AI Bias Datathon" },
+  { date: "August 2024", students: "Cynthia Nosiri", recognition: "Second Place, Emory University AI Bias Datathon" },
+  { date: "2025", students: "Awotwi Baffoe and Kelechi Nwachukwu", recognition: "Best Poster, Materials Science in Extreme Environments event" },
+  { date: "2025", students: "Opeyemi Adeniran", recognition: "Second Place, Wealth Summit Live Pitch Competition" },
+  { date: "2025", students: "David Nyarko", recognition: "Best Presentation, 13th International Conference on Control, Mechatronics and Automation" },
+  { date: "December 2025", students: "Kelechi Nwachukwu, Hashmath Fathima, Awotwi Baffoe, and Binisa Giri", recognition: "First Place, Humane Intelligence Bias Bounty \u2014 Accessibility in Design" },
+  { date: "December 2025", students: "Cynthia Nosiri", recognition: "First Place, Humane Intelligence Bias Bounty \u2014 Accessibility in Data" },
+];
+
+// Selected funded research (awarded only). Guide 9.1.
+const fundedResearch = [
+  { title: "NIST Equipment Grant", sponsor: "NIST", period: "2023\u20132025" },
+  { title: "EQUATE: Enhancing Quality and Uplifting AI Talent at HBCUs through Engagement", sponsor: "NIST", period: "2024\u20132025" },
+  { title: "Research and Education in Equitable AI and Machine Learning: Cybersecurity Implications for National Defense", sponsor: "Office of Naval Research", period: "Center-level award" },
+  { title: "Explainable Artificial Intelligence for Reasoning in Support of Complex Decision Making", sponsor: "Army Research Laboratory", period: "2024\u20132027" },
+  { title: "Evaluating AI-Assisted Cybersecurity Operations: Comparative Analysis of Human Performance with and without AI Tools", sponsor: "Frontier Model Forum", period: "Awarded 2025" },
+];
+
+// Partner categories. Guide 9.2. Logos added only with documented permission.
+const partnerCategories = [
+  "Federal and state agencies",
+  "Industry and technology partners",
+  "Academic collaborators",
+  "Transportation and infrastructure partners",
+  "Community and accessibility organizations",
+];
+
+// News & engagement timeline (reverse chronological). Guide 9.3.
+const newsTimeline = [
+  { date: "July 21, 2026", category: "Presentation", text: "Distinguished presentation on AI hallucination, data reliability, and scientific rigor at the RCMI Consortium National Conference." },
+  { date: "May 12, 2026", category: "Patent", text: "Autonomous Mobility System receives U.S. Patent No. 12,622,826." },
+  { date: "2025", category: "Demonstration", text: "UrbanFlow demonstrated at the World Bank Transforming Transportation event." },
+  { date: "2025", category: "Demonstration", text: "UrbanFlow demonstrated during the BWI Girl STEM Tour." },
+  { date: "2025", category: "Presentation", text: "DEPA researchers present explainable smart-contract vulnerability detection at the Johns Hopkins ADAM NRT Symposium." },
+  { date: "2024", category: "Demonstration", text: "UrbanFlow demonstration for The Arc Maryland." },
+];
+
+// Expanded People profiles. Guide 8.1. Bios/links pending member approval.
+const peopleProfiles = [
+  { name: "Dr. Kofi Nyarko", program: "Director, DEPA Lab", image: "nyarko.jpg", interests: "Data-intensive AI, computer vision, trustworthy AI, autonomous mobility, decision support", project: "UrbanFlow; Trustworthy AI for Cybersecurity", links: [{ label: "Email", href: "mailto:kofi.nyarko@morgan.edu" }] },
+  { name: "Cynthia Nosiri", program: "AI Researcher", image: "Cynthia.jpeg", interests: "Trustworthy AI, bias and fairness, healthcare data science", project: "Bias evaluation and accessibility in data", award: "First Place, Humane Intelligence Bias Bounty \u2014 Accessibility in Data (2025)" },
+  { name: "Derrick Cook", program: "AI Researcher", image: "Derrick_Cook.PNG", interests: "Machine learning, applied analytics", project: "DEPA research portfolio" },
+  { name: "Rezoan Sultan", program: "Human-AI Interaction Research Engineer", image: "Rezoan_Sultan.jpeg", interests: "Human-AI interaction, AI-assisted workflow evaluation", project: "Evaluating AI-assisted cybersecurity operations" },
+  { name: "Benjamin Hall", program: "Researcher", image: "Benjamin Hall.jpg", interests: "Data engineering and analytics", project: "DEPA research portfolio" },
+  { name: "Emmanuel Masa-ibi", program: "Researcher", image: "Emmanuel Masa-ibi.jpeg", interests: "AI/ML systems engineering", project: "AI/ML systems engineering workbench" },
+  { name: "Awotwi Baffoe", program: "AI Researcher", image: "Awotwi_Baffoe.jpg", interests: "Computer vision, non-destructive evaluation", project: "XPCI crack detection", award: "Best Poster, Materials Science in Extreme Environments (2025)" },
+  { name: "Opeyemi Adeniran", program: "AI Research Engineer", image: "Opeyemi.PNG", interests: "Applied AI, entrepreneurship", project: "DEPA research portfolio", award: "Second Place, Wealth Summit Live Pitch Competition (2025)" },
+  { name: "Anjolie Anthony", program: "Researcher", image: "Anjolie.JPG", interests: "AI research", project: "DEPA research portfolio" },
+  { name: "Binisa Giri", program: "AI Researcher", image: "Binisa_Giri.jpeg", interests: "Accessibility in AI design, bias evaluation", project: "Accessibility in design", award: "First Place, Humane Intelligence Bias Bounty \u2014 Accessibility in Design (2025)" },
+  { name: "Nicholas Cook", program: "AI Researcher", image: "NicholasCook.jpg", interests: "Machine learning", project: "DEPA research portfolio" },
+  { name: "Temitope Ajibola", program: "AI Researcher", image: "Temi.JPG", interests: "Autonomous systems, AI research", project: "DEPA research portfolio" },
+  { name: "David Nyarko", program: "Researcher", image: "david-nyarko.JPG", interests: "Autonomous systems, computer vision, entrepreneurship", project: "Autonomous mobility research", award: "Best Presentation, ICCMA (2025)" },
+];
+
+const peopleAlumni = [
+  { name: "Ekata Dhital", program: "Research Assistant (Alumni)", image: "Ekata Dhital.JPG", interests: "Data analysis" },
+  { name: "Tasmeer Alam", program: "AI Researcher (Alumni)", image: "Tasmeer_Alam.jpeg", interests: "Computer vision, traffic video analytics", project: "Automated traffic video analysis" },
+];
+
+// Searchable Publications page (Guide 7.1). Module-scope component so React
+// Hook usage satisfies the rules-of-hooks lint (uppercase component name).
+const PublicationsPage = () => {
+  const records = publicationsData;
+  const [q, setQ] = useState('');
+  const [year, setYear] = useState('All');
+  const [ptype, setPtype] = useState('All');
+  const [area, setArea] = useState('All');
+  const [status, setStatus] = useState('All');
+
+  const years = ['All', ...Array.from(new Set(records.map((r) => r.year))).sort((a, b) => b - a)];
+  const types = ['All', ...Array.from(new Set(records.map((r) => r.type)))];
+  const areas = ['All', ...Array.from(new Set(records.map((r) => r.area)))];
+  const statuses = ['All', 'Published', 'Accepted', 'Submitted', 'Draft Approved', 'Preprint', 'Rejected', 'Verify'];
+
+  const statusStyle = (s) => {
+    switch (s) {
+      case 'Published': return 'bg-green-100 text-green-700 border-green-300';
+      case 'Accepted': return 'bg-blue-100 text-blue-700 border-blue-300';
+      case 'Submitted': return 'bg-amber-100 text-amber-700 border-amber-300';
+      case 'Draft Approved': return 'bg-purple-100 text-purple-700 border-purple-300';
+      case 'Preprint': return 'bg-cyan-100 text-cyan-700 border-cyan-300';
+      case 'Rejected': return 'bg-red-100 text-red-700 border-red-300';
+      default: return 'bg-gray-100 text-gray-700 border-gray-300';
+    }
+  };
+
+  const filtered = records
+    .filter((r) =>
+      (year === 'All' || r.year === year) &&
+      (ptype === 'All' || r.type === ptype) &&
+      (area === 'All' || r.area === area) &&
+      (status === 'All' || r.status === status) &&
+      (q.trim() === '' || (r.title + ' ' + r.authors + ' ' + r.venue).toLowerCase().includes(q.toLowerCase()))
+    )
+    .sort((a, b) => b.year - a.year);
+
+  const selectCls = 'w-full px-3 py-2 rounded-lg border border-blue-300 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400';
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4 text-center">
+            Publications and <span className="text-blue-600">Scholarly Outputs</span>
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-900 text-center mb-4 max-w-4xl mx-auto">
+            DEPA researchers publish peer-reviewed scholarship, conference papers, datasets, technical frameworks, and work-in-progress studies across data engineering, predictive analytics, trustworthy AI, cybersecurity, computer vision, and autonomous systems.
+          </p>
+          <p className="text-sm text-gray-600 text-center mb-8">{METRICS_AS_OF} &middot; statuses verified against the CEAMLS Activities sheet</p>
+
+          <div className="bg-blue-50 rounded-2xl p-4 sm:p-6 border border-blue-200 shadow-md mb-8">
+            <label className="block mb-4">
+              <span className="sr-only">Search publications</span>
+              <input
+                type="text"
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                placeholder="Search by title, author, or venue..."
+                className="w-full px-4 py-3 rounded-lg border border-blue-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </label>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+              <label className="block">
+                <span className="block text-xs font-bold text-blue-700 mb-1">Year</span>
+                <select value={year} onChange={(e) => setYear(e.target.value === 'All' ? 'All' : Number(e.target.value))} className={selectCls}>
+                  {years.map((y) => <option key={y} value={y}>{y}</option>)}
+                </select>
+              </label>
+              <label className="block">
+                <span className="block text-xs font-bold text-blue-700 mb-1">Type</span>
+                <select value={ptype} onChange={(e) => setPtype(e.target.value)} className={selectCls}>
+                  {types.map((t) => <option key={t} value={t}>{t}</option>)}
+                </select>
+              </label>
+              <label className="block">
+                <span className="block text-xs font-bold text-blue-700 mb-1">Research area</span>
+                <select value={area} onChange={(e) => setArea(e.target.value)} className={selectCls}>
+                  {areas.map((a) => <option key={a} value={a}>{a}</option>)}
+                </select>
+              </label>
+              <label className="block">
+                <span className="block text-xs font-bold text-blue-700 mb-1">Status</span>
+                <select value={status} onChange={(e) => setStatus(e.target.value)} className={selectCls}>
+                  {statuses.map((s) => <option key={s} value={s}>{s}</option>)}
+                </select>
+              </label>
+            </div>
+            <p className="text-sm text-gray-700 mt-4">{filtered.length} of {records.length} records</p>
+          </div>
+
+          <div className="space-y-4">
+            {filtered.map((r) => (
+              <div key={r.title} className="bg-white rounded-2xl p-5 sm:p-6 border border-blue-200 shadow-sm">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                  <h2 className="text-lg sm:text-xl font-bold text-gray-900 flex-grow">{r.title}</h2>
+                  <span className={`self-start px-3 py-1 rounded-full text-xs font-bold border whitespace-nowrap ${statusStyle(r.status)}`}>
+                    {r.status === 'Verify' ? 'Status: verify' : r.status}
+                  </span>
+                </div>
+                <p className="text-gray-800 text-sm mt-2">{r.authors}</p>
+                <div className="flex flex-wrap gap-2 mt-3 text-xs">
+                  <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded border border-blue-300 font-medium">{r.type}</span>
+                  <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded border border-blue-200">{r.venue}</span>
+                  <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded border border-blue-200">{r.year}</span>
+                  <span className="px-2 py-1 bg-orange-50 text-orange-700 rounded border border-orange-200">{r.area}</span>
+                </div>
+                {r.link ? (
+                  <a href={r.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center mt-4 px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg text-sm font-semibold transition-all duration-300">
+                    View Publication
+                  </a>
+                ) : null}
+              </div>
+            ))}
+            {filtered.length === 0 && (
+              <div className="text-center text-gray-600 py-12">No publications match the selected filters.</div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const DepaLabHomepage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -114,45 +385,31 @@ const DepaLabHomepage = () => {
     });
   }, []);
 
-  const researchAreas = [
-    {
-      title: "IoT Data Analytics",
-      description: "Analyze and visualize complex IoT networks for actionable insights.",
-      icon: ""
-    },
-    {
-      title: "Cybersecurity",
-      description: "Secure networks through advanced analytics and visualization techniques.",
-      icon: ""
-    },
-    {
-      title: "Machine Learning",
-      description: "Optimize algorithms for real-world decision support and autonomous systems.",
-      icon: ""
-    },
-    {
-      title: "Computer Vision",
-      description: "Automating traffic data analysis, pose estimation, and scene perception for diverse applications.",
-      icon: ""
-    },
-    {
-      title: "Ethical AI Framework",
-      description: "Advancing trustworthy and unbiased AI systems while addressing algorithmic bias.",
-      icon: ""
-    },
-    {
-      title: "Human-Computer Interaction",
-      description: "Creating interactive visualization tools for enhanced situational awareness.",
-      icon: ""
-    },
-    {
-      title: "Autonomous Systems",
-      description: "Developing robust algorithms for real-time navigation in challenging environments.",
-      icon: ""
-    }
-  ];
+  // Open a standalone detail view (Publications, Innovation & IP, People, etc.).
+  const openView = useCallback((viewKey) => {
+    setMobileMenuOpen(false);
+    setCurrentView(viewKey);
+  }, []);
+
+  // Unified nav dispatch: scroll to a homepage section or open a detail view.
+  const goTo = useCallback((item) => {
+    if (item.kind === 'view') openView(item.target);
+    else navigate(item.target);
+  }, [openView, navigate]);
 
   const projects = [
+    {
+      title: "UrbanFlow: Accessible Autonomous Mobility",
+      description: "Flagship retrofit autonomous mobility platform combining LiDAR, computer vision, localization, mapping, and planning to support safe navigation in complex indoor and outdoor environments.",
+      link: "urbanflow",
+      icon: ""
+    },
+    {
+      title: "Trustworthy AI for Cybersecurity & Cyber-Physical Systems",
+      description: "Program developing and evaluating AI methods for threat detection, explainability, robustness, and human oversight in cybersecurity and cyber-physical systems.",
+      link: "trustworthy-ai",
+      icon: ""
+    },
     {
       title: "XPCI Crack Detection and Categorization",
       description: "Automated crack detection in low-density materials using X-ray Phase Contrast Imaging (XPCI) with YOLOv11 deep learning architecture.",
@@ -938,181 +1195,223 @@ const DepaLabHomepage = () => {
     },
 
    
-'publications': () => {
-      // Unified publication card design - all publications use the same layout
-      // pattern. Each entry is described by a data object below; the component
-      // renders them identically so the page reads as one consistent set of
-      // cards (matching the awards page design).
-      const publications = [
-        {
-          title: "AI/ML Systems Engineering Workbench Framework",
-          tags: ["IEEE CISS Conference", "Systems Engineering"],
-          authorsLabel: "Authors:",
-          authors: [
-            { name: "Dr. Kofi Nyarko", accent: "orange" },
-            { name: "Emmanual Masa-Ibi", accent: "blue" },
-          ],
-          highlights: [
-            { label: "Venue", note: "Conference on Information Sciences and Systems (CISS)" },
-          ],
-          body: (
-            <>This paper presents a <span className="text-blue-600 font-semibold">workbench framework</span> for AI/ML systems engineering, providing a structured environment for developing, evaluating, and deploying machine learning systems at scale.</>
-          ),
-          impactLabel: "Research Impact:",
-          impact: "Establishes a reusable engineering foundation for building reliable AI/ML systems across diverse application domains.",
-          link: "https://ieeexplore.ieee.org/document/10089781/",
-        },
-        {
-          title: "Automated Traffic Video Analysis with Modular Computer Vision Pipeline",
-          tags: ["IEEE CISS Conference", "Computer Vision"],
-          authorsLabel: "Authors:",
-          authors: [
-            { name: "Tasmeer Alam", accent: "orange" },
-            { name: "Dr. Kofi Nyarko", accent: "blue" },
-          ],
-          highlights: [
-            { label: "Venue", note: "Conference on Information Sciences and Systems (CISS)" },
-          ],
-          body: (
-            <>A <span className="text-blue-600 font-semibold">modular computer vision pipeline</span> for automated traffic video analysis, enabling scalable detection, classification, and tracking of vehicles and traffic events in real-world footage.</>
-          ),
-          impactLabel: "Research Impact:",
-          impact: "Provides a flexible CV architecture that supports rapid extension to new traffic analytics tasks without rebuilding the underlying pipeline.",
-          link: "https://ieeexplore.ieee.org/document/10944672",
-        },
-        {
-          title: "Network Intrusion Visualization with NIVA",
-          tags: ["IEEE Haptic Symposium", "Cybersecurity"],
-          authorsLabel: "Authors:",
-          authors: [
-            { name: "Kofi Nyarko", accent: "orange" },
-            { name: "Tanya Capers", accent: "blue" },
-            { name: "Craig Scott", accent: "orange" },
-            { name: "Kemi Ladeji-Osias", accent: "blue" },
-          ],
-          highlights: [
-            { label: "Venue", note: "10th Symposium on Haptic Interfaces for Virtual Environment and Teleoperator Systems" },
-          ],
-          body: (
-            <>NIVA introduces a <span className="text-blue-600 font-semibold">visualization-driven approach</span> to network intrusion analysis, combining haptic interfaces with intuitive graphical representations to help analysts identify and respond to threats more effectively.</>
-          ),
-          impactLabel: "Research Impact:",
-          impact: "Advances multi-modal interaction techniques for cybersecurity, demonstrating how visualization and haptics together improve threat detection.",
-          link: "https://ieeexplore.ieee.org/abstract/document/998969",
-        },
-        {
-          title: "Cloud Based Passive Building Occupancy Characterization",
-          tags: ["IEEE HST Conference", "Smart Buildings"],
-          authorsLabel: "Authors:",
-          authors: [
-            { name: "Kofi Nyarko", accent: "orange" },
-            { name: "Cecelia Wright-Brown", accent: "blue" },
-          ],
-          highlights: [
-            { label: "Venue", note: "IEEE International Conference on Technologies for Homeland Security (HST)" },
-          ],
-          body: (
-            <>A <span className="text-blue-600 font-semibold">cloud-based passive sensing approach</span> for characterizing building occupancy without active user input, enabling smarter building management and homeland security applications.</>
-          ),
-          impactLabel: "Research Impact:",
-          impact: "Demonstrates how passive cloud-connected sensing can deliver accurate occupancy intelligence for safety and efficiency at building scale.",
-          link: "https://ieeexplore.ieee.org/abstract/document/6699097",
-        },
-        {
-          title: "SmartPattern: A Machine Learning Framework for Detecting Reentrancy Vulnerabilities in Blockchain Smart Contracts",
-          tags: ["IEEE Publication", "Blockchain Security", "Machine Learning"],
-          authorsLabel: "Research Team:",
-          authors: [
-            { name: "DEPA Lab Research Team", accent: "orange" },
-          ],
-          highlights: [
-            { label: "Detection Accuracy", note: "94% on 40,000 smart contracts" },
-            { label: "Models Used", note: "Random Forest and Support Vector Classifier" },
-          ],
-          body: (
-            <>SmartPattern introduces a <span className="text-blue-600 font-semibold">machine learning framework</span> for detecting <span className="text-orange-600 font-semibold">reentrancy attacks</span> in smart contracts, achieving superior performance over traditional static analysis tools and transformer-based approaches.</>
-          ),
-          impactLabel: "Research Impact:",
-          impact: "Strengthens DeFi and blockchain security by giving developers a high-accuracy, scalable tool for identifying reentrancy vulnerabilities before deployment.",
-          link: "https://ieeexplore.ieee.org/abstract/document/10944738",
-        },
-      ];
+'publications': PublicationsPage,
 
-      const PublicationCard = ({ data }) => (
-        <div className="bg-blue-50 rounded-3xl p-6 sm:p-8 border border-blue-200 shadow-md">
-          <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-4">
-            {data.title}
-          </h2>
+    'urbanflow': () => (
+      <div className="min-h-screen bg-white">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8">
+              <span className="inline-block px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold border border-orange-300 mb-3">Flagship Project</span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">UrbanFlow: Accessible Autonomous Mobility</h1>
+              <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
+            </div>
 
-          <div className="flex flex-wrap gap-2 mb-5">
-            {data.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold border border-blue-300"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+            {/* Hero image (replace with an approved UrbanFlow wheelchair demonstration photo) */}
+            <div className="mb-10 bg-blue-50 rounded-3xl p-4 sm:p-6 border border-blue-200 shadow-lg">
+              <img
+                src="/depa-lab/images/depa2.jpeg"
+                loading="lazy"
+                alt="UrbanFlow accessible autonomous mobility research at the DEPA Lab"
+                className="w-full h-64 sm:h-96 rounded-2xl object-cover border border-blue-200"
+              />
+              <p className="text-center text-gray-700 text-sm mt-3 italic">Representative laboratory image &mdash; replace with an approved UrbanFlow demonstration photo.</p>
+            </div>
 
-          <h4 className="text-base font-bold text-blue-700 mb-2">
-            {data.authorsLabel}
-          </h4>
-          <div className="flex flex-wrap gap-2 mb-6">
-            {data.authors.map((a) => (
-              <span
-                key={a.name}
-                className={
-                  a.accent === 'orange'
-                    ? "px-3 py-1 bg-orange-100 text-orange-700 rounded-lg text-sm font-medium border border-orange-300"
-                    : "px-3 py-1 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium border border-blue-300"
-                }
-              >
-                {a.name}
-              </span>
-            ))}
-          </div>
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-blue-600 mb-3">Overview</h2>
+              <p className="text-gray-900 leading-relaxed text-lg">
+                UrbanFlow is a retrofit autonomous mobility platform designed to support safe navigation across complex indoor and outdoor environments. The system combines LiDAR, computer vision, localization, mapping, motion planning, and intelligent control to extend the capabilities of a powered wheelchair without requiring a purpose-built mobility base.
+              </p>
+            </section>
 
-          <div
-            className={
-              data.highlights.length > 1
-                ? "grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6"
-                : "grid grid-cols-1 gap-4 mb-6"
-            }
-          >
-            {data.highlights.map((h) => (
-              <div
-                key={h.label}
-                className="bg-white rounded-lg p-4 border border-orange-300"
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="inline-block w-4 h-4 rounded-full bg-orange-500"></span>
-                  <h5 className="font-bold text-orange-700">{h.label}</h5>
-                </div>
-                <p className="text-gray-900 text-sm">{h.note}</p>
+            <section className="mb-8 bg-blue-50 rounded-2xl p-6 border border-blue-200">
+              <h2 className="text-2xl font-bold text-blue-600 mb-3">The Challenge</h2>
+              <p className="text-gray-900 leading-relaxed text-lg">
+                Airports, hospitals, campuses, and transportation facilities contain dynamic spaces that are difficult for many mobility users to navigate independently. UrbanFlow investigates how affordable sensing and AI can support accessible, context-aware mobility while keeping safety, usability, and human control central to system design.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-blue-600 mb-3">Technical Approach</h2>
+              <p className="text-gray-900 leading-relaxed text-lg mb-4">
+                The platform integrates 2D LiDAR, RGB-D vision, inertial sensing, odometry, and optional high-precision positioning. Research areas include hybrid indoor/outdoor localization, SLAM, obstacle detection, path planning, person following, docking, and multimodal sensor fusion.
+              </p>
+              <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-center border border-blue-300">
+                <p className="text-white font-semibold text-lg mb-1">System Architecture</p>
+                <p className="text-blue-100 text-sm">Sensing (LiDAR &middot; RGB-D &middot; IMU &middot; odometry) &rarr; Localization &amp; Mapping &rarr; Perception &rarr; Planning &amp; Control &rarr; Safety Monitoring</p>
+                <p className="text-blue-200 text-xs mt-3 italic">Add an approved architecture diagram here.</p>
               </div>
-            ))}
+            </section>
+
+            <section className="mb-8 bg-blue-50 rounded-2xl p-6 border border-blue-200">
+              <h2 className="text-2xl font-bold text-blue-600 mb-4">Selected Capabilities</h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {['Vision-LiDAR perception and mapping', 'Indoor and outdoor navigation', 'Dynamic obstacle detection and avoidance', 'Person-following assistance', 'Docking and transportation integration', 'Explainable system monitoring and safety evaluation'].map((c) => (
+                  <li key={c} className="flex items-start gap-2 text-gray-900">
+                    <span className="text-orange-500 mt-1">&#8226;</span><span>{c}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-blue-600 mb-3">Technology Translation</h2>
+              <p className="text-gray-900 leading-relaxed text-lg">
+                UrbanFlow research contributed to the Autonomous Mobility System, U.S. Patent No. 12,622,826.
+              </p>
+            </section>
+
+            <section className="mb-10 bg-blue-50 rounded-2xl p-6 border border-blue-200">
+              <h2 className="text-2xl font-bold text-blue-600 mb-3">Selected Demonstrations</h2>
+              <p className="text-gray-900 leading-relaxed text-lg">
+                The platform has been demonstrated for The Arc Maryland, at the World Bank&rsquo;s Transforming Transportation event, and during a Girl STEM Tour at Baltimore/Washington International Thurgood Marshall Airport.
+              </p>
+            </section>
+
+            <div className="text-center">
+              <a href="mailto:kofi.nyarko@morgan.edu" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                Contact the UrbanFlow Team
+              </a>
+            </div>
           </div>
+        </div>
+      </div>
+    ),
 
-          <p className="text-gray-900 leading-relaxed mb-5">
-            {data.body}
-          </p>
+    'trustworthy-ai': () => (
+      <div className="min-h-screen bg-white">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">Trustworthy AI for Cybersecurity and Cyber-Physical Systems</h1>
+              <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
+            </div>
 
-          <div className="bg-white rounded-lg p-4 border border-blue-300 mb-5">
-            <p className="text-blue-700">
-              <strong className="font-bold">{data.impactLabel}</strong>{' '}
-              <span className="font-medium">{data.impact}</span>
+            <p className="text-lg sm:text-xl text-gray-900 leading-relaxed max-w-4xl mx-auto text-center mb-10">
+              DEPA develops and evaluates AI methods for detecting threats, explaining model decisions, measuring robustness, and supporting human oversight in cybersecurity and cyber-physical systems. The program addresses both model performance and the operational conditions under which an AI system should be trusted.
             </p>
-          </div>
 
-          <a
-            href={data.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
-          >
-            Read Full Paper
-          </a>
+            <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-center border border-blue-300 mb-10">
+              <p className="text-white font-semibold text-lg mb-1">Trust Loop</p>
+              <p className="text-blue-100 text-sm">Data &rarr; Model &rarr; Explanation &rarr; Operator &rarr; Decision &rarr; (feedback to Data)</p>
+              <p className="text-blue-200 text-xs mt-3 italic">Add an approved data-model-explanation-operator-decision diagram here.</p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+                <h2 className="text-2xl font-bold text-blue-600 mb-4">Current Research Themes</h2>
+                <ul className="space-y-3">
+                  {['Adversarial robustness in intrusion and ransomware detection', 'Industrial control system anomaly detection under explicit false-alarm constraints', 'Cybersecurity of connected and automated vehicles', 'Explainable smart-contract vulnerability detection', 'Privacy-preserving evaluation of large language model pipelines', 'Human performance with and without AI-assisted cybersecurity tools'].map((t) => (
+                    <li key={t} className="flex items-start gap-2 text-gray-900"><span className="text-orange-500 mt-1">&#8226;</span><span>{t}</span></li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+                <h2 className="text-2xl font-bold text-blue-600 mb-4">Selected Outputs</h2>
+                <ul className="space-y-3">
+                  {['Alarm-Budgeted Event-Level Evaluation of ICS Anomaly Detection: Lessons from SWaT and WADI', 'GraphAE: Plant-Informed Graph Autoencoder for ICS Anomaly Detection with SHAP-Based Explanations', 'SmartPattern: A Machine Learning Framework for Detecting Reentrancy Vulnerabilities in Blockchain Smart Contracts', 'RIPPLE: Differential Testing of Exact-Value Restoration Boundaries in Privacy-Preserving LLM Pipelines'].map((o) => (
+                    <li key={o} className="flex items-start gap-2 text-gray-900"><span className="text-orange-500 mt-1">&#8226;</span><span>{o}</span></li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="text-center mt-10">
+              <button onClick={() => setCurrentView('publications')} className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                View Related Publications
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'innovation-ip': () => (
+      <div className="min-h-screen bg-white">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">Innovation and Intellectual Property</h1>
+              <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
+            </div>
+            <p className="text-lg sm:text-xl text-gray-900 leading-relaxed max-w-4xl mx-auto text-center mb-10">
+              DEPA translates research into protectable technologies, prototypes, datasets, and software systems. This page highlights publicly reportable patents and intellectual property disclosures associated with DEPA leadership and collaborators.
+            </p>
+
+            <h2 className="text-2xl font-bold text-blue-600 mb-4">Issued Patents</h2>
+            <div className="space-y-6 mb-10">
+              {ipIssued.map((p) => (
+                <div key={p.title} className="bg-blue-50 rounded-2xl p-6 border border-blue-200 shadow-md">
+                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                    <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold border border-green-300">Issued</span>
+                    <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold border border-blue-300">{p.number}</span>
+                    <span className="text-sm text-gray-700">{p.date}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{p.title}</h3>
+                  <p className="text-blue-700 text-sm font-semibold mb-2">Inventors: {p.inventors}</p>
+                  <p className="text-gray-900">{p.summary}</p>
+                </div>
+              ))}
+            </div>
+
+            <h2 className="text-2xl font-bold text-blue-600 mb-4">Pending Patents</h2>
+            <div className="space-y-6 mb-10">
+              {ipPending.map((p) => (
+                <div key={p.title} className="bg-blue-50 rounded-2xl p-6 border border-blue-200 shadow-md">
+                  <span className="inline-block px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-bold border border-amber-300 mb-3">{p.status}</span>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{p.title}</h3>
+                  <p className="text-blue-700 text-sm font-semibold mb-2">Inventors: {p.inventors}</p>
+                  <p className="text-gray-900">{p.summary}</p>
+                </div>
+              ))}
+            </div>
+
+            <h2 className="text-2xl font-bold text-blue-600 mb-4">Selected Intellectual Property Disclosures</h2>
+            <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200 shadow-md">
+              <ul className="space-y-3">
+                {ipDisclosures.map((d) => (
+                  <li key={d} className="flex items-start gap-2 text-gray-900"><span className="text-orange-500 mt-1">&#8226;</span><span>{d}</span></li>
+                ))}
+              </ul>
+              <p className="text-sm text-gray-600 mt-4 italic">Confidential disclosure details are not published. Each description is approved by the Office of Technology Transfer or project lead.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'people': () => {
+      const ProfileCard = ({ p }) => (
+        <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200 shadow-md">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="relative w-20 h-20 rounded-full overflow-hidden border-4 border-blue-400 shadow-lg flex-shrink-0">
+              <img
+                src={`/depa-lab/images/${p.image}`}
+                alt={p.name}
+                loading="lazy"
+                className="w-full h-full object-cover"
+                onError={(e) => { e.target.style.display = 'none'; const fb = e.target.nextSibling; if (fb && fb.style) fb.style.display = 'flex'; }}
+              />
+              <div className="w-full h-full absolute inset-0 items-center justify-center text-xl text-white font-bold" style={{ background: 'linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%)', display: 'none' }}>
+                {p.name.split(' ').map((n) => n[0]).join('').substring(0, 2)}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-gray-900">{p.name}</h3>
+              <p className="text-blue-700 text-sm font-semibold">{p.program}</p>
+            </div>
+          </div>
+          <p className="text-gray-900 text-sm mb-2"><span className="font-semibold text-blue-700">Research interests:</span> {p.interests}</p>
+          {p.project ? <p className="text-gray-900 text-sm mb-2"><span className="font-semibold text-blue-700">Current project:</span> {p.project}</p> : null}
+          {p.award ? <p className="text-gray-900 text-sm mb-2"><span className="font-semibold text-blue-700">Selected recognition:</span> {p.award}</p> : null}
+          {p.links && p.links.length ? (
+            <div className="flex flex-wrap gap-2 mt-3">
+              {p.links.map((l) => (
+                <a key={l.label} href={l.href} className="px-3 py-1 bg-white text-blue-700 rounded-lg text-xs font-medium border border-blue-300 hover:bg-blue-100 transition-colors">{l.label}</a>
+              ))}
+            </div>
+          ) : null}
         </div>
       );
 
@@ -1120,33 +1419,169 @@ const DepaLabHomepage = () => {
         <div className="min-h-screen bg-white">
           <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
             <div className="max-w-6xl mx-auto">
-              <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-6 text-center">
-                Research{' '}
-                <span className="text-blue-600">Publications</span>
-              </h1>
-
-              <p className="text-lg sm:text-xl text-gray-900 text-center mb-12 max-w-4xl mx-auto">
-                Explore our comprehensive contributions to research and innovation in AI, machine learning, and technology.
+              <div className="text-center mb-8">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">Our <span className="text-blue-600">People</span></h1>
+                <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
+              </div>
+              <p className="text-lg sm:text-xl text-gray-900 text-center mb-10 max-w-4xl mx-auto">
+                DEPA brings together faculty, staff, and student researchers advancing data engineering, predictive analytics, trustworthy AI, computer vision, and autonomous systems.
               </p>
-
-              <div className="space-y-8">
-                {publications.map((p) => (
-                  <PublicationCard key={p.title} data={p} />
-                ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {peopleProfiles.map((p) => <ProfileCard key={p.name} p={p} />)}
               </div>
 
-              <div className="mt-12 text-center">
-                <div className="inline-block px-6 sm:px-8 py-4 bg-blue-50 border border-blue-300 text-blue-700 rounded-full font-bold text-base sm:text-lg">
-                  Contributing to the Future of AI and Technology Research
-                </div>
+              <h2 className="text-2xl font-bold text-blue-600 mt-14 mb-6 text-center">Alumni</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {peopleAlumni.map((p) => <ProfileCard key={p.name} p={p} />)}
               </div>
+              <p className="text-sm text-gray-600 text-center mt-8 italic">Public bios, portraits, and profile links are shown with each member&rsquo;s approval.</p>
             </div>
           </div>
         </div>
       );
     },
 
-    'symposium': () => (
+    'impact': () => (
+      <div className="min-h-screen bg-white">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">Research <span className="text-blue-600">Impact</span></h1>
+              <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
+              <p className="text-sm text-gray-600 mt-4">{METRICS_AS_OF}</p>
+            </div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
+              {impactMetrics.filter((m) => !m.wide).map((m) => (
+                <div key={m.label} className="bg-blue-50 rounded-2xl p-5 border border-blue-200 shadow-sm text-center">
+                  <div className="text-3xl font-black text-blue-600 mb-2">{m.value}</div>
+                  <p className="text-gray-800 text-sm">{m.label}</p>
+                </div>
+              ))}
+            </div>
+
+            <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-2">Student Achievement</h2>
+            <p className="text-gray-900 mb-6 max-w-4xl">
+              DEPA students apply research skills in scholarly publication, technical competitions, demonstrations, and entrepreneurship. Their accomplishments reflect the lab&rsquo;s emphasis on hands-on research, mentorship, and translation of AI into practical systems.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-14">
+              {studentAchievements.map((a, i) => (
+                <div key={i} className="bg-blue-50 rounded-2xl p-5 border border-blue-200 shadow-sm">
+                  <span className="inline-block px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-bold border border-orange-300 mb-2">{a.date}</span>
+                  <h3 className="text-lg font-bold text-gray-900">{a.students}</h3>
+                  <p className="text-gray-900 text-sm mt-1">{a.recognition}</p>
+                </div>
+              ))}
+            </div>
+
+            <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-2">Selected Funded Research</h2>
+            <p className="text-gray-900 mb-6 max-w-4xl">
+              DEPA researchers contribute to externally supported work in trustworthy AI, cybersecurity, autonomous systems, data infrastructure, and decision support. Selected awarded efforts include:
+            </p>
+            <div className="space-y-4 mb-4">
+              {fundedResearch.map((g) => (
+                <div key={g.title} className="bg-blue-50 rounded-2xl p-5 border border-blue-200 shadow-sm">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                    <h3 className="text-lg font-bold text-gray-900 flex-grow">{g.title}</h3>
+                    <span className="self-start px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold border border-blue-300 whitespace-nowrap">{g.period}</span>
+                  </div>
+                  <p className="text-blue-700 text-sm font-semibold mt-1">{g.sponsor}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-gray-600 mb-14 italic">Center-level awards state DEPA&rsquo;s role rather than implying the full award belongs to the lab.</p>
+
+            <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-2">Collaboration and Partnerships</h2>
+            <p className="text-gray-900 mb-6 max-w-4xl">
+              DEPA works with university researchers, government agencies, industry, nonprofit organizations, and community partners to move AI research from theory to practical use. Collaboration may include sponsored research, shared test environments, student mentorship, technical demonstrations, data development, and technology evaluation.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {partnerCategories.map((c) => (
+                <div key={c} className="bg-white rounded-xl p-5 border border-blue-200 shadow-sm text-gray-900 font-medium flex items-center gap-2">
+                  <span className="inline-block w-3 h-3 rounded-full bg-orange-500"></span>{c}
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-gray-600 mt-6 italic">Logos are used only with documented permission; sponsors are not described as partners unless an active relationship exists.</p>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'news': () => (
+      <div className="min-h-screen bg-white">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-10">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">News &amp; <span className="text-blue-600">Engagement</span></h1>
+              <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
+            </div>
+            <div className="relative border-l-2 border-blue-200 ml-3">
+              {newsTimeline.map((n, i) => (
+                <div key={i} className="relative pl-8 pb-8">
+                  <span className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-orange-500 border-2 border-white shadow"></span>
+                  <div className="bg-blue-50 rounded-2xl p-5 border border-blue-200 shadow-sm">
+                    <div className="flex flex-wrap items-center gap-3 mb-2">
+                      <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold border border-blue-300">{n.category}</span>
+                      <span className="text-sm font-semibold text-gray-700">{n.date}</span>
+                    </div>
+                    <p className="text-gray-900">{n.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-gray-600 text-center mt-4 italic">Each entry links to an event page, date, image credit, and description as records are confirmed.</p>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'join-us': () => (
+      <div className="min-h-screen bg-white">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">Join or Collaborate with <span className="text-blue-600">DEPA</span></h1>
+              <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="bg-blue-50 rounded-3xl p-6 sm:p-8 border border-blue-200 shadow-md">
+                <h2 className="text-2xl font-bold text-blue-600 mb-4">For Students</h2>
+                <p className="text-gray-900 leading-relaxed mb-4">
+                  DEPA welcomes motivated undergraduate and graduate students interested in data engineering, predictive analytics, computer vision, trustworthy AI, cybersecurity, and autonomous systems. Students may contribute through research assistantships, course projects, independent study, theses, dissertations, and summer research programs.
+                </p>
+                <h3 className="font-bold text-blue-700 mb-2">When contacting the lab, include:</h3>
+                <ul className="space-y-2">
+                  {['Your degree program and expected graduation date', 'Research interests and relevant coursework', 'Technical skills and links to code or prior projects', 'The DEPA project or research program that interests you', 'A r\u00e9sum\u00e9 or curriculum vitae'].map((t) => (
+                    <li key={t} className="flex items-start gap-2 text-gray-900"><span className="text-orange-500 mt-1">&#8226;</span><span>{t}</span></li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-blue-50 rounded-3xl p-6 sm:p-8 border border-blue-200 shadow-md">
+                <h2 className="text-2xl font-bold text-blue-600 mb-4">For Collaborators</h2>
+                <p className="text-gray-900 leading-relaxed mb-4">
+                  DEPA works with academic, government, industry, and community partners on sponsored research, data and testbed development, system evaluation, student mentorship, and technology demonstrations.
+                </p>
+                <p className="text-gray-900 leading-relaxed">
+                  Prospective partners should provide a concise description of the problem, available data or environment, intended users, timeline, and potential resources.
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center mt-10">
+              <a href="mailto:kofi.nyarko@morgan.edu" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                Contact the DEPA Lab
+              </a>
+              <p className="text-sm text-gray-600 mt-4 italic">The lab does not promise funding or placement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+        'symposium': () => (
       <div className="min-h-screen bg-white">
         <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
 <div className="max-w-6xl mx-auto">
@@ -1281,7 +1716,17 @@ const DepaLabHomepage = () => {
   // The same header and footer render on the home view AND on every research
   // detail view, so the nav menu is always visible.
 
-  const NAV_ITEMS = ['Home', 'About', 'Research', 'Projects', 'Awards', 'Funding', 'Publications', 'Symposium', 'Team'];
+  const NAV_ITEMS = [
+    { label: 'Home', kind: 'scroll', target: 'hero' },
+    { label: 'Research', kind: 'scroll', target: 'research' },
+    { label: 'Projects', kind: 'scroll', target: 'projects' },
+    { label: 'Publications', kind: 'view', target: 'publications' },
+    { label: 'Innovation', kind: 'view', target: 'innovation-ip' },
+    { label: 'People', kind: 'view', target: 'people' },
+    { label: 'Impact', kind: 'view', target: 'impact' },
+    { label: 'News', kind: 'view', target: 'news' },
+    { label: 'Join Us', kind: 'view', target: 'join-us' },
+  ];
 
   const headerJSX = (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-blue-100 shadow-lg">
@@ -1305,19 +1750,16 @@ const DepaLabHomepage = () => {
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center">
             <div className="flex items-center bg-blue-50/80 backdrop-blur-xl rounded-full px-2 py-2 shadow-lg border border-blue-100">
-              {NAV_ITEMS.map((item) => {
-                const sectionId = item === 'Home' ? 'hero' : item.toLowerCase();
-                return (
-                  <button
-                    key={item}
-                    onClick={() => navigate(sectionId)}
-                    className="relative px-3 xl:px-4 py-2 mx-0.5 text-sm font-medium text-gray-900 hover:text-white rounded-full transition-all duration-300 group focus:outline-none"
-                  >
-                    <span className="relative z-10">{item}</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100"></div>
-                  </button>
-                );
-              })}
+              {NAV_ITEMS.map((item) => (
+                <button
+                  key={item.label}
+                  onClick={() => goTo(item)}
+                  className="relative px-3 xl:px-4 py-2 mx-0.5 text-sm font-medium text-gray-900 hover:text-white rounded-full transition-all duration-300 group focus:outline-none"
+                >
+                  <span className="relative z-10">{item.label}</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100"></div>
+                </button>
+              ))}
             </div>
           </nav>
 
@@ -1360,18 +1802,15 @@ const DepaLabHomepage = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="space-y-2.5 sm:space-y-3">
-              {NAV_ITEMS.map((item) => {
-                const sectionId = item === 'Home' ? 'hero' : item.toLowerCase();
-                return (
-                  <button
-                    key={item}
-                    onClick={() => navigate(sectionId)}
-                    className="group flex items-center justify-between w-full p-3 sm:p-4 bg-blue-50 rounded-2xl hover:bg-blue-100 transition-all duration-300 border border-blue-100 focus:outline-none"
-                  >
-                    <span className="text-gray-900 font-semibold group-hover:text-blue-600 transition-colors duration-300 text-base">{item}</span>
-                    </button>
-                );
-              })}
+              {NAV_ITEMS.map((item) => (
+                <button
+                  key={item.label}
+                  onClick={() => goTo(item)}
+                  className="group flex items-center justify-between w-full p-3 sm:p-4 bg-blue-50 rounded-2xl hover:bg-blue-100 transition-all duration-300 border border-blue-100 focus:outline-none"
+                >
+                  <span className="text-gray-900 font-semibold group-hover:text-blue-600 transition-colors duration-300 text-base">{item.label}</span>
+                </button>
+              ))}
               <div className="pt-3 border-t border-blue-200">
                 <button
                   onClick={() => navigate('contact')}
@@ -1411,13 +1850,20 @@ const DepaLabHomepage = () => {
           <div className="text-center md:text-left">
             <h4 className="text-base sm:text-lg font-bold mb-4 uppercase tracking-wider text-orange-300">Explore</h4>
             <ul className="space-y-2 text-blue-100 text-sm sm:text-base">
-              {['About', 'Research', 'Projects', 'Publications', 'Team'].map((item) => (
-                <li key={item}>
+              {[
+                { label: 'Research', kind: 'scroll', target: 'research' },
+                { label: 'Projects', kind: 'scroll', target: 'projects' },
+                { label: 'Publications', kind: 'view', target: 'publications' },
+                { label: 'People', kind: 'view', target: 'people' },
+                { label: 'Impact', kind: 'view', target: 'impact' },
+                { label: 'Join Us', kind: 'view', target: 'join-us' },
+              ].map((item) => (
+                <li key={item.label}>
                   <button
-                    onClick={() => navigate(item.toLowerCase())}
+                    onClick={() => goTo(item)}
                     className="hover:text-white transition-colors focus:outline-none"
                   >
-                    {item}
+                    {item.label}
                   </button>
                 </li>
               ))}
@@ -1446,7 +1892,7 @@ const DepaLabHomepage = () => {
 
         <div className="border-t border-white/20 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-blue-100 text-xs sm:text-sm">
           <span>&copy; {new Date().getFullYear()} DEPA Research Lab. All rights reserved.</span>
-          <span>Morgan State University &middot; Baltimore, MD</span>
+          <span>Last updated: June 2026 &middot; Morgan State University, Baltimore, MD</span>
         </div>
       </div>
     </footer>
@@ -1535,15 +1981,17 @@ const DepaLabHomepage = () => {
     </div>
     
     {/* Main Title */}
-    <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-12 leading-tight text-white">
-      Welcome to{' '}
-      <span className="block mt-4 text-white drop-shadow-2xl">
-        DEPA Research Lab
-      </span>
+    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight text-white max-w-5xl mx-auto drop-shadow-2xl">
+      Data Engineering and Predictive Analytics for Intelligent, Trustworthy Systems
     </h1>
-    
+
+    {/* Body */}
+    <p className="text-lg sm:text-xl text-blue-100 leading-relaxed mb-12 max-w-4xl mx-auto">
+      The Data Engineering and Predictive Analytics (DEPA) Lab at Morgan State University develops data-intensive artificial intelligence systems that transform complex engineering data into predictive insight, reliable decisions, and deployable technologies. Our work spans data engineering, computer vision, trustworthy AI, cybersecurity, intelligent transportation, autonomous mobility, and decision support.
+    </p>
+
     {/* Call to Action Buttons */}
-    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
       <a 
         href="#research" 
         className="w-full sm:w-auto group px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full font-bold text-lg transition-all duration-500 transform hover:scale-105 shadow-2xl"
@@ -1552,38 +2000,16 @@ const DepaLabHomepage = () => {
           Explore Our Research
           </span>
       </a>
-      <a 
-        href="#projects" 
+      <button
+        onClick={() => openView('join-us')}
         className="w-full sm:w-auto group px-8 py-4 bg-white text-blue-600 hover:bg-blue-50 rounded-full font-bold text-lg transition-all duration-500 transform hover:scale-105 shadow-2xl"
       >
         <span className="relative z-10 flex items-center justify-center">
-          View Projects
+          Collaborate With DEPA
           </span>
-      </a>
+      </button>
     </div>
-    
-    {/* Stats */}
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-      <div className="text-center group">
-        <div className="text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">
-          50+
-        </div>
-        <div className="text-blue-100 font-medium">Research Projects</div>
-      </div>
-      <div className="text-center group">
-        <div className="text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">
-          13+
-        </div>
-        <div className="text-blue-100 font-medium">Team Members</div>
-      </div>
-      <div className="text-center group">
-        <div className="text-4xl font-black text-white mb-2 group-hover:scale-110 transition-transform duration-300">
-          7
-        </div>
-        <div className="text-blue-100 font-medium">Research Areas</div>
-      </div>
-    </div>
-    
+
     <div className="h-2 w-32 bg-orange-500 mx-auto rounded-full shadow-2xl animate-pulse mt-12"></div>
   </div>
   
@@ -1597,6 +2023,45 @@ const DepaLabHomepage = () => {
     </div>
   </div>
 </section>
+
+        {/* Institutional Context: DEPA / CEAMLS / RAIN (Guide 4.2) */}
+        <section id="context" className="py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-5xl mx-auto bg-blue-50 rounded-3xl p-6 sm:p-10 border border-blue-200 shadow-lg">
+              <p className="text-lg sm:text-xl text-gray-900 leading-relaxed text-center">
+                DEPA is a research laboratory within Morgan State University&rsquo;s{' '}
+                <a href="https://www.morgan.edu/ceamls" target="_blank" rel="noopener noreferrer" className="text-blue-600 font-semibold underline">Center for Equitable Artificial Intelligence and Machine Learning Systems (CEAMLS)</a>. DEPA leads work in data engineering, predictive modeling, optimization, decision support, and data-intensive AI systems. Projects involving robotics, intelligent sensing, and autonomous platforms may be conducted jointly with the Robotics, Autonomy &amp; Intelligent Networks (RAIN) Lab.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Impact Metrics Strip (Guide 4.3) */}
+        <section id="metrics" className="py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 text-center">Research Impact at a Glance</h2>
+            <p className="text-blue-100 text-center mb-10">{METRICS_AS_OF}</p>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+              {impactMetrics.filter((m) => !m.wide).map((m) => (
+                <div key={m.label} className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/20 text-center">
+                  <div className="text-3xl sm:text-4xl font-black text-white mb-2">{m.value}</div>
+                  <p className="text-blue-100 text-sm leading-snug">{m.label}</p>
+                </div>
+              ))}
+            </div>
+            {impactMetrics.filter((m) => m.wide).map((m) => (
+              <div key={m.label} className="max-w-4xl mx-auto mt-4 bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/20 text-center">
+                <p className="text-white font-semibold">{m.label}</p>
+              </div>
+            ))}
+            <div className="text-center mt-8">
+              <button onClick={() => openView('impact')} className="inline-flex items-center px-6 py-3 bg-white/10 border border-white/30 text-white rounded-full font-bold hover:bg-white/20 transition-all duration-300">
+                See Full Impact
+              </button>
+            </div>
+          </div>
+        </section>
+
         {/* About Section */}
         <section id="about" className="mb-24 py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -1653,73 +2118,83 @@ const DepaLabHomepage = () => {
         {/* Research Areas Section */}
         <section id="research" className="mb-24 py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-10 text-center">
-              Core Research{' '}
-              <span className="text-white">
-                Areas
-              </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 text-center">
+              Research{' '}
+              <span className="text-white">Programs</span>
             </h2>
-            
-            {/* Research Areas Carousel */}
-            <div className="relative max-w-7xl mx-auto">
-              {/* Navigation Arrows */}
-              <button 
-                onClick={() => {
-                  const container = document.getElementById('research-carousel');
-                  if (container) container.scrollBy({ left: -400, behavior: 'smooth' });
-                }}
-                aria-label="Scroll research carousel left"
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full hidden sm:flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              
-              <button 
-                onClick={() => {
-                  const container = document.getElementById('research-carousel');
-                  if (container) container.scrollBy({ left: 400, behavior: 'smooth' });
-                }}
-                aria-label="Scroll research carousel right"
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full hidden sm:flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
+            <p className="text-lg sm:text-xl text-blue-100 text-center mb-12 max-w-4xl mx-auto">
+              Our work is organized into four programs spanning foundational methods and deployable systems.
+            </p>
 
-              {/* Carousel Container */}
-              <div 
-                id="research-carousel"
-                className="flex overflow-x-auto gap-4 sm:gap-6 pb-4 px-2 sm:px-12 scrollbar-hide snap-x snap-mandatory"
-              >
-                {researchAreas.map((area, index) => (
-                  <div key={index} className="flex-shrink-0 w-80 group transform hover:scale-105 transition-all duration-500">
-                    <div className="bg-white rounded-2xl p-8 border border-blue-200 shadow-xl h-full">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                        {area.title}
-                      </h3>
-                      <p className="text-lg text-gray-800 leading-relaxed text-center">
-                        {area.description}
-                      </p>
-                    </div>
+            {/* Four Research Programs (Guide 5.1) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+              {researchPrograms.map((program, index) => (
+                <div key={program.title} className="bg-white rounded-2xl p-6 sm:p-8 border border-blue-200 shadow-xl h-full flex flex-col">
+                  <div className="flex items-start gap-3 mb-3">
+                    <span className="flex-shrink-0 w-9 h-9 rounded-full bg-orange-500 text-white font-black flex items-center justify-center">{index + 1}</span>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{program.title}</h3>
                   </div>
-                ))}
-              </div>
+                  <p className="text-gray-800 leading-relaxed flex-grow">{program.description}</p>
+                  {program.view ? (
+                    <button
+                      onClick={() => openView(program.view)}
+                      className="self-start inline-flex items-center mt-4 px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg text-sm font-semibold transition-all duration-300"
+                    >
+                      Explore Program
+                    </button>
+                  ) : null}
+                </div>
+              ))}
             </div>
 
-            {/* Research Excellence Badge */}
-            <div className="text-center mt-8">
-              <div className="inline-flex items-center px-6 py-3 bg-white/10 border border-white/30 text-white rounded-full font-bold text-sm">
-                7 Cutting-Edge Research Domains
+            {/* Technical Capabilities (Guide 5.2) */}
+            <div className="max-w-6xl mx-auto mt-14">
+              <h3 className="text-2xl sm:text-3xl font-black text-white mb-6 text-center">Technical Capabilities</h3>
+              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-white/20">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {technicalCapabilities.map((cap) => (
+                    <li key={cap} className="flex items-start gap-2 text-blue-50">
+                      <span className="text-orange-400 mt-1">&#9656;</span>
+                      <span>{cap}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Recent Results Section (Guide 4.4) */}
+        <section id="recent-results" className="mb-24 py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4 text-center">
+              Recent <span className="text-blue-600">Results</span>
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-900 text-center mb-12 max-w-4xl mx-auto">
+              DEPA research moves from foundational methods to tested systems, scholarly publications, intellectual property, and public demonstrations.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {recentResults.map((r) => (
+                <div key={r.title} className="bg-blue-50 rounded-2xl p-6 border border-blue-200 shadow-md h-full flex flex-col">
+                  <span className="self-start px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-bold border border-orange-300 mb-3">{r.category}</span>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{r.title}</h3>
+                  <p className="text-blue-700 text-sm font-semibold mb-3">{r.status}</p>
+                  <p className="text-gray-800 text-sm leading-relaxed flex-grow mb-4">{r.blurb}</p>
+                  <button
+                    onClick={() => openView(r.view)}
+                    className="self-start inline-flex items-center text-blue-600 font-semibold text-sm hover:text-orange-600 transition-colors"
+                  >
+                    Learn more &rarr;
+                  </button>
                 </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Projects Section */}
         <section id="projects" className="mb-24 py-16 bg-white">
+
           <div className="container mx-auto px-4 sm:px-6">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-12 text-center">
               Innovative Projects and{' '}
@@ -2149,16 +2624,74 @@ const DepaLabHomepage = () => {
               </div>
             </div>
 
-            <div className="text-center mt-8">
+            <div className="text-center mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <div className="inline-flex items-center px-8 py-4 bg-white/10 border border-white/30 text-white rounded-full font-bold text-lg">
                 {presentTeamMembers.length} Active Researchers Building the Future of AI
               </div>
+              <button
+                onClick={() => openView('people')}
+                className="inline-flex items-center px-6 py-3 bg-white text-blue-700 rounded-full font-bold hover:bg-blue-50 transition-all duration-300 shadow-lg"
+              >
+                View Full Profiles
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* News Preview (Guide 9.3) */}
+        <section id="news-preview" className="mb-24 py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4 text-center">
+              News &amp; <span className="text-blue-600">Engagement</span>
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-900 text-center mb-12 max-w-3xl mx-auto">
+              Recent demonstrations, talks, publications, patents, and milestones.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {newsTimeline.slice(0, 3).map((n, i) => (
+                <div key={i} className="bg-blue-50 rounded-2xl p-6 border border-blue-200 shadow-md">
+                  <div className="flex flex-wrap items-center gap-2 mb-3">
+                    <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold border border-blue-300">{n.category}</span>
+                    <span className="text-sm font-semibold text-gray-700">{n.date}</span>
+                  </div>
+                  <p className="text-gray-900">{n.text}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-12">
+              <button
+                onClick={() => openView('news')}
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                View All News
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Join Us CTA (Guide 10.1) */}
+        <section id="join-cta" className="mb-24 py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6">
+                Join or Collaborate with DEPA
+              </h2>
+              <p className="text-lg sm:text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                We welcome motivated students and academic, government, industry, and community partners interested in data engineering, predictive analytics, computer vision, trustworthy AI, cybersecurity, and autonomous systems.
+              </p>
+              <button
+                onClick={() => openView('join-us')}
+                className="inline-flex items-center px-8 py-4 bg-white text-blue-700 rounded-full font-bold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+              >
+                Explore Opportunities
+              </button>
             </div>
           </div>
         </section>
 
         {/* Contact Section */}
         <section id="contact" className="mb-24 py-16 bg-white">
+
           <div className="container mx-auto px-4 sm:px-6">
             <div className="bg-blue-50 rounded-3xl p-6 sm:p-10 lg:p-12 border border-blue-200 shadow-xl text-center">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-8">

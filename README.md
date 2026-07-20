@@ -32,6 +32,44 @@ npm run build      # production bundle (what GitHub Actions runs)
 
 That's it. Everything the site needs lives here.
 
+## Editing site content
+
+All site content lives in `src/components/home.jsx`. Structured data is declared
+once at module scope near the top of the file, so most updates are edits to a
+single array — no JSX changes needed:
+
+- `researchPrograms`, `technicalCapabilities` — Research page
+- `impactMetrics` — homepage metrics strip (update `METRICS_AS_OF` too)
+- `recentResults` — homepage "Recent Results"
+- `publicationsData` — searchable Publications page (status/type/area/year drive the filters)
+- `ipIssued`, `ipPending`, `ipDisclosures` — Innovation & IP page
+- `studentAchievements`, `fundedResearch`, `partnerCategories` — Impact page
+- `newsTimeline` — News page and homepage preview
+- `peopleProfiles`, `peopleAlumni` — People page
+- `presentTeamMembers` — homepage team carousel
+
+Standalone pages (UrbanFlow, Trustworthy AI, Innovation & IP, People, Impact,
+News, Join Us) are entries in the `ResearchComponents` map and are opened from
+the nav via `openView(...)`. Homepage anchors are reached via `navigate(...)`.
+
+## Recommended quarterly content workflow (from the enhancement guide)
+
+1. Export or review the CEAMLS Activities tabs for Scholarly Publications,
+   Patents, Grants, External Presentations/Panels, Recognition, and Partnerships.
+2. Filter records by **confirmed DEPA attribution**, not merely by the presence
+   of the director's name.
+3. Send proposed additions to the DEPA director and relevant project lead for
+   approval.
+4. Update the structured data arrays in `home.jsx`.
+5. Check all links, dates, statuses, author names, and image permissions.
+6. Submit a pull request with a short change log.
+7. Review desktop, tablet, mobile, keyboard navigation, and accessibility
+   before deployment.
+8. Update the "Last updated" date in the footer (and `METRICS_AS_OF`).
+
+Suggested content tracker fields: item, page, source, approver, status, link,
+image permission, last reviewed date.
+
 ## Recent fixes
 
 ### Browser hang/crash
