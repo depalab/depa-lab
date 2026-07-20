@@ -1792,7 +1792,7 @@ const DepaLabHomepage = () => {
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center py-14 sm:py-20 lg:py-20 min-h-[calc(100vh-4rem)]">
 
               {/* Text column */}
-              <div className="lg:col-span-7 text-left">
+              <div className="lg:col-span-6 text-left">
                 <div className="flex items-center gap-3 mb-6">
                   <span className="h-px w-10 bg-orange-500"></span>
                   <span className="eyebrow text-orange-500">Morgan State University &middot; CEAMLS</span>
@@ -1829,8 +1829,8 @@ const DepaLabHomepage = () => {
               </div>
 
               {/* Honeycomb image cluster (slanted left-to-right) */}
-              <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-                <svg viewBox="0 0 490 560" className="w-full max-w-[440px] sm:max-w-[520px] h-auto" role="img" aria-label="DEPA Lab research imagery arranged as a slanted honeycomb">
+              <div className="lg:col-span-6 relative flex justify-center">
+                <svg viewBox="0 0 490 560" className="w-full max-w-[440px] sm:max-w-[520px] lg:max-w-[560px] h-auto" role="img" aria-label="DEPA Lab research imagery arranged as a slanted honeycomb">
                   <defs>
                     <clipPath id="hxA"><path d="M130,40 L216.6,90 L216.6,190 L130,240 L43.4,190 L43.4,90 Z" /></clipPath>
                     <clipPath id="hxB"><path d="M216.6,190 L303.2,240 L303.2,340 L216.6,390 L130,340 L130,240 Z" /></clipPath>
