@@ -173,6 +173,191 @@ const peopleAlumni = [
   { name: "Tasmeer Alam", program: "AI Researcher (Alumni)", image: "Tasmeer_Alam.jpeg", interests: "Computer vision, traffic video analytics", project: "Automated traffic video analysis" },
 ];
 
+// ---------------------------------------------------------------------------
+// Research visuals (Guide 5.1: one diagram per program). Custom inline SVGs in
+// the existing blue/orange palette — no new colors or fonts, no stock imagery.
+// ---------------------------------------------------------------------------
+const ProgramVisual = ({ index }) => {
+  const svg = { className: 'w-full h-32 sm:h-36 block', preserveAspectRatio: 'xMidYMid meet', role: 'img' };
+
+  // 0 — Data Engineering & Intelligent Workflows: many sources -> pipeline -> decision-ready store
+  if (index === 0) {
+    return (
+      <svg viewBox="0 0 440 150" {...svg} aria-label="Many data sources flowing through a pipeline into a decision-ready data store">
+        <rect width="440" height="150" rx="16" fill="#eff6ff" />
+        {[28, 62, 96].map((y, i) => (
+          <g key={i}>
+            <rect x="20" y={y} width="78" height="26" rx="6" fill="#ffffff" stroke="#93c5fd" strokeWidth="1.5" />
+            <rect x="28" y={y + 7} width="46" height="4" rx="2" fill="#bfdbfe" />
+            <rect x="28" y={y + 15} width="30" height="4" rx="2" fill="#dbeafe" />
+          </g>
+        ))}
+        {[41, 75, 109].map((y, i) => (
+          <path key={i} d={`M100 ${y} C132 ${y}, 142 75, 170 75`} fill="none" stroke="#fb923c" strokeWidth="2.5" />
+        ))}
+        <rect x="170" y="57" width="104" height="36" rx="18" fill="#2563eb" />
+        <circle cx="194" cy="75" r="4" fill="#ffffff" />
+        <circle cx="222" cy="75" r="4" fill="#ffffff" />
+        <circle cx="250" cy="75" r="4" fill="#ffffff" />
+        <path d="M274 75 H314" stroke="#1e40af" strokeWidth="2.5" />
+        <path d="M314 75 l-9 -5 v10 z" fill="#1e40af" />
+        <g transform="translate(332,48)">
+          <path d="M6 10 a34 10 0 0 1 68 0 v34 a34 10 0 0 1 -68 0 z" fill="#fdba74" />
+          <ellipse cx="40" cy="10" rx="34" ry="10" fill="#f97316" />
+          <path d="M27 40 l9 9 l17 -20" fill="none" stroke="#ffffff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+        </g>
+      </svg>
+    );
+  }
+
+  // 1 — Predictive Analytics & Decision Support: history + forecast with a confidence band
+  if (index === 1) {
+    return (
+      <svg viewBox="0 0 440 150" {...svg} aria-label="A trend line continuing into a forecast with a confidence band">
+        <rect width="440" height="150" rx="16" fill="#eff6ff" />
+        {[42, 72, 102].map((y, i) => (
+          <line key={i} x1="30" y1={y} x2="410" y2={y} stroke="#dbeafe" strokeWidth="1" />
+        ))}
+        <line x1="30" y1="26" x2="30" y2="122" stroke="#93c5fd" strokeWidth="1.5" />
+        <line x1="30" y1="122" x2="410" y2="122" stroke="#93c5fd" strokeWidth="1.5" />
+        <path d="M250 62 L410 24 L410 58 L250 80 Z" fill="#fed7aa" opacity="0.55" />
+        <polyline points="30,106 80,94 130,98 180,74 224,82 250,71" fill="none" stroke="#2563eb" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        <polyline points="250,71 330,54 410,41" fill="none" stroke="#f97316" strokeWidth="3" strokeDasharray="7 6" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="250" cy="71" r="5.5" fill="#ffffff" stroke="#2563eb" strokeWidth="3" />
+        <circle cx="410" cy="41" r="5.5" fill="#f97316" />
+      </svg>
+    );
+  }
+
+  // 2 — Trustworthy AI & Cybersecurity: a verified shield linked to its guarantees
+  if (index === 2) {
+    const chips = [
+      { x: 24, y: 26, w: 86, label: 'Robust' },
+      { x: 330, y: 26, w: 86, label: 'Fair' },
+      { x: 24, y: 100, w: 92, label: 'Private' },
+      { x: 300, y: 100, w: 116, label: 'Explainable' },
+    ];
+    return (
+      <svg viewBox="0 0 440 150" {...svg} aria-label="A verified trust shield connected to robustness, fairness, privacy, and explainability">
+        <rect width="440" height="150" rx="16" fill="#eff6ff" />
+        {chips.map((c, i) => (
+          <line key={i} x1={c.x + c.w / 2} y1={c.y + 12} x2="220" y2="75" stroke="#fb923c" strokeWidth="1.5" opacity="0.7" />
+        ))}
+        <g transform="translate(190,30)">
+          <path d="M30 2 L58 14 V44 C58 66 45 82 30 92 C15 82 2 66 2 44 V14 Z" fill="#2563eb" />
+          <path d="M17 46 l10 10 l17 -21" fill="none" stroke="#ffffff" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+        </g>
+        {chips.map((c, i) => (
+          <g key={i}>
+            <rect x={c.x} y={c.y} width={c.w} height="24" rx="12" fill="#ffffff" stroke="#93c5fd" strokeWidth="1.5" />
+            <text x={c.x + c.w / 2} y={c.y + 16} textAnchor="middle" fontSize="12" fontWeight="700" fill="#1e40af">{c.label}</text>
+          </g>
+        ))}
+      </svg>
+    );
+  }
+
+  // 3 — Computer Vision & Autonomous Systems: a platform sensing and detecting objects
+  return (
+    <svg viewBox="0 0 440 150" {...svg} aria-label="An autonomous platform sensing its surroundings and detecting a pedestrian">
+      <rect width="440" height="150" rx="16" fill="#eff6ff" />
+      <line x1="20" y1="122" x2="420" y2="122" stroke="#bfdbfe" strokeWidth="2" />
+      {[30, 50, 70].map((r, i) => (
+        <path key={i} d={`M120 ${92 - r} A ${r} ${r} 0 0 1 ${120 + r} 92`} fill="none" stroke="#fb923c" strokeWidth="2.5" opacity={0.85 - i * 0.22} />
+      ))}
+      <g transform="translate(44,84)">
+        <rect x="0" y="10" width="72" height="26" rx="7" fill="#1e40af" />
+        <rect x="14" y="-4" width="40" height="18" rx="5" fill="#2563eb" />
+        <circle cx="18" cy="38" r="8" fill="#111827" />
+        <circle cx="54" cy="38" r="8" fill="#111827" />
+      </g>
+      <g transform="translate(300,52)">
+        <rect x="0" y="0" width="70" height="70" rx="4" fill="none" stroke="#2563eb" strokeWidth="2" strokeDasharray="2 3" />
+        {[[0, 0], [70, 0], [0, 70], [70, 70]].map(([cx, cy], i) => (
+          <path key={i} d={`M${cx} ${cy}`} />
+        ))}
+        <path d="M0 0 h16 M0 0 v16 M70 0 h-16 M70 0 v16 M0 70 h16 M0 70 v-16 M70 70 h-16 M70 70 v-16" stroke="#f97316" strokeWidth="3" fill="none" strokeLinecap="round" />
+        <circle cx="35" cy="24" r="10" fill="#1e40af" />
+        <path d="M35 34 v22 M35 40 l-12 8 M35 40 l12 8 M35 56 l-10 12 M35 56 l10 12" stroke="#1e40af" strokeWidth="4" strokeLinecap="round" fill="none" />
+      </g>
+    </svg>
+  );
+};
+
+// UrbanFlow system architecture (Guide 6.1). Left-to-right processing pipeline.
+const UrbanFlowArchitecture = () => {
+  const stages = [
+    { x: 15, lines: ['Sensing'] },
+    { x: 195, lines: ['Localization', '& Mapping'] },
+    { x: 375, lines: ['Perception'] },
+    { x: 555, lines: ['Planning', '& Control'] },
+    { x: 735, lines: ['Safety', 'Monitoring'] },
+  ];
+  const sensors = ['LiDAR', 'RGB-D', 'IMU', 'Odometry'];
+  return (
+    <svg viewBox="0 0 900 250" className="w-full h-auto block" preserveAspectRatio="xMidYMid meet" role="img" aria-label="UrbanFlow architecture: sensing feeds localization and mapping, perception, planning and control, and safety monitoring">
+      <rect width="900" height="250" rx="18" fill="#ffffff" stroke="#bfdbfe" strokeWidth="2" />
+      {stages.slice(0, 4).map((s, i) => (
+        <g key={i}>
+          <path d={`M${s.x + 150} 96 H${stages[i + 1].x}`} stroke="#f97316" strokeWidth="3" />
+          <path d={`M${stages[i + 1].x} 96 l-11 -6 v12 z`} fill="#f97316" />
+        </g>
+      ))}
+      {stages.map((s, i) => (
+        <g key={i}>
+          <rect x={s.x} y="66" width="150" height="60" rx="12" fill="#2563eb" />
+          {s.lines.map((ln, j) => (
+            <text key={j} x={s.x + 75} y={s.lines.length === 1 ? 102 : 92 + j * 20} textAnchor="middle" fontSize="17" fontWeight="700" fill="#ffffff">{ln}</text>
+          ))}
+        </g>
+      ))}
+      {sensors.map((label, i) => (
+        <g key={i}>
+          <path d="M90 126 V150" stroke="#93c5fd" strokeWidth="1.5" />
+          <path d={`M90 150 H${40 + i * 130 + 55}`} stroke="#93c5fd" strokeWidth="1.5" />
+          <path d={`M${40 + i * 130 + 55} 150 V170`} stroke="#93c5fd" strokeWidth="1.5" />
+          <rect x={40 + i * 130} y="170" width="110" height="34" rx="17" fill="#eff6ff" stroke="#93c5fd" strokeWidth="1.5" />
+          <text x={40 + i * 130 + 55} y="191" textAnchor="middle" fontSize="15" fontWeight="600" fill="#1e40af">{label}</text>
+        </g>
+      ))}
+      <text x="450" y="232" textAnchor="middle" fontSize="13" fill="#6b7280">Multimodal sensor fusion runs across every stage.</text>
+    </svg>
+  );
+};
+
+// Trustworthy-AI trust loop (Guide 6.2): data, model, explanation, operator, decision, feedback.
+const TrustLoop = () => {
+  const nodes = [
+    { x: 15, label: 'Data' },
+    { x: 195, label: 'Model' },
+    { x: 375, label: 'Explanation' },
+    { x: 555, label: 'Operator' },
+    { x: 735, label: 'Decision' },
+  ];
+  return (
+    <svg viewBox="0 0 900 230" className="w-full h-auto block" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Trust loop: data to model to explanation to operator to decision, with feedback returning to data">
+      <rect width="900" height="230" rx="18" fill="#ffffff" stroke="#bfdbfe" strokeWidth="2" />
+      {nodes.slice(0, 4).map((n, i) => (
+        <g key={i}>
+          <path d={`M${n.x + 150} 150 H${nodes[i + 1].x}`} stroke="#2563eb" strokeWidth="3" />
+          <path d={`M${nodes[i + 1].x} 150 l-11 -6 v12 z`} fill="#2563eb" />
+        </g>
+      ))}
+      {nodes.map((n, i) => (
+        <g key={i}>
+          <rect x={n.x} y="120" width="150" height="60" rx="12" fill={i === 4 ? '#1e40af' : '#2563eb'} />
+          <text x={n.x + 75} y="156" textAnchor="middle" fontSize="17" fontWeight="700" fill="#ffffff">{n.label}</text>
+        </g>
+      ))}
+      {/* feedback arc from Decision back to Data */}
+      <path d="M810 120 C810 40, 690 40, 450 40 C210 40, 90 40, 90 118" fill="none" stroke="#f97316" strokeWidth="3" strokeDasharray="8 6" />
+      <path d="M90 118 l-6 -11 h12 z" fill="#f97316" />
+      <rect x="372" y="26" width="156" height="28" rx="14" fill="#ffedd5" stroke="#fb923c" strokeWidth="1.5" />
+      <text x="450" y="45" textAnchor="middle" fontSize="14" fontWeight="700" fill="#c2410c">Feedback to data</text>
+    </svg>
+  );
+};
+
 // Searchable Publications page (Guide 7.1). Module-scope component so React
 // Hook usage satisfies the rules-of-hooks lint (uppercase component name).
 const PublicationsPage = () => {
@@ -1008,10 +1193,9 @@ const DepaLabHomepage = () => {
               <p className="text-gray-900 leading-relaxed text-lg mb-4">
                 The platform integrates 2D LiDAR, RGB-D vision, inertial sensing, odometry, and optional high-precision positioning. Research areas include hybrid indoor/outdoor localization, SLAM, obstacle detection, path planning, person following, docking, and multimodal sensor fusion.
               </p>
-              <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-center border border-blue-300">
-                <p className="text-white font-semibold text-lg mb-1">System Architecture</p>
-                <p className="text-blue-100 text-sm">Sensing (LiDAR &middot; RGB-D &middot; IMU &middot; odometry) &rarr; Localization &amp; Mapping &rarr; Perception &rarr; Planning &amp; Control &rarr; Safety Monitoring</p>
-                <p className="text-blue-200 text-xs mt-3 italic">Add an approved architecture diagram here.</p>
+              <div className="bg-blue-50 rounded-2xl p-4 sm:p-6 border border-blue-200">
+                <p className="text-blue-700 font-bold text-center mb-4">System Architecture</p>
+                <UrbanFlowArchitecture />
               </div>
             </section>
 
@@ -1063,10 +1247,9 @@ const DepaLabHomepage = () => {
               DEPA develops and evaluates AI methods for detecting threats, explaining model decisions, measuring robustness, and supporting human oversight in cybersecurity and cyber-physical systems. The program addresses both model performance and the operational conditions under which an AI system should be trusted.
             </p>
 
-            <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-center border border-blue-300 mb-10">
-              <p className="text-white font-semibold text-lg mb-1">Trust Loop</p>
-              <p className="text-blue-100 text-sm">Data &rarr; Model &rarr; Explanation &rarr; Operator &rarr; Decision &rarr; (feedback to Data)</p>
-              <p className="text-blue-200 text-xs mt-3 italic">Add an approved data-model-explanation-operator-decision diagram here.</p>
+            <div className="bg-blue-50 rounded-2xl p-4 sm:p-6 border border-blue-200 mb-10">
+              <p className="text-blue-700 font-bold text-center mb-4">How trust is evaluated</p>
+              <TrustLoop />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -1585,83 +1768,67 @@ const DepaLabHomepage = () => {
       <main className="flex-grow pt-16 sm:pt-20">
         
         {/* Hero Section */}
-<section id="hero" className="relative mb-16 pt-16 min-h-screen flex items-center overflow-hidden">
-  
-  {/* Hero Background Image */}
-  <div 
-    className="absolute inset-0 z-0"
-    style={{
-      backgroundImage: 'url(/depa-lab/images/depa2.jpeg)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
-    }}
-  />
-  
-  {/* Dark Overlay for Text Readability */}
-  <div className="absolute inset-0 z-10 bg-gradient-to-br from-blue-900/90 via-blue-800/85 to-blue-900/90" />
-  
-  {/* Hero Background Pattern */}
-  <div className="absolute inset-0 z-10 opacity-10">
-    <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full animate-ping"></div>
-    <div className="absolute top-3/4 left-1/3 w-1 h-1 bg-white rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
-    <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-white rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+<section id="hero" className="relative pt-16 min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900">
+
+  {/* Ambient texture */}
+  <div className="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true">
+    <div className="absolute top-24 left-10 w-2 h-2 bg-white rounded-full animate-ping"></div>
+    <div className="absolute bottom-28 left-1/3 w-1 h-1 bg-white rounded-full animate-ping" style={{animationDelay: '1.5s'}}></div>
+    <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-orange-300 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
   </div>
-  
-  {/* Hero Content */}
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20 w-full">
-    
-    {/* Animated Badge */}
-    <div className="flex justify-center mb-8">
-      <div className="flex items-center gap-4 animate-pulse">
-        <div className="h-3 w-3 bg-orange-400 rounded-full animate-ping"></div>
-        <span className="text-white uppercase tracking-wider text-sm font-bold px-4 py-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm">
-           Transforming Data to Decisions Through Intelligent Systems
-        </span>
-        <div className="h-3 w-3 bg-orange-400 rounded-full animate-ping"></div>
+
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+    <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-20 lg:py-16">
+
+      {/* Text column */}
+      <div className="text-left">
+        <div className="inline-flex items-center gap-3 mb-6">
+          <span className="h-2.5 w-2.5 bg-orange-400 rounded-full animate-pulse"></span>
+          <span className="text-orange-300 uppercase tracking-wider text-xs sm:text-sm font-bold">Transforming Data to Decisions</span>
+        </div>
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+          Data Engineering &amp; Predictive Analytics for <span className="text-orange-400">Intelligent, Trustworthy Systems</span>
+        </h1>
+        <p className="text-lg sm:text-xl text-blue-100 leading-relaxed mb-8 max-w-xl">
+          The DEPA Lab at Morgan State University builds data-intensive AI systems that turn complex engineering data into predictive insight, reliable decisions, and deployable technologies &mdash; across data engineering, computer vision, trustworthy AI, cybersecurity, intelligent transportation, autonomous mobility, and decision support.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <a
+            href="#research"
+            className="px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl text-center"
+          >
+            Explore Our Research
+          </a>
+          <button
+            onClick={() => openView('join-us')}
+            className="px-8 py-4 bg-white/10 border border-white/40 text-white hover:bg-white hover:text-blue-700 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm text-center"
+          >
+            Collaborate With DEPA
+          </button>
+        </div>
       </div>
+
+      {/* Image column (same hero image, now shown alongside the text) */}
+      <div className="relative">
+        <div className="absolute -inset-3 bg-orange-500/20 rounded-[2rem] blur-2xl pointer-events-none" aria-hidden="true"></div>
+        <div className="hidden lg:block absolute -bottom-5 -left-5 h-24 w-24 bg-orange-500 rounded-2xl" aria-hidden="true"></div>
+        <div className="relative z-10 rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
+          <img
+            src="/depa-lab/images/depa2.jpeg"
+            alt="DEPA Lab researchers analyzing transportation and sensor data on large visualization displays"
+            className="w-full h-64 sm:h-80 lg:h-[520px] object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent pointer-events-none"></div>
+        </div>
+      </div>
+
     </div>
-    
-    {/* Main Title */}
-    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight text-white max-w-5xl mx-auto drop-shadow-2xl">
-      Data Engineering and Predictive Analytics for Intelligent, Trustworthy Systems
-    </h1>
-
-    {/* Body */}
-    <p className="text-lg sm:text-xl text-blue-100 leading-relaxed mb-12 max-w-4xl mx-auto">
-      The Data Engineering and Predictive Analytics (DEPA) Lab at Morgan State University develops data-intensive artificial intelligence systems that transform complex engineering data into predictive insight, reliable decisions, and deployable technologies. Our work spans data engineering, computer vision, trustworthy AI, cybersecurity, intelligent transportation, autonomous mobility, and decision support.
-    </p>
-
-    {/* Call to Action Buttons */}
-    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
-      <a 
-        href="#research" 
-        className="w-full sm:w-auto group px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full font-bold text-lg transition-all duration-500 transform hover:scale-105 shadow-2xl"
-      >
-        <span className="relative z-10 flex items-center justify-center">
-          Explore Our Research
-          </span>
-      </a>
-      <button
-        onClick={() => openView('join-us')}
-        className="w-full sm:w-auto group px-8 py-4 bg-white text-blue-600 hover:bg-blue-50 rounded-full font-bold text-lg transition-all duration-500 transform hover:scale-105 shadow-2xl"
-      >
-        <span className="relative z-10 flex items-center justify-center">
-          Collaborate With DEPA
-          </span>
-      </button>
-    </div>
-
-    <div className="h-2 w-32 bg-orange-500 mx-auto rounded-full shadow-2xl animate-pulse mt-12"></div>
   </div>
-  
-  {/* Scroll Down Indicator */}
-  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-    <div className="flex flex-col items-center group cursor-pointer">
-      <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center">
-        <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-      </div>
-      <span className="text-white text-xs mt-2">Scroll</span>
+
+  {/* Scroll indicator */}
+  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce hidden sm:block">
+    <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+      <div className="w-1 h-3 bg-white/80 rounded-full mt-2"></div>
     </div>
   </div>
 </section>
@@ -1718,20 +1885,25 @@ const DepaLabHomepage = () => {
             {/* Four Research Programs (Guide 5.1) */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
               {researchPrograms.map((program, index) => (
-                <div key={program.title} className="bg-white rounded-2xl p-6 sm:p-8 border border-blue-200 shadow-xl h-full flex flex-col">
-                  <div className="flex items-start gap-3 mb-3">
-                    <span className="flex-shrink-0 w-9 h-9 rounded-full bg-orange-500 text-white font-black flex items-center justify-center">{index + 1}</span>
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{program.title}</h3>
+                <div key={program.title} className="bg-white rounded-2xl border border-blue-200 shadow-xl h-full flex flex-col overflow-hidden">
+                  <div className="border-b border-blue-100">
+                    <ProgramVisual index={index} />
                   </div>
-                  <p className="text-gray-800 leading-relaxed flex-grow">{program.description}</p>
-                  {program.view ? (
-                    <button
-                      onClick={() => openView(program.view)}
-                      className="self-start inline-flex items-center mt-4 px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg text-sm font-semibold transition-all duration-300"
-                    >
-                      Explore Program
-                    </button>
-                  ) : null}
+                  <div className="p-6 sm:p-8 flex flex-col flex-grow">
+                    <div className="flex items-start gap-3 mb-3">
+                      <span className="flex-shrink-0 w-9 h-9 rounded-full bg-orange-500 text-white font-black flex items-center justify-center">{index + 1}</span>
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{program.title}</h3>
+                    </div>
+                    <p className="text-gray-800 leading-relaxed flex-grow">{program.description}</p>
+                    {program.view ? (
+                      <button
+                        onClick={() => openView(program.view)}
+                        className="self-start inline-flex items-center mt-4 px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg text-sm font-semibold transition-all duration-300"
+                      >
+                        Explore Program
+                      </button>
+                    ) : null}
+                  </div>
                 </div>
               ))}
             </div>
