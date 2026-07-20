@@ -4,21 +4,74 @@ import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 // Static data — declared once at module scope (not re-created on every render).
 // -----------------------------------------------------------------------------
 
-const presentTeamMembers = [
-  { name: "Dr. Kofi Nyarko", role: "Director of DEPA Lab", image: "nyarko.jpg" },
-  { name: "Cynthia Nosiri", role: "AI Researcher", image: "Cynthia.jpeg" },
-  { name: "Derrick Cook", role: "AI Researcher", image: "Derrick_Cook.PNG" },
-  { name: "Rezoan Sultan", role: "Human-AI Interaction Research Engineer", image: "Rezoan_Sultan.jpeg" },
-  { name: "Benjamin Hall", role: "Researcher", image: "Benjamin Hall.jpg" },
-  { name: "Emmanuel Masa-ibi", role: "Researcher", image: "Emmanuel Masa-ibi.jpeg" },
-  { name: "Awotwi Baffoe", role: "AI Researcher", image: "Awotwi_Baffoe.jpg" },
-  { name: "Opeyemi Adeniran", role: "AI Research Engineer", image: "Opeyemi.PNG" },
-  { name: "Anjolie Anthony", role: "Researcher", image: "Anjolie.JPG" },
-  { name: "Binisa Giri", role: "AI Researcher", image: "Binisa_Giri.jpeg" },
-  { name: "Nicholas Cook", role: "AI Researcher", image: "NicholasCook.jpg" },
-  { name: "Temitope Ajibola", role: "AI Researcher", image: "Temi.JPG" },
-  { name: "David Nyarko", role: "Researcher", image: "david-nyarko.JPG" },
-];
+const projects = [
+    {
+      title: "UrbanFlow: Accessible Autonomous Mobility",
+      description: "Flagship retrofit autonomous mobility platform combining LiDAR, computer vision, localization, mapping, and planning to support safe navigation in complex indoor and outdoor environments.",
+      link: "urbanflow",
+      icon: ""
+    },
+    {
+      title: "Trustworthy AI for Cybersecurity & Cyber-Physical Systems",
+      description: "Program developing and evaluating AI methods for threat detection, explainability, robustness, and human oversight in cybersecurity and cyber-physical systems.",
+      link: "trustworthy-ai",
+      icon: ""
+    },
+    {
+      title: "XPCI Crack Detection and Categorization",
+      description: "Automated crack detection in low-density materials using X-ray Phase Contrast Imaging (XPCI) with YOLOv11 deep learning architecture.",
+      link: "xpci-crack-detection",
+      icon: ""
+    },
+    {
+      title: "MSU AI Academic Advisor",
+      description: "Multi-step agent pipeline leveraging transformer-based LLMs fine-tuned with human feedback for personalized academic guidance.",
+      link: "msu-ai-advisor",
+      icon: ""
+    },
+    {
+      title: "Cyber Shield",
+      description: "Abusive language detection system using DistilBERT model to assess sentiment and detect harmful content in user-generated text.",
+      link: "cyber-shield",
+      icon: ""
+    },
+    {
+      title: "Benchmarking LLMs for AAVE & SAE",
+      description: "Research investigating how large language models handle different English dialects, focusing on African American Vernacular English versus Standard American English.",
+      link: "llm-benchmarking",
+      icon: ""
+    },
+    {
+      title: "Quantized LLM for Airport Navigation",
+      description: "Lightweight language model system using quantized LLMs for efficient performance on limited hardware for airport assistance.",
+      link: "quantized-llm-navigation",
+      icon: ""
+    },
+    {
+      title: "Vision-based Autonomous Drone Object Tracking",
+      description: "Autonomous wheelchair system with follower drone for luggage tracking using person re-identification and real-time object tracking.",
+      link: "drone-tracking-system",
+      icon: ""
+    },
+    {
+      title: "AI/ML Bench Guard",
+      description: "Comprehensive benchmarking framework for evaluating cloud-based, LLM, and open-source machine learning services.",
+      link: "ml-bench-guard",
+      icon: ""
+    },
+    {
+      title: "Multimodal LLMs for Forensic Video Analysis",
+      description: "Investigating prompting strategies in multimodal large language models for human-aligned forensic video analysis applications.",
+      link: "forensic-video-analysis",
+      icon: ""
+    },
+    {
+      title: "Smart Contract Reentrancy Detection",
+      description: "Automated detection of reentrancy vulnerabilities in smart contracts using hybrid feature engineering approach.",
+      link: "smart-contract-detection",
+      icon: ""
+    }
+  ];
 
 // Snapshot date shown wherever counts/metrics appear. Update on each content review.
 const METRICS_AS_OF = "As of June 2026";
@@ -582,79 +635,11 @@ const DepaLabHomepage = () => {
     else navigate(item.target);
   }, [openView, navigate]);
 
-  const projects = [
-    {
-      title: "UrbanFlow: Accessible Autonomous Mobility",
-      description: "Flagship retrofit autonomous mobility platform combining LiDAR, computer vision, localization, mapping, and planning to support safe navigation in complex indoor and outdoor environments.",
-      link: "urbanflow",
-      icon: ""
-    },
-    {
-      title: "Trustworthy AI for Cybersecurity & Cyber-Physical Systems",
-      description: "Program developing and evaluating AI methods for threat detection, explainability, robustness, and human oversight in cybersecurity and cyber-physical systems.",
-      link: "trustworthy-ai",
-      icon: ""
-    },
-    {
-      title: "XPCI Crack Detection and Categorization",
-      description: "Automated crack detection in low-density materials using X-ray Phase Contrast Imaging (XPCI) with YOLOv11 deep learning architecture.",
-      link: "xpci-crack-detection",
-      icon: ""
-    },
-    {
-      title: "MSU AI Academic Advisor",
-      description: "Multi-step agent pipeline leveraging transformer-based LLMs fine-tuned with human feedback for personalized academic guidance.",
-      link: "msu-ai-advisor",
-      icon: ""
-    },
-    {
-      title: "Cyber Shield",
-      description: "Abusive language detection system using DistilBERT model to assess sentiment and detect harmful content in user-generated text.",
-      link: "cyber-shield",
-      icon: ""
-    },
-    {
-      title: "Benchmarking LLMs for AAVE & SAE",
-      description: "Research investigating how large language models handle different English dialects, focusing on African American Vernacular English versus Standard American English.",
-      link: "llm-benchmarking",
-      icon: ""
-    },
-    {
-      title: "Quantized LLM for Airport Navigation",
-      description: "Lightweight language model system using quantized LLMs for efficient performance on limited hardware for airport assistance.",
-      link: "quantized-llm-navigation",
-      icon: ""
-    },
-    {
-      title: "Vision-based Autonomous Drone Object Tracking",
-      description: "Autonomous wheelchair system with follower drone for luggage tracking using person re-identification and real-time object tracking.",
-      link: "drone-tracking-system",
-      icon: ""
-    },
-    {
-      title: "AI/ML Bench Guard",
-      description: "Comprehensive benchmarking framework for evaluating cloud-based, LLM, and open-source machine learning services.",
-      link: "ml-bench-guard",
-      icon: ""
-    },
-    {
-      title: "Multimodal LLMs for Forensic Video Analysis",
-      description: "Investigating prompting strategies in multimodal large language models for human-aligned forensic video analysis applications.",
-      link: "forensic-video-analysis",
-      icon: ""
-    },
-    {
-      title: "Smart Contract Reentrancy Detection",
-      description: "Automated detection of reentrancy vulnerabilities in smart contracts using hybrid feature engineering approach.",
-      link: "smart-contract-detection",
-      icon: ""
-    }
-  ];
 
-  // Research Components — memoized so the 12 inner component functions are not
-  // re-allocated on every render. setCurrentView is a stable reference from
-  // useState, so an empty dependency array is correct.
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+  // Research Components — memoized so the inner component functions are not
+  // re-allocated on every render. All data referenced is module-scope and
+  // setCurrentView is a stable useState reference, so [] is correct.
   const ResearchComponents = useMemo(() => ({
     'xpci-crack-detection': () => (
       <div className="min-h-screen bg-white">
@@ -1535,6 +1520,72 @@ const DepaLabHomepage = () => {
       </div>
     ),
 
+    'projects': () => (
+      <div className="min-h-screen bg-white">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">Project <span className="text-blue-600">Portfolio</span></h1>
+              <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
+            </div>
+            <p className="text-lg sm:text-xl text-gray-900 text-center mb-12 max-w-4xl mx-auto">
+              DEPA&rsquo;s active and completed projects span data engineering, predictive analytics, trustworthy AI, cybersecurity, computer vision, and autonomous systems. Select a project to see its goals, methods, and outcomes.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.map((project, index) => (
+                <div key={index} className="group transform hover:scale-105 transition-all duration-500">
+                  <div className="bg-blue-50 rounded-2xl p-8 border border-blue-200 shadow-lg h-full hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{project.title}</h3>
+                    <p className="text-gray-900 leading-relaxed mb-6 flex-grow">{project.description}</p>
+                    <button
+                      onClick={() => setCurrentView(project.link)}
+                      className="self-start inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+    'about': () => (
+      <div className="min-h-screen bg-white">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-8">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">About the <span className="text-blue-600">DEPA Lab</span></h1>
+              <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
+            </div>
+
+            <p className="text-lg sm:text-xl text-gray-900 leading-relaxed text-center mb-10 max-w-4xl mx-auto">
+              The DEPA Lab at Morgan State University builds data-intensive AI systems that turn complex engineering data into predictive insight, reliable decisions, and deployable technologies &mdash; across data engineering, computer vision, trustworthy AI, cybersecurity, intelligent transportation, autonomous mobility, and decision support.
+            </p>
+
+            <div className="bg-blue-50 rounded-3xl p-6 sm:p-10 border border-blue-200 shadow-lg mb-12">
+              <p className="text-lg sm:text-xl text-gray-900 leading-relaxed text-center">
+                DEPA is a research laboratory within Morgan State University&rsquo;s{' '}
+                <a href="https://www.morgan.edu/ceamls" target="_blank" rel="noopener noreferrer" className="text-blue-600 font-semibold underline">Center for Equitable Artificial Intelligence and Machine Learning Systems (CEAMLS)</a>. DEPA leads work in data engineering, predictive modeling, optimization, decision support, and data-intensive AI systems. Projects involving robotics, intelligent sensing, and autonomous platforms may be conducted jointly with the Robotics, Autonomy &amp; Intelligent Networks (RAIN) Lab.
+              </p>
+            </div>
+
+            <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-6 text-center">Technical Capabilities</h2>
+            <div className="bg-blue-50 rounded-3xl p-6 sm:p-8 border border-blue-200">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {technicalCapabilities.map((cap) => (
+                  <li key={cap} className="flex items-start gap-2 text-gray-900">
+                    <span className="text-orange-500 mt-1">&#9656;</span>
+                    <span>{cap}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
   }), []);
 
   // ---- Reusable layout fragments ------------------------------------------
@@ -1543,8 +1594,9 @@ const DepaLabHomepage = () => {
 
   const NAV_ITEMS = [
     { label: 'Home', kind: 'scroll', target: 'hero' },
+    { label: 'About', kind: 'view', target: 'about' },
     { label: 'Research', kind: 'scroll', target: 'research' },
-    { label: 'Projects', kind: 'scroll', target: 'projects' },
+    { label: 'Projects', kind: 'view', target: 'projects' },
     { label: 'Publications', kind: 'view', target: 'publications' },
     { label: 'Innovation', kind: 'view', target: 'innovation-ip' },
     { label: 'People', kind: 'view', target: 'people' },
@@ -1676,8 +1728,9 @@ const DepaLabHomepage = () => {
             <h4 className="text-base sm:text-lg font-bold mb-4 uppercase tracking-wider text-orange-300">Explore</h4>
             <ul className="space-y-2 text-blue-100 text-sm sm:text-base">
               {[
+                { label: 'About', kind: 'view', target: 'about' },
                 { label: 'Research', kind: 'scroll', target: 'research' },
-                { label: 'Projects', kind: 'scroll', target: 'projects' },
+                { label: 'Projects', kind: 'view', target: 'projects' },
                 { label: 'Publications', kind: 'view', target: 'publications' },
                 { label: 'People', kind: 'view', target: 'people' },
                 { label: 'Impact', kind: 'view', target: 'impact' },
@@ -1786,12 +1839,9 @@ const DepaLabHomepage = () => {
           <span className="h-2.5 w-2.5 bg-orange-400 rounded-full animate-pulse"></span>
           <span className="text-orange-300 uppercase tracking-wider text-xs sm:text-sm font-bold">Transforming Data to Decisions</span>
         </div>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-8">
           Data Engineering &amp; Predictive Analytics for <span className="text-orange-400">Intelligent, Trustworthy Systems</span>
         </h1>
-        <p className="text-lg sm:text-xl text-blue-100 leading-relaxed mb-8 max-w-xl">
-          The DEPA Lab at Morgan State University builds data-intensive AI systems that turn complex engineering data into predictive insight, reliable decisions, and deployable technologies &mdash; across data engineering, computer vision, trustworthy AI, cybersecurity, intelligent transportation, autonomous mobility, and decision support.
-        </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <a
             href="#research"
@@ -1832,18 +1882,6 @@ const DepaLabHomepage = () => {
     </div>
   </div>
 </section>
-
-        {/* Institutional Context: DEPA / CEAMLS / RAIN (Guide 4.2) */}
-        <section id="context" className="py-16 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto bg-blue-50 rounded-3xl p-6 sm:p-10 border border-blue-200 shadow-lg">
-              <p className="text-lg sm:text-xl text-gray-900 leading-relaxed text-center">
-                DEPA is a research laboratory within Morgan State University&rsquo;s{' '}
-                <a href="https://www.morgan.edu/ceamls" target="_blank" rel="noopener noreferrer" className="text-blue-600 font-semibold underline">Center for Equitable Artificial Intelligence and Machine Learning Systems (CEAMLS)</a>. DEPA leads work in data engineering, predictive modeling, optimization, decision support, and data-intensive AI systems. Projects involving robotics, intelligent sensing, and autonomous platforms may be conducted jointly with the Robotics, Autonomy &amp; Intelligent Networks (RAIN) Lab.
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* Impact Metrics Strip (Guide 4.3) */}
         <section id="metrics" className="py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
@@ -1907,21 +1945,6 @@ const DepaLabHomepage = () => {
                 </div>
               ))}
             </div>
-
-            {/* Technical Capabilities (Guide 5.2) */}
-            <div className="max-w-6xl mx-auto mt-14">
-              <h3 className="text-2xl sm:text-3xl font-black text-white mb-6 text-center">Technical Capabilities</h3>
-              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-white/20">
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {technicalCapabilities.map((cap) => (
-                    <li key={cap} className="flex items-start gap-2 text-blue-50">
-                      <span className="text-orange-400 mt-1">&#9656;</span>
-                      <span>{cap}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -1949,143 +1972,6 @@ const DepaLabHomepage = () => {
                   </button>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Projects Section */}
-        <section id="projects" className="mb-24 py-16 bg-white">
-
-          <div className="container mx-auto px-4 sm:px-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-12 text-center">
-              Innovative Projects and{' '}
-              <span className="text-blue-600">
-                Research Highlights
-              </span>
-            </h2>
-            
-            <p className="text-xl text-gray-900 text-center mb-12 max-w-4xl mx-auto">
-              At DEPA Research Lab, we are at the forefront of cutting-edge research, solving complex real-world challenges through interdisciplinary approaches.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
-                <div key={index} className="group transform hover:scale-105 transition-all duration-500">
-                  <div className="bg-blue-50 rounded-2xl p-8 border border-blue-200 shadow-lg h-full hover:shadow-xl transition-all duration-300">
-                    <div className="text-center mb-4">
-                      <div className="text-4xl mb-4">{project.icon}</div>
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-900 leading-relaxed mb-6">
-                      {project.description}
-                    </p>
-                    <button 
-                      onClick={() => setCurrentView(project.link)}
-                      className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-                    >
-                      Learn More
-                      </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="team" className="mb-24 py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
-          <div className="container mx-auto px-4 sm:px-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-8 text-center">
-              Meet Our{' '}
-              <span className="text-white">
-                Team
-              </span>
-            </h2>
-            
-            <p className="text-xl text-blue-100 text-center mb-12 max-w-3xl mx-auto">
-              Meet the brilliant minds behind DEPA Lab's groundbreaking research and innovation.
-            </p>
-
-            {/* Team Carousel */}
-            <div className="relative max-w-7xl mx-auto">
-              <button 
-                onClick={() => {
-                  const container = document.getElementById('team-carousel');
-                  if (container) container.scrollBy({ left: -400, behavior: 'smooth' });
-                }}
-                aria-label="Scroll team carousel left"
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full hidden sm:flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              
-              <button 
-                onClick={() => {
-                  const container = document.getElementById('team-carousel');
-                  if (container) container.scrollBy({ left: 400, behavior: 'smooth' });
-                }}
-                aria-label="Scroll team carousel right"
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 rounded-full hidden sm:flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 transform hover:scale-110 shadow-2xl"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-
-              <div 
-                id="team-carousel"
-                className="flex overflow-x-auto gap-4 sm:gap-6 pb-4 px-2 sm:px-12 scrollbar-hide snap-x snap-mandatory"
-              >
-                {presentTeamMembers.map((member, index) => (
-                  <div key={index} className="flex-shrink-0 w-56 sm:w-64 snap-start group transform hover:scale-105 transition-all duration-500">
-                    <div className="bg-white rounded-2xl p-6 border border-blue-200 shadow-xl text-center h-full">
-                      <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-400 shadow-2xl">
-                        <img 
-                          src={`/depa-lab/images/${member.image}`}
-                          alt={member.name}
-                          loading="lazy"
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            e.target.style.display = 'none';
-                            const fallback = e.target.nextSibling;
-                            if (fallback && fallback.style) fallback.style.display = 'flex';
-                          }}
-                        />
-                        <div 
-                          className="w-full h-full absolute inset-0 flex items-center justify-center text-3xl text-white font-bold"
-                          style={{
-                            background: `linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%)`,
-                            display: 'none'
-                          }}
-                        >
-                          {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
-                        </div>
-                      </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">
-                        {member.name}
-                      </h4>
-                      <p className="text-gray-800 font-medium">
-                        {member.role}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="text-center mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <div className="inline-flex items-center px-8 py-4 bg-white/10 border border-white/30 text-white rounded-full font-bold text-lg">
-                {presentTeamMembers.length} Active Researchers Building the Future of AI
-              </div>
-              <button
-                onClick={() => openView('people')}
-                className="inline-flex items-center px-6 py-3 bg-white text-blue-700 rounded-full font-bold hover:bg-blue-50 transition-all duration-300 shadow-lg"
-              >
-                View Full Profiles
-              </button>
             </div>
           </div>
         </section>
