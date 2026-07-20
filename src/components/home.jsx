@@ -1484,6 +1484,16 @@ const DepaLabHomepage = () => {
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
 
+            <p className="text-lg sm:text-xl text-gray-900 leading-relaxed text-center mb-8 max-w-4xl mx-auto">
+              The DEPA Lab at Morgan State University builds data-intensive AI systems that turn complex engineering data into predictive insight, reliable decisions, and deployable technologies &mdash; across data engineering, computer vision, trustworthy AI, cybersecurity, intelligent transportation, autonomous mobility, and decision support.
+            </p>
+            <div className="bg-blue-50 rounded-3xl p-6 sm:p-8 border border-blue-200 shadow-md mb-10">
+              <p className="text-base sm:text-lg text-gray-900 leading-relaxed text-center">
+                DEPA is a research laboratory within Morgan State University&rsquo;s{' '}
+                <a href="https://www.morgan.edu/ceamls" target="_blank" rel="noopener noreferrer" className="text-blue-600 font-semibold underline">Center for Equitable Artificial Intelligence and Machine Learning Systems (CEAMLS)</a>. DEPA leads work in data engineering, predictive modeling, optimization, decision support, and data-intensive AI systems. Projects involving robotics, intelligent sensing, and autonomous platforms may be conducted jointly with the Robotics, Autonomy &amp; Intelligent Networks (RAIN) Lab.
+              </p>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="bg-blue-50 rounded-3xl p-6 sm:p-8 border border-blue-200 shadow-md">
                 <h2 className="text-2xl font-bold text-blue-600 mb-4">For Students</h2>
@@ -1506,6 +1516,21 @@ const DepaLabHomepage = () => {
                 <p className="text-gray-900 leading-relaxed">
                   Prospective partners should provide a concise description of the problem, available data or environment, intended users, timeline, and potential resources.
                 </p>
+              </div>
+            </div>
+
+            <div className="mt-12">
+              <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-2 text-center">Technical Capabilities</h2>
+              <p className="text-gray-700 text-center mb-6 max-w-3xl mx-auto">What DEPA can perform for prospective students and partners.</p>
+              <div className="bg-blue-50 rounded-3xl p-6 sm:p-8 border border-blue-200">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {technicalCapabilities.map((cap) => (
+                    <li key={cap} className="flex items-start gap-2 text-gray-900">
+                      <span className="text-orange-500 mt-1">&#9656;</span>
+                      <span>{cap}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
@@ -1551,41 +1576,6 @@ const DepaLabHomepage = () => {
         </div>
       </div>
     ),
-    'about': () => (
-      <div className="min-h-screen bg-white">
-        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-8">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">About the <span className="text-blue-600">DEPA Lab</span></h1>
-              <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
-            </div>
-
-            <p className="text-lg sm:text-xl text-gray-900 leading-relaxed text-center mb-10 max-w-4xl mx-auto">
-              The DEPA Lab at Morgan State University builds data-intensive AI systems that turn complex engineering data into predictive insight, reliable decisions, and deployable technologies &mdash; across data engineering, computer vision, trustworthy AI, cybersecurity, intelligent transportation, autonomous mobility, and decision support.
-            </p>
-
-            <div className="bg-blue-50 rounded-3xl p-6 sm:p-10 border border-blue-200 shadow-lg mb-12">
-              <p className="text-lg sm:text-xl text-gray-900 leading-relaxed text-center">
-                DEPA is a research laboratory within Morgan State University&rsquo;s{' '}
-                <a href="https://www.morgan.edu/ceamls" target="_blank" rel="noopener noreferrer" className="text-blue-600 font-semibold underline">Center for Equitable Artificial Intelligence and Machine Learning Systems (CEAMLS)</a>. DEPA leads work in data engineering, predictive modeling, optimization, decision support, and data-intensive AI systems. Projects involving robotics, intelligent sensing, and autonomous platforms may be conducted jointly with the Robotics, Autonomy &amp; Intelligent Networks (RAIN) Lab.
-              </p>
-            </div>
-
-            <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-6 text-center">Technical Capabilities</h2>
-            <div className="bg-blue-50 rounded-3xl p-6 sm:p-8 border border-blue-200">
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {technicalCapabilities.map((cap) => (
-                  <li key={cap} className="flex items-start gap-2 text-gray-900">
-                    <span className="text-orange-500 mt-1">&#9656;</span>
-                    <span>{cap}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
   }), []);
 
   // ---- Reusable layout fragments ------------------------------------------
@@ -1594,7 +1584,6 @@ const DepaLabHomepage = () => {
 
   const NAV_ITEMS = [
     { label: 'Home', kind: 'scroll', target: 'hero' },
-    { label: 'About', kind: 'view', target: 'about' },
     { label: 'Research', kind: 'scroll', target: 'research' },
     { label: 'Projects', kind: 'view', target: 'projects' },
     { label: 'Publications', kind: 'view', target: 'publications' },
@@ -1643,7 +1632,7 @@ const DepaLabHomepage = () => {
           {/* Desktop CTA */}
           <div className="hidden lg:block">
             <button
-              onClick={() => navigate('contact')}
+              onClick={() => openView('join-us')}
               className="relative inline-flex items-center px-5 py-2.5 xl:px-6 xl:py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group overflow-hidden focus:outline-none"
             >
               <span>Get In Touch</span>
@@ -1690,7 +1679,7 @@ const DepaLabHomepage = () => {
               ))}
               <div className="pt-3 border-t border-blue-200">
                 <button
-                  onClick={() => navigate('contact')}
+                  onClick={() => openView('join-us')}
                   className="flex items-center justify-center w-full px-6 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none"
                 >
                   <span>Get In Touch</span>
@@ -1728,7 +1717,6 @@ const DepaLabHomepage = () => {
             <h4 className="text-base sm:text-lg font-bold mb-4 uppercase tracking-wider text-orange-300">Explore</h4>
             <ul className="space-y-2 text-blue-100 text-sm sm:text-base">
               {[
-                { label: 'About', kind: 'view', target: 'about' },
                 { label: 'Research', kind: 'scroll', target: 'research' },
                 { label: 'Projects', kind: 'view', target: 'projects' },
                 { label: 'Publications', kind: 'view', target: 'publications' },
@@ -2023,34 +2011,6 @@ const DepaLabHomepage = () => {
               >
                 Explore Opportunities
               </button>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section id="contact" className="mb-24 py-16 bg-white">
-
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="bg-blue-50 rounded-3xl p-6 sm:p-10 lg:p-12 border border-blue-200 shadow-xl text-center">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-8">
-                Contact{' '}
-                <span className="text-blue-600">
-                  Us
-                </span>
-              </h2>
-              
-              <div className="space-y-6 max-w-3xl mx-auto">
-                <p className="text-xl text-gray-900">
-                  <span className="text-blue-600 font-semibold">Email:</span>{' '}
-                  <a href="mailto:kofi.nyarko@morgan.edu" className="text-gray-900 hover:text-blue-600 transition-colors duration-300 underline">
-                    kofi.nyarko@morgan.edu
-                  </a>
-                </p>
-                
-                <p className="text-xl text-gray-900 leading-relaxed">
-                  <span className="text-blue-600 font-semibold">Address:</span> Room 112 and 113 Schaefer Engineering Building, School of Engineering, 1700 E Cold Spring Ln, Baltimore, MD 21251
-                </p>
-              </div>
             </div>
           </div>
         </section>
