@@ -1784,12 +1784,12 @@ const DepaLabHomepage = () => {
       <main className="flex-grow pt-16 sm:pt-20">
         
         {/* Hero Section */}
-        <section id="hero" className="relative overflow-hidden bg-white pt-16">
+        <section id="hero" className="relative overflow-hidden bg-white">
           <div className="absolute inset-0 bg-grid-ink opacity-40 pointer-events-none" aria-hidden="true"></div>
           <div className="absolute top-0 right-0 h-full w-2/3 bg-gradient-to-l from-blue-50 via-blue-50/40 to-transparent pointer-events-none" aria-hidden="true"></div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center py-14 sm:py-20 lg:py-20 min-h-[calc(100vh-4rem)]">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center py-8 sm:py-10 lg:py-14">
 
               {/* Text column */}
               <div className="lg:col-span-6 text-left">
