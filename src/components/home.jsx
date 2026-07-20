@@ -1828,28 +1828,31 @@ const DepaLabHomepage = () => {
                 </div>
               </div>
 
-              {/* Honeycomb image cluster */}
+              {/* Honeycomb image cluster (slanted left-to-right) */}
               <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-                <svg viewBox="0 0 460 600" className="w-full max-w-[400px] sm:max-w-[460px] h-auto" role="img" aria-label="DEPA Lab researchers and team">
+                <svg viewBox="0 0 490 560" className="w-full max-w-[440px] sm:max-w-[520px] h-auto" role="img" aria-label="DEPA Lab research imagery arranged as a slanted honeycomb">
                   <defs>
-                    <clipPath id="hxC"><path d="M230,190 L316.6,240 L316.6,340 L230,390 L143.4,340 L143.4,240 Z" /></clipPath>
-                    <clipPath id="hxNE"><path d="M316.6,40 L403.2,90 L403.2,190 L316.6,240 L230,190 L230,90 Z" /></clipPath>
-                    <clipPath id="hxNW"><path d="M143.4,40 L230,90 L230,190 L143.4,240 L56.8,190 L56.8,90 Z" /></clipPath>
-                    <clipPath id="hxSE"><path d="M316.6,340 L403.2,390 L403.2,490 L316.6,540 L230,490 L230,390 Z" /></clipPath>
+                    <clipPath id="hxA"><path d="M130,40 L216.6,90 L216.6,190 L130,240 L43.4,190 L43.4,90 Z" /></clipPath>
+                    <clipPath id="hxB"><path d="M216.6,190 L303.2,240 L303.2,340 L216.6,390 L130,340 L130,240 Z" /></clipPath>
+                    <clipPath id="hxC"><path d="M303.2,340 L389.8,390 L389.8,490 L303.2,540 L216.6,490 L216.6,390 Z" /></clipPath>
                   </defs>
-                  <image href="/depa-lab/images/depa2.jpeg" x="143.4" y="190" width="173.2" height="200" preserveAspectRatio="xMidYMid slice" clipPath="url(#hxC)" />
-                  <image href="/depa-lab/images/nyarko.jpg" x="230" y="40" width="173.2" height="200" preserveAspectRatio="xMidYMin slice" clipPath="url(#hxNE)" />
-                  <image href="/depa-lab/images/Cynthia.jpeg" x="56.8" y="40" width="173.2" height="200" preserveAspectRatio="xMidYMin slice" clipPath="url(#hxNW)" />
-                  <image href="/depa-lab/images/Rezoan_Sultan.jpeg" x="230" y="340" width="173.2" height="200" preserveAspectRatio="xMidYMin slice" clipPath="url(#hxSE)" />
-                  <path d="M230,190 L316.6,240 L316.6,340 L230,390 L143.4,340 L143.4,240 Z" fill="none" stroke="#ffffff" strokeWidth="4" />
-                  <path d="M316.6,40 L403.2,90 L403.2,190 L316.6,240 L230,190 L230,90 Z" fill="none" stroke="#ffffff" strokeWidth="4" />
-                  <path d="M143.4,40 L230,90 L230,190 L143.4,240 L56.8,190 L56.8,90 Z" fill="none" stroke="#ffffff" strokeWidth="4" />
-                  <path d="M316.6,340 L403.2,390 L403.2,490 L316.6,540 L230,490 L230,390 Z" fill="none" stroke="#ffffff" strokeWidth="4" />
-                  <path d="M143.4,340 L230,390 L230,490 L143.4,540 L56.8,490 L56.8,390 Z" fill="#f97316" />
-                  <circle cx="120" cy="440" r="7" fill="#ffffff" />
-                  <circle cx="165" cy="422" r="7" fill="#ffffff" />
-                  <circle cx="165" cy="458" r="7" fill="#ffffff" />
-                  <path d="M120,440 L165,422 M120,440 L165,458" stroke="#ffffff" strokeWidth="2.5" opacity="0.85" />
+                  <image href="/depa-lab/images/depa2.jpeg" x="43.4" y="40" width="173.2" height="200" preserveAspectRatio="xMinYMid slice" clipPath="url(#hxA)" />
+                  <image href="/depa-lab/images/depa2.jpeg" x="130" y="190" width="173.2" height="200" preserveAspectRatio="xMidYMid slice" clipPath="url(#hxB)" />
+                  <image href="/depa-lab/images/depa2.jpeg" x="216.6" y="340" width="173.2" height="200" preserveAspectRatio="xMaxYMid slice" clipPath="url(#hxC)" />
+                  <path d="M130,40 L216.6,90 L216.6,190 L130,240 L43.4,190 L43.4,90 Z" fill="none" stroke="#ffffff" strokeWidth="4" />
+                  <path d="M216.6,190 L303.2,240 L303.2,340 L216.6,390 L130,340 L130,240 Z" fill="none" stroke="#ffffff" strokeWidth="4" />
+                  <path d="M303.2,340 L389.8,390 L389.8,490 L303.2,540 L216.6,490 L216.6,390 Z" fill="none" stroke="#ffffff" strokeWidth="4" />
+                  {/* Orange accent hex (top-right) with data nodes */}
+                  <path d="M303.2,40 L389.8,90 L389.8,190 L303.2,240 L216.6,190 L216.6,90 Z" fill="#f97316" />
+                  <circle cx="283" cy="140" r="7" fill="#ffffff" />
+                  <circle cx="318" cy="123" r="7" fill="#ffffff" />
+                  <circle cx="318" cy="157" r="7" fill="#ffffff" />
+                  <path d="M283,140 L318,123 M283,140 L318,157" stroke="#ffffff" strokeWidth="2.5" opacity="0.85" />
+                  {/* Navy accent hex (mid-right) */}
+                  <path d="M389.8,190 L476.4,240 L476.4,340 L389.8,390 L303.2,340 L303.2,240 Z" fill="#124d89" />
+                  <circle cx="389.8" cy="290" r="8" fill="#f97316" />
+                  <circle cx="366" cy="268" r="4" fill="#ffffff" opacity="0.7" />
+                  <circle cx="413" cy="312" r="4" fill="#ffffff" opacity="0.7" />
                 </svg>
               </div>
 
