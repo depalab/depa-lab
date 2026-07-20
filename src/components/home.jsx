@@ -1901,42 +1901,40 @@ const DepaLabHomepage = () => {
         </section>
 
         {/* Research Areas Section */}
-        <section id="research" className="mb-24 py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
+        <section id="research" className="mb-24 py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="h-px w-8 bg-orange-400"></span>
-              <span className="eyebrow text-orange-300">Research</span>
+              <span className="eyebrow text-orange-500">Research</span>
               <span className="h-px w-8 bg-orange-400"></span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 text-center">
-              Research <span className="text-orange-400">Programs</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-center">
+              Research <span className="text-blue-600">Programs</span>
             </h2>
-            <p className="text-lg sm:text-xl text-blue-100 text-center mb-12 max-w-4xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 text-center mb-14 max-w-4xl mx-auto">
               Our work is organized into four programs spanning foundational methods and deployable systems.
             </p>
 
             {/* Four Research Programs (Guide 5.1) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-12 max-w-6xl mx-auto">
               {researchPrograms.map((program, index) => (
-                <div key={program.title} className="bg-white rounded-2xl border border-blue-200 shadow-xl h-full flex flex-col overflow-hidden">
-                  <div className="border-b border-blue-100">
+                <div key={program.title} className="flex flex-col">
+                  <div className="rounded-2xl overflow-hidden ring-1 ring-blue-100 mb-5">
                     <ProgramVisual index={index} />
                   </div>
-                  <div className="p-6 sm:p-8 flex flex-col flex-grow">
-                    <div className="flex items-start gap-3 mb-3">
-                      <span className="flex-shrink-0 w-9 h-9 rounded-full bg-orange-500 text-white font-black flex items-center justify-center">{index + 1}</span>
-                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{program.title}</h3>
-                    </div>
-                    <p className="text-gray-800 leading-relaxed flex-grow">{program.description}</p>
-                    {program.view ? (
-                      <button
-                        onClick={() => openView(program.view)}
-                        className="self-start inline-flex items-center mt-4 px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg text-sm font-semibold transition-all duration-300"
-                      >
-                        Explore Program
-                      </button>
-                    ) : null}
+                  <div className="flex items-start gap-3 mb-3">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-orange-500 text-white text-sm font-bold flex items-center justify-center mt-1">{index + 1}</span>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{program.title}</h3>
                   </div>
+                  <p className="text-gray-600 leading-relaxed flex-grow">{program.description}</p>
+                  {program.view ? (
+                    <button
+                      onClick={() => openView(program.view)}
+                      className="self-start inline-flex items-center gap-1 mt-4 text-blue-600 font-semibold text-sm hover:text-orange-600 transition-colors"
+                    >
+                      Explore Program &rarr;
+                    </button>
+                  ) : null}
                 </div>
               ))}
             </div>
@@ -1945,15 +1943,15 @@ const DepaLabHomepage = () => {
             <div className="max-w-6xl mx-auto mt-16">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <span className="h-px w-8 bg-orange-400"></span>
-                <span className="eyebrow text-orange-300">What we can do</span>
+                <span className="eyebrow text-orange-500">What we can do</span>
                 <span className="h-px w-8 bg-orange-400"></span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">Technical Capabilities</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">Technical Capabilities</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {technicalCapabilities.map((cap) => (
-                  <div key={cap} className="flex items-start gap-3 bg-white/5 hover:bg-white/10 transition-colors rounded-xl p-4 border border-white/10">
-                    <span className="text-orange-400 mt-0.5">&#9656;</span>
-                    <span className="text-blue-50">{cap}</span>
+                  <div key={cap} className="flex items-start gap-3 bg-blue-50 hover:bg-blue-100 transition-colors rounded-xl p-4 border border-blue-100">
+                    <span className="text-orange-500 mt-0.5">&#9656;</span>
+                    <span className="text-gray-800">{cap}</span>
                   </div>
                 ))}
               </div>
@@ -2031,20 +2029,25 @@ const DepaLabHomepage = () => {
         </section>
 
         {/* Join Us CTA (Guide 10.1) */}
-        <section id="join-cta" className="mb-24 py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
+        <section id="join-cta" className="mb-24 py-20 bg-gray-50 border-y border-gray-100">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <span className="h-px w-8 bg-orange-400"></span>
+                <span className="eyebrow text-orange-500">Get involved</span>
+                <span className="h-px w-8 bg-orange-400"></span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Join or Collaborate with DEPA
               </h2>
-              <p className="text-lg sm:text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
                 We welcome motivated students and academic, government, industry, and community partners interested in data engineering, predictive analytics, computer vision, trustworthy AI, cybersecurity, and autonomous systems.
               </p>
               <button
                 onClick={() => openView('join-us')}
-                className="inline-flex items-center px-8 py-4 bg-white text-blue-700 rounded-full font-bold text-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-2xl"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold text-lg transition-all duration-300 shadow-lg shadow-orange-500/25"
               >
-                Explore Opportunities
+                Explore Opportunities &rarr;
               </button>
             </div>
           </div>
