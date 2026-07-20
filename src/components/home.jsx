@@ -1484,16 +1484,6 @@ const DepaLabHomepage = () => {
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
 
-            <p className="text-lg sm:text-xl text-gray-900 leading-relaxed text-center mb-8 max-w-4xl mx-auto">
-              The DEPA Lab at Morgan State University builds data-intensive AI systems that turn complex engineering data into predictive insight, reliable decisions, and deployable technologies &mdash; across data engineering, computer vision, trustworthy AI, cybersecurity, intelligent transportation, autonomous mobility, and decision support.
-            </p>
-            <div className="bg-blue-50 rounded-3xl p-6 sm:p-8 border border-blue-200 shadow-md mb-10">
-              <p className="text-base sm:text-lg text-gray-900 leading-relaxed text-center">
-                DEPA is a research laboratory within Morgan State University&rsquo;s{' '}
-                <a href="https://www.morgan.edu/ceamls" target="_blank" rel="noopener noreferrer" className="text-blue-600 font-semibold underline">Center for Equitable Artificial Intelligence and Machine Learning Systems (CEAMLS)</a>. DEPA leads work in data engineering, predictive modeling, optimization, decision support, and data-intensive AI systems. Projects involving robotics, intelligent sensing, and autonomous platforms may be conducted jointly with the Robotics, Autonomy &amp; Intelligent Networks (RAIN) Lab.
-              </p>
-            </div>
-
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="bg-blue-50 rounded-3xl p-6 sm:p-8 border border-blue-200 shadow-md">
                 <h2 className="text-2xl font-bold text-blue-600 mb-4">For Students</h2>
@@ -1516,21 +1506,6 @@ const DepaLabHomepage = () => {
                 <p className="text-gray-900 leading-relaxed">
                   Prospective partners should provide a concise description of the problem, available data or environment, intended users, timeline, and potential resources.
                 </p>
-              </div>
-            </div>
-
-            <div className="mt-12">
-              <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-2 text-center">Technical Capabilities</h2>
-              <p className="text-gray-700 text-center mb-6 max-w-3xl mx-auto">What DEPA can perform for prospective students and partners.</p>
-              <div className="bg-blue-50 rounded-3xl p-6 sm:p-8 border border-blue-200">
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {technicalCapabilities.map((cap) => (
-                    <li key={cap} className="flex items-start gap-2 text-gray-900">
-                      <span className="text-orange-500 mt-1">&#9656;</span>
-                      <span>{cap}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             </div>
 
@@ -1809,67 +1784,95 @@ const DepaLabHomepage = () => {
       <main className="flex-grow pt-16 sm:pt-20">
         
         {/* Hero Section */}
-<section id="hero" className="relative pt-16 min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900">
+        <section id="hero" className="relative overflow-hidden bg-[#0a1a33] pt-16">
+          {/* Signature blueprint grid + ambient glow */}
+          <div className="absolute inset-0 bg-grid opacity-60 pointer-events-none" aria-hidden="true"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0a1a33] via-[#0c2248]/90 to-[#0a1a33] pointer-events-none" aria-hidden="true"></div>
+          <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-blue-600/20 blur-3xl pointer-events-none" aria-hidden="true"></div>
+          <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-orange-500/10 blur-3xl pointer-events-none" aria-hidden="true"></div>
 
-  {/* Ambient texture */}
-  <div className="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true">
-    <div className="absolute top-24 left-10 w-2 h-2 bg-white rounded-full animate-ping"></div>
-    <div className="absolute bottom-28 left-1/3 w-1 h-1 bg-white rounded-full animate-ping" style={{animationDelay: '1.5s'}}></div>
-    <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-orange-300 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
-  </div>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center py-16 sm:py-20 lg:py-24 min-h-[calc(100vh-4rem)]">
 
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-    <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-20 lg:py-16">
+              {/* Text column */}
+              <div className="lg:col-span-7 text-left">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="h-px w-10 bg-orange-400"></span>
+                  <span className="eyebrow text-orange-300">Morgan State University &middot; CEAMLS</span>
+                </div>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] mb-6">
+                  Data Engineering &amp; Predictive Analytics for <span className="text-orange-400">Intelligent, Trustworthy Systems</span>
+                </h1>
+                <p className="text-lg sm:text-xl text-blue-100/90 leading-relaxed mb-8 max-w-2xl">
+                  The DEPA Lab at Morgan State University builds data-intensive AI systems that turn complex engineering data into predictive insight, reliable decisions, and deployable technologies &mdash; across data engineering, computer vision, trustworthy AI, cybersecurity, intelligent transportation, autonomous mobility, and decision support.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                  <a
+                    href="#research"
+                    className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold text-base transition-all duration-300 shadow-lg shadow-orange-500/25"
+                  >
+                    Explore Our Research
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                  </a>
+                  <button
+                    onClick={() => openView('join-us')}
+                    className="inline-flex items-center justify-center px-7 py-3.5 border border-white/25 text-white hover:bg-white hover:text-[#0a1a33] rounded-full font-semibold text-base transition-all duration-300"
+                  >
+                    Collaborate With DEPA
+                  </button>
+                </div>
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-6 border-t border-white/10 text-sm text-blue-200/80">
+                  <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-orange-400"></span>Patented autonomous mobility</span>
+                  <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-orange-400"></span>Peer-reviewed AI &amp; cybersecurity</span>
+                  <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-orange-400"></span>Federal &amp; industry partners</span>
+                </div>
+              </div>
 
-      {/* Text column */}
-      <div className="text-left">
-        <div className="inline-flex items-center gap-3 mb-6">
-          <span className="h-2.5 w-2.5 bg-orange-400 rounded-full animate-pulse"></span>
-          <span className="text-orange-300 uppercase tracking-wider text-xs sm:text-sm font-bold">Transforming Data to Decisions</span>
-        </div>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-8">
-          Data Engineering &amp; Predictive Analytics for <span className="text-orange-400">Intelligent, Trustworthy Systems</span>
-        </h1>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <a
-            href="#research"
-            className="px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl text-center"
-          >
-            Explore Our Research
-          </a>
-          <button
-            onClick={() => openView('join-us')}
-            className="px-8 py-4 bg-white/10 border border-white/40 text-white hover:bg-white hover:text-blue-700 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm text-center"
-          >
-            Collaborate With DEPA
-          </button>
-        </div>
-      </div>
+              {/* Image column */}
+              <div className="lg:col-span-5 relative">
+                <div className="absolute -inset-4 bg-gradient-to-tr from-orange-500/20 to-blue-500/20 rounded-[2rem] blur-2xl pointer-events-none" aria-hidden="true"></div>
+                <div className="relative rounded-3xl overflow-hidden ring-1 ring-white/15 shadow-2xl">
+                  <img
+                    src="/depa-lab/images/depa2.jpeg"
+                    alt="DEPA Lab researchers analyzing transportation and sensor data on large visualization displays"
+                    className="w-full h-72 sm:h-96 lg:h-[540px] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a33]/70 via-transparent to-transparent pointer-events-none"></div>
+                </div>
+                <div className="hidden sm:flex absolute -bottom-6 -left-6 items-center gap-3 bg-white rounded-2xl shadow-2xl p-4 pr-5 max-w-[260px] ring-1 ring-black/5">
+                  <div className="h-11 w-11 flex-shrink-0 rounded-xl bg-[#0a1a33] flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" aria-hidden="true">
+                      <path d="M12 2l7 3v6c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V5l7-3z" fill="#2563eb" />
+                      <path d="M9 12l2 2 4-4" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-500">U.S. Patent 12,622,826</p>
+                    <p className="text-sm font-bold text-gray-900 leading-snug">Autonomous Mobility System</p>
+                  </div>
+                </div>
+              </div>
 
-      {/* Image column (same hero image, now shown alongside the text) */}
-      <div className="relative">
-        <div className="absolute -inset-3 bg-orange-500/20 rounded-[2rem] blur-2xl pointer-events-none" aria-hidden="true"></div>
-        <div className="hidden lg:block absolute -bottom-5 -left-5 h-24 w-24 bg-orange-500 rounded-2xl" aria-hidden="true"></div>
-        <div className="relative z-10 rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
-          <img
-            src="/depa-lab/images/depa2.jpeg"
-            alt="DEPA Lab researchers analyzing transportation and sensor data on large visualization displays"
-            className="w-full h-64 sm:h-80 lg:h-[520px] object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent pointer-events-none"></div>
-        </div>
-      </div>
+            </div>
+          </div>
+        </section>
 
-    </div>
-  </div>
-
-  {/* Scroll indicator */}
-  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce hidden sm:block">
-    <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-      <div className="w-1 h-3 bg-white/80 rounded-full mt-2"></div>
-    </div>
-  </div>
-</section>
+        {/* Institutional Context: DEPA / CEAMLS / RAIN (Guide 4.2) */}
+        <section id="context" className="py-16 sm:py-24 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <span className="h-px w-8 bg-orange-400"></span>
+                <span className="eyebrow text-orange-500">Who we are</span>
+                <span className="h-px w-8 bg-orange-400"></span>
+              </div>
+              <p className="text-xl sm:text-2xl text-gray-800 leading-relaxed font-light">
+                DEPA is a research laboratory within Morgan State University&rsquo;s{' '}
+                <a href="https://www.morgan.edu/ceamls" target="_blank" rel="noopener noreferrer" className="font-medium text-blue-700 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-blue-800">Center for Equitable Artificial Intelligence and Machine Learning Systems (CEAMLS)</a>. DEPA leads work in data engineering, predictive modeling, optimization, decision support, and data-intensive AI systems. Projects involving robotics, intelligent sensing, and autonomous platforms may be conducted jointly with the Robotics, Autonomy &amp; Intelligent Networks (RAIN) Lab.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Impact Metrics Strip (Guide 4.3) */}
         <section id="metrics" className="py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
@@ -1900,9 +1903,13 @@ const DepaLabHomepage = () => {
         {/* Research Areas Section */}
         <section id="research" className="mb-24 py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 text-center">
-              Research{' '}
-              <span className="text-white">Programs</span>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="h-px w-8 bg-orange-400"></span>
+              <span className="eyebrow text-orange-300">Research</span>
+              <span className="h-px w-8 bg-orange-400"></span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 text-center">
+              Research <span className="text-orange-400">Programs</span>
             </h2>
             <p className="text-lg sm:text-xl text-blue-100 text-center mb-12 max-w-4xl mx-auto">
               Our work is organized into four programs spanning foundational methods and deployable systems.
@@ -1933,13 +1940,36 @@ const DepaLabHomepage = () => {
                 </div>
               ))}
             </div>
+
+            {/* Technical Capabilities (Guide 5.2) */}
+            <div className="max-w-6xl mx-auto mt-16">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <span className="h-px w-8 bg-orange-400"></span>
+                <span className="eyebrow text-orange-300">What we can do</span>
+                <span className="h-px w-8 bg-orange-400"></span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">Technical Capabilities</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {technicalCapabilities.map((cap) => (
+                  <div key={cap} className="flex items-start gap-3 bg-white/5 hover:bg-white/10 transition-colors rounded-xl p-4 border border-white/10">
+                    <span className="text-orange-400 mt-0.5">&#9656;</span>
+                    <span className="text-blue-50">{cap}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Recent Results Section (Guide 4.4) */}
         <section id="recent-results" className="mb-24 py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4 text-center">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="h-px w-8 bg-orange-400"></span>
+              <span className="eyebrow text-orange-500">Latest</span>
+              <span className="h-px w-8 bg-orange-400"></span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-center">
               Recent <span className="text-blue-600">Results</span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-900 text-center mb-12 max-w-4xl mx-auto">
@@ -1967,7 +1997,12 @@ const DepaLabHomepage = () => {
         {/* News Preview (Guide 9.3) */}
         <section id="news-preview" className="mb-24 py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4 text-center">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="h-px w-8 bg-orange-400"></span>
+              <span className="eyebrow text-orange-500">Updates</span>
+              <span className="h-px w-8 bg-orange-400"></span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-center">
               News &amp; <span className="text-blue-600">Engagement</span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-900 text-center mb-12 max-w-3xl mx-auto">
