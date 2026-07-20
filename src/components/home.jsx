@@ -1950,13 +1950,22 @@ const DepaLabHomepage = () => {
                 <span className="h-px w-8 bg-orange-400"></span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">Technical Capabilities</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {technicalCapabilities.map((cap) => (
-                  <div key={cap} className="flex items-start gap-3 bg-blue-50 hover:bg-blue-100 transition-colors rounded-xl p-4 border border-blue-100">
-                    <span className="text-orange-500 mt-0.5">&#9656;</span>
-                    <span className="text-gray-800">{cap}</span>
-                  </div>
-                ))}
+              <div className="relative max-w-4xl mx-auto mt-10">
+                {/* Center spine */}
+                <div className="absolute top-1 bottom-1 left-2.5 md:left-1/2 w-0.5 bg-[#124d89]/25 md:-translate-x-1/2" aria-hidden="true"></div>
+                <ul className="space-y-6 sm:space-y-7">
+                  {technicalCapabilities.map((cap, i) => {
+                    const left = i % 2 === 0;
+                    return (
+                      <li key={cap} className="relative">
+                        <span className="absolute left-2.5 md:left-1/2 top-1 w-4 h-4 rounded-full bg-orange-500 ring-4 ring-white -translate-x-1/2" aria-hidden="true"></span>
+                        <div className={`pl-9 md:pl-0 md:w-1/2 ${left ? 'md:pr-12 md:text-right' : 'md:ml-auto md:pl-12 md:text-left'}`}>
+                          <span className="text-gray-800 text-base sm:text-lg leading-snug">{cap}</span>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </div>
           </div>
