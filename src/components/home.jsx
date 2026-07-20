@@ -231,7 +231,7 @@ const peopleAlumni = [
 // the existing blue/orange palette — no new colors or fonts, no stock imagery.
 // ---------------------------------------------------------------------------
 const ProgramVisual = ({ index }) => {
-  const svg = { className: 'w-full h-32 sm:h-36 block', preserveAspectRatio: 'xMidYMid meet', role: 'img' };
+  const svg = { className: 'w-full h-auto block', preserveAspectRatio: 'xMidYMid meet', role: 'img' };
 
   // 0 — Data Engineering & Intelligent Workflows: many sources -> pipeline -> decision-ready store
   if (index === 0) {
@@ -429,7 +429,7 @@ const PublicationsPage = () => {
   const statusStyle = (s) => {
     switch (s) {
       case 'Published': return 'bg-green-100 text-green-700 border-green-300';
-      case 'Accepted': return 'bg-blue-100 text-blue-700 border-blue-300';
+      case 'Accepted': return 'bg-blue-100 text-[#0f4276] border-blue-300';
       case 'Submitted': return 'bg-amber-100 text-amber-700 border-amber-300';
       case 'Draft Approved': return 'bg-purple-100 text-purple-700 border-purple-300';
       case 'Preprint': return 'bg-cyan-100 text-cyan-700 border-cyan-300';
@@ -455,7 +455,7 @@ const PublicationsPage = () => {
       <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4 text-center">
-            Publications and <span className="text-blue-600">Scholarly Outputs</span>
+            Publications and <span className="text-[#124d89]">Scholarly Outputs</span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-900 text-center mb-4 max-w-4xl mx-auto">
             DEPA researchers publish peer-reviewed scholarship, conference papers, datasets, technical frameworks, and work-in-progress studies across data engineering, predictive analytics, trustworthy AI, cybersecurity, computer vision, and autonomous systems.
@@ -475,25 +475,25 @@ const PublicationsPage = () => {
             </label>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
               <label className="block">
-                <span className="block text-xs font-bold text-blue-700 mb-1">Year</span>
+                <span className="block text-xs font-bold text-[#0f4276] mb-1">Year</span>
                 <select value={year} onChange={(e) => setYear(e.target.value === 'All' ? 'All' : Number(e.target.value))} className={selectCls}>
                   {years.map((y) => <option key={y} value={y}>{y}</option>)}
                 </select>
               </label>
               <label className="block">
-                <span className="block text-xs font-bold text-blue-700 mb-1">Type</span>
+                <span className="block text-xs font-bold text-[#0f4276] mb-1">Type</span>
                 <select value={ptype} onChange={(e) => setPtype(e.target.value)} className={selectCls}>
                   {types.map((t) => <option key={t} value={t}>{t}</option>)}
                 </select>
               </label>
               <label className="block">
-                <span className="block text-xs font-bold text-blue-700 mb-1">Research area</span>
+                <span className="block text-xs font-bold text-[#0f4276] mb-1">Research area</span>
                 <select value={area} onChange={(e) => setArea(e.target.value)} className={selectCls}>
                   {areas.map((a) => <option key={a} value={a}>{a}</option>)}
                 </select>
               </label>
               <label className="block">
-                <span className="block text-xs font-bold text-blue-700 mb-1">Status</span>
+                <span className="block text-xs font-bold text-[#0f4276] mb-1">Status</span>
                 <select value={status} onChange={(e) => setStatus(e.target.value)} className={selectCls}>
                   {statuses.map((s) => <option key={s} value={s}>{s}</option>)}
                 </select>
@@ -513,9 +513,9 @@ const PublicationsPage = () => {
                 </div>
                 <p className="text-gray-800 text-sm mt-2">{r.authors}</p>
                 <div className="flex flex-wrap gap-2 mt-3 text-xs">
-                  <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded border border-blue-300 font-medium">{r.type}</span>
-                  <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded border border-blue-200">{r.venue}</span>
-                  <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded border border-blue-200">{r.year}</span>
+                  <span className="px-2 py-1 bg-blue-100 text-[#0f4276] rounded border border-blue-300 font-medium">{r.type}</span>
+                  <span className="px-2 py-1 bg-blue-50 text-[#0f4276] rounded border border-blue-200">{r.venue}</span>
+                  <span className="px-2 py-1 bg-blue-50 text-[#0f4276] rounded border border-blue-200">{r.year}</span>
                   <span className="px-2 py-1 bg-orange-50 text-orange-700 rounded border border-orange-200">{r.area}</span>
                 </div>
                 {r.link ? (
@@ -652,7 +652,7 @@ const DepaLabHomepage = () => {
             
             <div className="mb-8">
               <div className="bg-white rounded-2xl p-6 border border-blue-200">
-                <h4 className="text-xl font-bold text-blue-600 mb-4 text-center">Research Demonstration Video</h4>
+                <h4 className="text-xl font-bold text-[#124d89] mb-4 text-center">Research Demonstration Video</h4>
                 <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-blue-200 bg-blue-50 flex items-center justify-center">
                   <div className="text-center">
 <h4 className="text-xl font-bold text-gray-900 mb-2">XPCI Research Demo</h4>
@@ -671,7 +671,7 @@ const DepaLabHomepage = () => {
             </div>
             
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-600 mb-4">Research Overview</h3>
+              <h3 className="text-2xl font-bold text-[#124d89] mb-4">Research Overview</h3>
               <p className="text-gray-900 leading-relaxed text-lg">
                 This project focuses on automated crack detection in low-density and structurally complex materials subjected to mechanical stress, such as crystal quartz, Westerly granite, and boron carbide. It integrates X-ray Phase Contrast Imaging (XPCI), known for its sensitivity to subtle structural variations, with the YOLOv11 deep learning architecture for high-resolution crack localization and classification.
               </p>
@@ -680,7 +680,7 @@ const DepaLabHomepage = () => {
               </p>
               
               <div className="bg-white rounded-xl p-6 border border-blue-200 mt-6">
-                <h4 className="text-xl font-bold text-blue-600 mb-4">Key Features</h4>
+                <h4 className="text-xl font-bold text-[#124d89] mb-4">Key Features</h4>
                 <ul className="text-gray-900 space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500 mt-1">•</span>
@@ -713,7 +713,7 @@ const DepaLabHomepage = () => {
             
             <div className="mb-8">
               <div className="bg-white rounded-2xl p-6 border border-blue-200">
-                <h4 className="text-xl font-bold text-blue-600 mb-4 text-center">System Demo</h4>
+                <h4 className="text-xl font-bold text-[#124d89] mb-4 text-center">System Demo</h4>
                 <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-blue-200 bg-blue-50 flex items-center justify-center">
                   <div className="text-center">
 <h4 className="text-xl font-bold text-gray-900 mb-2">MSU AI Advisor Demo</h4>
@@ -732,13 +732,13 @@ const DepaLabHomepage = () => {
             </div>
             
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-600 mb-4">Project Overview</h3>
+              <h3 className="text-2xl font-bold text-[#124d89] mb-4">Project Overview</h3>
               <p className="text-gray-900 leading-relaxed text-lg">
                 The AI Academic Advisor project leverages a multi-step agent pipeline built on transformer-based LLMs fine-tuned with human feedback to generate personalized academic guidance. User profile data—including course history, interests, and scheduling constraints—is collected through a conversational REST API that normalizes and encodes inputs for downstream processing.
               </p>
               
               <div className="bg-white rounded-xl p-6 border border-blue-200 mt-6">
-                <h4 className="text-xl font-bold text-blue-600 mb-4">Key Features</h4>
+                <h4 className="text-xl font-bold text-[#124d89] mb-4">Key Features</h4>
                 <ul className="text-gray-900 space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500 mt-1">•</span>
@@ -784,13 +784,13 @@ const DepaLabHomepage = () => {
             </div>
             
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-600 mb-4">System Overview</h3>
+              <h3 className="text-2xl font-bold text-[#124d89] mb-4">System Overview</h3>
               <p className="text-gray-900 leading-relaxed text-lg">
                 Cyber Shield is an abusive language detection system designed to analyze user-generated text and identify harmful or inappropriate content. Built to integrate with the Query-able Machine Learning Pipeline (QMLP), the system ingests input in JSON format, applies advanced preprocessing, and uses word embeddings to understand context.
               </p>
               
               <div className="bg-white rounded-xl p-6 border border-blue-200 mt-6">
-                <h4 className="text-xl font-bold text-blue-600 mb-4">Key Technologies</h4>
+                <h4 className="text-xl font-bold text-[#124d89] mb-4">Key Technologies</h4>
                 <ul className="text-gray-900 space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500 mt-1">•</span>
@@ -836,13 +836,13 @@ const DepaLabHomepage = () => {
             </div>
             
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-600 mb-4">Research Overview</h3>
+              <h3 className="text-2xl font-bold text-[#124d89] mb-4">Research Overview</h3>
               <p className="text-gray-900 leading-relaxed text-lg">
                 This research investigates how large language models (LLMs) handle different English dialects, with a focus on African American Vernacular English (AAVE) versus Standard American English (SAE). Models such as GPT-4, Claude 3.5, Gemini 1.5 Pro, Qwen2, and LLaMA 3 were evaluated across sentiment, refusal rates, and response quality.
               </p>
               
               <div className="bg-white rounded-xl p-6 border border-blue-200 mt-6">
-                <h4 className="text-xl font-bold text-blue-600 mb-4">Key Research Contributions</h4>
+                <h4 className="text-xl font-bold text-[#124d89] mb-4">Key Research Contributions</h4>
                 <ul className="text-gray-900 space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500 mt-1">•</span>
@@ -888,13 +888,13 @@ const DepaLabHomepage = () => {
             </div>
             
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-600 mb-4">Project Description</h3>
+              <h3 className="text-2xl font-bold text-[#124d89] mb-4">Project Description</h3>
               <p className="text-gray-900 leading-relaxed text-lg">
                 For this project, we developed a lightweight language model system using quantized LLMs to enable efficient performance on limited hardware. We experimented with 4-bit and 8-bit quantized models to reduce memory and computational demands while preserving accuracy.
               </p>
               
               <div className="bg-white rounded-xl p-6 border border-blue-200 mt-6">
-                <h4 className="text-xl font-bold text-blue-600 mb-4">Key Achievements</h4>
+                <h4 className="text-xl font-bold text-[#124d89] mb-4">Key Achievements</h4>
                 <ul className="text-gray-900 space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500 mt-1">•</span>
@@ -927,7 +927,7 @@ const DepaLabHomepage = () => {
             
             <div className="mb-8">
               <div className="bg-white rounded-2xl p-6 border border-blue-200">
-                <h4 className="text-xl font-bold text-blue-600 mb-4 text-center">System Demonstration</h4>
+                <h4 className="text-xl font-bold text-[#124d89] mb-4 text-center">System Demonstration</h4>
                 <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-blue-200 bg-blue-50 flex items-center justify-center">
                   <div className="text-center">
 <h4 className="text-xl font-bold text-gray-900 mb-2">Drone Tracking Demo</h4>
@@ -946,13 +946,13 @@ const DepaLabHomepage = () => {
             </div>
             
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-600 mb-4">Project Overview</h3>
+              <h3 className="text-2xl font-bold text-[#124d89] mb-4">Project Overview</h3>
               <p className="text-gray-900 leading-relaxed text-lg">
                 This project focuses on advancing autonomous wheelchair system designed to enhance mobility and independence. This includes multiple integrated components such as a Follower Drone for Luggage: A vision-based autonomous drone system capable of tracking and following the wheelchair user to carry luggage, using person re-identification and real-time object tracking techniques.
               </p>
               
               <div className="bg-white rounded-xl p-6 border border-blue-200 mt-6">
-                <h4 className="text-xl font-bold text-blue-600 mb-4">System Components</h4>
+                <h4 className="text-xl font-bold text-[#124d89] mb-4">System Components</h4>
                 <ul className="text-gray-900 space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500 mt-1">•</span>
@@ -985,7 +985,7 @@ const DepaLabHomepage = () => {
             
             <div className="mb-8">
               <div className="bg-white rounded-2xl p-6 border border-blue-200">
-                <h4 className="text-xl font-bold text-blue-600 mb-4 text-center">Benchmarking Framework Demo</h4>
+                <h4 className="text-xl font-bold text-[#124d89] mb-4 text-center">Benchmarking Framework Demo</h4>
                 <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-blue-200 bg-blue-50 flex items-center justify-center">
                   <div className="text-center">
 <h4 className="text-xl font-bold text-gray-900 mb-2">AI/ML Bench Guard Demo</h4>
@@ -1004,13 +1004,13 @@ const DepaLabHomepage = () => {
             </div>
             
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-600 mb-4">Framework Overview</h3>
+              <h3 className="text-2xl font-bold text-[#124d89] mb-4">Framework Overview</h3>
               <p className="text-gray-900 leading-relaxed text-lg">
                 AI/ML Bench Guard is a comprehensive benchmarking framework for evaluating cloud-based, LLM, and open-source machine learning services. The system conducts automated performance assessments across multiple providers, including AWS, Azure, GCP, and open-source alternatives.
               </p>
               
               <div className="bg-white rounded-xl p-6 border border-blue-200 mt-6">
-                <h4 className="text-xl font-bold text-blue-600 mb-4">Key Features</h4>
+                <h4 className="text-xl font-bold text-[#124d89] mb-4">Key Features</h4>
                 <ul className="text-gray-900 space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500 mt-1">•</span>
@@ -1056,13 +1056,13 @@ const DepaLabHomepage = () => {
             </div>
             
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-600 mb-4">Research Overview</h3>
+              <h3 className="text-2xl font-bold text-[#124d89] mb-4">Research Overview</h3>
               <p className="text-gray-900 leading-relaxed text-lg">
                 This research investigates how different prompting strategies can optimize multimodal large language models for forensic video analysis applications. The study systematically evaluates eight distinct prompting techniques including zero-shot, sequential, least-to-most, ReAct, chain-of-thought, meta-prompting, self-consistency, and iterative approaches.
               </p>
               
               <div className="bg-white rounded-xl p-6 border border-blue-200 mt-6">
-                <h4 className="text-xl font-bold text-blue-600 mb-4">Research Significance</h4>
+                <h4 className="text-xl font-bold text-[#124d89] mb-4">Research Significance</h4>
                 <ul className="text-gray-900 space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500 mt-1">•</span>
@@ -1108,13 +1108,13 @@ const DepaLabHomepage = () => {
             </div>
             
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-blue-600 mb-4">Research Overview</h3>
+              <h3 className="text-2xl font-bold text-[#124d89] mb-4">Research Overview</h3>
               <p className="text-gray-900 leading-relaxed text-lg">
                 This research develops an automated system for detecting reentrancy vulnerabilities in smart contracts, which represent one of the most dangerous security flaws in blockchain applications. The study introduces a hybrid feature engineering approach that combines pattern-based detection with graph-based analysis.
               </p>
               
               <div className="bg-white rounded-xl p-6 border border-blue-200 mt-6">
-                <h4 className="text-xl font-bold text-blue-600 mb-4">Key Innovations</h4>
+                <h4 className="text-xl font-bold text-[#124d89] mb-4">Key Innovations</h4>
                 <ul className="text-gray-900 space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500 mt-1">•</span>
@@ -1160,32 +1160,32 @@ const DepaLabHomepage = () => {
             </div>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-blue-600 mb-3">Overview</h2>
+              <h2 className="text-2xl font-bold text-[#124d89] mb-3">Overview</h2>
               <p className="text-gray-900 leading-relaxed text-lg">
                 UrbanFlow is a retrofit autonomous mobility platform designed to support safe navigation across complex indoor and outdoor environments. The system combines LiDAR, computer vision, localization, mapping, motion planning, and intelligent control to extend the capabilities of a powered wheelchair without requiring a purpose-built mobility base.
               </p>
             </section>
 
             <section className="mb-8 bg-blue-50 rounded-2xl p-6 border border-blue-200">
-              <h2 className="text-2xl font-bold text-blue-600 mb-3">The Challenge</h2>
+              <h2 className="text-2xl font-bold text-[#124d89] mb-3">The Challenge</h2>
               <p className="text-gray-900 leading-relaxed text-lg">
                 Airports, hospitals, campuses, and transportation facilities contain dynamic spaces that are difficult for many mobility users to navigate independently. UrbanFlow investigates how affordable sensing and AI can support accessible, context-aware mobility while keeping safety, usability, and human control central to system design.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-blue-600 mb-3">Technical Approach</h2>
+              <h2 className="text-2xl font-bold text-[#124d89] mb-3">Technical Approach</h2>
               <p className="text-gray-900 leading-relaxed text-lg mb-4">
                 The platform integrates 2D LiDAR, RGB-D vision, inertial sensing, odometry, and optional high-precision positioning. Research areas include hybrid indoor/outdoor localization, SLAM, obstacle detection, path planning, person following, docking, and multimodal sensor fusion.
               </p>
               <div className="bg-blue-50 rounded-2xl p-4 sm:p-6 border border-blue-200">
-                <p className="text-blue-700 font-bold text-center mb-4">System Architecture</p>
+                <p className="text-[#0f4276] font-bold text-center mb-4">System Architecture</p>
                 <UrbanFlowArchitecture />
               </div>
             </section>
 
             <section className="mb-8 bg-blue-50 rounded-2xl p-6 border border-blue-200">
-              <h2 className="text-2xl font-bold text-blue-600 mb-4">Selected Capabilities</h2>
+              <h2 className="text-2xl font-bold text-[#124d89] mb-4">Selected Capabilities</h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {['Vision-LiDAR perception and mapping', 'Indoor and outdoor navigation', 'Dynamic obstacle detection and avoidance', 'Person-following assistance', 'Docking and transportation integration', 'Explainable system monitoring and safety evaluation'].map((c) => (
                   <li key={c} className="flex items-start gap-2 text-gray-900">
@@ -1196,14 +1196,14 @@ const DepaLabHomepage = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-blue-600 mb-3">Technology Translation</h2>
+              <h2 className="text-2xl font-bold text-[#124d89] mb-3">Technology Translation</h2>
               <p className="text-gray-900 leading-relaxed text-lg">
                 UrbanFlow research contributed to the Autonomous Mobility System, U.S. Patent No. 12,622,826.
               </p>
             </section>
 
             <section className="mb-10 bg-blue-50 rounded-2xl p-6 border border-blue-200">
-              <h2 className="text-2xl font-bold text-blue-600 mb-3">Selected Demonstrations</h2>
+              <h2 className="text-2xl font-bold text-[#124d89] mb-3">Selected Demonstrations</h2>
               <p className="text-gray-900 leading-relaxed text-lg">
                 The platform has been demonstrated for The Arc Maryland, at the World Bank&rsquo;s Transforming Transportation event, and during a Girl STEM Tour at Baltimore/Washington International Thurgood Marshall Airport.
               </p>
@@ -1233,13 +1233,13 @@ const DepaLabHomepage = () => {
             </p>
 
             <div className="bg-blue-50 rounded-2xl p-4 sm:p-6 border border-blue-200 mb-10">
-              <p className="text-blue-700 font-bold text-center mb-4">How trust is evaluated</p>
+              <p className="text-[#0f4276] font-bold text-center mb-4">How trust is evaluated</p>
               <TrustLoop />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200">
-                <h2 className="text-2xl font-bold text-blue-600 mb-4">Current Research Themes</h2>
+                <h2 className="text-2xl font-bold text-[#124d89] mb-4">Current Research Themes</h2>
                 <ul className="space-y-3">
                   {['Adversarial robustness in intrusion and ransomware detection', 'Industrial control system anomaly detection under explicit false-alarm constraints', 'Cybersecurity of connected and automated vehicles', 'Explainable smart-contract vulnerability detection', 'Privacy-preserving evaluation of large language model pipelines', 'Human performance with and without AI-assisted cybersecurity tools'].map((t) => (
                     <li key={t} className="flex items-start gap-2 text-gray-900"><span className="text-orange-500 mt-1">&#8226;</span><span>{t}</span></li>
@@ -1247,7 +1247,7 @@ const DepaLabHomepage = () => {
                 </ul>
               </div>
               <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200">
-                <h2 className="text-2xl font-bold text-blue-600 mb-4">Selected Outputs</h2>
+                <h2 className="text-2xl font-bold text-[#124d89] mb-4">Selected Outputs</h2>
                 <ul className="space-y-3">
                   {['Alarm-Budgeted Event-Level Evaluation of ICS Anomaly Detection: Lessons from SWaT and WADI', 'GraphAE: Plant-Informed Graph Autoencoder for ICS Anomaly Detection with SHAP-Based Explanations', 'SmartPattern: A Machine Learning Framework for Detecting Reentrancy Vulnerabilities in Blockchain Smart Contracts', 'RIPPLE: Differential Testing of Exact-Value Restoration Boundaries in Privacy-Preserving LLM Pipelines'].map((o) => (
                     <li key={o} className="flex items-start gap-2 text-gray-900"><span className="text-orange-500 mt-1">&#8226;</span><span>{o}</span></li>
@@ -1278,35 +1278,35 @@ const DepaLabHomepage = () => {
               DEPA translates research into protectable technologies, prototypes, datasets, and software systems. This page highlights publicly reportable patents and intellectual property disclosures associated with DEPA leadership and collaborators.
             </p>
 
-            <h2 className="text-2xl font-bold text-blue-600 mb-4">Issued Patents</h2>
+            <h2 className="text-2xl font-bold text-[#124d89] mb-4">Issued Patents</h2>
             <div className="space-y-6 mb-10">
               {ipIssued.map((p) => (
                 <div key={p.title} className="bg-blue-50 rounded-2xl p-6 border border-blue-200 shadow-md">
                   <div className="flex flex-wrap items-center gap-3 mb-3">
                     <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold border border-green-300">Issued</span>
-                    <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold border border-blue-300">{p.number}</span>
+                    <span className="px-3 py-1 bg-blue-100 text-[#0f4276] rounded-full text-xs font-semibold border border-blue-300">{p.number}</span>
                     <span className="text-sm text-gray-700">{p.date}</span>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{p.title}</h3>
-                  <p className="text-blue-700 text-sm font-semibold mb-2">Inventors: {p.inventors}</p>
+                  <p className="text-[#0f4276] text-sm font-semibold mb-2">Inventors: {p.inventors}</p>
                   <p className="text-gray-900">{p.summary}</p>
                 </div>
               ))}
             </div>
 
-            <h2 className="text-2xl font-bold text-blue-600 mb-4">Pending Patents</h2>
+            <h2 className="text-2xl font-bold text-[#124d89] mb-4">Pending Patents</h2>
             <div className="space-y-6 mb-10">
               {ipPending.map((p) => (
                 <div key={p.title} className="bg-blue-50 rounded-2xl p-6 border border-blue-200 shadow-md">
                   <span className="inline-block px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-bold border border-amber-300 mb-3">{p.status}</span>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{p.title}</h3>
-                  <p className="text-blue-700 text-sm font-semibold mb-2">Inventors: {p.inventors}</p>
+                  <p className="text-[#0f4276] text-sm font-semibold mb-2">Inventors: {p.inventors}</p>
                   <p className="text-gray-900">{p.summary}</p>
                 </div>
               ))}
             </div>
 
-            <h2 className="text-2xl font-bold text-blue-600 mb-4">Selected Intellectual Property Disclosures</h2>
+            <h2 className="text-2xl font-bold text-[#124d89] mb-4">Selected Intellectual Property Disclosures</h2>
             <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200 shadow-md">
               <ul className="space-y-3">
                 {ipDisclosures.map((d) => (
@@ -1338,16 +1338,16 @@ const DepaLabHomepage = () => {
             </div>
             <div>
               <h3 className="text-lg font-bold text-gray-900">{p.name}</h3>
-              <p className="text-blue-700 text-sm font-semibold">{p.program}</p>
+              <p className="text-[#0f4276] text-sm font-semibold">{p.program}</p>
             </div>
           </div>
-          <p className="text-gray-900 text-sm mb-2"><span className="font-semibold text-blue-700">Research interests:</span> {p.interests}</p>
-          {p.project ? <p className="text-gray-900 text-sm mb-2"><span className="font-semibold text-blue-700">Current project:</span> {p.project}</p> : null}
-          {p.award ? <p className="text-gray-900 text-sm mb-2"><span className="font-semibold text-blue-700">Selected recognition:</span> {p.award}</p> : null}
+          <p className="text-gray-900 text-sm mb-2"><span className="font-semibold text-[#0f4276]">Research interests:</span> {p.interests}</p>
+          {p.project ? <p className="text-gray-900 text-sm mb-2"><span className="font-semibold text-[#0f4276]">Current project:</span> {p.project}</p> : null}
+          {p.award ? <p className="text-gray-900 text-sm mb-2"><span className="font-semibold text-[#0f4276]">Selected recognition:</span> {p.award}</p> : null}
           {p.links && p.links.length ? (
             <div className="flex flex-wrap gap-2 mt-3">
               {p.links.map((l) => (
-                <a key={l.label} href={l.href} className="px-3 py-1 bg-white text-blue-700 rounded-lg text-xs font-medium border border-blue-300 hover:bg-blue-100 transition-colors">{l.label}</a>
+                <a key={l.label} href={l.href} className="px-3 py-1 bg-white text-[#0f4276] rounded-lg text-xs font-medium border border-blue-300 hover:bg-blue-100 transition-colors">{l.label}</a>
               ))}
             </div>
           ) : null}
@@ -1359,7 +1359,7 @@ const DepaLabHomepage = () => {
           <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-8">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">Our <span className="text-blue-600">People</span></h1>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">Our <span className="text-[#124d89]">People</span></h1>
                 <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
               </div>
               <p className="text-lg sm:text-xl text-gray-900 text-center mb-10 max-w-4xl mx-auto">
@@ -1369,7 +1369,7 @@ const DepaLabHomepage = () => {
                 {peopleProfiles.map((p) => <ProfileCard key={p.name} p={p} />)}
               </div>
 
-              <h2 className="text-2xl font-bold text-blue-600 mt-14 mb-6 text-center">Alumni</h2>
+              <h2 className="text-2xl font-bold text-[#124d89] mt-14 mb-6 text-center">Alumni</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {peopleAlumni.map((p) => <ProfileCard key={p.name} p={p} />)}
               </div>
@@ -1385,7 +1385,7 @@ const DepaLabHomepage = () => {
         <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">Research <span className="text-blue-600">Impact</span></h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">Research <span className="text-[#124d89]">Impact</span></h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
               <p className="text-sm text-gray-600 mt-4">{METRICS_AS_OF}</p>
             </div>
@@ -1393,7 +1393,7 @@ const DepaLabHomepage = () => {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
               {impactMetrics.filter((m) => !m.wide).map((m) => (
                 <div key={m.label} className="bg-blue-50 rounded-2xl p-5 border border-blue-200 shadow-sm text-center">
-                  <div className="text-3xl font-black text-blue-600 mb-2">{m.value}</div>
+                  <div className="text-3xl font-black text-[#124d89] mb-2">{m.value}</div>
                   <p className="text-gray-800 text-sm">{m.label}</p>
                 </div>
               ))}
@@ -1422,9 +1422,9 @@ const DepaLabHomepage = () => {
                 <div key={g.title} className="bg-blue-50 rounded-2xl p-5 border border-blue-200 shadow-sm">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                     <h3 className="text-lg font-bold text-gray-900 flex-grow">{g.title}</h3>
-                    <span className="self-start px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold border border-blue-300 whitespace-nowrap">{g.period}</span>
+                    <span className="self-start px-3 py-1 bg-blue-100 text-[#0f4276] rounded-full text-xs font-semibold border border-blue-300 whitespace-nowrap">{g.period}</span>
                   </div>
-                  <p className="text-blue-700 text-sm font-semibold mt-1">{g.sponsor}</p>
+                  <p className="text-[#0f4276] text-sm font-semibold mt-1">{g.sponsor}</p>
                 </div>
               ))}
             </div>
@@ -1452,7 +1452,7 @@ const DepaLabHomepage = () => {
         <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-10">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">News &amp; <span className="text-blue-600">Engagement</span></h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">News &amp; <span className="text-[#124d89]">Engagement</span></h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
             <div className="relative border-l-2 border-blue-200 ml-3">
@@ -1461,7 +1461,7 @@ const DepaLabHomepage = () => {
                   <span className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-orange-500 border-2 border-white shadow"></span>
                   <div className="bg-blue-50 rounded-2xl p-5 border border-blue-200 shadow-sm">
                     <div className="flex flex-wrap items-center gap-3 mb-2">
-                      <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold border border-blue-300">{n.category}</span>
+                      <span className="px-3 py-1 bg-blue-100 text-[#0f4276] rounded-full text-xs font-bold border border-blue-300">{n.category}</span>
                       <span className="text-sm font-semibold text-gray-700">{n.date}</span>
                     </div>
                     <p className="text-gray-900">{n.text}</p>
@@ -1480,17 +1480,17 @@ const DepaLabHomepage = () => {
         <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">Join or Collaborate with <span className="text-blue-600">DEPA</span></h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">Join or Collaborate with <span className="text-[#124d89]">DEPA</span></h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="bg-blue-50 rounded-3xl p-6 sm:p-8 border border-blue-200 shadow-md">
-                <h2 className="text-2xl font-bold text-blue-600 mb-4">For Students</h2>
+                <h2 className="text-2xl font-bold text-[#124d89] mb-4">For Students</h2>
                 <p className="text-gray-900 leading-relaxed mb-4">
                   DEPA welcomes motivated undergraduate and graduate students interested in data engineering, predictive analytics, computer vision, trustworthy AI, cybersecurity, and autonomous systems. Students may contribute through research assistantships, course projects, independent study, theses, dissertations, and summer research programs.
                 </p>
-                <h3 className="font-bold text-blue-700 mb-2">When contacting the lab, include:</h3>
+                <h3 className="font-bold text-[#0f4276] mb-2">When contacting the lab, include:</h3>
                 <ul className="space-y-2">
                   {['Your degree program and expected graduation date', 'Research interests and relevant coursework', 'Technical skills and links to code or prior projects', 'The DEPA project or research program that interests you', 'A r\u00e9sum\u00e9 or curriculum vitae'].map((t) => (
                     <li key={t} className="flex items-start gap-2 text-gray-900"><span className="text-orange-500 mt-1">&#8226;</span><span>{t}</span></li>
@@ -1499,7 +1499,7 @@ const DepaLabHomepage = () => {
               </div>
 
               <div className="bg-blue-50 rounded-3xl p-6 sm:p-8 border border-blue-200 shadow-md">
-                <h2 className="text-2xl font-bold text-blue-600 mb-4">For Collaborators</h2>
+                <h2 className="text-2xl font-bold text-[#124d89] mb-4">For Collaborators</h2>
                 <p className="text-gray-900 leading-relaxed mb-4">
                   DEPA works with academic, government, industry, and community partners on sponsored research, data and testbed development, system evaluation, student mentorship, and technology demonstrations.
                 </p>
@@ -1525,7 +1525,7 @@ const DepaLabHomepage = () => {
         <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">Project <span className="text-blue-600">Portfolio</span></h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">Project <span className="text-[#124d89]">Portfolio</span></h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
             </div>
             <p className="text-lg sm:text-xl text-gray-900 text-center mb-12 max-w-4xl mx-auto">
@@ -1598,7 +1598,7 @@ const DepaLabHomepage = () => {
                   className="relative px-3 xl:px-4 py-2 mx-0.5 text-sm font-medium text-gray-900 hover:text-white rounded-full transition-all duration-300 group focus:outline-none"
                 >
                   <span className="relative z-10">{item.label}</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#124d89] to-[#1a5c9e] rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100"></div>
                 </button>
               ))}
             </div>
@@ -1623,9 +1623,9 @@ const DepaLabHomepage = () => {
               className="relative group p-2.5 sm:p-3 bg-blue-50 rounded-2xl shadow-lg border border-blue-100 focus:outline-none"
             >
               <div className="flex flex-col justify-center items-center w-6 h-6">
-                <span className={`bg-blue-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${mobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
-                <span className={`bg-blue-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                <span className={`bg-blue-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${mobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+                <span className={`bg-[#124d89] block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${mobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
+                <span className={`bg-[#124d89] block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`bg-[#124d89] block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${mobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
               </div>
             </button>
           </div>
@@ -1649,7 +1649,7 @@ const DepaLabHomepage = () => {
                   onClick={() => goTo(item)}
                   className="group flex items-center justify-between w-full p-3 sm:p-4 bg-blue-50 rounded-2xl hover:bg-blue-100 transition-all duration-300 border border-blue-100 focus:outline-none"
                 >
-                  <span className="text-gray-900 font-semibold group-hover:text-blue-600 transition-colors duration-300 text-base">{item.label}</span>
+                  <span className="text-gray-900 font-semibold group-hover:text-[#124d89] transition-colors duration-300 text-base">{item.label}</span>
                 </button>
               ))}
               <div className="pt-3 border-t border-blue-200">
@@ -1668,7 +1668,7 @@ const DepaLabHomepage = () => {
   );
 
   const footerJSX = (
-    <footer className="bg-gradient-to-br from-blue-700 via-blue-800 to-blue-900 text-white pt-12 pb-8">
+    <footer className="bg-gradient-to-br from-[#0f4276] via-[#0c3560] to-[#0a2c50] text-white pt-12 pb-8">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
           {/* Brand */}
@@ -1677,7 +1677,7 @@ const DepaLabHomepage = () => {
               onClick={() => navigate('hero')}
               className="flex items-center justify-center md:justify-start mb-4 group focus:outline-none"
             >
-              <div className="w-10 h-10 bg-white text-blue-700 rounded-full flex items-center justify-center font-black mr-3 group-hover:scale-110 transition-transform">
+              <div className="w-10 h-10 bg-white text-[#0f4276] rounded-full flex items-center justify-center font-black mr-3 group-hover:scale-110 transition-transform">
                 D
               </div>
               <span className="text-xl sm:text-2xl font-black tracking-tight">DEPA Research Lab</span>
@@ -1743,7 +1743,7 @@ const DepaLabHomepage = () => {
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       aria-label="Scroll to top"
-      className={`fixed bottom-5 right-5 sm:bottom-8 sm:right-8 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-2xl flex items-center justify-center transition-all duration-300 ${
+      className={`fixed bottom-5 right-5 sm:bottom-8 sm:right-8 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-[#124d89] to-[#0f4276] text-white shadow-2xl flex items-center justify-center transition-all duration-300 ${
         showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'
       } hover:scale-110 focus:outline-none`}
     >
@@ -1784,73 +1784,73 @@ const DepaLabHomepage = () => {
       <main className="flex-grow pt-16 sm:pt-20">
         
         {/* Hero Section */}
-        <section id="hero" className="relative overflow-hidden bg-[#0a1a33] pt-16">
-          {/* Signature blueprint grid + ambient glow */}
-          <div className="absolute inset-0 bg-grid opacity-60 pointer-events-none" aria-hidden="true"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0a1a33] via-[#0c2248]/90 to-[#0a1a33] pointer-events-none" aria-hidden="true"></div>
-          <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-blue-600/20 blur-3xl pointer-events-none" aria-hidden="true"></div>
-          <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-orange-500/10 blur-3xl pointer-events-none" aria-hidden="true"></div>
+        <section id="hero" className="relative overflow-hidden bg-white pt-16">
+          <div className="absolute inset-0 bg-grid-ink opacity-40 pointer-events-none" aria-hidden="true"></div>
+          <div className="absolute top-0 right-0 h-full w-2/3 bg-gradient-to-l from-blue-50 via-blue-50/40 to-transparent pointer-events-none" aria-hidden="true"></div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center py-16 sm:py-20 lg:py-24 min-h-[calc(100vh-4rem)]">
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center py-14 sm:py-20 lg:py-20 min-h-[calc(100vh-4rem)]">
 
               {/* Text column */}
               <div className="lg:col-span-7 text-left">
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="h-px w-10 bg-orange-400"></span>
-                  <span className="eyebrow text-orange-300">Morgan State University &middot; CEAMLS</span>
+                  <span className="h-px w-10 bg-orange-500"></span>
+                  <span className="eyebrow text-orange-500">Morgan State University &middot; CEAMLS</span>
                 </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] mb-6">
-                  Data Engineering &amp; Predictive Analytics for <span className="text-orange-400">Intelligent, Trustworthy Systems</span>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#0c2b4d] leading-[1.04] mb-6">
+                  Data Engineering &amp; Predictive Analytics for <span className="text-orange-500">Intelligent, Trustworthy Systems</span>
                 </h1>
-                <p className="text-lg sm:text-xl text-blue-100/90 leading-relaxed mb-8 max-w-2xl">
+                <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl">
                   The DEPA Lab at Morgan State University builds data-intensive AI systems that turn complex engineering data into predictive insight, reliable decisions, and deployable technologies &mdash; across data engineering, computer vision, trustworthy AI, cybersecurity, intelligent transportation, autonomous mobility, and decision support.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-10">
                   <a
                     href="#research"
-                    className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold text-base transition-all duration-300 shadow-lg shadow-orange-500/25"
+                    className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-orange-500 hover:bg-orange-600 text-white rounded-full font-semibold text-base transition-all duration-300 shadow-lg shadow-orange-500/20"
                   >
                     Explore Our Research
                     <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
                   </a>
                   <button
                     onClick={() => openView('join-us')}
-                    className="inline-flex items-center justify-center px-7 py-3.5 border border-white/25 text-white hover:bg-white hover:text-[#0a1a33] rounded-full font-semibold text-base transition-all duration-300"
+                    className="inline-flex items-center justify-center px-7 py-3.5 border-2 border-[#124d89] text-[#124d89] hover:bg-[#124d89] hover:text-white rounded-full font-semibold text-base transition-all duration-300"
                   >
                     Collaborate With DEPA
                   </button>
                 </div>
-                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-6 border-t border-white/10 text-sm text-blue-200/80">
-                  <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-orange-400"></span>Patented autonomous mobility</span>
-                  <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-orange-400"></span>Peer-reviewed AI &amp; cybersecurity</span>
-                  <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-orange-400"></span>Federal &amp; industry partners</span>
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-6 border-t border-gray-200 text-sm text-gray-500">
+                  <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-orange-500"></span>Patented autonomous mobility</span>
+                  <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-orange-500"></span>Peer-reviewed AI &amp; cybersecurity</span>
+                  <span className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-orange-500"></span>Federal &amp; industry partners</span>
                 </div>
               </div>
 
-              {/* Image column */}
-              <div className="lg:col-span-5 relative">
-                <div className="absolute -inset-4 bg-gradient-to-tr from-orange-500/20 to-blue-500/20 rounded-[2rem] blur-2xl pointer-events-none" aria-hidden="true"></div>
-                <div className="relative rounded-3xl overflow-hidden ring-1 ring-white/15 shadow-2xl">
-                  <img
-                    src="/depa-lab/images/depa2.jpeg"
-                    alt="DEPA Lab researchers analyzing transportation and sensor data on large visualization displays"
-                    className="w-full h-72 sm:h-96 lg:h-[540px] object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a33]/70 via-transparent to-transparent pointer-events-none"></div>
-                </div>
-                <div className="hidden sm:flex absolute -bottom-6 -left-6 items-center gap-3 bg-white rounded-2xl shadow-2xl p-4 pr-5 max-w-[260px] ring-1 ring-black/5">
-                  <div className="h-11 w-11 flex-shrink-0 rounded-xl bg-[#0a1a33] flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" aria-hidden="true">
-                      <path d="M12 2l7 3v6c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V5l7-3z" fill="#2563eb" />
-                      <path d="M9 12l2 2 4-4" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-500">U.S. Patent 12,622,826</p>
-                    <p className="text-sm font-bold text-gray-900 leading-snug">Autonomous Mobility System</p>
-                  </div>
-                </div>
+              {/* Honeycomb image cluster */}
+              <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
+                <svg viewBox="0 0 440 600" className="w-full max-w-[380px] sm:max-w-[440px] h-auto" role="img" aria-label="DEPA Lab research imagery arranged as a honeycomb">
+                  <defs>
+                    <clipPath id="heroHexA">
+                      <path d="M150,200 L236.6,250 L236.6,350 L150,400 L63.4,350 L63.4,250 Z" />
+                    </clipPath>
+                  </defs>
+                  {/* Photo hexagon */}
+                  <image href="/depa-lab/images/depa2.jpeg" x="63.4" y="200" width="173.2" height="200" preserveAspectRatio="xMidYMid slice" clipPath="url(#heroHexA)" />
+                  <path d="M150,200 L236.6,250 L236.6,350 L150,400 L63.4,350 L63.4,250 Z" fill="none" stroke="#ffffff" strokeWidth="4" />
+                  {/* Orange accent hexagon (top) with data nodes */}
+                  <path d="M236.6,50 L323.2,100 L323.2,200 L236.6,250 L150,200 L150,100 Z" fill="#f97316" />
+                  <circle cx="220" cy="150" r="6" fill="#fff" opacity="0.9" />
+                  <circle cx="253" cy="135" r="6" fill="#fff" opacity="0.9" />
+                  <circle cx="253" cy="168" r="6" fill="#fff" opacity="0.9" />
+                  <path d="M220,150 L253,135 M220,150 L253,168" stroke="#fff" strokeWidth="2" opacity="0.7" />
+                  {/* Navy accent hexagon (right) */}
+                  <path d="M323,200 L409.6,250 L409.6,350 L323,400 L236.4,350 L236.4,250 Z" fill="#124d89" />
+                  <circle cx="323" cy="300" r="7" fill="#f97316" />
+                  <circle cx="300" cy="278" r="4" fill="#ffffff" opacity="0.7" />
+                  <circle cx="346" cy="322" r="4" fill="#ffffff" opacity="0.7" />
+                  {/* Outline hexagon (bottom) */}
+                  <path d="M236.6,350 L323.2,400 L323.2,500 L236.6,550 L150,500 L150,400 Z" fill="none" stroke="#124d89" strokeWidth="3" />
+                  <circle cx="236.6" cy="450" r="6" fill="#f97316" />
+                </svg>
               </div>
 
             </div>
@@ -1868,14 +1868,14 @@ const DepaLabHomepage = () => {
               </div>
               <p className="text-xl sm:text-2xl text-gray-800 leading-relaxed font-light">
                 DEPA is a research laboratory within Morgan State University&rsquo;s{' '}
-                <a href="https://www.morgan.edu/ceamls" target="_blank" rel="noopener noreferrer" className="font-medium text-blue-700 underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-blue-800">Center for Equitable Artificial Intelligence and Machine Learning Systems (CEAMLS)</a>. DEPA leads work in data engineering, predictive modeling, optimization, decision support, and data-intensive AI systems. Projects involving robotics, intelligent sensing, and autonomous platforms may be conducted jointly with the Robotics, Autonomy &amp; Intelligent Networks (RAIN) Lab.
+                <a href="https://www.morgan.edu/ceamls" target="_blank" rel="noopener noreferrer" className="font-medium text-[#0f4276] underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-[#0c3560]">Center for Equitable Artificial Intelligence and Machine Learning Systems (CEAMLS)</a>. DEPA leads work in data engineering, predictive modeling, optimization, decision support, and data-intensive AI systems. Projects involving robotics, intelligent sensing, and autonomous platforms may be conducted jointly with the Robotics, Autonomy &amp; Intelligent Networks (RAIN) Lab.
               </p>
             </div>
           </div>
         </section>
 
         {/* Impact Metrics Strip (Guide 4.3) */}
-        <section id="metrics" className="py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
+        <section id="metrics" className="py-16 bg-gradient-to-br from-[#124d89] via-[#0f4276] to-[#0c3560]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 text-center">Research Impact at a Glance</h2>
             <p className="text-blue-100 text-center mb-10">{METRICS_AS_OF}</p>
@@ -1909,7 +1909,7 @@ const DepaLabHomepage = () => {
               <span className="h-px w-8 bg-orange-400"></span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-center">
-              Research <span className="text-blue-600">Programs</span>
+              Research <span className="text-[#124d89]">Programs</span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 text-center mb-14 max-w-4xl mx-auto">
               Our work is organized into four programs spanning foundational methods and deployable systems.
@@ -1930,7 +1930,7 @@ const DepaLabHomepage = () => {
                   {program.view ? (
                     <button
                       onClick={() => openView(program.view)}
-                      className="self-start inline-flex items-center gap-1 mt-4 text-blue-600 font-semibold text-sm hover:text-orange-600 transition-colors"
+                      className="self-start inline-flex items-center gap-1 mt-4 text-[#124d89] font-semibold text-sm hover:text-orange-600 transition-colors"
                     >
                       Explore Program &rarr;
                     </button>
@@ -1968,7 +1968,7 @@ const DepaLabHomepage = () => {
               <span className="h-px w-8 bg-orange-400"></span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-center">
-              Recent <span className="text-blue-600">Results</span>
+              Recent <span className="text-[#124d89]">Results</span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-900 text-center mb-12 max-w-4xl mx-auto">
               DEPA research moves from foundational methods to tested systems, scholarly publications, intellectual property, and public demonstrations.
@@ -1978,11 +1978,11 @@ const DepaLabHomepage = () => {
                 <div key={r.title} className="bg-blue-50 rounded-2xl p-6 border border-blue-200 shadow-md h-full flex flex-col">
                   <span className="self-start px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-bold border border-orange-300 mb-3">{r.category}</span>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{r.title}</h3>
-                  <p className="text-blue-700 text-sm font-semibold mb-3">{r.status}</p>
+                  <p className="text-[#0f4276] text-sm font-semibold mb-3">{r.status}</p>
                   <p className="text-gray-800 text-sm leading-relaxed flex-grow mb-4">{r.blurb}</p>
                   <button
                     onClick={() => openView(r.view)}
-                    className="self-start inline-flex items-center text-blue-600 font-semibold text-sm hover:text-orange-600 transition-colors"
+                    className="self-start inline-flex items-center text-[#124d89] font-semibold text-sm hover:text-orange-600 transition-colors"
                   >
                     Learn more &rarr;
                   </button>
@@ -2001,7 +2001,7 @@ const DepaLabHomepage = () => {
               <span className="h-px w-8 bg-orange-400"></span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-center">
-              News &amp; <span className="text-blue-600">Engagement</span>
+              News &amp; <span className="text-[#124d89]">Engagement</span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-900 text-center mb-12 max-w-3xl mx-auto">
               Recent demonstrations, talks, publications, patents, and milestones.
@@ -2010,7 +2010,7 @@ const DepaLabHomepage = () => {
               {newsTimeline.slice(0, 3).map((n, i) => (
                 <div key={i} className="bg-blue-50 rounded-2xl p-6 border border-blue-200 shadow-md">
                   <div className="flex flex-wrap items-center gap-2 mb-3">
-                    <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold border border-blue-300">{n.category}</span>
+                    <span className="px-3 py-1 bg-blue-100 text-[#0f4276] rounded-full text-xs font-bold border border-blue-300">{n.category}</span>
                     <span className="text-sm font-semibold text-gray-700">{n.date}</span>
                   </div>
                   <p className="text-gray-900">{n.text}</p>
@@ -2029,7 +2029,7 @@ const DepaLabHomepage = () => {
         </section>
 
         {/* Join Us CTA (Guide 10.1) */}
-        <section id="join-cta" className="mb-24 py-20 bg-gray-50 border-y border-gray-100">
+        <section id="join-cta" className="mb-24 py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-4xl mx-auto text-center">
               <div className="flex items-center justify-center gap-3 mb-4">
