@@ -1861,7 +1861,7 @@ const DepaLabHomepage = () => {
         </section>
 
         {/* Institutional Context: DEPA / CEAMLS / RAIN (Guide 4.2) */}
-        <section id="context" className="py-16 sm:py-24 bg-white">
+        <section id="context" className="py-12 sm:py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <div className="flex items-center justify-center gap-3 mb-6">
@@ -1878,7 +1878,7 @@ const DepaLabHomepage = () => {
         </section>
 
         {/* Impact Metrics Strip (Guide 4.3) */}
-        <section id="metrics" className="py-16 bg-gradient-to-br from-[#124d89] via-[#0f4276] to-[#0c3560]">
+        <section id="metrics" className="py-12 sm:py-16 bg-gradient-to-br from-[#124d89] via-[#0f4276] to-[#0c3560]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 text-center">Research Impact at a Glance</h2>
             <p className="text-blue-100 text-center mb-10">{METRICS_AS_OF}</p>
@@ -1904,7 +1904,7 @@ const DepaLabHomepage = () => {
         </section>
 
         {/* Research Areas Section */}
-        <section id="research" className="mb-24 py-16 bg-white">
+        <section id="research" className="py-12 sm:py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="h-px w-8 bg-orange-400"></span>
@@ -1972,7 +1972,7 @@ const DepaLabHomepage = () => {
         </section>
 
         {/* Recent Results Section (Guide 4.4) */}
-        <section id="recent-results" className="mb-24 py-16 bg-white">
+        <section id="recent-results" className="py-12 sm:py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="h-px w-8 bg-orange-400"></span>
@@ -2005,7 +2005,7 @@ const DepaLabHomepage = () => {
         </section>
 
         {/* News Preview (Guide 9.3) */}
-        <section id="news-preview" className="mb-24 py-16 bg-white">
+        <section id="news-preview" className="py-12 sm:py-16 bg-white overflow-hidden">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="h-px w-8 bg-orange-400"></span>
@@ -2015,21 +2015,30 @@ const DepaLabHomepage = () => {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-center">
               News &amp; <span className="text-[#124d89]">Engagement</span>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-900 text-center mb-12 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-900 text-center max-w-3xl mx-auto">
               Recent demonstrations, talks, publications, patents, and milestones.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {newsTimeline.slice(0, 3).map((n, i) => (
-                <div key={i} className="bg-blue-50 rounded-2xl p-6 border border-blue-200 shadow-md">
+          </div>
+
+          {/* Auto-scrolling carousel */}
+          <div className="relative overflow-hidden mt-10 group">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-10 sm:w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-10 sm:w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
+            <div className="flex gap-6 w-max px-3 animate-marquee group-hover:[animation-play-state:paused]">
+              {[...newsTimeline, ...newsTimeline].map((n, i) => (
+                <div key={i} className="w-72 sm:w-80 flex-shrink-0 bg-blue-50 rounded-2xl p-6 border border-blue-100">
                   <div className="flex flex-wrap items-center gap-2 mb-3">
-                    <span className="px-3 py-1 bg-blue-100 text-[#0f4276] rounded-full text-xs font-bold border border-blue-300">{n.category}</span>
+                    <span className="px-3 py-1 bg-[#124d89]/10 text-[#0f4276] rounded-full text-xs font-bold border border-[#124d89]/20">{n.category}</span>
                     <span className="text-sm font-semibold text-gray-700">{n.date}</span>
                   </div>
-                  <p className="text-gray-900">{n.text}</p>
+                  <p className="text-gray-900 text-sm leading-relaxed">{n.text}</p>
                 </div>
               ))}
             </div>
-            <div className="text-center mt-12">
+          </div>
+
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="text-center mt-10">
               <button
                 onClick={() => openView('news')}
                 className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
@@ -2041,7 +2050,7 @@ const DepaLabHomepage = () => {
         </section>
 
         {/* Join Us CTA (Guide 10.1) */}
-        <section id="join-cta" className="mb-24 py-20 bg-white">
+        <section id="join-cta" className="py-12 sm:py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-4xl mx-auto text-center">
               <div className="flex items-center justify-center gap-3 mb-4">
