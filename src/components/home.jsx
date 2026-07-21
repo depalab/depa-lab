@@ -18,6 +18,18 @@ const projects = [
       icon: ""
     },
     {
+      title: "AI-Driven Flight Delay Prediction for Climate-Resilient Airspace Management",
+      description: "Machine learning fused with real-time meteorological data (NOAA, BTS) and flight schedules to forecast delays, power decision-support dashboards, and improve climate resilience in aviation.",
+      link: "flight-delay-prediction",
+      icon: ""
+    },
+    {
+      title: "Heart-Rate Computation Using Eulerian Video Magnification",
+      description: "A skin-segmented adaptation of Eulerian Video Magnification that amplifies subtle facial color changes to estimate heart rate from video, using YOLOv8 face detection and adaptive skin masking.",
+      link: "evm-heart-rate",
+      icon: ""
+    },
+    {
       title: "XPCI Crack Detection and Categorization",
       description: "Automated crack detection in low-density materials using X-ray Phase Contrast Imaging (XPCI) with YOLOv11 deep learning architecture.",
       link: "xpci-crack-detection",
@@ -207,7 +219,7 @@ const newsTimeline = [
 // Expanded People profiles. Guide 8.1. Bios/links pending member approval.
 const peopleProfiles = [
   { name: "Dr. Kofi Nyarko", program: "Director, DEPA Lab", image: "nyarko.jpg", interests: "Data-intensive AI, computer vision, trustworthy AI, autonomous mobility, decision support", project: "UrbanFlow; Trustworthy AI for Cybersecurity", links: [{ label: "Email", href: "mailto:kofi.nyarko@morgan.edu" }] },
-  { name: "Cynthia Nosiri", program: "AI Researcher", image: "Cynthia.jpeg", interests: "Trustworthy AI, bias and fairness, healthcare data science", project: "Bias evaluation and accessibility in data", award: "First Place, Humane Intelligence Bias Bounty \u00b7 Accessibility in Data (2025)" },
+  { name: "Cynthia Nosiri", program: "AI Researcher", image: "cynthia.JPG", interests: "Trustworthy AI, bias and fairness, healthcare data science", project: "Bias evaluation and accessibility in data", award: "First Place, Humane Intelligence Bias Bounty \u00b7 Accessibility in Data (2025)" },
   { name: "Derrick Cook", program: "AI Researcher", image: "Derrick_Cook.PNG", interests: "Machine learning, applied analytics", project: "DEPA research portfolio" },
   { name: "Rezoan Sultan", program: "Human-AI Interaction Research Engineer", image: "Rezoan_Sultan.jpeg", interests: "Human-AI interaction, AI-assisted workflow evaluation", project: "Evaluating AI-assisted cybersecurity operations" },
   { name: "Benjamin Hall", program: "Researcher", image: "Benjamin Hall.jpg", interests: "Data engineering and analytics", project: "DEPA research portfolio" },
@@ -219,6 +231,10 @@ const peopleProfiles = [
   { name: "Nicholas Cook", program: "AI Researcher", image: "NicholasCook.jpg", interests: "Machine learning", project: "DEPA research portfolio" },
   { name: "Temitope Ajibola", program: "AI Researcher", image: "Temi.JPG", interests: "Autonomous systems, AI research", project: "DEPA research portfolio" },
   { name: "David Nyarko", program: "Researcher", image: "david-nyarko.JPG", interests: "Autonomous systems, computer vision, entrepreneurship", project: "Autonomous mobility research", award: "Best Presentation, ICCMA (2025)" },
+  { name: "Abiola Ajala", program: "AI Researcher", image: "Abiola_Ajala_Headshot.jpg", interests: "Applied AI and data science", project: "DEPA research portfolio" },
+  { name: "Joshua Mabonga", program: "AI Researcher", image: "josh.jpg", interests: "Applied AI and data science", project: "DEPA research portfolio" },
+  { name: "Raj Bariya", program: "AI Researcher", image: "Raj_bariya.jpeg", interests: "Predictive analytics, aviation, climate resilience", project: "AI-Driven Flight Delay Prediction" },
+  { name: "Tijesunimi Abraham", program: "AI Researcher", image: "Tijesunimi.jpeg", interests: "Computer vision, physiological signal processing", project: "Heart-rate estimation via Eulerian Video Magnification" },
 ];
 
 const peopleAlumni = [
@@ -1551,6 +1567,68 @@ const DepaLabHomepage = () => {
         </div>
       </div>
     ),
+    'flight-delay-prediction': () => (
+      <div className="min-h-screen bg-white">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-3">AI-Driven Flight Delay Prediction</h1>
+              <p className="text-lg text-[#124d89] font-semibold">for Climate-Resilient Airspace Management</p>
+              <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full mt-4"></div>
+              <p className="text-sm text-gray-600 mt-3">Lead: Raj Bariya</p>
+            </div>
+            <div className="space-y-6">
+              <p className="text-gray-900 leading-relaxed text-lg">
+                This project uses machine learning and climatic data to accurately predict flight delays. The system delivers timely forecasts and decision-support dashboards to airlines by incorporating real-time weather updates from credible sources such as NOAA and BTS and fusing them with flight schedules.
+              </p>
+              <p className="text-gray-900 leading-relaxed text-lg">
+                By anticipating disruptions, the model helps reduce costly delays, optimize resource distribution, improve the passenger experience, and strengthen climate resilience across the aviation industry.
+              </p>
+              <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+                <h4 className="text-xl font-bold text-[#124d89] mb-4">Highlights</h4>
+                <ul className="space-y-2">
+                  {['Real-time weather integration (NOAA, BTS)', 'Fusion of meteorological data with flight schedules', 'Decision-support dashboards for airlines', 'Improved resource allocation and passenger experience', 'Climate-resilient airspace management'].map((h) => (
+                    <li key={h} className="flex items-start gap-2 text-gray-900"><span className="text-orange-500 mt-1">&#8226;</span><span>{h}</span></li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
+    'evm-heart-rate': () => (
+      <div className="min-h-screen bg-white">
+        <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-12 lg:py-16">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">Heart-Rate Computation Using Eulerian Video Magnification</h1>
+              <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
+              <p className="text-sm text-gray-600 mt-3">Lead: Tijesunimi Abraham</p>
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-[#124d89]">Abstract</h3>
+              <p className="text-gray-900 leading-relaxed text-lg">
+                This project introduces a skin-segmented adaptation of Eulerian Video Magnification (EVM) that enhances modest, temporally band-limited color variations on human faces while minimizing non-skin distortions. Faces are detected using YOLOv8, and within each bounding box a robust skin mask is generated with an adaptive HSV model that incorporates intra-frame statistics, morphological refinement, and removal of the eyes and mouth via luminance heuristics.
+              </p>
+              <p className="text-gray-900 leading-relaxed text-lg">
+                Magnification is applied only within this mask and kept to a physiologically reasonable temporal range. Each magnified frame produces a compact intensity trace, and heart rate is determined by frequency analysis. Segmenting skin regions before magnification improves the signal-to-noise ratio compared with whole-face EVM, reducing failure modes during mild head movement, lighting fluctuations, and changes in facial expression.
+              </p>
+              <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+                <h4 className="text-xl font-bold text-[#124d89] mb-4">Approach</h4>
+                <ul className="space-y-2">
+                  {['YOLOv8 face detection with adaptive HSV skin masking', 'Morphological refinement; eyes and mouth removed by luminance heuristics', 'Magnification limited to skin regions and a physiological frequency band', 'Per-frame intensity trace with frequency-based heart-rate estimation', 'Improved signal-to-noise ratio versus whole-face EVM'].map((h) => (
+                    <li key={h} className="flex items-start gap-2 text-gray-900"><span className="text-orange-500 mt-1">&#8226;</span><span>{h}</span></li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+
   }), []);
 
   // ---- Reusable layout fragments ------------------------------------------
