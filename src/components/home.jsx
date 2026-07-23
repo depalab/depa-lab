@@ -220,22 +220,23 @@ const newsTimeline = [
 // Expanded People profiles. Guide 8.1. Bios/links pending member approval.
 const peopleProfiles = [
   { name: "Dr. Kofi Nyarko", program: "Director, DEPA Lab", image: "nyarko.jpg", interests: "Data-intensive AI, computer vision, trustworthy AI, autonomous mobility, decision support", project: "UrbanFlow; Trustworthy AI for Cybersecurity", award: "Third Place, Best Student Paper Presentation, ICNS Conference (2026)", links: [{ label: "Copy email", copy: "kofi.nyarko@morgan.edu" }] },
-  { name: "Cynthia Nosiri", program: "AI Researcher", image: "cynthia.JPG", interests: "Trustworthy AI, bias and fairness, healthcare data science", project: "Bias evaluation and accessibility in data", award: "First Place, Humane Intelligence Bias Bounty \u00b7 Accessibility in Data (2025)" },
-  { name: "Derrick Cook", program: "AI Researcher", image: "Derrick_Cook.PNG", interests: "Machine learning, applied analytics", project: "DEPA research portfolio" },
-  { name: "Rezoan Sultan", program: "Human-AI Interaction Research Engineer", image: "Rezoan_Sultan.jpeg", interests: "Human-AI interaction, AI-assisted workflow evaluation", project: "Evaluating AI-assisted cybersecurity operations" },
+  { name: "Cynthia Nosiri", program: "AI Researcher", image: "cynthia.JPG", interests: "Trustworthy AI, bias and fairness, healthcare data science", project: "Benchmarking LLMs for AAVE & SAE", award: "First Place, Humane Intelligence Bias Bounty \u00b7 Accessibility in Data (2025)" },
+  { name: "Derrick Cook", program: "AI Researcher", image: "Derrick_Cook.PNG", interests: "Machine learning, applied analytics", project: "Vision-based Autonomous Drone Object Tracking" },
+  { name: "Rezoan Sultan", program: "Human-AI Interaction Research Engineer", image: "Rezoan_Sultan.jpeg", interests: "Human-AI interaction, AI-assisted workflow evaluation", project: "MSU AI Academic Advisor" },
   { name: "Benjamin Hall", program: "Researcher", image: "Benjamin Hall.jpg", interests: "Data engineering and analytics", project: "DEPA research portfolio" },
-  { name: "Emmanuel Masa-ibi", program: "Researcher", image: "Emmanuel Masa-ibi.jpeg", interests: "AI/ML systems engineering", project: "AI/ML systems engineering workbench; AI-Driven Flight Delay Prediction", award: "Third Place, Best Student Paper Presentation, ICNS Conference (2026)" },
-  { name: "Awotwi Baffoe", program: "AI Researcher", image: "Awotwi_Baffoe.jpg", interests: "Computer vision, non-destructive evaluation", project: "XPCI crack detection", award: "Best Poster, Materials Science in Extreme Environments (2025)" },
-  { name: "Opeyemi Adeniran", program: "AI Research Engineer", image: "Opeyemi.PNG", interests: "Applied AI, entrepreneurship", project: "DEPA research portfolio", award: "Second Place, Wealth Summit Live Pitch Competition (2025)" },
+  { name: "Emmanuel Masa-ibi", program: "Researcher", image: "Emmanuel Masa-ibi.jpeg", interests: "AI/ML systems engineering", project: "AI/ML Bench Guard", award: "Third Place, Best Student Paper Presentation, ICNS Conference (2026)" },
+  { name: "Awotwi Baffoe", program: "AI Researcher", image: "Awotwi_Baffoe.jpg", interests: "Computer vision, non-destructive evaluation", project: "XPCI Crack Detection and Categorization", award: "Best Poster, Materials Science in Extreme Environments (2025)" },
+  { name: "Opeyemi Adeniran", program: "AI Research Engineer", image: "Opeyemi.PNG", interests: "Applied AI, entrepreneurship", project: "Multimodal LLMs for Forensic Video Analysis", award: "Second Place, Wealth Summit Live Pitch Competition (2025)" },
   { name: "Anjolie Anthony", program: "Researcher", image: "Anjolie.JPG", interests: "AI research", project: "DEPA research portfolio" },
-  { name: "Binisa Giri", program: "AI Researcher", image: "Binisa_Giri.jpeg", interests: "Accessibility in AI design, bias evaluation", project: "Accessibility in design", award: "First Place, Humane Intelligence Bias Bounty \u00b7 Accessibility in Design (2025)" },
+  { name: "Binisa Giri", program: "AI Researcher", image: "Binisa_Giri.jpeg", interests: "Accessibility in AI design, bias evaluation", project: "Cyber Shield", award: "First Place, Humane Intelligence Bias Bounty \u00b7 Accessibility in Design (2025)" },
   { name: "Nicholas Cook", program: "AI Researcher", image: "NicholasCook.jpg", interests: "Machine learning", project: "DEPA research portfolio" },
-  { name: "Temitope Ajibola", program: "AI Researcher", image: "Temi.JPG", interests: "Autonomous systems, AI research", project: "DEPA research portfolio" },
-  { name: "David Nyarko", program: "Researcher", image: "david-nyarko.JPG", interests: "Autonomous systems, computer vision, entrepreneurship", project: "Autonomous mobility research", award: "Best Presentation, ICCMA (2025)" },
+  { name: "Temitope Ajibola", program: "AI Researcher", image: "Temi.JPG", interests: "Autonomous systems, AI research", project: "Smart Contract Reentrancy Detection" },
+  { name: "David Nyarko", program: "Researcher", image: "david-nyarko.JPG", interests: "Autonomous systems, computer vision, entrepreneurship", project: "UrbanFlow: Accessible Autonomous Mobility", award: "Best Presentation, ICCMA (2025)" },
   { name: "Abiola Ajala", program: "AI Researcher", image: "Abiola_Ajala_Headshot.jpg", interests: "Predictive analytics, aviation decision support, machine learning", project: "AI-Driven Flight Delay Prediction", award: "Third Place, Best Student Paper Presentation, ICNS Conference (2026)" },
   { name: "Joshua Mabonga", program: "AI Researcher", image: "josh.jpg", interests: "Applied AI and data science", project: "DEPA research portfolio" },
   { name: "Raj Bariya", program: "AI Researcher", image: "Raj_bariya.jpeg", interests: "Predictive analytics, aviation, climate resilience", project: "AI-Driven Flight Delay Prediction", award: "Third Place, Best Student Paper Presentation, ICNS Conference (2026)" },
-  { name: "Tijesunimi Abraham", program: "AI Researcher", image: "Tijesunimi.jpeg", interests: "Computer vision, physiological signal processing", project: "Heart-rate estimation via Eulerian Video Magnification" },
+  { name: "Tijesunimi Abraham", program: "AI Researcher", image: "Tijesunimi.jpeg", interests: "Computer vision, physiological signal processing", project: "Heart-Rate Computation Using Eulerian Video Magnification" },
+  { name: "Tae", program: "AI Researcher", image: "Tae.png", interests: "Efficient and quantized large language models, assistive navigation", project: "Quantized LLM for Airport Navigation" },
 ];
 
 const peopleAlumni = [
@@ -1791,8 +1792,12 @@ const DepaLabHomepage = () => {
               onClick={() => navigate('hero')}
               className="flex items-center justify-center md:justify-start mb-4 group focus:outline-none"
             >
-              <div className="w-10 h-10 bg-white text-[#0f4276] rounded-full flex items-center justify-center font-black mr-3 group-hover:scale-110 transition-transform">
-                D
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-3 overflow-hidden group-hover:scale-110 transition-transform">
+                <img
+                  src="/depa-lab/images/DEPA-logo.png"
+                  alt="DEPA Research Lab logo"
+                  className="w-full h-full object-contain p-1"
+                />
               </div>
               <span className="text-xl sm:text-2xl font-black tracking-tight">DEPA Research Lab</span>
             </button>
@@ -1806,11 +1811,8 @@ const DepaLabHomepage = () => {
             <h4 className="text-base sm:text-lg font-bold mb-4 uppercase tracking-wider text-orange-300">Explore</h4>
             <ul className="space-y-2 text-blue-100 text-sm sm:text-base">
               {[
-                { label: 'Research', kind: 'scroll', target: 'research' },
                 { label: 'Projects', kind: 'view', target: 'projects' },
                 { label: 'Publications', kind: 'view', target: 'publications' },
-                { label: 'People', kind: 'view', target: 'people' },
-                { label: 'Impact', kind: 'view', target: 'impact' },
                 { label: 'Join Us', kind: 'view', target: 'join-us' },
               ].map((item) => (
                 <li key={item.label}>
