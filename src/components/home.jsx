@@ -186,6 +186,7 @@ const studentAchievements = [
   { date: "2025", students: "David Nyarko", recognition: "Best Presentation, 13th International Conference on Control, Mechatronics and Automation" },
   { date: "December 2025", students: "Kelechi Nwachukwu, Hashmath Fathima, Awotwi Baffoe, and Binisa Giri", recognition: "First Place, Humane Intelligence Bias Bounty \u00b7 Accessibility in Design" },
   { date: "December 2025", students: "Cynthia Nosiri", recognition: "First Place, Humane Intelligence Bias Bounty \u00b7 Accessibility in Data" },
+  { date: "April 2026", students: "Abiola O. Ajala, Raj Bariya, Emmanuel Masa-Ibi, and Kofi Nyarko", recognition: "Third Place, Best Student Paper Presentation, Integrated Communications, Navigation and Surveillance (ICNS) Conference, for \u201cReal-Time Flight Delay Prediction Using Integrated Machine Learning and Meteorological Intelligence for CNS/ATM Decision Support\u201d" },
 ];
 
 // Selected funded research (awarded only). Guide 9.1.
@@ -218,12 +219,12 @@ const newsTimeline = [
 
 // Expanded People profiles. Guide 8.1. Bios/links pending member approval.
 const peopleProfiles = [
-  { name: "Dr. Kofi Nyarko", program: "Director, DEPA Lab", image: "nyarko.jpg", interests: "Data-intensive AI, computer vision, trustworthy AI, autonomous mobility, decision support", project: "UrbanFlow; Trustworthy AI for Cybersecurity", links: [{ label: "Email", href: "mailto:kofi.nyarko@morgan.edu" }] },
+  { name: "Dr. Kofi Nyarko", program: "Director, DEPA Lab", image: "nyarko.jpg", interests: "Data-intensive AI, computer vision, trustworthy AI, autonomous mobility, decision support", project: "UrbanFlow; Trustworthy AI for Cybersecurity", award: "Third Place, Best Student Paper Presentation, ICNS Conference (2026)", links: [{ label: "Copy email", copy: "kofi.nyarko@morgan.edu" }] },
   { name: "Cynthia Nosiri", program: "AI Researcher", image: "cynthia.JPG", interests: "Trustworthy AI, bias and fairness, healthcare data science", project: "Bias evaluation and accessibility in data", award: "First Place, Humane Intelligence Bias Bounty \u00b7 Accessibility in Data (2025)" },
   { name: "Derrick Cook", program: "AI Researcher", image: "Derrick_Cook.PNG", interests: "Machine learning, applied analytics", project: "DEPA research portfolio" },
   { name: "Rezoan Sultan", program: "Human-AI Interaction Research Engineer", image: "Rezoan_Sultan.jpeg", interests: "Human-AI interaction, AI-assisted workflow evaluation", project: "Evaluating AI-assisted cybersecurity operations" },
   { name: "Benjamin Hall", program: "Researcher", image: "Benjamin Hall.jpg", interests: "Data engineering and analytics", project: "DEPA research portfolio" },
-  { name: "Emmanuel Masa-ibi", program: "Researcher", image: "Emmanuel Masa-ibi.jpeg", interests: "AI/ML systems engineering", project: "AI/ML systems engineering workbench" },
+  { name: "Emmanuel Masa-ibi", program: "Researcher", image: "Emmanuel Masa-ibi.jpeg", interests: "AI/ML systems engineering", project: "AI/ML systems engineering workbench; AI-Driven Flight Delay Prediction", award: "Third Place, Best Student Paper Presentation, ICNS Conference (2026)" },
   { name: "Awotwi Baffoe", program: "AI Researcher", image: "Awotwi_Baffoe.jpg", interests: "Computer vision, non-destructive evaluation", project: "XPCI crack detection", award: "Best Poster, Materials Science in Extreme Environments (2025)" },
   { name: "Opeyemi Adeniran", program: "AI Research Engineer", image: "Opeyemi.PNG", interests: "Applied AI, entrepreneurship", project: "DEPA research portfolio", award: "Second Place, Wealth Summit Live Pitch Competition (2025)" },
   { name: "Anjolie Anthony", program: "Researcher", image: "Anjolie.JPG", interests: "AI research", project: "DEPA research portfolio" },
@@ -231,9 +232,9 @@ const peopleProfiles = [
   { name: "Nicholas Cook", program: "AI Researcher", image: "NicholasCook.jpg", interests: "Machine learning", project: "DEPA research portfolio" },
   { name: "Temitope Ajibola", program: "AI Researcher", image: "Temi.JPG", interests: "Autonomous systems, AI research", project: "DEPA research portfolio" },
   { name: "David Nyarko", program: "Researcher", image: "david-nyarko.JPG", interests: "Autonomous systems, computer vision, entrepreneurship", project: "Autonomous mobility research", award: "Best Presentation, ICCMA (2025)" },
-  { name: "Abiola Ajala", program: "AI Researcher", image: "Abiola_Ajala_Headshot.jpg", interests: "Applied AI and data science", project: "DEPA research portfolio" },
+  { name: "Abiola Ajala", program: "AI Researcher", image: "Abiola_Ajala_Headshot.jpg", interests: "Predictive analytics, aviation decision support, machine learning", project: "AI-Driven Flight Delay Prediction", award: "Third Place, Best Student Paper Presentation, ICNS Conference (2026)" },
   { name: "Joshua Mabonga", program: "AI Researcher", image: "josh.jpg", interests: "Applied AI and data science", project: "DEPA research portfolio" },
-  { name: "Raj Bariya", program: "AI Researcher", image: "Raj_bariya.jpeg", interests: "Predictive analytics, aviation, climate resilience", project: "AI-Driven Flight Delay Prediction" },
+  { name: "Raj Bariya", program: "AI Researcher", image: "Raj_bariya.jpeg", interests: "Predictive analytics, aviation, climate resilience", project: "AI-Driven Flight Delay Prediction", award: "Third Place, Best Student Paper Presentation, ICNS Conference (2026)" },
   { name: "Tijesunimi Abraham", program: "AI Researcher", image: "Tijesunimi.jpeg", interests: "Computer vision, physiological signal processing", project: "Heart-rate estimation via Eulerian Video Magnification" },
 ];
 
@@ -1224,12 +1225,6 @@ const DepaLabHomepage = () => {
                 The platform has been demonstrated for The Arc Maryland, at the World Bank&rsquo;s Transforming Transportation event, and during a Girl STEM Tour at Baltimore/Washington International Thurgood Marshall Airport.
               </p>
             </section>
-
-            <div className="text-center">
-              <a href="mailto:kofi.nyarko@morgan.edu" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl">
-                Contact the UrbanFlow Team
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -1363,7 +1358,30 @@ const DepaLabHomepage = () => {
           {p.links && p.links.length ? (
             <div className="flex flex-wrap gap-2 mt-3">
               {p.links.map((l) => (
-                <a key={l.label} href={l.href} className="px-3 py-1 bg-white text-[#0f4276] rounded-lg text-xs font-medium border border-blue-300 hover:bg-blue-100 transition-colors">{l.label}</a>
+                l.copy ? (
+                  <button
+                    key={l.label}
+                    onClick={(e) => {
+                      const btn = e.currentTarget;
+                      const original = l.label;
+                      const done = () => {
+                        btn.textContent = 'Copied';
+                        setTimeout(() => { btn.textContent = original; }, 1500);
+                      };
+                      if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(l.copy).then(done).catch(() => { btn.textContent = l.copy; });
+                      } else {
+                        btn.textContent = l.copy;
+                      }
+                    }}
+                    title={l.copy}
+                    className="px-3 py-1 bg-white text-[#0f4276] rounded-lg text-xs font-medium border border-blue-300 hover:bg-blue-100 transition-colors focus:outline-none"
+                  >
+                    {l.label}
+                  </button>
+                ) : (
+                  <a key={l.label} href={l.href} className="px-3 py-1 bg-white text-[#0f4276] rounded-lg text-xs font-medium border border-blue-300 hover:bg-blue-100 transition-colors">{l.label}</a>
+                )
               ))}
             </div>
           ) : null}
@@ -1525,6 +1543,26 @@ const DepaLabHomepage = () => {
               </div>
             </div>
 
+            <div className="max-w-3xl mx-auto mt-12 bg-blue-50 rounded-3xl p-6 sm:p-8 border border-blue-200">
+              <h2 className="text-2xl font-bold text-[#124d89] mb-5 text-center">Contact</h2>
+              <div className="space-y-4 text-center">
+                <p className="text-gray-900">
+                  <span className="font-semibold text-[#124d89]">Dr. Kofi Nyarko</span><br />
+                  Director, DEPA Research Lab
+                </p>
+                <p className="text-gray-900">
+                  <span className="font-semibold text-[#124d89]">Email:</span>{' '}
+                  <a href="mailto:kofi.nyarko@morgan.edu" className="underline decoration-orange-400 decoration-2 underline-offset-4 hover:text-[#0f4276] break-all">kofi.nyarko@morgan.edu</a>
+                </p>
+                <address className="not-italic text-gray-900 leading-relaxed">
+                  <span className="font-semibold text-[#124d89]">Address:</span><br />
+                  Rooms 112 and 113, Schaefer Engineering Building<br />
+                  School of Engineering, Morgan State University<br />
+                  1700 E Cold Spring Ln, Baltimore, MD 21251
+                </address>
+              </div>
+            </div>
+
             <div className="text-center mt-10">
               <a href="mailto:kofi.nyarko@morgan.edu" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl">
                 Contact the DEPA Lab
@@ -1575,7 +1613,6 @@ const DepaLabHomepage = () => {
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-3">AI-Driven Flight Delay Prediction</h1>
               <p className="text-lg text-[#124d89] font-semibold">for Climate-Resilient Airspace Management</p>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full mt-4"></div>
-              <p className="text-sm text-gray-600 mt-3">Lead: Raj Bariya</p>
             </div>
             <div className="space-y-6">
               <p className="text-gray-900 leading-relaxed text-lg">
@@ -1605,7 +1642,6 @@ const DepaLabHomepage = () => {
             <div className="text-center mb-8">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">Heart-Rate Computation Using Eulerian Video Magnification</h1>
               <div className="h-1 w-32 bg-orange-500 mx-auto rounded-full"></div>
-              <p className="text-sm text-gray-600 mt-3">Lead: Tijesunimi Abraham</p>
             </div>
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-[#124d89]">Abstract</h3>
@@ -1789,23 +1825,27 @@ const DepaLabHomepage = () => {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Related links */}
           <div className="text-center md:text-left">
-            <h4 className="text-base sm:text-lg font-bold mb-4 uppercase tracking-wider text-orange-300">Contact</h4>
-            <p className="text-blue-100 text-sm sm:text-base mb-2">
-              <a
-                href="mailto:kofi.nyarko@morgan.edu"
-                className="hover:text-white transition-colors break-all"
-              >
-                kofi.nyarko@morgan.edu
-              </a>
-            </p>
-            <address className="not-italic text-blue-100 text-sm leading-relaxed">
-              Rooms 112 &amp; 113, Schaefer Engineering Building<br />
-              Morgan State University<br />
-              1700 E Cold Spring Ln<br />
-              Baltimore, MD 21251
-            </address>
+            <h4 className="text-base sm:text-lg font-bold mb-4 uppercase tracking-wider text-orange-300">Quick Links</h4>
+            <ul className="space-y-2 text-blue-100 text-sm sm:text-base">
+              {[
+                { label: 'CEAMLS', href: 'https://www.morgan.edu/ceamls' },
+                { label: 'NSEA', href: 'https://www.equitableaisymposium.com/' },
+                { label: 'ACT', href: 'https://depalab.github.io/ACT/' },
+              ].map((l) => (
+                <li key={l.label}>
+                  <a
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
